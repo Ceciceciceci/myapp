@@ -3,6 +3,7 @@ import {Link, NavLink} from 'react-router-dom';
 
 class Header extends Component{
 
+    
     openMenu(){
         let navLinks = document.querySelector(".nav-links");
         if(navLinks.classList.contains('showNav')){
@@ -34,7 +35,7 @@ class Header extends Component{
                             </li>
                             <li><a href="/#about">about</a></li>
                             <li><Link to="/projects">projects</Link></li>
-                            <li><a href="https://ceciceciceci.github.io/artindex.html">art</a></li>
+                            <li><a href="https://ceciceciceci.github.io/artindex.html" target="_blank">art</a></li>
                             <li><Link to="/contact">contact</Link></li>
                         </ul>
                     )

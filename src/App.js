@@ -36,6 +36,10 @@ class App extends Component {
       { projName: 'Classic Vacations', year: '2019-cont.', links:[ { name: 'Style Guide site', linkout:'http://classicvacationsdesign.com/' }, {name: 'Classic Vacations site', linkout: 'https://www.classicvacations.com/'} ], description: 'Created a style guide with the UX designer to help the rest of the team keep a uniformity for the new website look. Used HTML, CSS3, JS, PHP'}
     ]
   }
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
+  
   render() {
     return (
       <BrowserRouter>

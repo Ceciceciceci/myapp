@@ -443,14 +443,14 @@ header a:focus {
   width: 100%;
   background: #4E2B0D;
   /* background: linear-gradient(90deg, rgba(78,43,13,1) 0%, rgba(255,255,255,0) 50%, rgba(78,43,13,1) 100%); */
-  margin: 0 auto;
+  margin: 5px auto;
 }
 .divider-2{
   height: 4px; 
   width: 100%;
   background: #4E2B0D;
   /* background: linear-gradient(90deg, rgba(78,43,13,1) 0%, rgba(255,255,255,0) 50%, rgba(78,43,13,1) 100%); */
-  margin: 0 auto;
+  margin: 5px auto;
 }
 
 .proj-list .proj-list-item{
@@ -464,6 +464,7 @@ header a:focus {
 
   padding: 25px;
   border-left: 2px solid #4E2B0D;
+  border-bottom: 2px solid #4E2B0D;
 }
 
 .proj-list-item .project-heading{
@@ -488,6 +489,9 @@ header a:focus {
 
 .proj-list-item .project-img{
   grid-area: proj-img;
+  position: relative;
+  display:flex;
+  align-items: flex-start;
 }
 .proj-list-item .project-img img{
   width: 100%;
