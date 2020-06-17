@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/my-app/static/css/main.3cec226e.chunk.css",
+    "main.js": "/my-app/static/js/main.f5306bd5.chunk.js",
+    "main.js.map": "/my-app/static/js/main.f5306bd5.chunk.js.map",
+    "runtime-main.js": "/my-app/static/js/runtime-main.5119dbb0.js",
+    "runtime-main.js.map": "/my-app/static/js/runtime-main.5119dbb0.js.map",
+    "static/js/2.3820ea51.chunk.js": "/my-app/static/js/2.3820ea51.chunk.js",
+    "static/js/2.3820ea51.chunk.js.map": "/my-app/static/js/2.3820ea51.chunk.js.map",
+    "index.html": "/my-app/index.html",
+    "precache-manifest.6818a90532a3ab0a1522eeef5b425a78.js": "/my-app/precache-manifest.6818a90532a3ab0a1522eeef5b425a78.js",
+    "service-worker.js": "/my-app/service-worker.js",
+    "static/css/main.3cec226e.chunk.css.map": "/my-app/static/css/main.3cec226e.chunk.css.map",
+    "static/js/2.3820ea51.chunk.js.LICENSE.txt": "/my-app/static/js/2.3820ea51.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/my-app/static/media/a16ba49e-2f15-4cfd-9668-c7768fa1059b.457957fb.woff2",
+    "static/media/behance.svg": "/my-app/static/media/behance.4e9e54b6.svg",
+    "static/media/dogbread2.png": "/my-app/static/media/dogbread2.429913d6.png",
+    "static/media/github.svg": "/my-app/static/media/github.617870e4.svg",
+    "static/media/instagram.svg": "/my-app/static/media/instagram.662a4f14.svg",
+    "static/media/linkedin.svg": "/my-app/static/media/linkedin.619231ff.svg",
+    "static/media/proj1-img.jpg": "/my-app/static/media/proj1-img.b0743d0c.jpg",
+    "static/media/proj2-img.jpg": "/my-app/static/media/proj2-img.280a5f3f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5119dbb0.js",
+    "static/js/2.3820ea51.chunk.js",
+    "static/css/main.3cec226e.chunk.css",
+    "static/js/main.f5306bd5.chunk.js"
+  ]
+}
