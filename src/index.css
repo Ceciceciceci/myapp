@@ -614,6 +614,10 @@ footer li a:hover{
   padding-top: 10px;
   color: #000;
 }
+
+.contact h2 p{
+  font-weight: 400;
+}
 .contact p{
   margin:0px;
 }
@@ -742,6 +746,9 @@ footer li a:hover{
     font-size: 2.5em;
   }
 
+  .contact h2 p{
+    font-weight: 700;
+  }
   .contact-container .contact-links{
     padding-top: 35px !important;
     display:grid;

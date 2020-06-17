@@ -18,7 +18,7 @@ class Contact extends Component{
                         <li className="link contact-1">
                             <img src={github} />
                             <h4>Github <a href="https://github.com/Ceciceciceci">/Ceciceciceci</a></h4>
-                            <p>See some of the code I've uploaded.</p>
+                            <p>See some of the projects and small features I've worked on. There are also coding tests that I've taken that are in here.</p>
                         </li>
                         <li className="link contact-1">
                             <img src={behance} />
@@ -28,12 +28,12 @@ class Contact extends Component{
                         <li className="link contact-1">
                             <img src={instagram} />
                             <h4>Instagram <a href="https://www.instagram.com/ichiknees">/ichiknees</a></h4>
-                            <p>My sketches and doodles I do on my free time.</p>
+                            <p>My sketches and doodles I do on my free time. It is my hobby and I enjoy working with pen and digital media.</p>
                         </li>
                         <li className="link contact-1">
                             <img src={linkedin} />
                             <h4>LinkedIn <a href="https://www.linkedin.com/in/ceciliaaa-tran/">/ceciliaaa-tran</a></h4>
-                            <p>My resume showcasing where I worked.</p>
+                            <p>My resume showcasing where I worked. I've worked for CISCO, Walt Disney, Aerohive Networks, and Classic Vacations under Expedia. I also currently work on graphic design projects as a freelancer on the side for theme parks.</p>
                         </li>
                         <li className="link"><h4>Twitter <a href="https://www.twitter.com/ichi_nese">/ichi_nese</a></h4></li>
                     </ul>
