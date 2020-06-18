@@ -813,6 +813,9 @@ footer li a:hover{
   .proj-list{
     grid-template-columns: repeat(1, 1fr);
   }
+  .project-container {
+    padding: 55px 0px 0px 20px;
+}
   .project-container h1{
     font-size: 2.5em;
   }
