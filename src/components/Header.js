@@ -3,6 +3,12 @@ import {Link} from 'react-router-dom';
 
 class Header extends Component{
 
+    closeMenu(){
+        let navLinks = document.querySelector(".nav-links");
+        if(navLinks.classList.contains('showNav')){
+            navLinks.classList.remove('showNav');
+        }
+    }
     
     openMenu(){
         let navLinks = document.querySelector(".nav-links");
@@ -17,8 +23,8 @@ class Header extends Component{
                 if (navItem.name === "header"){
                     return(
                         <ul className="nav-links" key={navItem.id}>
-                            <li className="home-link"><Link to="/">home</Link></li>
-                            <li><Link className="logo" to="/">
+                            <li className="home-link" onClick={this.closeMenu}><Link to="/">home</Link></li>
+                            <li><Link className="logo" to="/" onClick={this.closeMenu}>
                                     <svg width="169" height="141" viewBox="0 0 169 141" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="169" height="141">
                                         <ellipse cx="84.5" cy="70.5" rx="84.5" ry="70.5" fill="#C46D24"/>
@@ -33,10 +39,10 @@ class Header extends Component{
                                     </svg>
                                 </Link>
                             </li>
-                            <li><a href="/#about">about </a></li>
-                            <li><Link to="/projects">projects</Link></li>
-                            <li><a href="https://ceciceciceci.github.io/artindex.html" target="_blank">art</a></li>
-                            <li><Link to="/contact">contact</Link></li>
+                            <li><a href="/#about" onClick={this.closeMenu}>about </a></li>
+                            <li><Link to="/projects" onClick={this.closeMenu}>projects</Link></li>
+                            <li><a href="https://ceciceciceci.github.io/artindex.html" target="_blank" onClick={this.closeMenu}>art</a></li>
+                            <li><Link to="/contact" onClick={this.closeMenu}>contact</Link></li>
                         </ul>
                     )
                 }
