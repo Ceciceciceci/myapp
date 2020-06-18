@@ -5,6 +5,7 @@ import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import { BrowserRouter, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 
 class App extends Component {
   state = {
@@ -43,14 +44,16 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
-          <Header navigation={this.state.navigation}/>
-          <Route exact path='/' component={Home} />
-          <Route path='/projects' component={Projects} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/resume' component={Resume} />
-           <p className="cp">(c) Cecilia Tran 2020</p>
-        </div>
+        <ScrollToTop>
+          <div className="App">
+            <Header navigation={this.state.navigation}/>
+            <Route exact path='/' component={Home} />
+            <Route path='/projects' component={Projects} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/resume' component={Resume} />
+            <p className="cp">(c) Cecilia Tran 2020</p>
+          </div>
+        </ScrollToTop>
       </BrowserRouter>
     );
   }
