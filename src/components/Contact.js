@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import github from '../imgs/svgs/github.svg';
 import behance from '../imgs/svgs/behance.svg';
 import instagram from '../imgs/svgs/instagram.svg';
@@ -12,7 +13,7 @@ class Contact extends Component{
                     <h1>contact?</h1>
                     <h2>
                         <p>You can contact me <a href="mailto:cecitran94@gmail.com" title="at click here my email">through email</a>.
-                        You can also check out these sites I have posted my work on. I tend to be experimenting in <a href="https://codepen.io/ichiknees/">Codepen</a> nowadays. Check out <a href="/resume" title="Click to see my resume">my resume</a> if you'd like.</p>
+                        You can also check out these sites I have posted my work on. I tend to be experimenting in <a href="https://codepen.io/ichiknees/">Codepen</a> nowadays. Check out <Link to="/resume" title="Click to see my resume">my resume</Link> if you'd like.</p>
                     </h2>
                     <ul className="contact-links">
                         <li className="link contact-1">

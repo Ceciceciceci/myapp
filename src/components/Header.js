@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Header extends Component{
 
@@ -33,7 +33,7 @@ class Header extends Component{
                                     </svg>
                                 </Link>
                             </li>
-                            <li><a href="/#about">about</a></li>
+                            <li><a href="/#about">about </a></li>
                             <li><Link to="/projects">projects</Link></li>
                             <li><a href="https://ceciceciceci.github.io/artindex.html" target="_blank">art</a></li>
                             <li><Link to="/contact">contact</Link></li>

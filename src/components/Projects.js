@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import projimg1 from '../imgs/proj1-img.jpg';
 import projimg2 from '../imgs/proj2-img.jpg';
 import projimg3 from '../imgs/proj3-img.jpg';
+import projimg4 from '../imgs/proj4-img.jpg';
 
 class Projects extends Component{
     render(){
@@ -92,7 +93,26 @@ class Projects extends Component{
                         </div>
                     </li>
                     <li className="proj-list-item">
-                       
+                        <div className="project-heading">
+                            <p className="num"><b>05.</b></p>
+                            <p className="date">2016</p>
+                            <div className="divider-2"></div>
+                            <div className="divider"></div>
+                            <h4>RENTENNIAL</h4>
+                            <div className="divider"></div>
+                            <div className="divider-2"></div>
+                        </div>
+                        <div className="project-img">
+                            <img src={projimg4} />
+                        </div>
+                        <div className="project-description">
+                            <p className="tech">HTML, CSS, Javascript (pre-ES6), Django, Python, AngularJS, Stripe, Docusign</p>
+                           <p>A cradle-to-grave renting and leasing properties web application aimed to take users through the process of renting and leasing paper free. Used AngularJS, CSS3, and JS to design the UX/UI.
+                                In charge of making wireframes, building the front-end, making user flows. 
+                                3 person group project.</p>
+                           <a className="goToProj" href="https://www.behance.net/gallery/99084861/Retennial-An-app-to-for-Millennial-Rentals" title="See old side design">view use case</a>
+                           <a className="goToProj" href="#" title="See github code">view github (privatized)</a>
+                        </div>
                     </li>
                 </ul>
             </div>

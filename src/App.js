@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
-import Footer from './components/Footer';
+import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -39,7 +39,7 @@ class App extends Component {
   componentDidMount() {
     window.scrollTo(0, 0)
   }
-  
+
   render() {
     return (
       <BrowserRouter>
@@ -48,6 +48,8 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/projects' component={Projects} />
           <Route path='/contact' component={Contact} />
+          <Route path='/resume' component={Resume} />
+           <p className="cp">(c) Cecilia Tran 2020</p>
         </div>
       </BrowserRouter>
     );
