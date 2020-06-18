@@ -114,7 +114,7 @@ header nav ul li a{
   background-size: 0% 4px;
   transition: all cubic-bezier(0,.5,0,1) 0.3s;
   font-weight: 700;
-  text-shadow: 0em .09em 0 #fff;
+  text-shadow: 0em .1em 0 #fff, -0.05em -0.05em 1px #fff;
 }
 header nav ul li a:nth-child(1){
   color: #86A488;
@@ -306,6 +306,15 @@ header a:focus {
   font-size: 1.5em;
   font-weight: 700;
   color: #f0be8c;
+}
+
+.about-desc a{
+  color: black;
+  transition: all 300ms ease-in-out;
+}
+.about-desc a:hover{
+  color: #ffe1c2;
+  font-weight: 700;
 }
 
 .ff-s-1{
@@ -819,7 +828,7 @@ footer li a:hover{
     font-size: 20px;
   }
 
-  .contact-container h1{
+  .contact-container h1, .resume h1{
     font-size:2.3em;
   }
 
@@ -888,4 +897,10 @@ footer li a:hover{
     display: none;
   } 
 
+}
+
+@media (max-width: 380px) {
+  .skills-container .skill-title .text{
+    top:3%;
+  }
 }
