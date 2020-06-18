@@ -673,6 +673,7 @@ footer li a:hover{
   background-color: #86A488;
   padding: 0px 15px 0px 15px;
   color: white;
+  box-shadow: 5px 5px 0px #fff;
 }
 .job-list{
   grid-area: job;
@@ -699,15 +700,18 @@ footer li a:hover{
 .resume p{
   margin: 0px;
 }
+.resume h2.job{
+  width: 100%;
+}
 
 .resume p.date{
   color: #86A488;
   font-weight: 700;
   padding-bottom: 15px;
 }
-.resume p li{
-  margin: 5px 0px;
-  list-style-type: none;
+.resume p ul{
+  padding: 0px 15px;
+  list-style-position: outside;
 }
 
 /*MEDIA QUERIES*/
