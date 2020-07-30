@@ -25,7 +25,7 @@ class Projects extends Component{
                             {/* or carousel */}
                         </div>
                         <div className="project-description">
-                           <p className="tech">HTML, CSS3, Javascript, PHP, Photoshop, Jquery, Bootstrap</p>
+                           <p className="tech">HTML, CSS3, Javascript, PHP, React, Photoshop, Jquery, Bootstrap</p>
                            <p>A design site I helped with the UX designer. This showcases the current styling for the new and upcoming website look! The designer wanted to use Jquery and Bootstrap, so the site is built on those libraries.</p>
                            <a className="goToProj" href="http://classicvacationsdesign.com/" title="go to Classic Vacations project">view website</a>
                            <a className="goToProj" href="http://classicvacations.com/" title="go to Classic Vacations">classic vacations site</a>
