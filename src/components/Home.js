@@ -21,7 +21,7 @@ class Home extends Component {
                     <div className="l-name" data-shadow='Tran'>Tran</div>
                   </span>
                 </div>
-                <div className="subtitle"><span className="stylize">Full-stack Dev</span><span className="stylize"> UI / UX Designer</span></div>
+                <div className="subtitle"><span className="stylize">Full-stack Dev</span><span className="stylize">UX Designer</span></div>
             </div>
             <svg width="914" height="914" viewBox="0 0 914 914" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M457 457C457 520.71 903.474 581.397 880.114 636.574C855.574 694.539 501.703 414.08 457 457C416.258 496.117 686.148 860.13 633.227 882.172C578.96 904.775 519.434 457 457 457C394.566 457 335.041 904.775 280.773 882.172C227.852 860.13 497.742 496.117 457 457C412.297 414.08 58.4257 694.539 33.8857 636.574C10.5262 581.397 457 520.71 457 457C457 393.29 10.5262 332.603 33.8857 277.426C58.4257 219.461 412.297 499.92 457 457C497.742 417.883 227.852 53.8698 280.773 31.8278C335.041 9.22515 394.566 457 457 457C519.434 457 578.96 9.22515 633.227 31.8278C686.148 53.8698 416.258 417.883 457 457C501.703 499.92 855.574 219.461 880.114 277.426C903.474 332.603 457 393.29 457 457Z" fill="#E6DCC5"/>
