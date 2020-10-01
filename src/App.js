@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
+import Pricepage from './components/Pricepage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 
