@@ -12,7 +12,7 @@ class Contact extends Component{
                 <div className="contact-container">
                     <h1>contact?</h1>
                     <h2>
-                        <p>You can contact me <a href="mailto:cecitran94@gmail.com" title="at click here my email">through email</a>.
+                        <p>You can contact me <a href="mailto:cecitran94@gmail.com" title="click here to email me">through email</a>. I offer web consulting services as well that you can see <Link to="/pricepage" title="Click to see my prices">here</Link>.
                         You can also check out these sites I have posted my work on. I tend to be experimenting in <a href="https://codepen.io/ichiknees/">Codepen</a> nowadays. Check out <Link to="/resume" title="Click to see my resume">my resume</Link> if you'd like.</p>
                     </h2>
                     <ul className="contact-links">
