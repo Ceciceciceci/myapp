@@ -661,9 +661,12 @@ footer li a:hover{
   padding: 50px 35px 0px 35px;
 }
 .resume-container{
-  display:grid;
-  grid-template-areas: 'school job';
-  grid-column-gap: 3rem;
+  display: grid;
+  grid-template-areas: 
+  'school'
+  'job'
+  ;
+
 }
 .school{
   grid-area:school;
