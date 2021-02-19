@@ -67,26 +67,27 @@ class Resume extends Component{
                 </ul>
             </div>
         )
-        console.log(jobList);
 
         return (
             <section className="resume">
                     <h1>resume.</h1>
                     <div className="resume-container">
                         <div className="school">
-                            <h2>Cecilia Tran</h2>
-                            <h3>Education</h3>
-                            <p>San Jose State University</p>
-                            <p>2012 to 2017</p>
-                            <p>Bachelor's of Science - </p>
-                            <p>Software Engineering</p>
-                            
-                            <h3>Email</h3>
-                            <p><a href="mailTo:cecitran94@gmail.com">cecitran94@gmail.com</a></p>
+                            <div className="contact1">
+                                <h2>Cecilia Tran</h2>
+                                <h3>Education</h3>
+                                <p>San Jose State University</p>
+                                <p>2012 to 2017</p>
+                                <p>Bachelor's of Science - </p>
+                                <p>Software Engineering</p>
+                            </div>
+                            <div className="contact2">
+                                <h3>Email</h3>
+                                <p><a href="mailTo:cecitran94@gmail.com">cecitran94@gmail.com</a></p>
+                            </div>
                         </div>
-
+                        <h2><b>Work Experience</b></h2>
                         <div className="job-list">
-                            <h2 className="job"><b>Work Experience</b></h2>
                             {jobList}
                         </div>
                     </div>

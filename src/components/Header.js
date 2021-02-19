@@ -23,7 +23,7 @@ class Header extends Component{
                 if (navItem.name === "header"){
                     return(
                         <ul className="nav-links" key={navItem.id}>
-                            <li className="home-link" onClick={this.closeMenu}><Link to="/">home</Link></li>
+                            {/* <li className="home-link" onClick={this.closeMenu}><Link to="/">home</Link></li> */}
                             <li><Link className="logo" to="/" onClick={this.closeMenu}>
                                     home
                                 </Link>

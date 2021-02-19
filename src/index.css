@@ -660,27 +660,37 @@ footer li a:hover{
 .resume{
   padding: 50px 35px 0px 35px;
 }
-.resume-container{
-  display: grid;
-  grid-template-areas: 
-  'school'
-  'job'
-  ;
 
+.resume-container{
+  display: flex;
+  flex-direction: column;
 }
+
+.resume-container h2:nth-child(2){
+  padding-top: 50px;
+  margin-bottom: 0px;
+}
+
 .school{
-  grid-area:school;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #86A488;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 35px 20px 35px;
   color: white;
   box-shadow: 5px 5px 0px #fff;
 }
+
 .job-list{
-  grid-area: job;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2; 
+  flex-wrap: wrap;
 }
+
 .job{
-  padding: 0px 0px 15px 0px;
-  border-bottom: 2px solid #AAAAAA;
+  flex: 40%;
+  padding: 0px 25px 0px 0px;
 }
 .resume h1{
   font-family: var(--cooper);
@@ -700,12 +710,9 @@ footer li a:hover{
 .resume p{
   margin: 0px;
 }
-.resume h2.job{
-  width: 100%;
-}
 
 .resume p.date{
-  color: #86A488;
+  color: #709e73;
   font-weight: 700;
   padding-bottom: 15px;
 }
@@ -842,59 +849,19 @@ footer li a:hover{
   .closeNavOnMobile{
     height: 0px;
   }
-
-  .resume-container{
-    display:grid;
-    grid-template-areas: 
-    'school'
-    'job';
-    grid-column-gap: 0;
-    grid-row-gap: 3rem;
-  }
   
   .school{
-    grid-area:school;
+    display: flex;
+    flex-direction: column;
     background-color: #86A488;
     padding: 0px 15px 15px 15px;
     color: white;
   }
-  /* html{
-    padding: 0px;
-  }
-  
-  body{
-    border: 0px solid white !important;
-  }
 
-  .about img{
-    display:none;
-  }*/
-/* Main  */
-  /* .inner-box h3{
-    font-size:2em;
+  .job{
+    flex: 100%;
+    padding: 0px 0px 0px 0px;
   }
-  .inner-box .name{
-    font-size: 4em;
-  }
-  .name .l-name{
-    padding-left: 120px;
-    margin-top: -25px;
-  }
-
-  .name .f-name:after{
-    top: .06em; left: 1.4em;
-  }
-  .name .l-name:after{
-    top: .06em; left: 3.05em;
-  }
-
-  .subtitle{ */
-    /* transform: translate(-50%, -10%); */
-  /* } */
-  /* .inner-box svg{
-    display:none;
-  } */
-
 
 /* Footer  */
   .inner-footer{
