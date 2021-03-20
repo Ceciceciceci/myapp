@@ -1,60 +1,42 @@
-import React, {Component} from 'react';
+import React, { useState, useEffect } from 'react';
+
+import LoadingScreen from './components/LoadingScreen';
+import NewHome from './components/NewHome';
 import Header from './components/Header';
-import Home from './components/Home';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
-import Projects from './components/Projects';
-import Pricepage from './components/Pricepage';
-import { BrowserRouter, Route } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
+import { ThemeProvider } from 'styled-components';
+import { LightTheme, DarkTheme } from './styles/theme'
+import { GlobalStyles } from './styles/global';
+import { BrowserRouter } from 'react-router-dom';
 
-class App extends Component {
-  state = {
-      navigation:[
-      {
-        id: 1,
-        name: 'header',
-        links: {
-          projects: '#projects',
-          art: '/art',
-          about: '/about',
-          resume: '/resume',
-          contact: '/contact',
-        }
-      },
-      {
-        id:2,
-        name: 'art',
-        links: {
-          illustration: '/illustration',
-          grapDesign: '/graphicdesign',
-          shop: 'https://ichee.bigcartel.com/',
-          contact: '/contact',
-        }
+export default function App () {
+
+  //toggle between themes
+  const [theme, setTheme] = useState('light')
+  const toggleTheme = () => {
+      if(theme === 'light'){
+          setTheme('dark');
+      } else {
+          setTheme('light');
       }
-    ],
-  }
-  componentDidMount() {
-    window.scrollTo(0, 0)
   }
 
-  render() {
-    return (
-      <BrowserRouter>
-        <ScrollToTop>
-          <div className="App">
-            <Header navigation={this.state.navigation}/>
-            <Route exact path='/' component={Home} />
-            <Route path='/projects' component={Projects} />
-            <Route path='/contact' component={Contact} />
-            <Route path='/resume' component={Resume} />
-            <Route path='/pricepage' component={Pricepage} />
-            <p className="cp">(c) Cecilia Tran 2020</p>
-          </div>
-        </ScrollToTop>
-      </BrowserRouter>
-    );
+  const navigation = {
+    about: '#about',
+    projects: '#projects',
+    caseStudies: '#caseStudies',
+    contact: '#about',
+    art: '/art'
   }
+
+  return (
+      <div className="App">
+        <ThemeProvider theme={(theme === 'light') ? LightTheme : DarkTheme}>
+          <>
+            <GlobalStyles />
+            <Header theme={theme} setTheme={setTheme} navigation={navigation} toggleTheme={toggleTheme}/>
+            <NewHome className="main-container" theme={theme} setTheme={setTheme} /> 
+          </>
+        </ThemeProvider>
+      </div>
+  );
 }
-
-export default App;

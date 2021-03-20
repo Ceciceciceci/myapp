@@ -1,52 +1,34 @@
-import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
+import navbanner from '../images/svgs/navbanner.svg';
+import flower from '../images/svgs/flower.svg';
+import star from '../images/svgs/star.svg';
+import Toggle from '../components/Toggle';
 
-class Header extends Component{
+export default function Header (props){
+    console.log("header props: ", props);
+    const { navigation, toggleTheme } = props;
+    const headerList = Object.keys(navigation).map((item) => {
+        return <li><a href={navigation[item]}>{item}</a></li>
+    });
+    const icon = props.theme === 'light' ? <img src={flower} alt="Home" /> : <img src={star} alt="Home" />
 
-    closeMenu(){
-        let navLinks = document.querySelector(".nav-links");
-        if(navLinks.classList.contains('showNav')){
-            navLinks.classList.remove('showNav');
-        }
-    }
-    
-    openMenu(){
-        let navLinks = document.querySelector(".nav-links");
-        if(navLinks.classList.contains('showNav')){
-            navLinks.classList.remove('showNav');
-          } else {navLinks.classList.add('showNav'); }
-    }
-    
-    render(){
-            const{ navigation } = this.props;
-            const headerList = navigation.map(navItem => {
-                if (navItem.name === "header"){
-                    return(
-                        <ul className="nav-links" key={navItem.id}>
-                            {/* <li className="home-link" onClick={this.closeMenu}><Link to="/">home</Link></li> */}
-                            <li><Link className="logo" to="/" onClick={this.closeMenu}>
-                                    home
-                                </Link>
-                            </li>
-                            <li><a href="/#about" onClick={this.closeMenu}>about </a></li>
-                            <li><Link to="/projects" onClick={this.closeMenu}>projects</Link></li>
-                            <li><a href="https://ceciceciceci.github.io/artindex.html" target="_blank" onClick={this.closeMenu}>art</a></li>
-                            <li><Link to="/contact" onClick={this.closeMenu}>contact</Link></li>
-                        </ul>
-                    )
-                }
-            })
-            return (
-                <header>
-                    <nav>
-                        <div>
-                            <div className="handle" onClick={this.openMenu}><b>menu</b></div>
-                            { headerList } 
-                        </div>
-                    </nav>
-                </header>
-            )
-        }
+    console.log("logo ", navbanner);
+
+    return (
+        <header>
+            <div className="homelogo">
+                {icon}
+            </div>
+            <nav>
+                <img src={navbanner} alt="navigation background" />
+                <ul className="nav-links">
+                    { headerList } 
+                </ul>
+            </nav>
+            <div className="themeToggle">
+                <Toggle theme={props.theme} toggleTheme={toggleTheme} />
+            </div>
+        </header>
+    )
 }
-
-export default Header;
