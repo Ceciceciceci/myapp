@@ -6,14 +6,12 @@ import star from '../images/svgs/star.svg';
 import Toggle from '../components/Toggle';
 
 export default function Header (props){
-    console.log("header props: ", props);
     const { navigation, toggleTheme } = props;
-    const headerList = Object.keys(navigation).map((item) => {
-        return <li><a href={navigation[item]}>{item}</a></li>
+    
+    const headerList = Object.keys(navigation).map((item, i) => {
+        return <li><a className={`job-${i}`} href={navigation[item]}>{item}</a></li>
     });
     const icon = props.theme === 'light' ? <img src={flower} alt="Home" /> : <img src={star} alt="Home" />
-
-    console.log("logo ", navbanner);
 
     return (
         <header>

@@ -27,7 +27,7 @@ export default function Hero() {
                 <img className="flowerstem right" src={flowerstem} />  
             </div>
             <div className="titles">
-                <span>Software<br/>Engineer</span><span>&&</span><span>UX<br/>Designer</span>
+                <span>Software<br/>Engineer</span><span className="and">&&</span><span>UX<br/>Designer</span>
             </div>
         </section>
     );

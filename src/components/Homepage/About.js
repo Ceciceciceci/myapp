@@ -7,18 +7,11 @@ import cloud from '../../images/svgs/cloud.svg';
 import daisy from '../../images/svgs/daisy.svg';
 import breadbowlplant from '../../images/breadbowlplant.png';
 
-import book from '../../images/book.png';
-import bookpage2 from '../../images/bookpage2.png';
-import bookpage3 from '../../images/bookpage3.png';
-import bookpage4 from '../../images/bookpage4.png';
-import bookpage5 from '../../images/bookpage5.png';
-import speechbubblestemstraight from '../../images/svgs/speechbubblestemstraight.svg';
-
 import speechbubblestemleft from '../../images/svgs/speechbubblestemleft.svg';
 import speechbubblestemright from '../../images/svgs/speechbubblestemright.svg';
 
 
-export default function About() {
+export default function About(props) {
 
     let jobs = [
         { 
@@ -79,6 +72,8 @@ export default function About() {
             ]
         }
       ]
+      const tools = ['VS Code', 'Github / JIRA / Confluence', 'AWS / S3', 'Wireframing', 'Word / Excel / Powerpoint', 'Photoshop / Illustrator', 'Figma / Miro'];
+
 
       let jobList = jobs.map((item, i) => {
           return (
@@ -132,7 +127,7 @@ export default function About() {
                         <img className="daisy" src={daisy} height={'30px'} />
                         <img className="daisy" src={daisy} height={'30px'} />
                     </div>
-                    <img src={me4} height={'250px'} />
+                    <img className="imgMe2" src={me4} height={'250px'} />
                 </div>
                 <button className="btn resume-btn">VIEW RESUME</button>
                 <div className="job-list">
@@ -151,11 +146,44 @@ export default function About() {
                 </div>
                 <div className="tools">
                     <table>
-
+                        <thead>
+                            <th>Tools</th>
+                            <th>Languages</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>VS Code / Atom</td>
+                                <td>HTML5</td>
+                            </tr>
+                            <tr>
+                                <td>Github / JIRA / Confluence</td>
+                                <td>HTML5</td>
+                            </tr>
+                            <tr>
+                                <td>VS Code / Atom</td>
+                                <td>HTML5</td>
+                            </tr>
+                            <tr>
+                                <td>VS Code / Atom</td>
+                                <td>HTML5</td>
+                            </tr>
+                            <tr>
+                                <td>VS Code / Atom</td>
+                                <td>HTML5</td>
+                            </tr>
+                            <tr>
+                                <td>VS Code / Atom</td>
+                                <td>HTML5</td>
+                            </tr>
+                            <tr>
+                                <td>VS Code / Atom</td>
+                                <td>HTML5</td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div className="food">
-                    <img src={breadbowlplant} height={'320px'} />
+                    <img src={breadbowlplant} height={'250px'} />
                 </div>
                 
             </div>

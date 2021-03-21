@@ -95,7 +95,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   nav li a:hover{
-    color: var(--blue); 
+    color: var(--orange); 
   }
 
   .homelogo img {
@@ -183,7 +183,7 @@ export const GlobalStyles = createGlobalStyle`
     // background-color: red;
     font-family: var(--fredoka);
     font-size: 50px;
-    color: ${({ theme }) => theme.titleColor};
+    color: ${({ theme }) => theme.text};
     position: absolute;
     bottom: 10%;
     left: 0;
@@ -192,6 +192,10 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
+  }
+
+  .titles .and{
+    color: var(--green);
   }
 
   .about-section {
@@ -291,12 +295,22 @@ export const GlobalStyles = createGlobalStyle`
     grid-area: info;
     color: ${({ theme }) => theme.text};
     margin-top: 125px;
+    padding: 0 2em 0 12em;
+  }
+  .job{
+
   }
 
+  .daisies{
+    margin-left: 0;
+  }
   .daisy{
     display: inline-block;
-    margin-right: 15px;
-    margin-left: 10px;
+    margin-right: 20px;
+  }
+
+  .m4 .imgMe2{
+    margin-left: -50px;
   }
 
   .resume-btn{
@@ -335,6 +349,10 @@ export const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
   }
+  .speechbubble.right{
+    width: 80%;
+    margin-left: 110px;
+  }
 
   .speech-text{
     font-family: var(--fredoka);
@@ -352,6 +370,67 @@ export const GlobalStyles = createGlobalStyle`
   .speechbubblestem.right{
     position: absolute;
     right: -25px;
+  }
+
+  .about-skills{
+    display: grid;
+    grid-template-area:'
+    
+    '
+  }
+
+  .tools table{
+    margin: 0 auto;
+    width: 50%;
+    background-color: var(--beige);
+
+  }
+
+
+
+
+  /* BOOK SECTION */
+  .book-section{
+    width: 100%;
+    display: grid;
+    position: relative;
+    margin-bottom: 500px;
+  }
+  .book{
+    margin: -125px auto 0;
+  }
+  .pages{
+    width: 60%;
+    position:relative;
+  }
+
+  .page.one{
+    position: absolute;
+    z-index: -1;
+    left: 65%;
+    top: -150px;
+  }
+  .page.two{
+    position: absolute;
+    z-index: -3;
+    left: 50%;
+    top: -60px;
+  }
+  .page.three{
+    position: absolute;
+    z-index: -2;
+    left: 30%;
+    top: -55%;
+  }
+  .page.four{
+    position: absolute;
+    z-index: -4;
+    left: 15%;
+    top: 125px;
+  }
+
+  .contact-section{
+    height: 500px;
   }
 
 `
