@@ -99,6 +99,12 @@ export const GlobalStyles = createGlobalStyle`
     color: var(--orange); 
   }
 
+  .homelogo{
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+  }
+
   .homelogo img {
     height: 45px;
     transition: transform 100ms ease-in-out;
@@ -177,7 +183,7 @@ export const GlobalStyles = createGlobalStyle`
     transform: scaleX(-1);
   }
   .flowerstem.right{
-    right: 15%;
+    right: 14%;
     pointer-events: none;
   }
 

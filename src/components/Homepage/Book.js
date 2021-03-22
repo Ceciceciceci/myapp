@@ -14,7 +14,7 @@ export default function Book(){
         </div>
         <div className="pages">
           <img className="page one" src={bookpage4} height={'275px'}/>
-          <img className="page two" src={bookpage2} height={'275px'}/>
+          <img className="page two" src={bookpage2} height={'275px'} style={{filter: 'blur(0.5px)'}}/>
           <img className="page three" src={bookpage3} height={'275px'}/>
           <img className="page four" src={bookpage5} height={'325px'}/>
         </div>
