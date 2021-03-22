@@ -10,10 +10,10 @@ export const ToggleContainer = styled.button`
   justify-content: space-between;
   margin: 0 auto;
   overflow: hidden;
-  padding: 0.5rem;
+  padding: 0.45rem;
   position: relative;
   width: 8rem;
-  height: 4rem;
+  height: 3.8rem;
 
   svg {
     height: auto;
