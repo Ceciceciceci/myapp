@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import eyes from '../images/eyes.png';
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Pacifico&display=swap');
@@ -35,7 +36,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .App{
     overflow: hidden;
-    margin: 10px 0px;
+    margin: 150px 0px;
     position: relative;
     z-index: 0;
   }
@@ -70,11 +71,11 @@ export const GlobalStyles = createGlobalStyle`
     top: 50px;
   }
 
-  header nav {
+  nav {
     position: relative;
   }
 
-  header nav ul {
+  nav ul {
     font-family: var(--fredoka);
     list-style-type: none;
     display: flex;
@@ -104,6 +105,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   .homelogo img:hover{
     transform: rotate(-15deg);
+    cursor: pointer;
   }
   
   .curly {
@@ -116,14 +118,13 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .main-container {
-      color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.text};
   }
 
   .hero-section {
     // background-color: aliceblue;
     position: relative;
     padding: 0px 250px;
-    margin-top: 150px;
     width: 100%;
     height: 103vh;
     margin-bottom: 100px;
@@ -169,6 +170,7 @@ export const GlobalStyles = createGlobalStyle`
   .flowerstem{
     height: 75%;
     position: absolute;
+    z-index:-1;
   }
   .flowerstem.left{
     left: 15%;
@@ -200,7 +202,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .about-section {
     position: relative;
-    padding: 0 250px;
+    padding: 0 20% 20%;
   }
 
   .about-section .background{
@@ -212,16 +214,12 @@ export const GlobalStyles = createGlobalStyle`
     left: 50%;
     transform: translate(-50%);
     width: 40%;
+    border-radius: 15px;
   }
   @media (min-width: 100px) and (max-width: 1000px){
     .about-section .background{
       width: 75%;
     }
-  }
-  
-  .about-me, .about-work{
-    // background-color: red;
-    margin-bottom: 0px;
   }
 
   /* About me */
@@ -255,13 +253,21 @@ export const GlobalStyles = createGlobalStyle`
 
   .about-me .cloud{
     grid-area: cloud;
+    display: flex;
+    justify-content: flex-end;
   }
+
+  .cloud img{
+    margin-right: 5%;
+  }
+
+
   .about-me .intro{
     grid-area: info;
     margin-top: 50px;
     padding: 0 12em 0 2.5em;
     line-height: 25px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
   }
   .intro p{
     margin-bottom: 15px;
@@ -279,7 +285,7 @@ export const GlobalStyles = createGlobalStyle`
       "info img2"
       "info button";
 
-    margin-bottom: 150px;
+    margin-bottom: 125px;
   }
   .about-work .me4{
     grid-area: img2;
@@ -295,27 +301,45 @@ export const GlobalStyles = createGlobalStyle`
     grid-area: info;
     color: ${({ theme }) => theme.text};
     margin-top: 125px;
-    padding: 0 2em 0 12em;
+    padding: 0 1.5em 0 10em;
   }
   .job{
-
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
   }
 
   .daisies{
-    margin-left: 0;
+    margin-left: -20px;
   }
   .daisy{
     display: inline-block;
-    margin-right: 20px;
+    margin-right: 25px;
+  }
+  .daisy:hover{
+    animation: spin 3s infinite;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
 
   .m4 .imgMe2{
     margin-left: -50px;
   }
 
-  .resume-btn{
+  .job-btn{
     grid-area: button;
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .resume-btn{
     letter-spacing: 0.2rem;
     font-family: var(--fredoka); 
     font-size: var(--font);
@@ -323,8 +347,19 @@ export const GlobalStyles = createGlobalStyle`
     width: 300px;
     margin-left: 15px;
     border: 5px solid var(--dark-blue);
-    background-color: #7DC3E1;
+    background-color: var(--blue);
     border-radius: 15px;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+  }
+
+  .resume-btn:hover{
+    background-color: var(--green);
+  }
+
+  .daisy2{
+    align-self: center;
+    margin-left: -25%;
   }
 
   .speech-bubble{
@@ -358,6 +393,11 @@ export const GlobalStyles = createGlobalStyle`
     font-family: var(--fredoka);
     letter-spacing: 5px;
     font-size: var(--speech-bubble-font-size);
+    color: var(--darkblue);
+  }
+
+  .orange{
+    color: var(--orange);
   }
 
   .speechbubblestem{
@@ -374,19 +414,62 @@ export const GlobalStyles = createGlobalStyle`
 
   .about-skills{
     display: grid;
-    grid-template-area:'
+    position: relative;
+    grid-template-areas:
+      "img3 info"
+      "img3 info";
+  }
+  .about-skills .speech-bubble{
+    grid-area: info;
+    margin-left:-10%;
+
+  }
+  .about-skills .img-group{
+    grid-area: img3;
+    display: flex;
+    justify-content: center;
+    margin-top: -75px;
+  }
+
+  .about-skills .tools, .about-skills .food{
+    grid-area: info;
+  }
+
+  .about-skills .tools{
+    letter-spacing: 1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     
-    '
   }
-
   .tools table{
-    margin: 0 auto;
-    width: 50%;
+    position: absolute;
+    z-index: -1;
+    left: -13%;
+    top: 20%;
+    font-size: 0.9em;
     background-color: var(--beige);
-
+    padding: 25px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   }
 
+  thead, th{
+    border-bottom: 5px solid #AF9A86;
+    text-align: left;
+    padding-bottom: 15px;
+    font-family: var(--fredoka);
+  }
+  table td{
+    border-bottom: 1px solid #AF9A86;
+    padding-right: 15px;
+  }
 
+  .about-skills .food{
+    position: absolute;
+    right: 5%;
+    bottom: -55%;
+  }
 
 
   /* BOOK SECTION */

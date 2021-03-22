@@ -1,22 +1,24 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import me3 from '../../images/me3.png';
 import imgbg from '../../images/svgs/imgbg.svg';
 import me4 from '../../images/me4.png';
 import me5 from '../../images/me5.png';
 import cloud from '../../images/svgs/cloud.svg';
 import daisy from '../../images/svgs/daisy.svg';
+import daisy2 from '../../images/svgs/daisy2.svg';
 import breadbowlplant from '../../images/breadbowlplant.png';
 
 import speechbubblestemleft from '../../images/svgs/speechbubblestemleft.svg';
 import speechbubblestemright from '../../images/svgs/speechbubblestemright.svg';
 
-
 export default function About(props) {
 
     let jobs = [
         { 
-          company: 'DreamWorks', 
-          title: 'Software Engineer - Web Tools', 
+          company: 'DREAMWORKS', 
+          title: 'Software Engineer', 
           date:'Jan 2021 to CURRENT',
           location: 'Glendale, CA',
           tools: 'Javascript, CSS3, HTML5, Python, React, Polymer',
@@ -25,8 +27,8 @@ export default function About(props) {
           ]
         },
         { 
-            company: 'Future Motion', 
-            title: 'Software Engineer - Web Tools', 
+            company: 'FUTURE MOTION', 
+            title: 'Software Engineer', 
             date:'Oct 2020 to Dec 2020',
             location: 'Santa Cruz, CA',
             tools: 'Javascript, CSS3, HTML5, Python, React',
@@ -35,7 +37,7 @@ export default function About(props) {
             ]
         },
         { 
-            company: 'Classic Vacations', 
+            company: 'CLASSIC VACATIONS', 
             title: 'Web Developer', 
             date:'Jan 2019 to Sept 2020', 
             location: 'San Jose, CA',
@@ -49,7 +51,7 @@ export default function About(props) {
             ]
         },
         { 
-            company: 'Aerohive Networks', 
+            company: 'AEROHIVE NETWORKS', 
             title: 'Fullstack Engineer', 
             date:'Jan 2018 to Dec 2019', 
             location: 'Milpitas, CA',
@@ -60,7 +62,7 @@ export default function About(props) {
             ]
         },
         { 
-            company: 'Walt Disney Company: Parks & Resorts', 
+            company: 'WALT DISNEY COMPANY', 
             title: 'Web UI Developer Intern', 
             date:'Jun 2017 to Jan 2018', 
             location: 'Orlando, FL',
@@ -93,7 +95,7 @@ export default function About(props) {
             <div className="about-me">
                 <div className="speech-bubble left">
                     <div className="speechbubble">
-                        <h3 className="speech-text">A little about me...</h3>
+                        <h3 className="speech-text">A little <span className="orange">about me</span>...</h3>
                     </div>
                     <img className="speechbubblestem left" src={speechbubblestemleft} />
                 </div>
@@ -117,7 +119,7 @@ export default function About(props) {
             <div className="about-work">
                 <div className="speech-bubble right">
                     <div className="speechbubble">
-                        <h3 className="speech-text">Where I've worked.</h3>
+                        <h3 className="speech-text">Where I've <span className="orange">worked</span>.</h3>
                     </div>
                     <img className="speechbubblestem right" src={speechbubblestemright} />
                 </div>
@@ -129,26 +131,30 @@ export default function About(props) {
                     </div>
                     <img className="imgMe2" src={me4} height={'250px'} />
                 </div>
-                <button className="btn resume-btn">VIEW RESUME</button>
+                <div className="job-btn">
+                    <Link to="/resume"><button className="btn resume-btn">VIEW RESUME</button></Link>
+                    <img className="daisy2" src={daisy2} height={'75px'} />
+                </div>
                 <div className="job-list">
                     {jobList}
                 </div>
             </div>
+
             <div className="about-skills">
                 <div className="speech-bubble left">
                     <div className="speechbubble">
-                        <h3 className="speech-text">Some of my utensils!</h3>
+                        <h3 className="speech-text">Some of my <span className="orange">utensils</span>!</h3>
                     </div>
                     <img className="speechbubblestem left" src={speechbubblestemleft} />
                 </div>
-                <div className="img-group" style={{width: '320px', height: '150px' }}>
+                <div className="img-group">
                     <img src={me5} height={'320px'} />
                 </div>
                 <div className="tools">
                     <table>
                         <thead>
-                            <th>Tools</th>
-                            <th>Languages</th>
+                            <th>TOOLS</th>
+                            <th>LANGUAGES</th>
                         </thead>
                         <tbody>
                             <tr>
@@ -157,33 +163,33 @@ export default function About(props) {
                             </tr>
                             <tr>
                                 <td>Github / JIRA / Confluence</td>
-                                <td>HTML5</td>
+                                <td>CSS3 / Bootstrap / SASS</td>
                             </tr>
                             <tr>
-                                <td>VS Code / Atom</td>
-                                <td>HTML5</td>
+                                <td>AWS / S3 / Route53</td>
+                                <td>Javascript ES6</td>
                             </tr>
                             <tr>
-                                <td>VS Code / Atom</td>
-                                <td>HTML5</td>
+                                <td>Wireframing / Prototype</td>
+                                <td>ReactJS / NodeJS</td>
                             </tr>
                             <tr>
-                                <td>VS Code / Atom</td>
-                                <td>HTML5</td>
+                                <td>Word / Excel / Powerpoint</td>
+                                <td>PHP</td>
                             </tr>
                             <tr>
-                                <td>VS Code / Atom</td>
-                                <td>HTML5</td>
+                                <td>Photoshop / Illustrator</td>
+                                <td>MySQL</td>
                             </tr>
                             <tr>
-                                <td>VS Code / Atom</td>
-                                <td>HTML5</td>
+                                <td>Figma / Miro</td>
+                                <td>Python </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <div className="food">
-                    <img src={breadbowlplant} height={'250px'} />
+                    <img src={breadbowlplant} height={'225px'} />
                 </div>
                 
             </div>

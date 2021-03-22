@@ -6,11 +6,13 @@ import Projects from '../components/Homepage/Projects';
 import CaseStudy from '../components/CaseStudy';
 import Contact from '../components/Homepage/Contact';
 
+import ScrollTo from '../components/ScrollTo';
+
 
 function NewHome (props) {
     console.log("props ", props);
     return (
-        <div>
+        <div className="main-container">
             <Hero />
             <About />
             <Book />

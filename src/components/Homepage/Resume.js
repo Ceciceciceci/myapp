@@ -63,7 +63,7 @@ export default function Resume() {
 
     return (
       <section className="resume-section">
-
+            HI I"M RESUME SECTIONNN
       </section>
     )
 
