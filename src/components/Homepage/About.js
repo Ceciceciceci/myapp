@@ -80,7 +80,7 @@ export default function About(props) {
       let jobList = jobs.map((item, i) => {
           return (
             <div className='job' data-index={`job-${i}`}>
-                <p><b>{item.company}</b></p>
+                <p className={`${item.company === 'DREAMWORKS' ? 'orange' : null}`}><b>{item.company}</b></p>
                 <p>{item.title}</p>
                 <p>{item.date}</p>
             </div>

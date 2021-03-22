@@ -10,7 +10,7 @@ import ScrollTo from '../components/ScrollTo';
 
 
 function NewHome (props) {
-    console.log("props ", props);
+    console.log("props ", props.theme);
     return (
         <div className="main-container">
             <Hero />

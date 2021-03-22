@@ -313,6 +313,10 @@ export const GlobalStyles = createGlobalStyle`
     margin-bottom: 1rem;
     letter-spacing: 1px;
   }
+  .job b{
+    color: ${({ theme }) => theme.currentJob};
+
+  }
 
   .daisies{
     margin-left: -20px;
@@ -320,7 +324,19 @@ export const GlobalStyles = createGlobalStyle`
   .daisy{
     display: inline-block;
     margin-right: 25px;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: bounce;
+    animation-timing-function: ease;
   }
+
+  .daisy:nth-child(2){
+    animation-delay: 1s;
+  }
+  .daisy:nth-child(3){
+    animation-delay: 0.5s;
+  }
+
   .daisy:hover{
     animation: spin 3s infinite;
     animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -333,6 +349,12 @@ export const GlobalStyles = createGlobalStyle`
       transform: rotate(360deg);
     }
   }
+
+  @keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  } 
 
   .m4 .imgMe2{
     margin-left: -50px;
