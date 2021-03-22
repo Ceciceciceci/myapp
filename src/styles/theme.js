@@ -8,7 +8,8 @@ export const LightTheme = {
     navText: '#1A1D26',
 
     aboutMeBg: '#F6A66C',
-    aboutMeBorder: '#F6A66C'
+    aboutMeBorder: '#F6A66C',
+    currentJob: '#F3F1E5'
 }
 
 export const DarkTheme = {
@@ -19,5 +20,6 @@ export const DarkTheme = {
     navText: '#1A1D26',
 
     aboutMeBg: '#1A1D26',
-    aboutMeBorder: '#EACFB1'
+    aboutMeBorder: '#EACFB1',
+    currentJob: '#F6A66C'
 }
