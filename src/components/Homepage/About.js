@@ -7,6 +7,7 @@ import me4 from '../../images/me4.png';
 import me5 from '../../images/me5.png';
 import cloud from '../../images/svgs/cloud.svg';
 import daisy from '../../images/svgs/daisy.svg';
+import star from '../../images/svgs/star.svg';
 import daisy2 from '../../images/svgs/daisy2.svg';
 import breadbowlplant from '../../images/breadbowlplant.png';
 
@@ -14,6 +15,8 @@ import speechbubblestemleft from '../../images/svgs/speechbubblestemleft.svg';
 import speechbubblestemright from '../../images/svgs/speechbubblestemright.svg';
 
 export default function About(props) {
+
+    const {theme} = props;
 
     let jobs = [
         { 
@@ -73,19 +76,39 @@ export default function About(props) {
                 "Multitasked and redid documentation on multiple projects at a time to develop new client needs and write tests using Python, Javascript"
             ]
         }
-      ]
-      const tools = ['VS Code', 'Github / JIRA / Confluence', 'AWS / S3', 'Wireframing', 'Word / Excel / Powerpoint', 'Photoshop / Illustrator', 'Figma / Miro'];
+    ]
+    const tools = ['VS Code', 'Github / JIRA / Confluence', 'AWS / S3', 'Wireframing', 'Word / Excel / Powerpoint', 'Photoshop / Illustrator', 'Figma / Miro'];
+    const languages = ['HTML5', 'CSS3 / Bootstrap / SASS', 'Javascript ES6'];
 
+    let jobList = jobs.map((item, i) => {
+        return (
+        <div className='job' data-index={`job-${i}`}>
+            <p className={`${item.company === 'DREAMWORKS' ? 'orange' : null}`}><b>{item.company}</b></p>
+            <p>{item.title}</p>
+            <p>{item.date}</p>
+        </div>
+        )
+    })
 
-      let jobList = jobs.map((item, i) => {
-          return (
-            <div className='job' data-index={`job-${i}`}>
-                <p className={`${item.company === 'DREAMWORKS' ? 'orange' : null}`}><b>{item.company}</b></p>
-                <p>{item.title}</p>
-                <p>{item.date}</p>
+    let iconChange;
+    if (theme === 'light') { 
+        iconChange = (
+                <div className="daisies">
+                    <img className="daisy" src={daisy} height={'30px'} />
+                    <img className="daisy" src={daisy} height={'30px'} />
+                    <img className="daisy" src={daisy} height={'30px'} />
+                </div>
+            )
+    } else {
+        iconChange =  (
+            <div className="daisies">
+                <img className="daisy" src={star} height={'30px'} />
+                <img className="daisy" src={star} height={'30px'} />
+                <img className="daisy" src={star} height={'30px'} />
             </div>
-          )
-      })
+        )
+    }
+    
 
     return (
         <section id="about" className="about-section">
@@ -124,11 +147,7 @@ export default function About(props) {
                     <img className="speechbubblestem right" src={speechbubblestemright} />
                 </div>
                 <div className="m4" style={{width: '320px', height: '150px' }}>
-                    <div className="daisies">
-                        <img className="daisy" src={daisy} height={'30px'} />
-                        <img className="daisy" src={daisy} height={'30px'} />
-                        <img className="daisy" src={daisy} height={'30px'} />
-                    </div>
+                    {iconChange}
                     <img className="imgMe2" src={me4} height={'250px'} />
                 </div>
                 <div className="job-btn">

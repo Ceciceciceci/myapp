@@ -125,12 +125,12 @@ export const GlobalStyles = createGlobalStyle`
 
   .main-container {
     color: ${({ theme }) => theme.text};
+    padding: 0px 200px;
   }
 
   .hero-section {
     // background-color: aliceblue;
     position: relative;
-    padding: 0px 250px;
     width: 100%;
     height: 103vh;
     margin-bottom: 100px;
@@ -208,7 +208,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .about-section {
     position: relative;
-    padding: 0 20% 20%;
+    padding-bottom: 250px;
   }
 
   .about-section .background{
@@ -219,7 +219,7 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     left: 50%;
     transform: translate(-50%);
-    width: 40%;
+    width: 60%;
     border-radius: 15px;
   }
   @media (min-width: 100px) and (max-width: 1000px){
@@ -240,14 +240,13 @@ export const GlobalStyles = createGlobalStyle`
   }
   .about-me .me3{
     grid-area: img;
-    margin-top: -25px;
-    margin-left: 15%;
+    margin: -25px 0 350px 15%;
     position: relative;
   }
   .me3 .imgBg{
     position: absolute;
-    top: -25px;
-    left: 15px;
+    top: -10px;
+    left: 25px;
     z-index: 0;
   }
   .me3 .imgMe{
@@ -271,7 +270,8 @@ export const GlobalStyles = createGlobalStyle`
   .about-me .intro{
     grid-area: info;
     margin-top: 50px;
-    padding: 0 12em 0 2.5em;
+    width: 30ch;
+    margin-left: 5%;
     line-height: 25px;
     letter-spacing: 1px;
   }
@@ -302,12 +302,10 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 15px;
   }
 
-
   .about-work .job-list{
     grid-area: info;
     color: ${({ theme }) => theme.text};
-    margin-top: 125px;
-    padding: 0 1.5em 0 10em;
+    margin: 150px auto 0 50%;
   }
   .job{
     margin-bottom: 1rem;
@@ -319,7 +317,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .daisies{
-    margin-left: -20px;
+    margin-top: -25px;
   }
   .daisy{
     display: inline-block;
@@ -357,7 +355,7 @@ export const GlobalStyles = createGlobalStyle`
   } 
 
   .m4 .imgMe2{
-    margin-left: -50px;
+    margin-top:15px;
   }
 
   .job-btn{
@@ -386,8 +384,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .daisy2{
-    align-self: center;
-    margin-left: -25%;
+    align-self: end;
   }
 
   .speech-bubble{
@@ -398,9 +395,11 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .speech-bubble.left{
-    margin-left: -50px;
+    margin-left: -13%;
+    margin-right: auto;
   }
   .speech-bubble.right{
+    margin-left: auto;
     margin-right: -50px;
   }
 
@@ -449,8 +448,6 @@ export const GlobalStyles = createGlobalStyle`
   }
   .about-skills .speech-bubble{
     grid-area: info;
-    margin-left:-10%;
-
   }
   .about-skills .img-group{
     grid-area: img3;

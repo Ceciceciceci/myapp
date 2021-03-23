@@ -61,9 +61,32 @@ export default function Resume() {
       }
     ]
 
+    let jobsList = jobs.map((item, i) => {
+        return (
+          <div className='job' data-index={`job-${i}`}>
+              <p><b>{item.company}</b></p>
+              <p>{item.title}</p>
+              <p>{item.date}</p>
+              <p>{item.location}</p>
+              <p>{item.tools}</p>
+              <p>{item.jobDesc}</p>
+          </div>
+        )
+    })
+
     return (
       <section className="resume-section">
-            HI I"M RESUME SECTIONNN
+            <div className="main-info">
+                <p>Hi!</p>
+                <h1>I'm Cecilia Tran.</h1>
+                <p>I hope you had a fun time looking at my website!</p>
+
+                <h3>Some things about me:</h3>
+                <p>San Jose State University</p>
+                <p>Bachelors of Software Engineering</p>
+                <p>2012-2017</p>
+            </div>
+           {jobsList}
       </section>
     )
 

@@ -37,7 +37,9 @@ export default function App () {
               <div className="App" theme={theme} setTheme={setTheme}>
                 <Header theme={theme} setTheme={setTheme} navigation={navigation} toggleTheme={toggleTheme}/>
                 <Switch>
-                  <Route exact path='/' component={NewHome} />
+                  <Route exact path='/' render={(props) => (
+                        <NewHome {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                      )} />
                   <Route path='/resume' component={Resume} />
                 </Switch>
               </div>
