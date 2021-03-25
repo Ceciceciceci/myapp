@@ -8,6 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { LightTheme, DarkTheme } from './styles/theme'
 import { GlobalStyles } from './styles/global';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ScrollTo from '../src/components/ScrollTo';
 
 export default function App () {
 
@@ -25,12 +26,13 @@ export default function App () {
     about: '#about',
     projects: '#projects',
     caseStudies: '#caseStudies',
-    contact: '#about',
+    contact: '#contact',
     art: '/art'
   }
 
   return (
      <Router>
+        <ScrollTo />
         <ThemeProvider theme={(theme === 'light') ? LightTheme : DarkTheme}>
           <>
             <GlobalStyles />

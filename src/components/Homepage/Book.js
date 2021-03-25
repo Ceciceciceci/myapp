@@ -18,6 +18,14 @@ export default function Book(){
           <img className="page three" src={bookpage3} height={'275px'}/>
           <img className="page four" src={bookpage5} height={'325px'}/>
         </div>
+        <div className="speech">
+          <div className="speech-bubble">
+            <div className="speechbubble">
+                <h3 className="speech-text">Come! I want to show you some...</h3>
+            </div>
+            <div className="speechbubblestem straight"></div>
+          </div>
+        </div>
     </section>
   )
 }

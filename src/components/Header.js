@@ -10,7 +10,7 @@ export default function Header (props){
     const { navigation, toggleTheme } = props;
 
     const headerList = Object.keys(navigation).map((item, i) => {
-        return <li><a className={`job-${i}`} href={navigation[item]}>{item}</a></li>
+        return <li><a className={`job-${i}`} id={`#${item}`} href={navigation[item]}>{item}</a></li>
     });
     const icon = props.theme === 'light' ? <img src={flower} alt="Home" /> : <img src={star} alt="Home" />
 

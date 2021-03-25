@@ -14,7 +14,7 @@ function NewHome (props) {
     return (
         <div className="main-container">
             <Hero />
-            <About theme={props.theme} />
+            <About theme={props.theme}/>
             <Book />
             <Projects />
             <CaseStudy />

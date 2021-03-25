@@ -471,6 +471,7 @@ export const GlobalStyles = createGlobalStyle`
   .tools table{
     position: absolute;
     z-index: -1;
+    color: var(--darkblue);
     left: -13%;
     top: 20%;
     font-size: 0.9em;
@@ -503,7 +504,29 @@ export const GlobalStyles = createGlobalStyle`
     display: grid;
     position: relative;
     margin-bottom: 500px;
+    // background-color: red;
   }
+  .book-section .speech{
+    position: absolute;
+    z-index: 15;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    top: 10em;
+  }
+
+  .speechbubblestem.straight{
+    height: 300px;
+    width: 15px;
+    background-color: var(--lightbeige);
+  }
+
+  .book-section .speech-bubble{
+    width: 60%;
+    position: relative;
+  }
+
   .book{
     margin: -125px auto 0;
   }
@@ -537,8 +560,25 @@ export const GlobalStyles = createGlobalStyle`
     top: 125px;
   }
 
+  .proj-section{
+    position: relative;
+  }
+  .proj-section .speech-text{
+    color: var(--blue);
+  }
+
+  .project{
+    display: flex;
+
+  }
+
+  .proj-image{
+    width: 300px;
+  }
+
   .contact-section{
     height: 500px;
+    color: ${({ theme }) => theme.text};
   }
 
 `
