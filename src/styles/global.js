@@ -569,11 +569,21 @@ export const GlobalStyles = createGlobalStyle`
 
   .project{
     display: flex;
-
+  }
+  .proj-info{
+    width: 50%;
   }
 
+  .photo{
+    width: 50%;
+    position: relative;
+  }
   .proj-image{
-    width: 300px;
+    width: 250px;
+    position: absolute;
+    z-index: 2;
+    top:25px;
+    left:25px;
   }
 
   .contact-section{

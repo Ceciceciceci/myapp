@@ -5,6 +5,8 @@ import projimg2 from '../../images/proj2-img.jpg';
 import projimg3 from '../../images/proj3-img.jpg';
 import projimg4 from '../../images/proj4-img.jpg';
 
+import photoframe from '../../images/svgs/photoframe.svg';
+
 export default function Projects() {
 
   let projects = [
@@ -17,7 +19,16 @@ export default function Projects() {
         {
           tech: 'HTML, CSS3, Javascript, PHP, React, Photoshop, Jquery, Bootstrap',
           paragraph: 'A design site I helped with the UX designer. This showcases the current styling for the new and upcoming website look! The designer wanted to use Jquery and Bootstrap, so the site is built on those libraries.',
-          links:['http://classicvacationsdesign.com/', 'http://classicvacations.com/']
+          links:[
+            {
+              caption: 'classic vacation design site',
+              link: 'http://classicvacationsdesign.com/'
+
+            }, {
+              caption: 'classic vacation site',
+              link: 'http://classicvacations.com/'
+            }
+          ]
       }
       
     },
@@ -30,7 +41,16 @@ export default function Projects() {
         {
           tech: 'HTML, CSS3, Javascript, PHP, React, Photoshop, Jquery, Bootstrap',
           paragraph: 'A design site I helped with the UX designer. This showcases the current styling for the new and upcoming website look! The designer wanted to use Jquery and Bootstrap, so the site is built on those libraries.',
-          links:['http://classicvacationsdesign.com/', 'http://classicvacations.com/']
+          links:[
+            {
+              caption: 'classic vacation design site',
+              link: 'http://classicvacationsdesign.com/'
+
+            }, {
+              caption: 'classic vacation site',
+              link: 'http://classicvacations.com/'
+            }
+          ]
         }
       
     },
@@ -43,7 +63,16 @@ export default function Projects() {
         {
           tech: 'HTML, CSS3, Javascript, PHP, React, Photoshop, Jquery, Bootstrap',
           paragraph: 'A design site I helped with the UX designer. This showcases the current styling for the new and upcoming website look! The designer wanted to use Jquery and Bootstrap, so the site is built on those libraries.',
-          links:['http://classicvacationsdesign.com/', 'http://classicvacations.com/']
+          links:[
+            {
+              caption: 'classic vacation design site',
+              link: 'http://classicvacationsdesign.com/'
+
+            }, {
+              caption: 'classic vacation site',
+              link: 'http://classicvacations.com/'
+            }
+          ]
         }
       
     },
@@ -56,13 +85,27 @@ export default function Projects() {
         {
           tech: 'HTML, CSS3, Javascript, PHP, React, Photoshop, Jquery, Bootstrap',
           paragraph: 'A design site I helped with the UX designer. This showcases the current styling for the new and upcoming website look! The designer wanted to use Jquery and Bootstrap, so the site is built on those libraries.',
-          links:['http://classicvacationsdesign.com/', 'http://classicvacations.com/']
+          links:[
+            {
+              caption: 'classic vacation design site',
+              link: 'http://classicvacationsdesign.com/'
+
+            }, {
+              caption: 'classic vacation site',
+              link: 'http://classicvacations.com/'
+            }
+          ]
         }
     }
   ]
 
   let projList = projects.map((item, i) => {
 
+      let linkList = item.description.links.map((item, i) =>{
+          return (
+            <li><a href={`${item.link}`}>{item.caption}</a></li>
+          )
+      })
       return (
       <div className="project" data-index={`proj-${i}`}>
           <div className="proj-info"> 
@@ -71,7 +114,13 @@ export default function Projects() {
             <p>{item.description.tech}</p>
             <p>{item.description.paragraph}</p>
           </div>
-          <img className="proj-image" src={item.images} />
+          <div className="photo">
+            <img src={photoframe} />
+            <img className="proj-image" src={item.images} alt='project image'/>
+            <p>
+              {linkList}
+            </p>
+          </div>
       </div>
       )
   })
