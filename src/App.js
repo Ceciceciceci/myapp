@@ -35,7 +35,7 @@ export default function App () {
     },
     {
       id: 2,
-      key: 'projects',
+      key: 'project',
       link: '/project'
     },
     {

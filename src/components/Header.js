@@ -6,17 +6,12 @@ import {Link} from 'react-router-dom';
 
 export default function Header ({navigation, theme, toggleTheme, setActiveState, activeState}){
 
-    const handleClick = (e, i) => {
-        setActiveState(true)
-    }
-
     const headerList = navigation.map((item, i) => {
         return (<li>
                     <a className={activeState ? "selected" : ""} 
                         key={item.key} 
-                        id={`#${item.key}`} 
+                        id={item.key} 
                         href={item.link}
-                        onClick={(event) => handleClick(event, item.id)}
                     >
                         {item.key}
                     </a>
