@@ -30,7 +30,6 @@ export default function Header ({navigation, theme, toggleTheme, setActiveState,
                 <Link to="/">{icon}</Link>
             </div>
             <nav>
-                {/* <img src={navbanner} alt="navigation background" /> */}
                 <ul className="nav-links">
                     { headerList } 
                 </ul>

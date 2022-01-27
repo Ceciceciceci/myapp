@@ -67,8 +67,8 @@ export default function Projects({theme, toggleTheme}) {
           paragraph: 'I like replacing my website design a lot and this was the theme of my last one.',
           links:[
             {
-              caption: 'not viewable at the moment',
-              link: 'not viewable at the moment'
+              caption: 'view',
+              link: 'https://dependabot-npm-and-yarn-elliptic-6-5-4.d3tvqpw6tbsv0z.amplifyapp.com/contact'
 
             }
           ]
