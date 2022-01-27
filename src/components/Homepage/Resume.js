@@ -1,15 +1,19 @@
 import React from 'react'
+import Footer from '../Footer'
+import multistar from '../../images/svgs/multistar.svg'
 
-export default function Resume() {
+export default function Resume({theme, toggleTheme}) {
     let jobs = [
       { 
-        company: 'DreamWorks', 
+        company: 'Dreamworks', 
         title: 'Software Engineer', 
         date:'Jan 2021 to CURRENT',
         location: 'Glendale, CA',
         tools: 'Javascript, CSS3, HTML5, Python, React, Polymer',
         jobDesc: [
-            "Working web tool features for TDs and artists to use."
+            "Developed web tool features to help improve the pipeline process for artists and technical directors",
+            "Documented and presented changes for app routes for the React transition from Polymer to make the code base more efficient",
+            "In tandem with the UX team, discussed hi-fi mockups to clear up and decrease the number of API calls by 50% to view animation assets"
         ]
       },
       { 
@@ -19,7 +23,8 @@ export default function Resume() {
           location: 'Santa Cruz, CA',
           tools: 'Javascript, CSS3, HTML5, Python, React',
           jobDesc: [
-              "Created front-end features for an internal tool on web to speed up factory picking, packing, and shipping process of EV skateboards.",
+              "Created and improved front-end features for an internal web tool to speed up factory picking, packing, and shipping process of One Wheel EV skateboards to be 5 times faster",
+              "Discussed UI ideas to improve UX before development stage"
           ]
       },
       { 
@@ -29,9 +34,8 @@ export default function Resume() {
           location: 'San Jose, CA',
           tools: 'Javascript, Drupal, CSS3, HTML5, PHP, MySQL, React',
           jobDesc: [
-              "Wireframed and worked with the UX designer and the developer team in India to successfully build and deploy, and optimize a new site redesign.",
-              "Created a style guide with the UX designer to help organize the site's new style and brand.",
-              "Self learned as the only engineer on the team for the first 4 months, a new language and infrastructure, Drupal and PHP. Introduced React to the team for possibility for changing frameworks to better optimize the site.",
+              "Wireframed and worked with the UX designer and the developer team in India to successfully build a better usable website and optimize the design code",
+              "Created a style guide with the UX designer to help organize the site's new style and brand",
               "Minimized the amount of libraries imported with CDNs needed into a few lines of Javascript.",
               "Created new documentation for any existing and new code worked on and organized it into documents and onto JIRA boards as the old code didn't have prior documentation to explain certain features."
           ]
@@ -62,31 +66,65 @@ export default function Resume() {
     ]
 
     let jobsList = jobs.map((item, i) => {
+
+        let jobDescItems = item.jobDesc.map((item, i ) => {
+            return(
+                <li className="job-desc" key={i}>{item}</li>
+            )
+        })
+
         return (
-          <div className='job' data-index={`job-${i}`}>
-              <p><b>{item.company}</b></p>
-              <p>{item.title}</p>
-              <p>{item.date}</p>
-              <p>{item.location}</p>
-              <p>{item.tools}</p>
-              <p>{item.jobDesc}</p>
+          <div className='jobtitle' data-index={`job-${i}`}>
+              <p className="date">{item.date}</p>
+              <p className="company"><b>{item.company.toUpperCase()} / {item.title.toUpperCase()}</b></p>
+              {/* <p className="tools">{item.tools}</p> */}
+              <ul>{jobDescItems}</ul>
           </div>
         )
     })
 
     return (
       <section className="resume-section">
-            <div className="main-info">
-                <p>Hi!</p>
-                <h1>I'm Cecilia Tran.</h1>
-                <p>I hope you had a fun time looking at my website!</p>
-
-                <h3>Some things about me:</h3>
-                <p>San Jose State University</p>
-                <p>Bachelors of Software Engineering</p>
-                <p>2012-2017</p>
+            <h1>Cecilia_Tran_2022.resume</h1>
+            <div className="resume-part">
+                <div className="resume-left">
+                    <h3 className="resume-title ex">EXPERIENCE</h3>
+                    {jobsList}
+                </div>
+                <div className="resume-right">
+                    <div className="education">
+                        <h3 className="resume-title ed">EDUCATION</h3>
+                        <li>
+                            <p className='date'>2020-2021</p>
+                            <p><b>UC Irvine, CE</b></p>
+                            <p className='thin'>UX and UI Design</p>
+                        </li>
+                        <li>
+                            <p className='date'>2012-2017</p>
+                            <p><b>San Jose State University</b></p>
+                            <p className='thin'>Bachelors of Software Engineering</p>
+                        </li>
+                    </div>
+                    <div>
+                        <h3 className="resume-title st">SKILLS & TOOLS</h3>
+                        <li>Javascript</li>
+                        <li>CSS</li>
+                        <li>ReactJS</li>
+                        <li>HTML</li>
+                        <li>NodeJS</li>
+                        <li>MySQL</li>
+                        <li>Wireframing / Rapid Prototyping</li>
+                        <li>VS Code</li>
+                        <li>Git / JIRA / Confluence</li>
+                        <li>Adobe Photoshop / Illustrator</li>
+                        <li>Figma</li>
+                        <li>Miro</li>
+                        <li>AWS: Route 53, S3</li>
+                    </div>
+                    <img src={multistar} alt="star" />
+                </div>
             </div>
-           {jobsList}
+            <Footer />
       </section>
     )
 

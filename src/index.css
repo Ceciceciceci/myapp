@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&family=Dongle:wght@300;400&display=swap');
 
 :root{
---fredoka : "Fredoka One", "Open Sans", sans-serif;
---openSans : "Open Sans", "Helvetica", sans-serif;
+  --dongle : "Dongle", "Open Sans", sans-serif;
+  --openSans : "Open Sans", "Helvetica", sans-serif;
+  --anonPro: "Anonymous Pro", "Open Sans", monospace;
 
 --blue: #7DC3E1;
 --green: #A6C550;

@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import Footer from '../Footer'
+
+import whoshape from '../../images/svgs/whoshape.svg'
 import me3 from '../../images/me3.png';
 import imgbg from '../../images/svgs/imgbg.svg';
 import me4 from '../../images/me4.png';
@@ -78,7 +81,7 @@ export default function About(props) {
         }
     ]
     const tools = ['VS Code', 'Github / JIRA / Confluence', 'AWS / S3', 'Wireframing', 'Word / Excel / Powerpoint', 'Photoshop / Illustrator', 'Figma / Miro'];
-    const languages = ['HTML5', 'CSS3 / Bootstrap / SASS', 'Javascript ES6'];
+    const languages = ['HTML', 'CSS3 / Bootstrap / SASS', 'Javascript ES6'];
 
     let jobList = jobs.map((item, i) => {
         return (
@@ -93,11 +96,11 @@ export default function About(props) {
     let iconChange;
     if (theme === 'light') { 
         iconChange = (
-                <div className="daisies">
-                    <img className="daisy" src={daisy} height={'30px'} />
-                    <img className="daisy" src={daisy} height={'30px'} />
-                    <img className="daisy" src={daisy} height={'30px'} />
-                </div>
+            <div className="daisies">
+                <img className="daisy" src={daisy} height={'30px'} />
+                <img className="daisy" src={daisy} height={'30px'} />
+                <img className="daisy" src={daisy} height={'30px'} />
+            </div>
             )
     } else {
         iconChange =  (
@@ -113,8 +116,12 @@ export default function About(props) {
     return (
         <section id="about" className="about-section">
             {/* HI I"M ABOUT SECTION */}
+            <div className="intro-card">
+                <img src={whoshape} alt="who am i"/>
+                <h1>Who am I ?</h1>
+                <p>Seriously tho.</p>
+            </div>
             <div className="background"></div>
-
             <div className="about-me">
                 <div className="speech-bubble left">
                     <div className="speechbubble">
@@ -131,6 +138,7 @@ export default function About(props) {
                 </div>
                 
                 <div className="intro">
+                    <p>My name is Cecilia!</p>
                     <p>A <strong>software engineer</strong> (with a focus on front-end) and a <strong>ux and ui designer</strong>.
                     I like to design creative solutions for user experiences where tech intersects art. </p>
                     <p>Currently, I am dabbling in ReactJS and Three.js.</p>
@@ -212,6 +220,7 @@ export default function About(props) {
                 </div>
                 
             </div>
+            <Footer />
         </section>
     );
 }

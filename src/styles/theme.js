@@ -1,10 +1,8 @@
-
-
 export const LightTheme = {
     pageBackground: 'white',
     text: '#1A1D26',
-    titleColor: '#F6A66C',
-    toggleBorder: '#1A1D26',
+    titleColor: '#F6BF6C',
+    toggleBorder: '#F6BF6C',
     navText: '#1A1D26',
 
     aboutMeBg: '#F6A66C',
@@ -17,7 +15,7 @@ export const DarkTheme = {
     text: '#EACFB1',
     titleColor: '#FFFFFF',
     toggleBorder: '#EACFB1',
-    navText: '#1A1D26',
+    navText: 'white',
 
     aboutMeBg: '#1A1D26',
     aboutMeBorder: '#EACFB1',

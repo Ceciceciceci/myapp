@@ -13,10 +13,10 @@ const ToggleContainer = styled.button`
   justify-content: space-between;
   background: ${({ theme }) => theme.pageBackground};
   width: 7rem;
-  height: 4rem;
+  height: 3.7rem;
   margin: 0 auto;
   border-radius: 30px;
-  border: 5px solid ${({ theme }) => theme.toggleBorder};
+  border: 2px solid ${({ theme }) => theme.toggleBorder};
   font-size: 0.5rem;
   padding: 0.5rem;
   overflow: hidden;

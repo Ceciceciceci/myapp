@@ -3,7 +3,12 @@ import React, { useState, useEffect } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import NewHome from './components/NewHome';
 import Header from './components/Header';
+import About from './components/Homepage/About';
+import Projects from './components/Homepage/Projects';
+import CaseStudy from './components/Homepage/CaseStudy';
+import Contact from './components/Homepage/Contact';
 import Resume from './components/Homepage/Resume';
+import Todo from './components/Todo';
 import { ThemeProvider } from 'styled-components';
 import { LightTheme, DarkTheme } from './styles/theme'
 import { GlobalStyles } from './styles/global';
@@ -22,13 +27,29 @@ export default function App () {
       }
   }
 
-  const navigation = {
-    about: '#about',
-    projects: '#projects',
-    caseStudies: '#caseStudies',
-    contact: '#contact',
-    art: '/art'
-  }
+  const navigation = [
+    {
+      id: 1,
+      key: 'about',
+      link: '/about'
+    },
+    {
+      id: 2,
+      key: 'projects',
+      link: '/project'
+    },
+    {
+      id: 3,
+      key: 'contact',
+      link: '/contact'
+    },
+    {
+      id: 4,
+      key: 'resume',
+      link: '/resume'
+    }
+  ]
+  const [activeState, setActiveState] = useState(false)
 
   return (
      <Router>
@@ -37,12 +58,29 @@ export default function App () {
           <>
             <GlobalStyles />
               <div className="App" theme={theme} setTheme={setTheme}>
-                <Header theme={theme} setTheme={setTheme} navigation={navigation} toggleTheme={toggleTheme}/>
+                <Header theme={theme} 
+                        setTheme={setTheme} 
+                        navigation={navigation} 
+                        toggleTheme={toggleTheme}
+                        activeState={activeState}
+                        setActiveState={setActiveState}
+                />
                 <Switch>
                   <Route exact path='/' render={(props) => (
-                        <NewHome {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                      )} />
-                  <Route path='/resume' component={Resume} />
+                    <NewHome {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/about' render={(props) => (
+                    <About {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/project' render={(props) => (
+                    <Projects {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/contact' render={(props) => (
+                    <Contact {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/resume' render={(props) => (
+                    <Resume {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
                 </Switch>
               </div>
           </>

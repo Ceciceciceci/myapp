@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-
-import me1 from '../../images/me1.png';
-import me2 from '../../images/me2.png';
 import flowerstem from '../../images/flowerstems.png'
+import multistar from '../../images/svgs/multistar.svg'
 
 export default function Hero() {
 
@@ -12,22 +10,17 @@ export default function Hero() {
         <section className="hero-section">
             <div>
                 {/* HI I"M HERO SECTION */}
+                <img className="hero-star" src={multistar} />    
                 <div className="hero-title">
-                    <p className="curly">Hi my name is</p>
-                    <h1 className="name">CECILIA<br/>TRAN</h1>
+                    <p className="hero-sub">oh my gosh!</p>
+                    <p className="hero-sub">welcome!</p>
+                    <p className="hero-sub">my name is</p>
+                    <h1 className="name">CECILIA</h1>
                 </div>
-                <img className="flowerstem left" src={flowerstem} />    
-                <div className="hero-image" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} >
-                    {!inHover ?  (
-                        <img className='me1' src={me1} />
-                    ) : (
-                        <img className='me2' src={me2} /> 
-                    )}
-                </div>
-                <img className="flowerstem right" src={flowerstem} />  
-            </div>
-            <div className="titles">
-                <span>Software<br/>Engineer</span><span className="and">&&</span><span>UX<br/>Designer</span>
+                <div className="flowerstems">
+                    <img className="flowerstem left" src={flowerstem} />    
+                    <img className="flowerstem right" src={flowerstem} /> 
+                </div> 
             </div>
         </section>
     );
