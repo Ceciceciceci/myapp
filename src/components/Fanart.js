@@ -1,5 +1,8 @@
 import React from 'react';
 import PhotoAlbum from "react-photo-album";
+
+import Footer from './Footer';
+
 import { fanartPhotos } from './Photos';
 import { pagesHeaderStyle, subtext } from '../styles/homestyles';
 
@@ -21,6 +24,7 @@ export default function Fanart (){
           padding="5"
           photos={fanartPhotos} 
         />
+        <Footer />
       </div>
   )
 }
