@@ -125,6 +125,33 @@ export const GlobalStyles = createGlobalStyle`
     height: 100vh;
     overflow: hidden; 
   }
+
+  .homeNav {
+    margin-top: 20px;
+  }
+
+  .homeNav li {
+    list-style-type: none;
+    margin-top: 25px;
+  }
+  
+  .homeNav li a {
+    text-decoration: underline;
+    color: ${({ theme }) => theme.navText};
+    letter-spacing: 0.3rem;
+    font-family: var(--dongle);
+    line-height: 30px;
+    font-size: 50px;
+    font-weight: 700;
+    transition: all 0.2s ease-in-out;
+    margin-right: 50px;
+  }
+
+  .homeNav li a:hover {
+    color: var(--orange); 
+    font-size: 75px;
+  }
+
   .hero-section .hero-star{
     position: absolute;
     z-index: 5;

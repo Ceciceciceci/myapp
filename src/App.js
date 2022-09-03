@@ -9,6 +9,11 @@ import CaseStudy from './components/Homepage/CaseStudy';
 import Contact from './components/Homepage/Contact';
 import Resume from './components/Homepage/Resume';
 import Todo from './components/Todo';
+
+import Fanart from './components/Fanart';
+import Original from './components/Original';
+import FoodArt from './components/FoodArt';
+import Contact2 from './components/Contact2';
 import { ThemeProvider } from 'styled-components';
 import { LightTheme, DarkTheme } from './styles/theme'
 import { GlobalStyles } from './styles/global';
@@ -49,6 +54,30 @@ export default function App () {
       link: '/resume'
     }
   ]
+
+  const artNavigation = [
+    {
+      id: 1,
+      key: 'fanart',
+      link: '/fanart'
+    },
+    {
+      id: 2,
+      key: 'original',
+      link: '/original'
+    },
+    {
+      id: 3,
+      key: 'foodart',
+      link: '/foodart'
+    },
+    {
+      id: 4,
+      key: 'contact',
+      link: '/contact'
+    }
+  ]
+
   const [activeState, setActiveState] = useState(false)
 
   return (
@@ -60,7 +89,7 @@ export default function App () {
               <div className="App" theme={theme} setTheme={setTheme}>
                 <Header theme={theme} 
                         setTheme={setTheme} 
-                        navigation={navigation} 
+                        navigation={artNavigation} 
                         toggleTheme={toggleTheme}
                         activeState={activeState}
                         setActiveState={setActiveState}
@@ -80,6 +109,18 @@ export default function App () {
                   )} />
                   <Route exact path='/resume' render={(props) => (
                     <Resume {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/fanart' render={(props) => (
+                    <Fanart {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/original' render={(props) => (
+                    <Original {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/foodart' render={(props) => (
+                    <FoodArt {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/contact2' render={(props) => (
+                    <Contact2 {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
                   )} />
                 </Switch>
               </div>

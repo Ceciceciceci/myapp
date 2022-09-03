@@ -10,7 +10,7 @@ export default function Contact (){
           {/* <h1>Let's talk more!</h1> */}
         </div>
         <div className="contact-form">
-          <img src={funpattern} alt="pattern"/>
+          {/* <img src={funpattern} alt="pattern"/> */}
           <div class="forms">
             <h4 class="title">To Cecilia:</h4>
             <form>
