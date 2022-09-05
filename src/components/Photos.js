@@ -23,13 +23,79 @@ import img22 from '../images/fanart/img22.png';
 import img23 from '../images/fanart/img23.png';
 import img24 from '../images/fanart/img24.png';
 import img25 from '../images/fanart/img25.jpg';
-
+import img26 from '../images/fanart/img26.png';
+import img27 from '../images/fanart/img27.png';
+import img28 from '../images/fanart/img28.png';
+import img29 from '../images/fanart/img29.png';
+import img30 from '../images/fanart/img30.png';
+import img31 from '../images/fanart/img31.png';
+import img32 from '../images/fanart/img32.png';
+import img33 from '../images/fanart/img33.png';
+import img34 from '../images/fanart/img34.png';
+import img35 from '../images/fanart/img35.png';
+import img36 from '../images/fanart/img36.png';
+import img37 from '../images/fanart/img37.png';
+import img38 from '../images/fanart/img38.png';
+import img39 from '../images/fanart/img39.png';
+import img40 from '../images/fanart/img40.png';
+import img41 from '../images/fanart/img41.png';
+import img42 from '../images/fanart/img42.png';
+import img43 from '../images/fanart/img43.png';
+import adamon from '../images/fanart/img43.png';
 
 /** Originals */
+import bear from '../images/original/bear.png';
+import bready from '../images/original/bready.png';
+import bryan from '../images/original/bryan.png';
+import comm1 from '../images/original/commission1.png';
+import crayon from '../images/original/crayon.png';
+import elephant from '../images/original/elephaant.png';
+import jeep from '../images/original/jeep.png';
+import millie from '../images/original/millie.png'
+import orig3 from '../images/original/orig3.jpg';
+import orig4 from '../images/original/orig4.png';
+import orig5 from '../images/original/orig5.png';
+import orig6 from '../images/original/orig6.png';
+import orig7 from '../images/original/orig7.png';
+import orig8 from '../images/original/orig8.png';
+import orig9 from '../images/original/orig9.png';
+import penguin from '../images/original/penguin.png'
 import sunny from '../images/fanart/sunny.png';
+import rose from '../images/original/rose.png';
+import webtools from '../images/original/webtools.png'
 
 /** Food art */
+import baguette from '../images/foodart/baguette.png'
+import bakery from '../images/foodart/bakery.png'
+import breadstamps from '../images/foodart/breadstamps.jpg'
+import foodart1 from '../images/foodart/foodart1.png'
+import foodart2 from '../images/foodart/foodart2.png'
+import foodart3 from '../images/foodart/foodart3.png'
+import foodart4 from '../images/foodart/foodart4.png'
+import foodart5 from '../images/foodart/foodart5.png'
+import foodart6 from '../images/foodart/foodart6.png'
+import foodart7 from '../images/foodart/foodart7.png'
+import foodart8 from '../images/foodart/foodart8.png'
+import foodart9 from '../images/foodart/foodart9.png'
+import foodart10 from '../images/foodart/foodart10.png'
+import foodart11 from '../images/foodart/foodart11.png'
+import foodart12 from '../images/foodart/foodart12.png'
+import foodart13 from '../images/foodart/foodart13.png'
+import foodart14 from '../images/foodart/foodart14.png'
+import foodart15 from '../images/foodart/foodart15.png'
+import foodart16 from '../images/foodart/foodart16.png'
+import foodart17 from '../images/foodart/foodart17.png'
+import foodart18 from '../images/foodart/foodart18.png'
+import foodart19 from '../images/foodart/foodart19.png'
+import foodart20 from '../images/foodart/foodart20.png'
+import foodart21 from '../images/foodart/foodart21.png'
+import foodart22 from '../images/foodart/foodart22.png'
+import foodart23 from '../images/foodart/foodart23.png'
+import foodart24 from '../images/foodart/foodart24.png'
+import foodart25 from '../images/foodart/foodart25.png'
+import foodart26 from '../images/foodart/foodart26.png'
 
+import sourdough from '../images/foodart/sourdough.png'
 
 const fanartPhotosList = [
   {id: 'kcake', url: kcake, width: '600', height: ''},
@@ -55,42 +121,74 @@ const fanartPhotosList = [
   {id: 'img22', url: img22, width: '1200', height: ''},
   {id: 'img23', url: img23, width: '600', height: ''},
   {id: 'img24', url: img24, width: '600', height: ''},
-  {id: 'img25', url: img25, width: '600', height: ''}
-  
+  {id: 'img25', url: img25, width: '600', height: ''},
+  {id: 'img26', url: img26, width: '600', height: ''},
+  {id: 'img27', url: img27, width: '600', height: ''},
+  {id: 'img28', url: img28, width: '600', height: ''},
+  {id: 'img29', url: img29, width: '600', height: ''},
+  {id: 'img30', url: img30, width: '600', height: ''},
+  {id: 'img31', url: img31, width: '600', height: ''},
+  {id: 'img32', url: img32, width: '600', height: ''},
+  {id: 'img33', url: img33, width: '600', height: ''},
+  {id: 'img34', url: img34, width: '600', height: ''},
+  {id: 'img35', url: img35, width: '600', height: ''},
+  {id: 'img36', url: img36, width: '600', height: ''},
+  {id: 'img37', url: img37, width: '600', height: ''},
+  {id: 'img38', url: img38, width: '600', height: ''},
+  {id: 'img39', url: img39, width: '600', height: ''},
+  {id: 'img40', url: img40, width: '600', height: ''},
+  {id: 'img41', url: img41, width: '600', height: ''},
+  {id: 'img42', url: img42, width: '600', height: ''},
+  {id: 'img43', url: img43, width: '600', height: ''},
+  {id: 'adamon', url: adamon, width: '600', height: ''}
 ]
 
 const originalPhotosList = [
   {id: 'sunny', url: sunny, width: '600', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''}
+  {id: 'rose', url: rose, width: '600', height: ''},
+  {id: 'orig3', url: orig3, width: '600', height: ''},
+  {id: 'orig4', url: orig4, width: '600', height: ''},
+  {id: 'orig5', url: orig5, width: '600', height: ''},
+  {id: 'orig6', url: orig6, width: '600', height: ''},
+  {id: 'orig7', url: orig7, width: '600', height: ''},
+  {id: 'orig8', url: orig8, width: '600', height: ''},
+  {id: 'orig9', url: orig9, width: '600', height: ''},
+  {id: 'comm1', url: comm1, width: '600', height: ''},
+  {id: 'millie', url: millie, width: '600', height: ''},
+  {id: 'webtools', url: webtools, width: '600', height: ''},
 ]
 
 const foodartPhotosList = [
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''},
-  {id: '', url: '', width: '', height: ''}
+  {id: 'foodart1', url: foodart1, width: '600', height: ''},
+  {id: 'foodart2', url: foodart2, width: '600', height: ''},
+  {id: 'foodart3', url: foodart3, width: '600', height: ''},
+  {id: 'foodart4', url: foodart4, width: '600', height: ''},
+  {id: 'foodart5', url: foodart5, width: '600', height: ''},
+  {id: 'foodart6', url: foodart6, width: '600', height: ''},
+  {id: 'foodart7', url: foodart7, width: '600', height: ''},
+  {id: 'foodart8', url: foodart8, width: '600', height: ''},
+  {id: 'foodart9', url: foodart9, width: '600', height: ''},
+  {id: 'foodart10', url: foodart10, width: '600', height: ''},
+  {id: 'foodart11', url: foodart11, width: '600', height: ''},
+  {id: 'foodart12', url: foodart12, width: '600', height: ''},
+  {id: 'foodart13', url: foodart13, width: '600', height: ''},
+  {id: 'foodart14', url: foodart14, width: '600', height: ''},
+  {id: 'foodart15', url: foodart15, width: '600', height: ''},
+  {id: 'foodart16', url: foodart16, width: '600', height: ''},
+  {id: 'foodart17', url: foodart17, width: '600', height: ''},
+  {id: 'foodart18', url: foodart18, width: '600', height: ''},
+  {id: 'foodart19', url: foodart19, width: '600', height: ''},
+  {id: 'foodart20', url: foodart20, width: '600', height: ''},
+  {id: 'foodart21', url: foodart21, width: '600', height: ''},
+  {id: 'foodart22', url: foodart22, width: '600', height: ''},
+  {id: 'foodart23', url: foodart23, width: '600', height: ''},
+  {id: 'foodart24', url: foodart24, width: '600', height: ''},
+  {id: 'foodart25', url: foodart25, width: '600', height: ''},
+  {id: 'foodart26', url: foodart26, width: '600', height: ''},
+  {id: 'sourdough', url: sourdough, width: '600', height: ''},
+  {id: 'baguette', url: baguette, width: '600', height: ''},
+  {id: 'bakery', url: bakery, width: '600', height: ''},
+  {id: 'breadstamps', url: breadstamps, width: '600', height: ''}
 ]
 
 export const fanartPhotos = fanartPhotosList.map((photo) => { 

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import eyes from '../images/eyes.png';
 
 export const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700;800&family=Pacifico&display=swap');
@@ -130,7 +129,7 @@ export const GlobalStyles = createGlobalStyle`
     margin-top: 20px;
   }
 
-  .homeNav li {
+  .homeNav li, div li {
     list-style-type: none;
     margin-top: 25px;
   }

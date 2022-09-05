@@ -7,11 +7,19 @@ export default function Contact (){
     <>
       <section id="contact" className="contact-section">
         <div className="intro-card">
-          {/* <h1>Let's talk more!</h1> */}
+          <h1>Let's talk more!</h1>
+          <div style={{backgroundColor: "#FFB700", width: "100%", textAlign: "center", padding: "25px" }}>
+            <ul> 
+                <li><a href="https://twitter.com/ichi_nese/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/ichiknees/?hl=en">Instagram</a></li>
+                <li><a href="https://www.behance.net/cecitran94fab0">Behance</a></li>
+                <li><a href="mailTo:cecitran94@gmail.com">Email</a></li>
+            </ul>
+          </div>
         </div>
-        <div className="contact-form">
+        {/* <div className="contact-form"> */}
           {/* <img src={funpattern} alt="pattern"/> */}
-          <div class="forms">
+          {/* <div class="forms">
             <h4 class="title">To Cecilia:</h4>
             <form>
               <input type="text" name="full-name" class="full-name" placeholder="Your name" autocomplete='off' />
@@ -19,9 +27,8 @@ export default function Contact (){
               <textarea rows={5} name="message" class="message" placeholder="Your message"></textarea>
               <button class="btn submit">SUBMIT</button>
             </form>
-          </div>
-        </div>
-        <Footer />
+          </div> */}
+        {/* </div> */}
       </section>
     </> 
   )
