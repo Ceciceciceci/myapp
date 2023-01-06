@@ -13,6 +13,7 @@ import Todo from './components/Todo';
 import Fanart from './components/Fanart';
 import Original from './components/Original';
 import FoodArt from './components/FoodArt';
+import Other from './components/Other';
 import Contact2 from './components/Contact2';
 import { ThemeProvider } from 'styled-components';
 import { LightTheme, DarkTheme } from './styles/theme'
@@ -73,6 +74,11 @@ export default function App () {
     },
     {
       id: 4,
+      key: 'craft & merch',
+      link: '/other'
+    },
+    {
+      id: 5,
       key: 'contact',
       link: '/contact'
     }
@@ -118,6 +124,9 @@ export default function App () {
                   )} />
                   <Route exact path='/foodart' render={(props) => (
                     <FoodArt {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
+                  )} />
+                  <Route exact path='/other' render={(props) => (
+                    <Other {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
                   )} />
                   <Route exact path='/contact2' render={(props) => (
                     <Contact2 {...props} theme={theme} setTheme={setTheme} isAuthed={true} />

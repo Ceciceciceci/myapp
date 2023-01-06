@@ -26,6 +26,7 @@ export default function ArtHomepage ({navigation}){
             <div>
               <li><a href="/fanart">fanart</a></li>
               <li><a href="/original">original</a></li>
+              <li><a href="/other">other</a></li>
             </div>
             <div>
               <li><a href="/foodart">foodart</a></li>

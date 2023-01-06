@@ -4,6 +4,7 @@ import kcake from '../images/fanart/kcake.png';
 import img4 from '../images/fanart/img4.png';
 import img5 from '../images/fanart/img5.png';
 import img6 from '../images/fanart/img6.png';
+import denji from '../images/fanart/denji.png'
 import img7 from '../images/fanart/img7.png';
 import img8 from '../images/fanart/img8.png';
 import img9 from '../images/fanart/img9.png';
@@ -42,15 +43,18 @@ import img41 from '../images/fanart/img41.png';
 import img42 from '../images/fanart/img42.png';
 import img43 from '../images/fanart/img43.png';
 import adamon from '../images/fanart/img43.png';
+import dream1 from '../images/fanart/dream1.png';
+import dream2 from '../images/fanart/dream2.png';
+import dream3 from '../images/fanart/dream3.png';
+import dream4 from '../images/fanart/dream4.png';
+import dream6 from '../images/fanart/dream6.png';
+import po from '../images/fanart/po.png';
 
 /** Originals */
-import bear from '../images/original/bear.png';
-import bready from '../images/original/bready.png';
 import bryan from '../images/original/bryan.png';
-import comm1 from '../images/original/commission1.png';
 import crayon from '../images/original/crayon.png';
-import elephant from '../images/original/elephaant.png';
-import jeep from '../images/original/jeep.png';
+import corps from '../images/original/corps-team.png';
+import ill3 from '../images/original/Illustration3.png';
 import millie from '../images/original/millie.png'
 import orig3 from '../images/original/orig3.jpg';
 import orig4 from '../images/original/orig4.png';
@@ -94,8 +98,18 @@ import foodart23 from '../images/foodart/foodart23.png'
 import foodart24 from '../images/foodart/foodart24.png'
 import foodart25 from '../images/foodart/foodart25.png'
 import foodart26 from '../images/foodart/foodart26.png'
-
 import sourdough from '../images/foodart/sourdough.png'
+
+/** Others */
+import coaster from '../images/original/DSC07819.jpg'
+import coaster2 from '../images/original/DSC07826.jpg'
+import knit1 from '../images/original/knit1.png'
+import knit2 from '../images/original/knit2.png'
+import knit3 from '../images/original/knit3.png'
+import knit4 from '../images/original/knit4.png'
+import knit5 from '../images/original/knit5.png'
+import sweater from '../images/original/sweater.png'
+import merch1 from '../images/original/merch1.png'
 
 const fanartPhotosList = [
   {id: 'kcake', url: kcake, width: '600', height: ''},
@@ -103,6 +117,7 @@ const fanartPhotosList = [
   {id: 'img4', url: img4, width: '400', height: ''},
   {id: 'img5', url: img5, width: '400', height: ''},
   {id: 'img6', url: img6, width: '600', height: ''},
+  {id: 'denji', url: denji, width: '600', height: ''},
   {id: 'img7', url: img7, width: '600', height: ''},
   {id: 'img8', url: img8, width: '600', height: ''},
   {id: 'img9', url: img9, width: '600', height: ''},
@@ -130,17 +145,19 @@ const fanartPhotosList = [
   {id: 'img31', url: img31, width: '600', height: ''},
   {id: 'img32', url: img32, width: '600', height: ''},
   {id: 'img33', url: img33, width: '600', height: ''},
-  {id: 'img34', url: img34, width: '600', height: ''},
   {id: 'img35', url: img35, width: '600', height: ''},
-  {id: 'img36', url: img36, width: '600', height: ''},
   {id: 'img37', url: img37, width: '600', height: ''},
   {id: 'img38', url: img38, width: '600', height: ''},
   {id: 'img39', url: img39, width: '600', height: ''},
   {id: 'img40', url: img40, width: '600', height: ''},
   {id: 'img41', url: img41, width: '600', height: ''},
   {id: 'img42', url: img42, width: '600', height: ''},
-  {id: 'img43', url: img43, width: '600', height: ''},
-  {id: 'adamon', url: adamon, width: '600', height: ''}
+  {id: 'dream1', url: dream1, width: '600', height: ''},
+  {id: 'po', url: po, width: '600', height: ''},
+  {id: 'dream2', url: dream2, width: '600', height: ''},
+  {id: 'dream3', url: dream3, width: '600', height: ''},
+  {id: 'dream4', url: dream4, width: '600', height: ''},
+  {id: 'dream6', url: dream6, width: '600', height: ''},
 ]
 
 const originalPhotosList = [
@@ -149,13 +166,12 @@ const originalPhotosList = [
   {id: 'orig3', url: orig3, width: '600', height: ''},
   {id: 'orig4', url: orig4, width: '600', height: ''},
   {id: 'orig5', url: orig5, width: '600', height: ''},
-  {id: 'orig6', url: orig6, width: '600', height: ''},
+  {id: 'corps', url: corps, width: '600', height: ''},
   {id: 'orig7', url: orig7, width: '600', height: ''},
   {id: 'orig8', url: orig8, width: '600', height: ''},
   {id: 'orig9', url: orig9, width: '600', height: ''},
-  {id: 'comm1', url: comm1, width: '600', height: ''},
+  {id: 'bryan', url: bryan, width: '600', height: ''},
   {id: 'millie', url: millie, width: '600', height: ''},
-  {id: 'webtools', url: webtools, width: '600', height: ''},
 ]
 
 const foodartPhotosList = [
@@ -191,6 +207,19 @@ const foodartPhotosList = [
   {id: 'breadstamps', url: breadstamps, width: '600', height: ''}
 ]
 
+const otherPhotosList = [
+  {id: 'coaster', url: coaster, width: '600', height: ''},
+  {id: 'coaster2', url: coaster2, width: '600', height: ''},
+  {id: 'merch1', url: merch1, width: '600', height: ''},
+  {id: 'knit1', url: knit1, width: '600', height: ''},
+  {id: 'knit2', url: knit2, width: '600', height: ''},
+  {id: 'knit3', url: knit3, width: '600', height: ''},
+  {id: 'knit5', url: knit5, width: '600', height: ''},
+  {id: 'knit4', url: knit4, width: '600', height: ''},
+  {id: 'sweater', url: sweater, width: '600', height: ''},
+  
+]
+
 export const fanartPhotos = fanartPhotosList.map((photo) => { 
   return {
     src: photo.url,
@@ -208,6 +237,14 @@ export const originalPhotos = originalPhotosList.map((photo) => {
 });
 
 export const foodartPhotos = foodartPhotosList.map((photo) => { 
+  return {
+    src: photo.url,
+    width: photo.width,
+    height: photo.height
+  };
+});
+
+export const otherPhotos = otherPhotosList.map((photo) => { 
   return {
     src: photo.url,
     width: photo.width,
