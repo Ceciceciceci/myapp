@@ -55,6 +55,13 @@ import bryan from '../images/original/bryan.png';
 import crayon from '../images/original/crayon.png';
 import corps from '../images/original/corps-team.png';
 import ill3 from '../images/original/Illustration3.png';
+import ill6 from '../images/original/Illustration6.png';
+import ill12 from '../images/original/Illustration12.png';
+import ill13 from '../images/original/Illustration13.png';
+import ill16 from '../images/original/Illustration16.png';
+import ill18 from '../images/original/Illustration18.png';
+import ill20 from '../images/original/Illustration20.png';
+import ill23 from '../images/original/Illustration23.png';
 import millie from '../images/original/millie.png'
 import orig3 from '../images/original/orig3.jpg';
 import orig4 from '../images/original/orig4.png';
@@ -97,7 +104,7 @@ import foodart22 from '../images/foodart/foodart22.png'
 import foodart23 from '../images/foodart/foodart23.png'
 import foodart24 from '../images/foodart/foodart24.png'
 import foodart25 from '../images/foodart/foodart25.png'
-import foodart26 from '../images/foodart/foodart26.png'
+import foodart26 from '../images/foodart/foodart26.png'   
 import sourdough from '../images/foodart/sourdough.png'
 
 /** Others */
@@ -171,6 +178,14 @@ const originalPhotosList = [
   {id: 'orig8', url: orig8, width: '600', height: ''},
   {id: 'orig9', url: orig9, width: '600', height: ''},
   {id: 'bryan', url: bryan, width: '600', height: ''},
+  {id: 'ill3', url: ill3, width: '600', height: ''},
+  {id: 'ill6', url: ill6, width: '600', height: ''},
+  {id: 'ill12', url: ill12, width: '600', height: ''},
+  {id: 'ill13', url: ill13, width: '600', height: ''},
+  {id: 'ill16', url: ill16, width: '600', height: ''},
+  {id: 'ill18', url: ill18, width: '600', height: ''},
+  {id: 'ill20', url: ill20, width: '600', height: ''},
+  {id: 'ill23', url: ill23, width: '600', height: ''},
   {id: 'millie', url: millie, width: '600', height: ''},
 ]
 
