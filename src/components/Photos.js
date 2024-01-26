@@ -1,6 +1,10 @@
 /** Fanart */
 import kburger from '../images/fanart/kburger.png';
 import kcake from '../images/fanart/kcake.png';
+import frierensticker from '../images/fanart/frierensticker.png';
+import getogojo from '../images/fanart/getogojo.png';
+import ghibli12 from '../images/fanart/ghibli12.png';
+import ghibli23 from '../images/fanart/ghibli23.png';
 import img4 from '../images/fanart/img4.png';
 import img5 from '../images/fanart/img5.png';
 import img6 from '../images/fanart/img6.png';
@@ -117,10 +121,16 @@ import knit4 from '../images/original/knit4.png'
 import knit5 from '../images/original/knit5.png'
 import sweater from '../images/original/sweater.png'
 import merch1 from '../images/original/merch1.png'
+import merch2 from ''
+import merch3 from ''
 
 const fanartPhotosList = [
   {id: 'kcake', url: kcake, width: '600', height: ''},
   {id: 'kburger', url: kburger, width: '600', height: ''},
+  {id: 'frierensticker', url: frierensticker, width: '600', height: '' },
+  {id: 'getogojo', url: getogojo, width: '600', height: ''},
+  {id: 'ghibli12', url: ghibli12, width: '600', height: ''},
+  {id: 'ghibli23', url: ghibli23, width: '600', height: ''},
   {id: 'img4', url: img4, width: '400', height: ''},
   {id: 'img5', url: img5, width: '400', height: ''},
   {id: 'img6', url: img6, width: '600', height: ''},
