@@ -121,8 +121,6 @@ import knit4 from '../images/original/knit4.png'
 import knit5 from '../images/original/knit5.png'
 import sweater from '../images/original/sweater.png'
 import merch1 from '../images/original/merch1.png'
-import merch2 from ''
-import merch3 from ''
 
 const fanartPhotosList = [
   {id: 'kcake', url: kcake, width: '600', height: ''},
