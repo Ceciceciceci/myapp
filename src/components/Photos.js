@@ -121,6 +121,14 @@ import knit4 from '../images/original/knit4.png'
 import knit5 from '../images/original/knit5.png'
 import sweater from '../images/original/sweater.png'
 import merch1 from '../images/original/merch1.png'
+import memopad1 from '../images/original/DSC09638.jpg'
+import memopad2 from '../images/original/DSC09650.jpg'
+import catsticker from '../images/original/DSC09663.jpg'
+import haikyuusticker from '../images/original/DSC09673.jpg'
+import newjeans from '../images/original/DSC09680.jpg'
+import woodpins from '../images/original/DSC09692.jpg'
+import totebag1 from '../images/original/totebag1.png'
+import totebag2 from '../images/original/totebag2.png'
 
 const fanartPhotosList = [
   {id: 'kcake', url: kcake, width: '600', height: ''},
@@ -129,6 +137,7 @@ const fanartPhotosList = [
   {id: 'getogojo', url: getogojo, width: '600', height: ''},
   {id: 'ghibli12', url: ghibli12, width: '600', height: ''},
   {id: 'ghibli23', url: ghibli23, width: '600', height: ''},
+  {id: 'newjeans', url: newjeans, width: '600', height: ''},
   {id: 'img4', url: img4, width: '400', height: ''},
   {id: 'img5', url: img5, width: '400', height: ''},
   {id: 'img6', url: img6, width: '600', height: ''},
@@ -231,6 +240,14 @@ const foodartPhotosList = [
 ]
 
 const otherPhotosList = [
+  {id: 'memopad1', url: memopad1, width: '600', height: ''},
+  {id: 'memopad2', url: memopad2, width: '600', height: ''},
+  {id: 'catsticker', url: catsticker, width: '600', height: ''},
+  {id: 'haikyuusticker', url: haikyuusticker, width: '600', height: ''},
+  {id: 'newjeans', url: newjeans, width: '600', height: ''},
+  {id: 'woodpins', url: woodpins, width: '600', height: ''},
+  {id: 'totebag1', url: totebag1, width: '600', height: ''},
+  {id: 'totebag2', url: totebag2, width: '600', height: ''},
   {id: 'coaster', url: coaster, width: '600', height: ''},
   {id: 'coaster2', url: coaster2, width: '600', height: ''},
   {id: 'merch1', url: merch1, width: '600', height: ''},
