@@ -1,140 +1,64 @@
-import React, { useState, useEffect } from 'react';
-
-import LoadingScreen from './components/LoadingScreen';
-import NewHome from './components/NewHome';
-import Header from './components/Header';
-import About from './components/Homepage/About';
-import Projects from './components/Homepage/Projects';
-import CaseStudy from './components/Homepage/CaseStudy';
-import Contact from './components/Homepage/Contact';
-import Resume from './components/Homepage/Resume';
-import Todo from './components/Todo';
-
-import Fanart from './components/Fanart';
-import Original from './components/Original';
-import FoodArt from './components/FoodArt';
-import Other from './components/Other';
-import Contact2 from './components/Contact2';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { LightTheme, DarkTheme } from './styles/theme'
+
+import Header from './components/Header';
+import NewHome from './components/NewHome';
+import UxApp from './ux/UxApp';
+import { LightTheme, DarkTheme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import ScrollTo from '../src/components/ScrollTo';
+import ScrollTo from './components/ScrollTo';
 
-export default function App () {
+function AppRoutes() {
+  const [theme, setTheme] = useState('light');
+  const [activeState, setActiveState] = useState(false);
+  const location = useLocation();
+  const isUxRoute = location.pathname.startsWith('/ux');
 
-  //toggle between themes
-  const [theme, setTheme] = useState('light')
   const toggleTheme = () => {
-      if(theme === 'light'){
-          setTheme('dark');
-      } else {
-          setTheme('light');
-      }
-  }
-
-  const navigation = [
-    {
-      id: 1,
-      key: 'about',
-      link: '/about'
-    },
-    {
-      id: 2,
-      key: 'project',
-      link: '/project'
-    },
-    {
-      id: 3,
-      key: 'contact',
-      link: '/contact'
-    },
-    {
-      id: 4,
-      key: 'resume',
-      link: '/resume'
-    }
-  ]
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   const artNavigation = [
-    {
-      id: 1,
-      key: 'fanart',
-      link: '/fanart'
-    },
-    {
-      id: 2,
-      key: 'original',
-      link: '/original'
-    },
-    {
-      id: 3,
-      key: 'foodart',
-      link: '/foodart'
-    },
-    {
-      id: 4,
-      key: 'craft & merch',
-      link: '/other'
-    },
-    {
-      id: 5,
-      key: 'contact',
-      link: '/contact'
-    }
-  ]
-
-  const [activeState, setActiveState] = useState(false)
+    { id: 1, key: 'fanart', link: '/fanart' },
+    { id: 2, key: 'original', link: '/original' },
+    { id: 3, key: 'foodart', link: '/foodart' },
+    { id: 4, key: 'craft & merch', link: '/other' },
+    { id: 5, key: 'contact', link: '/contact' },
+  ];
 
   return (
-     <Router>
-        <ScrollTo />
-        <ThemeProvider theme={(theme === 'light') ? LightTheme : DarkTheme}>
-          <>
-            <GlobalStyles />
-              <div className="App" theme={theme} setTheme={setTheme}>
-                <Header theme={theme} 
-                        setTheme={setTheme} 
-                        navigation={artNavigation} 
-                        toggleTheme={toggleTheme}
-                        activeState={activeState}
-                        setActiveState={setActiveState}
-                />
-                <Switch>
-                  <Route exact path='/' render={(props) => (
-                    <NewHome {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/about' render={(props) => (
-                    <About {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/project' render={(props) => (
-                    <Projects {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/contact' render={(props) => (
-                    <Contact {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/resume' render={(props) => (
-                    <Resume {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/fanart' render={(props) => (
-                    <Fanart {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/original' render={(props) => (
-                    <Original {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/foodart' render={(props) => (
-                    <FoodArt {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/other' render={(props) => (
-                    <Other {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                  <Route exact path='/contact2' render={(props) => (
-                    <Contact2 {...props} theme={theme} setTheme={setTheme} isAuthed={true} />
-                  )} />
-                </Switch>
-              </div>
-          </>
-        </ThemeProvider>
-      </Router>
+    <ThemeProvider theme={theme === 'light' ? LightTheme : DarkTheme}>
+      <GlobalStyles />
+      <div className={isUxRoute ? 'App app--ux' : 'App'} theme={theme} setTheme={setTheme}>
+        {!isUxRoute && (
+          <Header
+            theme={theme}
+            setTheme={setTheme}
+            navigation={artNavigation}
+            toggleTheme={toggleTheme}
+            activeState={activeState}
+            setActiveState={setActiveState}
+          />
+        )}
+        <Switch>
+          <Route path="/ux" component={UxApp} />
+          <Route
+            exact
+            path="/"
+            render={(props) => <NewHome {...props} isAuthed={true} />}
+          />
+        </Switch>
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default function App() {
+  return (
+    <Router>
+      <ScrollTo />
+      <AppRoutes />
+    </Router>
   );
 }

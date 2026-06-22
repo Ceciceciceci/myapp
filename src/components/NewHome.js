@@ -11,8 +11,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 function NewHome (props) {
     return (
         <div className="main-container">
-            {/* <Hero /> */}
-            <ArtHomepage />
+            <Hero />
+            {/* <ArtHomepage /> */}
         </div>
     )
 }
