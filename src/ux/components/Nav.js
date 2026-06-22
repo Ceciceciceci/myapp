@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
+import { displayFont } from '../styles';
 import { MenuIcon, CloseIcon } from '../icons';
+import logo from '../../images/ceci-shaker-charm.png';
 
 const links = [
-  { label: 'Home', to: '/ux' },
-  { label: 'Projects', to: '/ux/projects' },
-  { label: 'Art', to: '/ux/art' },
+  { label: 'Work', to: '/ux/projects' },
   { label: 'About', to: '/ux/about' },
+  { label: 'Art', to: '/ux/art' },
 ];
 
 const NavBar = styled.nav`
@@ -17,51 +18,97 @@ const NavBar = styled.nav`
   right: 0;
   z-index: 50;
   background: ${({ theme }) => theme.colors.navBg};
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.navBorder};
 `;
 
 const NavInner = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-  padding: 0 2rem;
-  height: ${({ theme }) => theme.navHeight};
+  padding: 16px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1.5rem;
 `;
 
-const Logo = styled(Link)`
-  font-family: ${({ theme }) => theme.fonts.display};
-  color: ${({ theme }) => theme.colors.foreground};
+const Brand = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
-  letter-spacing: -0.03em;
-  font-size: 1rem;
+  flex: 1;
+  min-width: 0;
+`;
+
+const BrandIcon = styled.div`
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+`;
+
+const BrandText = styled.p`
+  margin: 0;
+  font-size: 16px;
+  line-height: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const BrandName = styled.span`
+  ${displayFont}
+  display: inline-block;
+  color: ${({ theme }) => theme.colors.navName};
+  font-weight: 400;
+`;
+
+const BrandTitle = styled.span`
+  font-family: ${({ theme }) => theme.fonts.displayLight};
+  color: ${({ theme }) => theme.colors.navSubtitle};
+  font-weight: 300;
+
+  @media (max-width: 899px) {
+    display: none;
+  }
 `;
 
 const DesktopLinks = styled.div`
   display: none;
-  gap: 2.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+  flex: 1;
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     display: flex;
   }
 `;
 
 const NavLink = styled(Link)`
-  color: ${({ $active, theme }) =>
-    $active ? theme.colors.foreground : theme.colors.mutedForeground};
-  text-decoration: none;
-  font-size: 0.8125rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding-bottom: 2px;
-  border-bottom: 1px solid
-    ${({ $active, theme }) => ($active ? theme.colors.accent : 'transparent')};
-  transition: color 0.2s, border-color 0.2s;
+  && {
+    font-family: ${({ theme }) => theme.fonts.displayLight};
+    font-size: 16px;
+    font-weight: ${({ $active }) => ($active ? 500 : 300)};
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: ${({ $active, theme }) =>
+      $active ? theme.colors.navLinkActive : theme.colors.navLink};
+    transition: color 0.2s, font-weight 0.2s;
+  }
 
-  &:hover {
-    color: ${({ theme }) => theme.colors.foreground};
+  &&:hover {
+    color: ${({ theme }) => theme.colors.navLinkHover};
   }
 `;
 
@@ -69,11 +116,12 @@ const MenuButton = styled.button`
   display: flex;
   background: none;
   border: none;
-  color: ${({ theme }) => theme.colors.foreground};
+  color: ${({ theme }) => theme.colors.navLink};
   cursor: pointer;
   padding: 0.25rem;
+  flex-shrink: 0;
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     display: none;
   }
 `;
@@ -85,32 +133,44 @@ const MobileDrawer = styled.div`
   top: ${({ theme }) => theme.navHeight};
   left: 0;
   right: 0;
-  background: ${({ theme }) => theme.colors.background};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.navBg};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.navBorder};
   z-index: 40;
-  padding: 1.5rem 2rem;
-  gap: 1.5rem;
+  padding: 1.5rem 20px;
+  gap: 1.25rem;
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     display: none;
   }
 `;
 
 const MobileLink = styled(Link)`
-  color: ${({ $active, theme }) =>
-    $active ? theme.colors.foreground : theme.colors.mutedForeground};
-  text-decoration: none;
-  font-size: 0.875rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-left: 2px solid
-    ${({ $active, theme }) => ($active ? theme.colors.accent : 'transparent')};
-  padding-left: 1rem;
+  && {
+    font-family: ${({ theme }) => theme.fonts.displayLight};
+    font-size: 16px;
+    font-weight: ${({ $active }) => ($active ? 500 : 300)};
+    text-transform: uppercase;
+    text-decoration: none;
+    color: ${({ $active, theme }) =>
+      $active ? theme.colors.navLinkActive : theme.colors.navLink};
+    padding-left: ${({ $active }) => ($active ? '0.75rem' : '0')};
+    border-left: 2px solid
+      ${({ $active, theme }) => ($active ? theme.colors.navLinkActive : 'transparent')};
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  &&:hover {
+    color: ${({ theme }) => theme.colors.navLinkHover};
+    border-left-color: ${({ $active, theme }) =>
+      $active ? theme.colors.navLinkActive : theme.colors.navLinkHover};
+  }
 `;
 
 const isActive = (pathname, to) => {
-  if (to === '/ux') return pathname === '/ux' || pathname === '/ux/';
-  return pathname.startsWith(to);
+  if (to === '/ux/projects') {
+    return pathname.startsWith('/ux/projects');
+  }
+  return pathname === to || pathname.startsWith(`${to}/`);
 };
 
 export default function UxNav() {
@@ -121,9 +181,15 @@ export default function UxNav() {
     <>
       <NavBar>
         <NavInner>
-          <Logo to="/ux" onClick={() => setOpen(false)}>
-            cecilia tran
-          </Logo>
+          <Brand to="/ux" onClick={() => setOpen(false)}>
+            <BrandIcon>
+              <img src={logo} alt="" />
+            </BrandIcon>
+            <BrandText>
+              <BrandName>CECILIA TRAN</BrandName>
+              <BrandTitle>{'  UX Engineer && Product Designer'}</BrandTitle>
+            </BrandText>
+          </Brand>
 
           <DesktopLinks>
             {links.map((link) => (
@@ -131,6 +197,7 @@ export default function UxNav() {
                 key={link.to}
                 to={link.to}
                 $active={isActive(pathname, link.to)}
+                aria-current={isActive(pathname, link.to) ? 'page' : undefined}
               >
                 {link.label}
               </NavLink>

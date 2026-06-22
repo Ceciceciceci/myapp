@@ -1,119 +1,74 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container, PageMain } from '../styles';
-import { ArrowRight, MapPin } from '../icons';
+import { Container, PageMain, displayFont, pillFont } from '../styles';
+import { tagColor } from '../theme';
+import { ArrowRight } from '../icons';
+import ceciliaAvatar from '../../images/cecilia-avatar.png';
 import { projects } from '../data/projects';
-import { artworks } from '../data/artworks';
 
-const gridItems = [
-  {
-    type: 'project',
-    title: projects[0].title,
-    tag: projects[0].tags[0],
-    img: projects[0].img,
-    to: `/ux/projects/${projects[0].id}`,
-  },
-  {
-    type: 'project',
-    title: projects[1].title,
-    tag: projects[1].tags[0],
-    img: projects[1].img,
-    to: `/ux/projects/${projects[1].id}`,
-  },
-  {
-    type: 'art',
-    title: artworks[0].title,
-    tag: artworks[0].medium,
-    img: artworks[0].img,
-    to: '/ux/art',
-  },
-  {
-    type: 'project',
-    title: projects[2].title,
-    tag: projects[2].tags[0],
-    img: projects[2].img,
-    to: `/ux/projects/${projects[2].id}`,
-  },
-  {
-    type: 'project',
-    title: projects[3].title,
-    tag: projects[3].tags[0],
-    img: projects[3].img,
-    to: `/ux/projects/${projects[3].id}`,
-  },
-  {
-    type: 'art',
-    title: artworks[6].title,
-    tag: 'Fan art',
-    img: artworks[6].img,
-    to: '/ux/art',
-  },
-  {
-    type: 'art',
-    title: artworks[1].title,
-    tag: artworks[1].medium,
-    img: artworks[1].img,
-    to: '/ux/art',
-  },
-  {
-    type: 'art',
-    title: artworks[3].title,
-    tag: artworks[3].medium,
-    img: artworks[3].img,
-    to: '/ux/art',
-  },
-  {
-    type: 'art',
-    title: artworks[10].title,
-    tag: 'Fan art',
-    img: artworks[10].img,
-    to: '/ux/art',
-  },
-];
+const workGridItems = projects.slice(0, 4).map((project) => ({
+  type: 'project',
+  title: project.title,
+  tag: project.tags[0],
+  img: project.img,
+  to: `/ux/projects/${project.id}`,
+}));
 
 const shortcuts = [
-  { label: 'Case Studies', to: '/ux/projects', desc: `${projects.length} projects` },
-  { label: 'Art & Drawing', to: '/ux/art', desc: 'Illustrations' },
-  { label: 'About Me', to: '/ux/about', desc: 'Background' },
+  { label: 'Case Studies', to: '/ux/projects' },
+  { label: 'Art & Drawing', to: '/ux/art' },
+  { label: 'About Me', to: '/ux/about' },
 ];
 
 const HeroGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
-  min-height: calc(100vh - 56px);
-  gap: 4rem;
+  grid-template-columns: 1fr minmax(280px, 520px);
+  gap: 3rem;
   align-items: center;
+
+  @media (min-width: 901px) {
+    min-height: calc(100dvh - 64px);
+  }
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
-    min-height: unset;
   }
 `;
 
 const LeftCol = styled.div`
   padding: 4rem 0;
+
+  @media (max-width: 900px) {
+    padding: 3rem 0 1.5rem;
+  }
+`;
+
+const HeroTitleRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+`;
+
+const HeroAvatar = styled.img`
+  width: clamp(6.6rem, 18.5vw, 9.9rem);
+  height: auto;
+  flex-shrink: 0;
+  display: block;
 `;
 
 const HeroTitle = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   color: ${({ theme }) => theme.colors.foreground};
-  letter-spacing: -0.04em;
   font-size: clamp(2.75rem, 6vw, 5.5rem);
   line-height: 0.95;
-  margin-bottom: 1.75rem;
-  font-weight: 600;
+  margin: 0;
+  font-weight: 400;
 
   span {
     color: ${({ theme }) => theme.colors.accent};
   }
-`;
-
-const RoleLine = styled.p`
-  font-size: 0.9375rem;
-  color: ${({ theme }) => theme.colors.mutedForeground};
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.02em;
 `;
 
 const AccentRule = styled.div`
@@ -128,15 +83,6 @@ const Bio = styled.p`
   color: ${({ theme }) => theme.colors.mutedForeground};
   line-height: 1.75;
   max-width: 440px;
-  margin-bottom: 2rem;
-`;
-
-const Location = styled.div`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  color: ${({ theme }) => theme.colors.mutedForeground};
-  font-size: 0.8125rem;
   margin-bottom: 3rem;
 `;
 
@@ -149,47 +95,51 @@ const ShortcutGrid = styled.div`
 
 const ShortcutLink = styled(Link)`
   text-decoration: none;
-  background: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.hoverYellow : theme.colors.card};
-  border: 1.5px solid
-    ${({ $hovered, theme }) =>
-      $hovered ? theme.colors.hoverYellowBorder : theme.colors.border};
+  background: ${({ theme }) => theme.colors.buttonBg};
+  color: ${({ theme }) => theme.colors.buttonText};
+  border: none;
   padding: 0.875rem 1rem;
+  min-height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
-  border-radius: 1rem;
-  box-shadow: ${({ $hovered }) =>
-    $hovered
-      ? '0 4px 14px rgba(196,122,30,0.15)'
-      : '0 1px 4px rgba(92,51,23,0.07)'};
+  transition: background 0.25s;
+  border-radius: 15px;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.buttonBgHover};
+  }
 `;
 
 const GridPanel = styled.div`
   padding: 4rem 0;
-  display: flex;
-  align-items: center;
+  width: 100%;
 
   @media (max-width: 900px) {
-    padding-top: 0;
+    padding: 0 1rem 2rem;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    width: calc(100% + 4rem);
   }
 `;
 
-const ThumbGrid = styled.div`
+const WorkGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 130px);
-  gap: 0.375rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.875rem;
+  width: 100%;
 
   @media (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 `;
 
 const GridCard = styled(Link)`
   text-decoration: none;
   display: block;
+  width: 100%;
+  min-width: 0;
 `;
 
 const GridCardInner = styled.div`
@@ -198,8 +148,21 @@ const GridCardInner = styled.div`
   overflow: hidden;
   background: ${({ theme }) => theme.colors.card};
   border: 1.5px solid ${({ theme }) => theme.colors.border};
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(92, 51, 23, 0.09);
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(92, 51, 23, 0.1);
+  display: ${({ $isCta }) => ($isCta ? 'flex' : 'block')};
+  flex-direction: ${({ $isCta }) => ($isCta ? 'column' : 'unset')};
+  align-items: ${({ $isCta }) => ($isCta ? 'center' : 'unset')};
+  justify-content: ${({ $isCta }) => ($isCta ? 'center' : 'unset')};
+  gap: ${({ $isCta }) => ($isCta ? '0.75rem' : '0')};
+  padding: ${({ $isCta }) => ($isCta ? '1.5rem' : '0')};
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  ${GridCard}:hover & {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(92, 51, 23, 0.12);
+    border-color: ${({ theme }) => theme.colors.hoverYellowBorder};
+  }
 `;
 
 const GridImage = styled.img`
@@ -213,100 +176,102 @@ const GridImage = styled.img`
 const GridOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.overlay : theme.colors.overlayLight};
-  transition: background 0.3s ease;
+  background: linear-gradient(
+    to top,
+    rgba(44, 26, 15, 0.82) 0%,
+    rgba(44, 26, 15, 0.2) 45%,
+    rgba(44, 26, 15, 0.05) 100%
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0.625rem;
+  padding: 1rem;
 `;
 
 const GridTag = styled.div`
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
+  ${pillFont}
+  display: inline-block;
+  font-size: 0.825rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.accent};
-  margin-bottom: 0.125rem;
+  color: ${({ $color }) => $color};
+  background: ${({ $bg }) => $bg};
+  border: none;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.375rem;
 `;
 
 const GridTitle = styled.div`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
+  color: ${({ theme }) => theme.colors.buttonTextMuted};
+  font-size: clamp(0.875rem, 1.6vw, 1.0625rem);
+  line-height: 1.2;
+`;
+
+const CtaTitle = styled.div`
+  ${displayFont}
   color: ${({ theme }) => theme.colors.foreground};
-  font-size: 0.75rem;
-  letter-spacing: -0.01em;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  text-align: center;
+  line-height: 1.2;
 `;
 
-const GridDot = styled.div`
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: ${({ $isArt, theme }) =>
-    $isArt ? theme.colors.accent : theme.colors.foreground};
-  opacity: 0.6;
+const CtaArrow = styled.div`
+  color: ${({ theme }) => theme.colors.accent};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
-function GridItem({ item }) {
+const ShortcutLabel = styled.div`
+  ${displayFont}
+  font-size: 0.875rem;
+`;
+
+function WorkGridItem({ item, index }) {
   const [hovered, setHovered] = useState(false);
+  const tc = tagColor(index);
+  const isCta = item.type === 'cta';
+
   return (
     <GridCard
       to={item.to}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <GridCardInner>
-        <GridImage src={item.img} alt={item.title} $hovered={hovered} />
-        <GridOverlay $hovered={hovered}>
-          {hovered ? (
-            <div>
-              <GridTag>{item.tag}</GridTag>
+      <GridCardInner $isCta={isCta}>
+        {isCta ? (
+          <>
+            <GridTag $bg={tc.bg} $color={tc.color}>
+              {item.tag}
+            </GridTag>
+            <CtaTitle>{item.title}</CtaTitle>
+            <CtaArrow>
+              <ArrowRight size={18} />
+            </CtaArrow>
+          </>
+        ) : (
+          <>
+            <GridImage src={item.img} alt={item.title} $hovered={hovered} />
+            <GridOverlay>
+              <GridTag $bg={tc.bg} $color={tc.color}>
+                {item.tag}
+              </GridTag>
               <GridTitle>{item.title}</GridTitle>
-            </div>
-          ) : (
-            <GridDot $isArt={item.type === 'art'} />
-          )}
-        </GridOverlay>
+            </GridOverlay>
+          </>
+        )}
       </GridCardInner>
     </GridCard>
   );
 }
 
-function ShortcutCard({ label, to, desc }) {
-  const [hovered, setHovered] = useState(false);
+function ShortcutCard({ label, to }) {
   return (
-    <ShortcutLink
-      to={to}
-      $hovered={hovered}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div>
-        <div
-          style={{
-            fontFamily: 'var(--font-display, Bricolage Grotesque, sans-serif)',
-            fontSize: '0.875rem',
-            letterSpacing: '-0.01em',
-          }}
-        >
-          {label}
-        </div>
-        <div
-          style={{
-            fontSize: '0.6875rem',
-            color: '#7A5230',
-            marginTop: '0.125rem',
-          }}
-        >
-          {desc}
-        </div>
-      </div>
-      <ArrowRight
-        size={13}
-        style={{
-          color: hovered ? '#C47A1E' : '#7A5230',
-          transition: 'color 0.2s',
-        }}
-      />
+    <ShortcutLink to={to}>
+      <ShortcutLabel>{label}</ShortcutLabel>
+      <ArrowRight size={13} style={{ opacity: 0.9 }} />
     </ShortcutLink>
   );
 }
@@ -317,25 +282,21 @@ export default function UxHome() {
       <Container>
         <HeroGrid>
           <LeftCol>
-            <HeroTitle>
-              Cecilia
-              <br />
-              <span>Tran</span>
-            </HeroTitle>
+            <HeroTitleRow>
+              <HeroAvatar src={ceciliaAvatar} alt="" />
+              <HeroTitle>
+                Cecilia
+                <br />
+                <span>Tran</span>
+              </HeroTitle>
+            </HeroTitleRow>
 
-            <RoleLine>Software Engineer & UX/UI Designer</RoleLine>
             <AccentRule />
 
             <Bio>
-              I design creative solutions where tech intersects art — focused on
-              front-end engineering, user experience, and illustration. Currently
-              exploring React and Three.js.
+              I love creating solutions that help bring joy and ease to everyday
+              and fun experiences and hobbies.
             </Bio>
-
-            <Location>
-              <MapPin />
-              Glendale, CA / Remote
-            </Location>
 
             <ShortcutGrid>
               {shortcuts.map((s) => (
@@ -345,11 +306,11 @@ export default function UxHome() {
           </LeftCol>
 
           <GridPanel>
-            <ThumbGrid>
-              {gridItems.map((item, i) => (
-                <GridItem key={i} item={item} />
+            <WorkGrid>
+              {workGridItems.map((item, i) => (
+                <WorkGridItem key={item.to} item={item} index={i} />
               ))}
-            </ThumbGrid>
+            </WorkGrid>
           </GridPanel>
         </HeroGrid>
       </Container>

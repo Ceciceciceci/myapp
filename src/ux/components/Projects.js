@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container, PageMain, DisplayHeading } from '../styles';
+import { Container, PageMain, DisplayHeading, displayFont, pillFont } from '../styles';
 import { tagColor } from '../theme';
 import { ArrowUpRight } from '../icons';
 import { projects } from '../data/projects';
@@ -38,14 +38,20 @@ const ProjectLink = styled(Link)`
 `;
 
 const ProjectRow = styled.div`
-  border-top: 1px solid
-    ${({ $hovered, theme }) =>
-      $hovered ? 'rgba(196,137,90,0.4)' : theme.colors.border};
-  padding: 2.5rem 0;
+  background: ${({ theme }) => theme.colors.card};
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: 80px 1fr;
   gap: 2rem;
-  transition: border-color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  box-shadow: ${({ $hovered }) =>
+    $hovered ? '0 6px 18px rgba(44, 26, 15, 0.08)' : 'none'};
+  transform: ${({ $hovered }) => ($hovered ? 'translateY(-2px)' : 'none')};
+  border-color: ${({ $hovered, theme }) =>
+    $hovered ? theme.colors.hoverYellowBorder : theme.colors.border};
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
@@ -59,6 +65,7 @@ const ProjectYear = styled.div`
   letter-spacing: 0.08em;
   color: ${({ theme }) => theme.colors.mutedForeground};
   font-family: ${({ theme }) => theme.fonts.mono};
+  font-weight: 600;
 
   @media (max-width: 900px) {
     padding-top: 0;
@@ -78,9 +85,8 @@ const CardInner = styled.div`
 `;
 
 const ProjectTitle = styled.h2`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   color: ${({ theme }) => theme.colors.foreground};
-  letter-spacing: -0.03em;
   font-size: 1.75rem;
   margin: 0;
 `;
@@ -114,28 +120,30 @@ const TagList = styled.div`
 `;
 
 const Tag = styled.span`
-  font-size: 0.6875rem;
+  ${pillFont}
+  font-size: 0.825rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: ${({ $color }) => $color};
   background: ${({ $bg }) => $bg};
-  border: 1.5px solid ${({ $border }) => $border};
+  border: none;
   padding: 0.3rem 0.75rem;
   border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(92, 51, 23, 0.08);
 `;
 
 const Outcome = styled.div`
   font-size: 0.75rem;
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.mutedForeground};
   letter-spacing: 0.04em;
+  font-weight: 500;
 `;
 
 const Thumb = styled.div`
   width: 200px;
   flex-shrink: 0;
   overflow: hidden;
-  border: 1px solid ${({ theme }) => theme.colors.border};
+  border: none;
+  border-radius: 8px;
 
   @media (max-width: 900px) {
     width: 100%;
@@ -152,7 +160,7 @@ const ThumbImg = styled.img`
 `;
 
 const ListEnd = styled.div`
-  padding-bottom: 6rem;
+  padding: 2rem 0 6rem;
 `;
 
 const Eyebrow = styled.p`
@@ -182,7 +190,7 @@ function ProjectCard({ project }) {
                 <ArrowUpRight
                   size={16}
                   style={{
-                    color: '#C47A1E',
+                    color: 'inherit',
                     opacity: hovered ? 1 : 0,
                     transition: 'opacity 0.2s',
                   }}
@@ -194,7 +202,7 @@ function ProjectCard({ project }) {
                 {project.tags.map((tag, i) => {
                   const tc = tagColor(i);
                   return (
-                    <Tag key={tag} $color={tc.color} $bg={tc.bg} $border={tc.border}>
+                    <Tag key={tag} $color={tc.color} $bg={tc.bg}>
                       {tag}
                     </Tag>
                   );
@@ -226,8 +234,8 @@ export default function UxProjects() {
             </DisplayHeading>
           </div>
           <HeaderDesc>
-            Four case studies spanning UX research, web development, community
-            projects, and internal tools — from wireframes to shipped code.
+            Four case studies spanning desktop product design, Shopify e-commerce,
+            travel web development, and conservation-focused UX research.
           </HeaderDesc>
         </Header>
 

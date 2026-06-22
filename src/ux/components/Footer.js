@@ -1,59 +1,118 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import footerMascot from '../../images/footer-mascot.png';
 
 const socials = [
-  { label: 'Twitter', href: 'https://twitter.com/ichi_nese/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/ichiknees/' },
-  { label: 'Behance', href: 'https://www.behance.net/cecitran94fab0' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ceciliaaa-tran/' },
+  { label: 'Github', href: 'https://github.com/Ceciceciceci' },
   { label: 'Email', href: 'mailto:cecitran94@gmail.com' },
+  { label: 'Instagram', href: 'https://www.instagram.com/ichiknees/' },
 ];
 
 const FooterEl = styled.footer`
-  border-top: 1px solid ${({ theme }) => theme.colors.border};
+  position: relative;
+  height: auto;
+  width: 100%;
+  border-top: 1px solid ${({ theme }) => theme.colors.navBorder};
   background: ${({ theme }) => theme.colors.background};
+  padding-bottom: env(safe-area-inset-bottom, 0);
 `;
 
 const FooterInner = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-  padding: 1.75rem 2rem;
+  padding: 1rem 1.25rem 0.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  flex-wrap: wrap;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0));
+  }
 `;
 
-const Copyright = styled.span`
-  font-size: 0.75rem;
-  color: ${({ theme }) => theme.colors.mutedForeground};
-  letter-spacing: 0.04em;
+const Copyright = styled.p`
+  flex: 1;
+  margin: 0;
+  font-family: ${({ theme }) => theme.fonts.displayLight};
+  font-weight: 400;
+  font-size: 1rem;
+  color: ${({ theme }) => theme.colors.navSubtitle};
+  line-height: normal;
+  white-space: nowrap;
+
+  @media (max-width: 900px) {
+    flex: unset;
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+    font-size: 1rem;
+  }
+`;
+
+const MascotWrap = styled.div`
+  flex-shrink: 0;
+  width: 124px;
+  height: 49px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
 `;
 
 const SocialList = styled.div`
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 2.5rem;
+
+  @media (max-width: 900px) {
+    flex: unset;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    width: 100%;
+  }
 `;
 
 const SocialLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.socialHoverColor : theme.colors.mutedForeground};
-  background: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.socialHoverBg : 'transparent'};
-  border: 1.5px solid
-    ${({ $hovered, theme }) =>
-      $hovered ? theme.colors.socialHoverBorder : 'transparent'};
-  text-decoration: none;
-  font-size: 0.8125rem;
+  font-family: ${({ theme }) => theme.fonts.displayLight};
+  font-weight: 400;
+  font-size: 1rem;
   letter-spacing: 0.02em;
-  transition: color 0.2s, background 0.2s, border-color 0.2s;
-  padding: 0.35rem 0.875rem;
-  border-radius: 999px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: ${({ $hovered, theme }) =>
+    $hovered ? theme.colors.navLinkHover : theme.colors.navSubtitle};
+  transition: color 0.2s;
+  white-space: nowrap;
+`;
+
+const DesktopOnly = styled.div`
+  flex: 1;
+  min-width: 0;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const MobileOnly = styled.div`
+  display: none;
+  width: 100%;
+
+  @media (max-width: 900px) {
+    display: block;
+  }
 `;
 
 function SocialItem({ label, href }) {
@@ -74,15 +133,32 @@ function SocialItem({ label, href }) {
 }
 
 export default function UxFooter() {
+  const year = new Date().getFullYear();
+
   return (
     <FooterEl>
       <FooterInner>
-        <Copyright>© {new Date().getFullYear()} Cecilia Tran</Copyright>
+        <DesktopOnly>
+          <Copyright>
+            © Cecilia Tran, {year}
+          </Copyright>
+        </DesktopOnly>
+
+        <MascotWrap>
+          <img src={footerMascot} alt="" aria-hidden="true" />
+        </MascotWrap>
+
         <SocialList>
           {socials.map((s) => (
             <SocialItem key={s.label} {...s} />
           ))}
         </SocialList>
+
+        <MobileOnly>
+          <Copyright>
+            © Cecilia Tran, {year}
+          </Copyright>
+        </MobileOnly>
       </FooterInner>
     </FooterEl>
   );

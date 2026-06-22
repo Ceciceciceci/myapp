@@ -38,6 +38,19 @@ export const GlobalStyles = createGlobalStyle`
     position: relative;
   }
 
+  .App.app--ux {
+    overflow: visible;
+    margin: 0;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
   html{
     scroll-behavior: smooth;
   }

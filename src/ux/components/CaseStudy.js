@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container, PageMain, SectionLabel } from '../styles';
-import { tagColor } from '../theme';
+import { Container, PageMain, SectionLabel, displayFont, pillFont } from '../styles';
+import { tagColor, displayFontStyle } from '../theme';
 import { ArrowLeft, ArrowRight } from '../icons';
 import { projects } from '../data/projects';
 
@@ -58,7 +58,8 @@ const MetaBlock = styled.div`
 `;
 
 const MetaLabel = styled.div`
-  font-size: 0.625rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.mutedForeground};
@@ -68,8 +69,7 @@ const MetaLabel = styled.div`
 const MetaValue = styled.div`
   font-size: 0.875rem;
   color: ${({ theme }) => theme.colors.foreground};
-  font-family: ${({ theme }) => theme.fonts.display};
-  letter-spacing: -0.01em;
+  ${displayFont}
 `;
 
 const YearRow = styled.div`
@@ -81,7 +81,8 @@ const YearRow = styled.div`
 `;
 
 const Year = styled.span`
-  font-size: 0.6875rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.accent};
@@ -95,20 +96,20 @@ const Divider = styled.span`
 `;
 
 const Tag = styled.span`
-  font-size: 0.625rem;
+  ${pillFont}
+  font-size: 0.825rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: ${({ $color }) => $color};
   background: ${({ $bg }) => $bg};
-  border: 1.5px solid ${({ $border }) => $border};
+  border: none;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
 `;
 
 const Title = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: clamp(2.5rem, 6vw, 5rem);
-  letter-spacing: -0.04em;
   line-height: 1;
   color: ${({ theme }) => theme.colors.foreground};
   margin-bottom: 0.75rem;
@@ -128,6 +129,7 @@ const HeroImage = styled.img`
   display: block;
   aspect-ratio: 16 / 7;
   object-fit: cover;
+  object-position: top center;
   border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
@@ -145,11 +147,10 @@ const BodyGrid = styled.div`
 `;
 
 const ProblemText = styled.p`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: clamp(1.1rem, 2vw, 1.375rem);
   color: ${({ theme }) => theme.colors.foreground};
   line-height: 1.6;
-  letter-spacing: -0.02em;
 `;
 
 const ApproachList = styled.ul`
@@ -199,7 +200,7 @@ const StepHeader = styled.div`
 `;
 
 const StepLabel = styled.span`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: 0.8125rem;
   color: ${({ theme }) => theme.colors.foreground};
 `;
@@ -212,7 +213,8 @@ const StepLine = styled.div`
 
 const StepIndex = styled.span`
   font-family: ${({ theme }) => theme.fonts.mono};
-  font-size: 0.625rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   color: ${({ theme }) => theme.colors.accentBlue};
 `;
@@ -225,6 +227,154 @@ const StepImg = styled.img`
   border: 1px solid ${({ theme }) => theme.colors.border};
   margin-bottom: 0.875rem;
 `;
+
+const MobileCarousel = styled.div`
+  margin-bottom: 0.875rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  background: ${({ theme }) => theme.colors.card || theme.colors.background};
+`;
+
+const MobileCarouselLabel = styled.p`
+  margin: 0;
+  padding: 0.625rem 1rem;
+  font-family: ${({ theme }) => theme.fonts.mono};
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+`;
+
+const MobileCarouselStage = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  min-height: 420px;
+
+  @media (max-width: 600px) {
+    padding: 1rem 2.75rem;
+    min-height: 360px;
+  }
+`;
+
+const MobileCarouselImg = styled.img`
+  display: block;
+  max-height: 400px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+
+  @media (max-width: 600px) {
+    max-height: 340px;
+  }
+`;
+
+const CarouselBtn = styled.button`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  ${({ $side }) => ($side === 'left' ? 'left: 0.75rem' : 'right: 0.75rem')};
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 50%;
+  background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.foreground};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: ${({ theme }) => theme.colors.accentBlue};
+    color: ${({ theme }) => theme.colors.accentBlue};
+  }
+`;
+
+const CarouselDots = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1rem 1rem;
+`;
+
+const CarouselDot = styled.button`
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: ${({ $active, theme }) =>
+    $active ? theme.colors.accentBlue : theme.colors.border};
+  transition: background 0.2s;
+`;
+
+function MobileViewsCarousel({ views }) {
+  const [index, setIndex] = useState(0);
+  const count = views.length;
+
+  const goTo = useCallback(
+    (next) => setIndex((next + count) % count),
+    [count],
+  );
+
+  useEffect(() => {
+    if (count <= 1) return undefined;
+    const timer = setInterval(() => goTo(index + 1), 4000);
+    return () => clearInterval(timer);
+  }, [index, count, goTo]);
+
+  if (!views?.length) return null;
+
+  const current = views[index];
+
+  return (
+    <MobileCarousel>
+      <MobileCarouselLabel>Mobile views</MobileCarouselLabel>
+      <MobileCarouselStage>
+        {count > 1 && (
+          <>
+            <CarouselBtn
+              type="button"
+              $side="left"
+              aria-label="Previous screen"
+              onClick={() => goTo(index - 1)}
+            >
+              <ArrowLeft size={14} />
+            </CarouselBtn>
+            <CarouselBtn
+              type="button"
+              $side="right"
+              aria-label="Next screen"
+              onClick={() => goTo(index + 1)}
+            >
+              <ArrowRight size={14} />
+            </CarouselBtn>
+          </>
+        )}
+        <MobileCarouselImg src={current.src} alt={current.alt} />
+      </MobileCarouselStage>
+      {count > 1 && (
+        <CarouselDots>
+          {views.map((view, i) => (
+            <CarouselDot
+              key={view.alt}
+              type="button"
+              $active={i === index}
+              aria-label={`Show ${view.alt}`}
+              onClick={() => setIndex(i)}
+            />
+          ))}
+        </CarouselDots>
+      )}
+    </MobileCarousel>
+  );
+}
 
 const MetricsSection = styled.div`
   border-top: 1px solid ${({ theme }) => theme.colors.border};
@@ -254,10 +404,9 @@ const MetricCell = styled.div`
 `;
 
 const MetricValue = styled.div`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   color: ${({ theme }) => theme.colors.foreground};
-  letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 0.5rem;
 `;
@@ -297,24 +446,20 @@ const NavGrid = styled.div`
 `;
 
 const NavBtn = styled.button`
-  background: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.hoverYellow : theme.colors.card};
-  border: 1.5px solid
-    ${({ $hovered, theme }) =>
-      $hovered ? theme.colors.hoverYellowBorder : theme.colors.border};
-  padding: 1.5rem;
+  background: ${({ theme }) => theme.colors.tagYellow};
+  border: none;
+  padding: 2rem 1.5rem;
   text-align: ${({ $align }) => $align};
   cursor: pointer;
-  transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+  transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
   align-items: ${({ $align }) => ($align === 'right' ? 'flex-end' : 'flex-start')};
-  border-radius: 1.25rem;
+  border-radius: 12px;
   box-shadow: ${({ $hovered }) =>
-    $hovered
-      ? '0 4px 14px rgba(196,122,30,0.13)'
-      : '0 1px 4px rgba(92,51,23,0.07)'};
+    $hovered ? '0 6px 18px rgba(44, 26, 15, 0.08)' : 'none'};
+  transform: ${({ $hovered }) => ($hovered ? 'translateY(-2px)' : 'none')};
 `;
 
 const ExternalLinks = styled.div`
@@ -350,15 +495,66 @@ const ExtendedGrid = styled.div`
   }
 `;
 
+const PagePreview = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
+const PagePreviewImg = styled.img`
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 0.75rem;
+`;
+
+const PagePreviewTitle = styled.h4`
+  ${displayFont}
+  font-size: 0.9375rem;
+  color: ${({ theme }) => theme.colors.foreground};
+  margin: 0;
+`;
+
+const ResearchCard = styled.div`
+  padding: 1.25rem 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+
+  &:last-child {
+    border-bottom: none;
+  }
+`;
+
+const ResearchTitle = styled.h4`
+  ${displayFont}
+  font-size: 0.9375rem;
+  color: ${({ theme }) => theme.colors.foreground};
+  margin: 0 0 0.75rem;
+`;
+
+const ResearchList = styled.ul`
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const ResearchListItem = styled.li`
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  font-size: 0.875rem;
+  line-height: 1.65;
+`;
+
 const ExtendedBlock = styled.div`
   margin-bottom: 2.5rem;
 `;
 
 const BlockTitle = styled.h3`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: 1rem;
   color: ${({ theme }) => theme.colors.foreground};
-  letter-spacing: -0.02em;
   margin-bottom: 1rem;
 `;
 
@@ -400,10 +596,9 @@ const FindingCard = styled.div`
 `;
 
 const FindingStat = styled.div`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.accent};
-  letter-spacing: -0.03em;
   margin-bottom: 0.5rem;
 `;
 
@@ -431,7 +626,8 @@ const QuoteText = styled.p`
 `;
 
 const QuoteTheme = styled.span`
-  font-size: 0.6875rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.accent};
@@ -446,7 +642,7 @@ const PersonaCard = styled.div`
 `;
 
 const PersonaName = styled.h4`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: 1rem;
   color: ${({ theme }) => theme.colors.foreground};
   margin: 0 0 0.75rem;
@@ -477,7 +673,7 @@ const FlowCard = styled.div`
 `;
 
 const FlowTitle = styled.h4`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   font-size: 0.9375rem;
   color: ${({ theme }) => theme.colors.foreground};
   margin: 0 0 0.5rem;
@@ -502,6 +698,56 @@ function CaseStudyExtended({ extended }) {
           </ExtendedBlock>
         )}
       </ExtendedSection>
+
+      {extended.siteMapPages && (
+        <ExtendedSection>
+          <SectionLabel>Site Map</SectionLabel>
+          <ExtendedGrid>
+            {extended.siteMapPages.map((page) => (
+              <PagePreview key={page.title}>
+                <PagePreviewTitle>{page.title}</PagePreviewTitle>
+                <SolutionText>{page.description}</SolutionText>
+                <PagePreviewImg src={page.img} alt={page.title} />
+              </PagePreview>
+            ))}
+          </ExtendedGrid>
+        </ExtendedSection>
+      )}
+
+      {extended.researchSteps && (
+        <ExtendedSection>
+          <SectionLabel>Research</SectionLabel>
+          {extended.researchSteps.map((step) => (
+            <ResearchCard key={step.title}>
+              <ResearchTitle>{step.title}</ResearchTitle>
+              <ResearchList>
+                {step.items.map((item) => (
+                  <ResearchListItem key={item}>{item}</ResearchListItem>
+                ))}
+              </ResearchList>
+            </ResearchCard>
+          ))}
+        </ExtendedSection>
+      )}
+
+      {extended.prototyping && (
+        <ExtendedSection>
+          <SectionLabel>Prototyping</SectionLabel>
+          <SolutionText style={{ marginBottom: '1rem' }}>{extended.prototyping.summary}</SolutionText>
+          <GoalList>
+            {extended.prototyping.items.map((item) => (
+              <GoalItem key={item}>{item}</GoalItem>
+            ))}
+          </GoalList>
+        </ExtendedSection>
+      )}
+
+      {extended.reflection && (
+        <ExtendedSection>
+          <SectionLabel>Reflection</SectionLabel>
+          <ContextText>{extended.reflection}</ContextText>
+        </ExtendedSection>
+      )}
 
       {extended.survey && (
         <ExtendedSection>
@@ -681,7 +927,7 @@ export default function UxCaseStudy() {
                 {project.tags.map((tag, i) => {
                   const tc = tagColor(i);
                   return (
-                    <Tag key={tag} $color={tc.color} $bg={tc.bg} $border={tc.border}>
+                    <Tag key={tag} $color={tc.color} $bg={tc.bg}>
                       {tag}
                     </Tag>
                   );
@@ -708,9 +954,12 @@ export default function UxCaseStudy() {
               {[
                 { label: 'Role', value: project.role },
                 { label: 'Duration', value: project.duration },
+                project.tools ? { label: 'Tools', value: project.tools } : null,
                 { label: 'Team', value: project.team },
                 { label: 'Outcome', value: project.outcome },
-              ].map(({ label, value }) => (
+              ]
+                .filter(Boolean)
+                .map(({ label, value }) => (
                 <div key={label}>
                   <MetaLabel>{label}</MetaLabel>
                   <MetaValue>{value}</MetaValue>
@@ -759,6 +1008,7 @@ export default function UxCaseStudy() {
                   <StepLabel>{step.label}</StepLabel>
                 </StepHeader>
                 {step.img && <StepImg src={step.img} alt={step.label} />}
+                {step.mobileViews && <MobileViewsCarousel views={step.mobileViews} />}
                 <SolutionText>{step.body}</SolutionText>
               </ProcessStep>
             ))}
@@ -791,10 +1041,10 @@ export default function UxCaseStudy() {
           <NavGrid>
             {prev ? (
               <NavButton onClick={() => history.push(`/ux/projects/${prev.id}`)} align="left">
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.6875rem', letterSpacing: '0.06em', textTransform: 'uppercase', color: '#7A5230' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.825rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#333333' }}>
                   <ArrowLeft size={11} /> Previous
                 </span>
-                <span style={{ fontFamily: 'Bricolage Grotesque, sans-serif', fontSize: '1.125rem', letterSpacing: '-0.02em' }}>
+                <span style={{ ...displayFontStyle(), fontSize: '1.125rem', color: '#000000' }}>
                   {prev.title}
                 </span>
               </NavButton>
@@ -803,10 +1053,10 @@ export default function UxCaseStudy() {
             )}
             {next ? (
               <NavButton onClick={() => history.push(`/ux/projects/${next.id}`)} align="right">
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.6875rem', letterSpacing: '0.06em', textTransform: 'uppercase', color: '#7A5230' }}>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.825rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#333333' }}>
                   Next <ArrowRight size={11} />
                 </span>
-                <span style={{ fontFamily: 'Bricolage Grotesque, sans-serif', fontSize: '1.125rem', letterSpacing: '-0.02em' }}>
+                <span style={{ ...displayFontStyle(), fontSize: '1.125rem', color: '#000000' }}>
                   {next.title}
                 </span>
               </NavButton>

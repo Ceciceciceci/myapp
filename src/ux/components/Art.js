@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Container, PageMain, DisplayHeading } from '../styles';
+import { Container, PageMain, DisplayHeading, displayFont } from '../styles';
 import { artworks } from '../data/artworks';
 
 const Header = styled.div`
@@ -17,16 +17,45 @@ const Header = styled.div`
   }
 `;
 
-const HeaderDesc = styled.p`
+const HeaderDesc = styled.div`
   max-width: 280px;
   color: ${({ theme }) => theme.colors.mutedForeground};
   font-size: 0.875rem;
   line-height: 1.7;
   padding-bottom: 0.25rem;
 
+  p + p {
+    margin-top: 1rem;
+  }
+
   @media (max-width: 900px) {
     max-width: 100%;
   }
+`;
+
+const InstagramLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  border: 1.5px solid
+    ${({ $hovered, theme }) =>
+      $hovered ? theme.colors.hoverYellowBorder : theme.colors.border};
+  padding: 0.75rem 1.75rem;
+  color: ${({ $hovered, theme }) =>
+    $hovered ? theme.colors.hoverBrown : theme.colors.foreground};
+  background: ${({ $hovered, theme }) =>
+    $hovered ? theme.colors.hoverYellow : 'transparent'};
+  text-decoration: none;
+  font-size: 0.875rem;
+  letter-spacing: 0.04em;
+  ${displayFont}
+  transition: border-color 0.25s, color 0.25s, background 0.25s, box-shadow 0.25s;
+  border-radius: 999px;
+  box-shadow: ${({ $hovered }) =>
+    $hovered
+      ? '0 4px 14px rgba(246,166,108,0.15)'
+      : '0 1px 4px rgba(92,51,23,0.08)'};
 `;
 
 const Eyebrow = styled.p`
@@ -84,64 +113,34 @@ const ArtOverlay = styled.div`
 `;
 
 const ArtTitle = styled.div`
-  font-family: ${({ theme }) => theme.fonts.display};
+  ${displayFont}
   color: ${({ theme }) => theme.colors.foreground};
   font-size: 0.875rem;
-  letter-spacing: -0.01em;
   margin-bottom: 0.25rem;
 `;
 
 const ArtMeta = styled.div`
-  font-size: 0.6875rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.accent};
   letter-spacing: 0.04em;
 `;
 
-const Cta = styled.div`
-  border-top: 1px solid ${({ theme }) => theme.colors.border};
-  padding: 3rem 0 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
-const CtaText = styled.p`
-  color: ${({ theme }) => theme.colors.mutedForeground};
-  font-size: 0.9375rem;
-  line-height: 1.7;
-  max-width: 420px;
-`;
-
-const CtaLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border: 1.5px solid
-    ${({ $hovered, theme }) =>
-      $hovered ? theme.colors.hoverYellowBorder : theme.colors.border};
-  padding: 0.75rem 1.75rem;
-  color: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.hoverBrown : theme.colors.foreground};
-  background: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.hoverYellow : 'transparent'};
-  text-decoration: none;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
-  font-family: ${({ theme }) => theme.fonts.display};
-  transition: border-color 0.25s, color 0.25s, background 0.25s, box-shadow 0.25s;
-  flex-shrink: 0;
-  border-radius: 999px;
-  box-shadow: ${({ $hovered }) =>
-    $hovered
-      ? '0 4px 14px rgba(196,122,30,0.15)'
-      : '0 1px 4px rgba(92,51,23,0.08)'};
-`;
+function InstagramCta() {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <InstagramLink
+      href="https://www.instagram.com/ichiknees/"
+      target="_blank"
+      rel="noopener noreferrer"
+      $hovered={hovered}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      Follow on Instagram →
+    </InstagramLink>
+  );
+}
 
 function ArtCard({ artwork }) {
   const [hovered, setHovered] = useState(false);
@@ -153,27 +152,9 @@ function ArtCard({ artwork }) {
       <ArtImage src={artwork.img} alt={artwork.title} loading="lazy" $hovered={hovered} />
       <ArtOverlay $hovered={hovered}>
         <ArtTitle>{artwork.title}</ArtTitle>
-        <ArtMeta>
-          {artwork.medium} · {artwork.year}
-        </ArtMeta>
+        <ArtMeta>{artwork.medium}</ArtMeta>
       </ArtOverlay>
     </ArtCardWrap>
-  );
-}
-
-function InstagramCta() {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <CtaLink
-      href="https://www.instagram.com/ichiknees/"
-      target="_blank"
-      rel="noopener noreferrer"
-      $hovered={hovered}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      Follow on Instagram →
-    </CtaLink>
   );
 }
 
@@ -191,9 +172,15 @@ export default function UxArt() {
             </DisplayHeading>
           </div>
           <HeaderDesc>
-            Fan art, botanical studies, and character illustrations — made in
-            sketchbooks and on screen. Hobbies include drawing, graphic design,
-            and baking.
+            <p>
+              Here are some doodles and art and product design that I make during my down
+              time. I love creating new designs that bring fun joy into people's lives!
+            </p>
+            <p>
+              No AI used to produce these. I did it all myself from concept {'>'} sketch{' '}
+              {'>'} final.
+            </p>
+            <InstagramCta />
           </HeaderDesc>
         </Header>
 
@@ -202,14 +189,6 @@ export default function UxArt() {
             <ArtCard key={artwork.id} artwork={artwork} />
           ))}
         </MasonryGrid>
-
-        <Cta>
-          <CtaText>
-            More art on Instagram and Behance. Feel free to reach out if you'd
-            like to collaborate or commission something.
-          </CtaText>
-          <InstagramCta />
-        </Cta>
       </Container>
     </PageMain>
   );

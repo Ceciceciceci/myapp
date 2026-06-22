@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const UxGlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=DM+Mono&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500;600&family=Sometype+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
   .ux-portfolio {
     font-family: ${({ theme }) => theme.fonts.body};
@@ -10,7 +10,8 @@ export const UxGlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
-  .ux-portfolio a {
+  .ux-portfolio main a,
+  .ux-portfolio footer a {
     color: inherit;
   }
 
@@ -28,14 +29,40 @@ export const UxGlobalStyles = createGlobalStyle`
     justify-content: unset;
   }
 
+  /* Override main-site global footer (absolute, 50px) */
+  .ux-portfolio footer {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    height: auto;
+    width: 100%;
+    padding: 0;
+    display: block;
+    font-size: inherit;
+    font-weight: 400;
+    font-family: inherit;
+  }
+
   .app--ux {
     overflow: visible;
     margin: 0;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: ${({ theme }) => theme.colors.background};
+  }
+
+  html,
+  body,
+  #root {
+    background-color: ${({ theme }) => theme.colors.background};
+    min-height: 100%;
+    min-height: 100dvh;
   }
 `;
 
 export const PageMain = styled.main`
-  min-height: 100vh;
+  width: 100%;
   padding-top: ${({ theme }) => theme.navHeight};
   position: relative;
   z-index: 1;
@@ -48,31 +75,43 @@ export const Container = styled.div`
 `;
 
 export const SectionLabel = styled.p`
-  font-size: 0.6875rem;
+  font-size: 0.825rem;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.accent};
   margin-bottom: 1.25rem;
 `;
 
-export const DisplayHeading = styled.h1`
+export const displayFont = css`
   font-family: ${({ theme }) => theme.fonts.display};
-  letter-spacing: -0.04em;
+  letter-spacing: ${({ theme }) => theme.typography.displayLetterSpacing};
+  transform: scaleX(${({ theme }) => theme.typography.displayScaleX});
+  transform-origin: ${({ $centered }) => ($centered ? 'center' : 'left')} center;
+`;
+
+export const DisplayHeading = styled.h1`
+  ${displayFont}
   color: ${({ theme }) => theme.colors.foreground};
   line-height: 1;
+  font-weight: 400;
+`;
+
+export const pillFont = css`
+  font-family: ${({ theme }) => theme.fonts.displayLight};
   font-weight: 600;
 `;
 
 export const Tag = styled.span`
-  font-size: 0.625rem;
+  ${pillFont}
+  font-size: 0.825rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: ${({ $color }) => $color};
   background: ${({ $bg }) => $bg};
-  border: 1.5px solid ${({ $border }) => $border};
+  border: none;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-  box-shadow: 0 1px 3px rgba(92, 51, 23, 0.08);
 `;
 
 export const StyledLink = styled.a`

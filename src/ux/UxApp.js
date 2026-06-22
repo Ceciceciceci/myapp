@@ -10,17 +10,17 @@ import UxProjects from './components/Projects';
 import UxCaseStudy from './components/CaseStudy';
 import UxAbout from './components/About';
 import UxArt from './components/Art';
+import UxResume from './components/Resume';
 import styled from 'styled-components';
 
 const Shell = styled.div`
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100dvh;
   background: ${({ theme }) => theme.colors.background};
-  display: flex;
-  flex-direction: column;
 `;
 
 const Content = styled.div`
-  flex: 1;
+  width: 100%;
 `;
 
 export default function UxApp() {
@@ -36,6 +36,7 @@ export default function UxApp() {
             <Route exact path="/ux/projects/:id" component={UxCaseStudy} />
             <Route exact path="/ux/art" component={UxArt} />
             <Route exact path="/ux/about" component={UxAbout} />
+            <Route exact path="/ux/resume" component={UxResume} />
           </Switch>
         </Content>
         <UxFooter />
