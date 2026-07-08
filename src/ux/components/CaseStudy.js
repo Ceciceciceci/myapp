@@ -126,10 +126,9 @@ const HeroWrap = styled.div`
 
 const HeroImage = styled.img`
   width: 100%;
+  height: auto;
   display: block;
-  aspect-ratio: 16 / 7;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
   border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
@@ -221,11 +220,10 @@ const StepIndex = styled.span`
 
 const StepImg = styled.img`
   width: 100%;
+  height: auto;
   display: block;
-  aspect-ratio: ${({ $portrait }) => ($portrait ? 'auto' : '16 / 10')};
-  object-fit: ${({ $portrait }) => ($portrait ? 'contain' : 'cover')};
-  max-height: ${({ $portrait }) => ($portrait ? '520px' : 'none')};
-  background: ${({ $portrait }) => ($portrait ? '#1A293D' : 'transparent')};
+  object-fit: contain;
+  background: ${({ $portrait }) => ($portrait ? '#1A293D' : 'rgba(42, 41, 41, 0.04)')};
   border: 1px solid ${({ theme }) => theme.colors.border};
   margin-bottom: 0.875rem;
 `;
@@ -422,16 +420,17 @@ const MetricLabel = styled.div`
 
 const ProcessStrip = styled.div`
   display: grid;
-  grid-template-columns: ${({ $cols }) => `repeat(${$cols}, 1fr)`};
-  gap: 0.75rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   padding: 3rem 0 0;
 `;
 
 const StripImg = styled.img`
   width: 100%;
+  height: auto;
   display: block;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(42, 41, 41, 0.04);
   border: 1px solid ${({ theme }) => theme.colors.border};
 `;
 
@@ -505,16 +504,16 @@ const PagePreview = styled.div`
 
 const PagePreviewImg = styled.img`
   width: 100%;
+  height: auto;
   display: block;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
+  background: rgba(42, 41, 41, 0.04);
   border: 1px solid ${({ theme }) => theme.colors.border};
   border-radius: 0.75rem;
 `;
 
 const ArtworkImg = styled.img`
   width: 100%;
-  max-width: 420px;
   display: block;
   object-fit: contain;
   background: #1A293D;
@@ -1050,7 +1049,7 @@ export default function UxCaseStudy() {
         </MetricsSection>
 
         {project.processImgs.length > 0 && (
-          <ProcessStrip $cols={project.processImgs.length}>
+          <ProcessStrip>
             {project.processImgs.map((img, i) => (
               <StripImg key={i} src={img} alt={`Process ${i + 1}`} />
             ))}
