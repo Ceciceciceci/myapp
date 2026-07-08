@@ -146,6 +146,16 @@ const InlineLink = styled(Link)`
   }
 `;
 
+const InlineExternalLink = styled.a`
+  color: ${({ theme }) => theme.colors.accent};
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.navLinkActive};
+  }
+`;
+
 const BodyGrid = styled.div`
   padding: 5rem 0 6rem;
   display: grid;
@@ -316,9 +326,32 @@ export default function UxAbout() {
             <BodyText>
               I'm Cecilia! Currently I'm a design engineer with a focus on
               front-end development and UX/UI design. I like building creative
-              solutions where technology intersects art. Fun fact! I have two
-              movie credits after working at Dreamworks: Puss in Boots 2 and
-              Bad Guys ^^
+              solutions where technology intersects art. Fun fact! I have three
+              movie credits after working at Dreamworks:{' '}
+              <InlineExternalLink
+                href="https://youtu.be/D4tbx5FrAWY?si=_IlwtjXsmLArq58w&t=443"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Puss in Boots 2
+              </InlineExternalLink>
+              {', '}
+              <InlineExternalLink
+                href="https://youtu.be/6AJvojp8iFY?si=jbfwvjy-77_ez5YK&t=248"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Bad Guys
+              </InlineExternalLink>{' '}
+              and{' '}
+              <InlineExternalLink
+                href="https://youtu.be/skVxTuH-r_M?si=ecj3zSNL1TrR5xCF&t=372"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Ruby Gillman, Teenage Kraken
+              </InlineExternalLink>{' '}
+              ^^
             </BodyText>
             <BodyText $last>
               My work spans wireframing, interface design, product development
