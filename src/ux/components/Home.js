@@ -70,6 +70,12 @@ const HeroAvatar = styled.img`
   display: block;
 `;
 
+const HeroTitleGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
 const HeroTitle = styled.h1`
   ${displayFont}
   color: ${({ theme }) => theme.colors.foreground};
@@ -80,6 +86,20 @@ const HeroTitle = styled.h1`
 
   span {
     color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+const HeroRole = styled.p`
+  display: none;
+  margin: 0;
+  font-family: ${({ theme }) => theme.fonts.mono};
+  font-size: clamp(0.875rem, 1.75vw, 1.0625rem);
+  color: ${({ theme }) => theme.colors.mutedForeground};
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+
+  @media (max-width: 899px) {
+    display: block;
   }
 `;
 
@@ -265,11 +285,14 @@ export default function UxHome() {
           <HeroLeft>
             <HeroTitleRow>
               <HeroAvatar src={ceciliaAvatar} alt="" />
-              <HeroTitle>
-                Cecilia
-                <br />
-                <span>Tran</span>
-              </HeroTitle>
+              <HeroTitleGroup>
+                <HeroTitle>
+                  Cecilia
+                  <br />
+                  <span>Tran</span>
+                </HeroTitle>
+                <HeroRole>Design Engineer</HeroRole>
+              </HeroTitleGroup>
             </HeroTitleRow>
 
             <AccentRule />
