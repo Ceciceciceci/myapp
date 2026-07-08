@@ -22,11 +22,197 @@ import stretchieSessionBuilder from '../../images/stretchie/session-builder.png'
 import stretchieAlarmSetup from '../../images/stretchie/alarm-setup.png';
 import stretchieActiveStretch from '../../images/stretchie/active-stretch.png';
 import stretchieNotification from '../../images/stretchie/notification.png';
+import stretchieArtwork from '../../images/stretchie/artwork.png';
+import fmDsIntro from '../../images/future-motion-design-system/intro.png';
+import fmDsDesktop17 from '../../images/future-motion-design-system/desktop-17.png';
+import fmDsButtons from '../../images/future-motion-design-system/buttons.png';
+import fmDsIcons from '../../images/future-motion-design-system/icons.png';
+import fmDsMessageBanner from '../../images/future-motion-design-system/message-banner.png';
+import fmDsLoadingStates from '../../images/future-motion-design-system/loading-states.png';
+import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
+import onewheelQuizPrimitives from '../../images/onewheel-quiz/primitives.png';
+import onewheelQuizModules from '../../images/onewheel-quiz/quiz-modules.png';
+import onewheelQuizIcons from '../../images/onewheel-quiz/icons.png';
 
 export const projects = [
   {
+    id: 'future-motion-design-system',
+    year: '2025 - cont',
+    title: 'Future Motion Design System',
+    subtitle: 'Creating a shared design language for web and mobile product teams',
+    tags: ['Design System', 'UX Design', 'Figma', 'Component Library', 'AI', 'COO Presentation'],
+    brief:
+      'Initiated a design language system at Future Motion with reusable Figma components, documented patterns, and shared UI foundations for customer-facing and internal tools. Presented the POC and ongoing work to the COO, and am exploring AI to build an agent that tests transferring components from Figma into Storybook.',
+    outcome: 'Component library in Figma · COO POC presentation · Cross-team adoption',
+    img: fmDsDesktop17,
+    role: 'Lead UX Designer + Software Engineer',
+    duration: '2025 – ongoing (continuing initiative)',
+    team: 'Design, engineering, graphic design stakeholders, and COO',
+    tools: 'Figma, Storybook, React, AI',
+    heroImg: fmDsDesktop17,
+    problem:
+      'Future Motion was shipping multiple web and mobile experiences like warranty tools, trade-in flows, factory dashboards, sales platforms, and partner storefronts, all without a shared visual or component language. Teams reused one-off UI patterns, design reviews took longer than needed, and engineering spent time rebuilding the same buttons, forms, and layouts across products.',
+    approach: [
+      'Audited existing interfaces across customer, factory, and internal tools to inventory repeated UI patterns and inconsistencies.',
+      'Partnered with the graphic design team to align brand direction with practical product UI needs.',
+      'Defined foundations for color, typography, spacing, and interaction states in Figma.',
+      'Built a base component library for buttons, inputs, navigation, tables, and status patterns used across web and mobile.',
+      'Presented the design system POC and ongoing library work to the COO to secure executive buy-in and align on adoption priorities.',
+      'Applied the library to new product work including warranty, trade-in, and sales experiences.',
+      'Building an AI agent to test transferring Figma components into Storybook and reduce manual design-to-code handoff.',
+    ],
+    process: [
+      {
+        label: 'Documentation Intro',
+        body:
+          'Created a shared Figma file as the source of truth for internal tools, documenting primitives, components, usage guidelines, and how teams should copy, comment on, and publish updates to the library.',
+        img: fmDsIntro,
+      },
+      {
+        label: 'Product Sync Table',
+        body:
+          'Applied the system to a live internal tool for reviewing and syncing product updates from Shopify and the order system, including navigation, data tables, status chips, toggles, and primary actions.',
+        img: fmDsDesktop17,
+      },
+      {
+        label: 'Button Components',
+        body:
+          'Documented button variants across sizes, states, and intent (primary, submit, and danger) with solid and outlined styles, icon support, and usage guidance for in-card layouts.',
+        img: fmDsButtons,
+      },
+      {
+        label: 'Icons Library',
+        body:
+          'Organized Material Design icons into categorized tables for arrows, errors, actions, and objects, with naming conventions and implementation notes for developers.',
+        img: fmDsIcons,
+      },
+      {
+        label: 'Message Banner',
+        body:
+          'Defined message banner patterns for high-priority errors and warnings, including full-width layouts, persistent states, and closable versus non-closable variants.',
+        img: fmDsMessageBanner,
+      },
+      {
+        label: 'Loading States',
+        body:
+          'Standardized loading patterns for data-heavy internal screens, including centered fetch states and spinner treatment across light and dark themes.',
+        img: fmDsLoadingStates,
+      },
+    ],
+    solution:
+      'A living design language system that gave Future Motion a shared foundation for web and mobile UI, from tokens and components in Figma to documented patterns teams could reuse across warranty, trade-in, factory, and sales products. I presented the POC and progress to the COO to align leadership on the system direction, with the next phase using AI to test an agent workflow for moving components from Figma into Storybook.',
+    metrics: [
+      { value: '1', label: 'Shared Figma library' },
+      { value: 'Web + Mobile', label: 'Platforms covered' },
+      { value: 'Multi-team', label: 'Adoption across products' },
+      { value: 'Reusable', label: 'Base components' },
+    ],
+    processImgs: [
+      fmDsIntro,
+      fmDsDesktop17,
+      fmDsButtons,
+      fmDsIcons,
+      fmDsMessageBanner,
+      fmDsLoadingStates,
+    ],
+    links: [],
+    extended: {
+      context:
+        'As Lead UX Designer and Software Engineer at Future Motion, I saw the same UI problems appear across very different products: a warranty recall tool, a factory touchscreen, a trade-in flow, and partner storefronts. Each team solved layout and component questions independently. The design system initiative was my effort to give design, engineering, and graphic design a single source of truth. I presented the POC and ongoing work to the COO to walk through the library structure, adoption plan, and how the system would reduce repeated UI work across teams. Right now I am also using AI to create an agent that tests transferring components from Figma into Storybook, so the library can move faster from design documentation to coded implementation.',
+      goals: [
+        'Reduce one-off UI patterns across customer and internal tools',
+        'Create reusable Figma components with clear states and variants',
+        'Align graphic design brand direction with product UI implementation',
+        'Speed up design reviews and engineering handoff',
+        'Support both web and mobile product surfaces',
+        'Use AI to test an agent workflow for Figma-to-Storybook component transfer',
+      ],
+      researchSteps: [
+        {
+          title: 'Interface audit',
+          items: [
+            'Reviewed live and in-progress products to catalog repeated patterns in forms, navigation, tables, and actions.',
+            'Identified the highest-friction inconsistencies slowing design and engineering collaboration.',
+          ],
+        },
+        {
+          title: 'Stakeholder alignment',
+          items: [
+            'Worked with graphic design on brand direction and visual tone for product UI.',
+            'Presented the design system POC and library progress to the COO to secure executive buy-in and align on adoption priorities.',
+          ],
+        },
+        {
+          title: 'Implementation planning',
+          items: [
+            'Prioritized base components used most often across warranty, trade-in, sales, and factory tools.',
+            'Mapped Figma components to React implementation patterns for smoother handoff.',
+          ],
+        },
+      ],
+      styleGuide:
+        'The system covered typography scales, color roles for brand and status states, spacing units, button and input variants, form layouts, navigation shells, table patterns, icons, and message banners. Components were built as Figma variants with documented usage notes so teams knew which pattern to reach for in common scenarios.',
+      siteMapPages: [
+        {
+          title: 'Documentation Intro',
+          description:
+            'Welcome page explaining primitives, components, and how teams should use and maintain the shared Figma library.',
+          img: fmDsIntro,
+        },
+        {
+          title: 'Product Sync Table',
+          description:
+            'Internal tool screen applying the system to complex data tables, status chips, toggles, and sync actions.',
+          img: fmDsDesktop17,
+        },
+        {
+          title: 'Button Components',
+          description:
+            'Button variants across sizes, states, and intent with solid, outlined, and icon-only options.',
+          img: fmDsButtons,
+        },
+        {
+          title: 'Icons Library',
+          description:
+            'Categorized Material Design icon tables with vector previews and implementation naming.',
+          img: fmDsIcons,
+        },
+        {
+          title: 'Message Banner',
+          description:
+            'Error and warning banner patterns with closable and persistent full-width variants.',
+          img: fmDsMessageBanner,
+        },
+        {
+          title: 'Loading States',
+          description:
+            'Standardized fetch and spinner patterns for data-heavy internal screens in light and dark themes.',
+          img: fmDsLoadingStates,
+        },
+      ],
+      prototyping: {
+        summary:
+          'The library was validated by applying it directly to active product work rather than living only as a standalone artifact.',
+        items: [
+          'Warranty recall and trade-in customer flows',
+          'Factory touchscreen and warehouse workflows',
+          'Sales platform and budget tracking dashboards',
+          'Partner storefront experiences such as f(x)nction',
+        ],
+      },
+      reflection:
+        'The hardest part was not drawing components; it was getting teams to adopt them. The system became most useful once it was tied to real products people were already building. Presenting the POC to the COO helped frame the library as a company-wide investment, not just a design-side artifact, and staying close to the graphic design team helped it feel like a shared team asset.',
+      futureSteps: [
+        'Expand mobile-specific components for factory and field workflows',
+        'Continue testing an AI agent that transfers Figma components into Storybook for engineering parity',
+        'Add accessibility documentation for focus, contrast, and touch targets',
+        'Track adoption and deprecate legacy one-off patterns over time',
+      ],
+    },
+  },
+  {
     id: 'stretchie',
-    year: '2025-2026',
+    year: '2026',
     title: 'Stretchie',
     subtitle: 'A desktop stretch app for desk workers who need a reminder stretch session throughout the day',
     tags: ['UX Design', 'Product Design', 'Desktop App', 'Figma Make'],
@@ -54,6 +240,13 @@ export const projects = [
         body:
           'Stretchie started from my own experience and conversations with desk-bound friends. The goal was not just another stretch timer, but a desktop-native habit helper that could break the cycle of stiffness, carpal tunnel risk, tension headaches, and post-PT relapse.',
         img: stretchieProblemInspiration,
+      },
+      {
+        label: 'Character Art & Illustration',
+        body:
+          'I created the Stretchie character, icons, and stretch poses in a playful yellow-and-orange palette inspired by Tamagotchi nostalgia. The artwork carries through the alarm clock mascot, session animations, and UI accents so the product feels friendly and energizing at the desk.',
+        img: stretchieArtwork,
+        portrait: true,
       },
       {
         label: 'Landing & Session Start',
@@ -169,6 +362,11 @@ export const projects = [
           'Email-connected session save and resume patterns',
         ],
       },
+      artwork: {
+        summary:
+          'Beyond UX and product design, I illustrated Stretchie’s character, icons, and stretch poses to give the app a cohesive, playful identity.',
+        img: stretchieArtwork,
+      },
       reflection:
         'I now use Stretchie for my own daily stretches and it has genuinely helped me stay more consistent at the desk. The biggest lesson was designing for the environment where the problem actually happens. A phone alarm was never going to fix a desktop problem. I hope to keep building Stretchie out with more stretches and richer routines over time.',
       futureSteps: [
@@ -180,13 +378,199 @@ export const projects = [
     },
   },
   {
+    id: 'fm-data-table-redesign',
+    hidden: true,
+    year: '2026',
+    title: 'Redesigning the data table for internal tools',
+    subtitle: 'Making dense operational data easier to scan, filter, and act on across internal workflows',
+    tags: ['UX Design', 'Internal Tools', 'Data Tables', 'React'],
+    brief:
+      'Redesigned the data table patterns used across Future Motion internal tools so teams could review orders, statuses, and records faster with clearer hierarchy, filtering, and row actions.',
+    outcome: 'Improved scanability · Shared table patterns · Faster internal reviews',
+    img: classicVacationsBooking,
+    role: 'Lead UX Designer + Software Engineer',
+    duration: '2026 (ongoing)',
+    team: 'Engineering and operations stakeholders',
+    tools: 'Figma, React',
+    heroImg: classicVacationsBooking,
+    problem:
+      'Internal teams relied on data-heavy tables to manage orders, fulfillment, and operational records. Existing table layouts buried key status information, made filtering inconsistent across tools, and slowed down the reviews that happened dozens of times a day.',
+    approach: [
+      'Audited table usage across internal applications to find repeated pain points in scanning, sorting, filtering, and row actions.',
+      'Mapped the most common data types and actions operators needed at a glance versus on drill-down.',
+      'Defined a shared table pattern with clearer column hierarchy, status treatment, and bulk actions.',
+      'Prototyped and validated the redesign with customer service and operations workflows before rolling it into active tools.',
+    ],
+    process: [
+      {
+        label: 'Audit',
+        body:
+          'Reviewed how different internal tools presented tabular data and where teams were spending extra time hunting for status, owner, or next-step information.',
+        img: classicVacationsAgencyId,
+      },
+      {
+        label: 'Pattern Definition',
+        body:
+          'Established reusable table layouts for dense operational data, including filter placement, row density, and action affordances that could scale across products.',
+        img: classicVacationsBooking,
+      },
+    ],
+    solution:
+      'A redesigned data table system that made internal records easier to scan and act on, with shared interaction patterns teams could reuse instead of rebuilding table UX from scratch in every tool.',
+    metrics: [
+      { value: 'Shared', label: 'Table patterns' },
+      { value: 'Faster', label: 'Operational reviews' },
+      { value: 'React', label: 'Implementation' },
+      { value: 'Multi-team', label: 'Tool adoption' },
+    ],
+    processImgs: [classicVacationsBooking, classicVacationsAgencyId],
+    links: [],
+    extended: {
+      context:
+        'This work focused on one of the most common UI surfaces in Future Motion internal tools: large tables full of order, fulfillment, and status data that teams interact with all day.',
+      goals: [
+        'Improve scanability for high-volume operational reviews',
+        'Standardize filtering, sorting, and row actions across internal tools',
+        'Reduce visual noise while keeping critical status information visible',
+        'Create reusable table patterns aligned with the broader design system',
+      ],
+    },
+  },
+  {
+    id: 'onewheel-riding-preference-quiz',
+    year: '2025',
+    title: 'Onewheel Riding Preference Quiz',
+    subtitle: 'A custom shaping quiz for multiple Onewheel models, tailored to each rider’s purchase and riding history',
+    tags: ['UX Design', 'Product Design', 'Front-End', 'Customer Experience', 'Figma', 'Graphic Design', 'COO Presentation'],
+    brief:
+      'Designed and built a custom shaping quiz for multiple Onewheel models that adapts to each rider’s purchase and riding history, helping them dial in traction, terrain, performance, and weight across model-specific color themes like neon yellow for GT and deep blue for XR. Drove a 50% increase in user account registration and more logins back into the app.',
+    outcome: '50% registration increase · More app logins · Multi-model themes',
+    img: onewheelQuizMain,
+    role: 'Lead UX Designer + Software Engineer',
+    duration: '2025',
+    team: 'Graphic design, COO, marketing, and engineering',
+    tools: 'Figma, React',
+    heroImg: onewheelQuizMain,
+    problem:
+      'Onewheel riders could customize board shaping settings across multiple models, but the right traction, terrain, performance, and weight setup was not always obvious, especially when the experience needed to reflect what board they owned and how they actually rode.',
+    approach: [
+      'Pulled color and typography primitives from the Onewheel mobile app to keep the quiz visually aligned with existing rider-facing products.',
+      'Mapped quiz inputs to the four shaping dimensions riders care about most: traction, terrain, performance, and weight.',
+      'Applied model-specific color themes that follow Onewheel branding, such as neon yellow for GT, deep blue for XR, and GTS blue for GT-S.',
+      'Partnered with the graphic design team and COO to iron out quiz flow details, visual direction, and finalized illustration graphics.',
+      'Designed slider and radio patterns with dynamic illustrations that respond to rider selections.',
+      'Prototyped model theme variants in Figma, including annotated interaction states and mobile quiz modules.',
+      'Built the quiz frontend in React, translating the Figma flow into interactive sliders, radio inputs, and dynamic illustration states.',
+      'Presented the quiz POC and design progress to the COO for feedback and alignment before moving toward launch.',
+    ],
+    process: [
+      {
+        label: 'Primitives & Tokens',
+        body:
+          'Documented color and font primitives from the mobile app, including board theme colors such as neon yellow for GT, deep blue for XR, and GTS blue for GT-S, plus MONO45 / ABCFavorit typography, so each model’s quiz felt native to Onewheel branding.',
+        img: onewheelQuizPrimitives,
+      },
+      {
+        label: 'Single-Page Quiz Flow',
+        body:
+          'Designed and implemented a single-page slider form that adapts to each rider’s Onewheel model with traction, terrain, performance, and weight sections, model-specific color themes, hover states, dynamic graphics, and a clear submit action in React.',
+        img: onewheelQuizMain,
+      },
+      {
+        label: 'Quiz Modules',
+        body:
+          'Built reusable quiz item modules for vertical lists, horizontal scales, and icon-based questions, with selected, default, and hover states across model-specific themes such as GT neon yellow and XR deep blue.',
+        img: onewheelQuizModules,
+      },
+      {
+        label: 'Illustrations & Icons',
+        body:
+          'Created line-art icons and dynamic illustrations for traction, terrain, performance, and weight, then worked with the graphic design team and COO to refine the finalized graphics, including variants that update based on rider input such as mellow-to-aggressive performance visuals.',
+        img: onewheelQuizIcons,
+      },
+    ],
+    solution:
+      'A customer-facing custom shaping quiz that translated rider preferences into actionable settings across multiple Onewheel models, using purchase-aware flows, four shaping dimensions, model-specific color themes, responsive illustrations, and a React frontend. The experience drove a 50% increase in user account registration and brought more riders back into the app through personalized GT, GT-S, XR, and other model variants.',
+    metrics: [
+      { value: '50%', label: 'Registration increase' },
+      { value: 'More', label: 'App logins' },
+      { value: '4', label: 'Shaping dimensions' },
+      { value: 'Multi-model', label: 'Color themes' },
+    ],
+    processImgs: [
+      onewheelQuizPrimitives,
+      onewheelQuizMain,
+      onewheelQuizModules,
+      onewheelQuizIcons,
+    ],
+    links: [],
+    extended: {
+      context:
+        'The quiz was created to help riders move from “I know how I ride” to “here are the shaping settings that fit me.” By anchoring the experience in Onewheel’s existing mobile color and type system, and tailoring each flow to the rider’s purchase and riding history, the quiz made traction, terrain, performance, and weight choices easier to understand. Each model received its own visual theme, such as neon yellow for GT and deep blue for XR, so the experience felt native to the board they owned. After launch, the quiz helped drive a 50% increase in user account registration and more logins back into the app.',
+      goals: [
+        'Help riders choose shaping settings with more confidence',
+        'Align quiz visuals with Onewheel mobile app primitives',
+        'Support multiple Onewheel models with purchase-aware theme variants',
+        'Apply model-specific color themes such as GT neon yellow and XR deep blue',
+        'Use dynamic illustrations to make abstract settings feel concrete',
+        'Increase account registration and bring riders back into the app',
+        'Build a responsive React frontend that matches the approved Figma flow',
+        'Finalize quiz graphics and interaction details with graphic design and the COO',
+      ],
+      researchSteps: [
+        {
+          title: 'Graphic design collaboration',
+          items: [
+            'Partnered with the graphic design team to refine quiz visuals, illustration direction, and finalized graphics.',
+            'Iterated on traction, terrain, performance, and weight graphics so they felt on-brand and easy to understand.',
+          ],
+        },
+        {
+          title: 'COO review & POC presentation',
+          items: [
+            'Worked with the COO to iron out quiz flow details, content priorities, and visual polish.',
+            'Presented the quiz POC to the COO to walk through the shaping experience and gather executive feedback.',
+          ],
+        },
+      ],
+      reflection:
+        'The quiz became much stronger once graphic design and the COO were involved in shaping the details. Model-specific themes like neon yellow for GT and deep blue for XR made each version feel true to Onewheel branding, and tying the flow to purchase and riding history made the shaping dimensions feel personal instead of generic. The 50% lift in account registration and increase in app logins showed that riders were willing to come back when the experience felt tailored to their board.',
+      siteMapPages: [
+        {
+          title: 'Primitives & Tokens',
+          description:
+            'Board-specific color themes pulled from Onewheel branding, including neon yellow for GT and deep blue for XR.',
+          img: onewheelQuizPrimitives,
+        },
+        {
+          title: 'Model Quiz Flow',
+          description:
+            'Purchase-aware single-page slider form with traction, terrain, performance, weight, and model-specific themes.',
+          img: onewheelQuizMain,
+        },
+        {
+          title: 'Quiz Modules',
+          description:
+            'Reusable quiz item patterns with vertical lists, horizontal scales, and icon-based questions.',
+          img: onewheelQuizModules,
+        },
+        {
+          title: 'Illustrations & Icons',
+          description:
+            'Line-art icons and dynamic illustrations that respond to rider selections.',
+          img: onewheelQuizIcons,
+        },
+      ],
+    },
+  },
+  {
     id: 'fxnction',
     year: '2024',
     title: 'f(x)nction',
     subtitle: 'Increasing wrist guard sales with an easy to use Shopify storefront',
-    tags: ['Shopify', 'UX Design', 'Front-End', 'E-commerce'],
+    tags: ['Shopify', 'UX Design', 'Front-End', 'E-commerce', 'B2B'],
     brief:
-      'Built a Shopify website with a coworker to help the owner of f(x)nction sell more wrist guards with accurate product information and hands-off order management.',
+      'Built a B2B Shopify website with a coworker to help the owner of f(x)nction sell more wrist guards with accurate product information and hands-off order management.',
     outcome: '50% sales increase · Shopify storefront live',
     img: fxnctionHero,
     role: 'Frontend Developer and UX Designer',
@@ -197,7 +581,7 @@ export const projects = [
     problem:
       'With a new influx of orders, the owner could not keep up with fulfillment and record data on a spreadsheet. He needed a better bookkeeping solution and a faster way for customers to buy wrist guards. With a one week build window, a quick but good solution was needed.',
     approach: [
-      'Asked the project owner about product requirements, target age group, and what needed to be displayed on the storefront.',
+      'Clarified B2B partnership requirements between f(x)nction and Future Motion, including product details, target riders, and storefront display needs.',
       'Reviewed a design sketch from the graphic design team and matched Shopify templates to their vision.',
       'Researched retailer options and chose Shopify for its global adoption, order data storage, and developer tooling.',
       'Learned Shopify Developer Tools through online courses to customize templates and ship under a tight deadline.',
@@ -206,7 +590,7 @@ export const projects = [
       {
         label: 'Overview',
         body:
-          'As a team of two, my coworker and I created a Shopify website to help the owner of f(x)nction sell more wrist guards with more accurate information for records and a hands-off ordering process. f(x)nction is in a brand partnership with Future Motion to sell wrist guards to Onewheel riders.',
+          'As a team of two, my coworker and I created a B2B Shopify website to help the owner of f(x)nction sell more wrist guards with more accurate information for records and a hands-off ordering process. f(x)nction is in a brand partnership with Future Motion to sell wrist guards to Onewheel riders.',
         img: fxnctionWristGuards,
       },
       {
@@ -249,7 +633,7 @@ export const projects = [
     links: [{ label: 'Access the Site', url: 'https://fxnctiongear.com/' }],
     extended: {
       context:
-        'f(x)nction is in a brand partnership with Future Motion to sell wrist guards to Onewheel riders. Before this project, orders were tracked manually and customers placed purchases through spreadsheets or email.',
+        'f(x)nction is in a B2B brand partnership with Future Motion to sell wrist guards to Onewheel riders. Before this project, orders were tracked manually and customers placed purchases through spreadsheets or email.',
       siteMapPages: [
         {
           title: 'Home Page',
@@ -278,7 +662,7 @@ export const projects = [
         {
           title: 'Asking questions',
           items: [
-            'Walked through product, audience, and display requirements with the project owner.',
+            'Walked through B2B product, audience, and display requirements with the project owner and Future Motion stakeholders.',
             'Read about f(x)nction on Reddit to understand what riders value about the brand.',
           ],
         },
@@ -314,7 +698,7 @@ export const projects = [
     year: '2019-2020',
     title: 'Classic Vacations',
     subtitle: 'Travel website redesign & style guide',
-    tags: ['UX Design', 'Web Dev', 'Drupal', 'React'],
+    tags: ['UX Design', 'Web Dev', 'Design System', 'React'],
     brief:
       'Wireframed and built a new site redesign with the UX designer and offshore dev team. Created a style guide to organize the brand and introduced React to the stack.',
     outcome: 'Live redesign · Style guide delivered',
@@ -366,7 +750,7 @@ export const projects = [
     year: '2021',
     title: 'San Diego Zoo',
     subtitle: 'Conservation-focused site redesign',
-    tags: ['UX Research', 'UI Design', 'Wireframing', 'Prototyping'],
+    tags: ['UX Research', 'UI Design', 'Wireframing', 'Motion Design'],
     brief:
       'A conceptual redesign of the San Diego Zoo website during COVID-19, surfacing live cams, conservation impact, and transparent donation paths for visitors who could no longer attend in person.',
     outcome: '41 survey responses · 5 interviews · Hi-fi prototype',
@@ -410,9 +794,9 @@ export const projects = [
         mobileViews: [
           { src: sdzMobileMenu, alt: 'Mobile navigation menu' },
           { src: sdzMobileDonationsLanding, alt: 'Mobile donations landing page' },
-          { src: sdzMobileDonateMonkey, alt: 'Mobile donation amount — monkey' },
-          { src: sdzMobileDonateElephant, alt: 'Mobile donation amount — elephant' },
-          { src: sdzMobileDonateRhino, alt: 'Mobile donation amount — rhino' },
+          { src: sdzMobileDonateMonkey, alt: 'Mobile donation amount: monkey' },
+          { src: sdzMobileDonateElephant, alt: 'Mobile donation amount: elephant' },
+          { src: sdzMobileDonateRhino, alt: 'Mobile donation amount: rhino' },
         ],
       },
     ],
@@ -557,3 +941,5 @@ export const projects = [
     },
   },
 ];
+
+export const visibleProjects = projects.filter((project) => !project.hidden);

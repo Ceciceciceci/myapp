@@ -7,7 +7,7 @@ import logo from '../../images/ceci-shaker-charm.png';
 
 const links = [
   { label: 'Work', to: '/ux/projects' },
-  { label: 'About', to: '/ux/about' },
+  { label: 'Resume', to: '/ux/about' },
   { label: 'Art', to: '/ux/art' },
 ];
 
@@ -153,16 +153,17 @@ const MobileLink = styled(Link)`
     text-decoration: none;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    padding-left: ${({ $active }) => ($active ? '0.75rem' : '0')};
+    padding-left: ${({ $active }) => ($active ? '16px' : '0')};
     border-left: 2px solid
       ${({ $active, theme }) => ($active ? theme.colors.navLinkActive : 'transparent')};
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
   }
 
   &&:hover {
     color: ${({ theme }) => theme.colors.navLinkHover};
     border-left-color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLinkHover};
+    padding-left: 16px;
   }
 `;
 

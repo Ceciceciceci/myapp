@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import footerMascot from '../../images/footer-mascot.png';
 
@@ -85,17 +85,35 @@ const SocialList = styled.div`
 `;
 
 const SocialLink = styled.a`
-  font-family: ${({ theme }) => theme.fonts.displayLight};
-  font-weight: 400;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.navLinkHover : theme.colors.navSubtitle};
-  transition: color 0.2s;
-  white-space: nowrap;
+  && {
+    font-family: ${({ theme }) => theme.fonts.displayLight};
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.navLink};
+    transition: color 0.2s, font-weight 0.2s;
+    white-space: nowrap;
+  }
+
+  &&:hover {
+    color: ${({ theme }) => theme.colors.navLinkHover};
+  }
 `;
+
+function SocialItem({ label, href }) {
+  return (
+    <SocialLink
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+    >
+      {label}
+    </SocialLink>
+  );
+}
 
 const DesktopOnly = styled.div`
   flex: 1;
@@ -114,23 +132,6 @@ const MobileOnly = styled.div`
     display: block;
   }
 `;
-
-function SocialItem({ label, href }) {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <SocialLink
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-      $hovered={hovered}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {label}
-    </SocialLink>
-  );
-}
 
 export default function UxFooter() {
   const year = new Date().getFullYear();

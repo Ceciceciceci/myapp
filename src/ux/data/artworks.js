@@ -2,6 +2,7 @@ import ill12 from '../../images/original/Illustration12.png';
 import ill16 from '../../images/original/Illustration16.png';
 import ill20 from '../../images/original/Illustration20.png';
 import rose from '../../images/original/rose.png';
+import corpsTeam from '../../images/original/corps-team.png';
 import characterPortraits from '../../images/original/character-portraits.png';
 import breadyKitchenTowelProduct from '../../images/original/bready-kitchen-towel-product.png';
 import breadyKitchenTowelFlatlay from '../../images/original/bready-kitchen-towel-flatlay.png';
@@ -121,6 +122,12 @@ export const artworks = [
     title: 'Sea Bakery',
     medium: 'Sticker sheet',
     img: seaBakery,
+  },
+  {
+    id: 20,
+    title: 'Corps Team',
+    medium: 'Digital illustration',
+    img: corpsTeam,
   },
   {
     id: 2,

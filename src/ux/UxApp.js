@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { uxTheme } from './theme';
 import { UxGlobalStyles } from './styles';
@@ -37,6 +37,7 @@ export default function UxApp() {
             <Route exact path="/ux/art" component={UxArt} />
             <Route exact path="/ux/about" component={UxAbout} />
             <Route exact path="/ux/resume" component={UxResume} />
+            <Redirect to="/ux" />
           </Switch>
         </Content>
         <UxFooter />

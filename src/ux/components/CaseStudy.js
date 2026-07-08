@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Container, PageMain, SectionLabel, displayFont, pillFont } from '../styles';
 import { tagColor, displayFontStyle } from '../theme';
 import { ArrowLeft, ArrowRight } from '../icons';
-import { projects } from '../data/projects';
+import { projects, visibleProjects } from '../data/projects';
 
 const BackLink = styled(Link)`
   display: inline-flex;
@@ -222,8 +222,10 @@ const StepIndex = styled.span`
 const StepImg = styled.img`
   width: 100%;
   display: block;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  aspect-ratio: ${({ $portrait }) => ($portrait ? 'auto' : '16 / 10')};
+  object-fit: ${({ $portrait }) => ($portrait ? 'contain' : 'cover')};
+  max-height: ${({ $portrait }) => ($portrait ? '520px' : 'none')};
+  background: ${({ $portrait }) => ($portrait ? '#1A293D' : 'transparent')};
   border: 1px solid ${({ theme }) => theme.colors.border};
   margin-bottom: 0.875rem;
 `;
@@ -510,6 +512,16 @@ const PagePreviewImg = styled.img`
   border-radius: 0.75rem;
 `;
 
+const ArtworkImg = styled.img`
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  object-fit: contain;
+  background: #1A293D;
+  border: 1px solid ${({ theme }) => theme.colors.border};
+  border-radius: 0.75rem;
+`;
+
 const PagePreviewTitle = styled.h4`
   ${displayFont}
   font-size: 0.9375rem;
@@ -742,6 +754,14 @@ function CaseStudyExtended({ extended }) {
         </ExtendedSection>
       )}
 
+      {extended.artwork && (
+        <ExtendedSection>
+          <SectionLabel>Artwork & Illustration</SectionLabel>
+          <SolutionText style={{ marginBottom: '1rem' }}>{extended.artwork.summary}</SolutionText>
+          <ArtworkImg src={extended.artwork.img} alt="Stretchie character artwork and icons" />
+        </ExtendedSection>
+      )}
+
       {extended.reflection && (
         <ExtendedSection>
           <SectionLabel>Reflection</SectionLabel>
@@ -892,10 +912,10 @@ export default function UxCaseStudy() {
   const { id } = useParams();
   const history = useHistory();
 
-  const index = projects.findIndex((p) => p.id === id);
-  const project = projects[index];
-  const prev = projects[index - 1] || null;
-  const next = projects[index + 1] || null;
+  const index = visibleProjects.findIndex((p) => p.id === id);
+  const project = projects.find((p) => p.id === id);
+  const prev = visibleProjects[index - 1] || null;
+  const next = visibleProjects[index + 1] || null;
 
   if (!project) {
     return (
@@ -1007,7 +1027,9 @@ export default function UxCaseStudy() {
                   <StepLine />
                   <StepLabel>{step.label}</StepLabel>
                 </StepHeader>
-                {step.img && <StepImg src={step.img} alt={step.label} />}
+                {step.img && (
+                  <StepImg src={step.img} alt={step.label} $portrait={step.portrait} />
+                )}
                 {step.mobileViews && <MobileViewsCarousel views={step.mobileViews} />}
                 <SolutionText>{step.body}</SolutionText>
               </ProcessStep>

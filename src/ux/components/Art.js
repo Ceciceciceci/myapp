@@ -51,7 +51,7 @@ const InstagramLink = styled.a`
   letter-spacing: 0.04em;
   ${displayFont}
   transition: border-color 0.25s, color 0.25s, background 0.25s, box-shadow 0.25s;
-  border-radius: 999px;
+  border-radius: 15px;
   box-shadow: ${({ $hovered }) =>
     $hovered
       ? '0 4px 14px rgba(246,166,108,0.15)'

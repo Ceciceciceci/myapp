@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Container, PageMain, DisplayHeading, displayFont, pillFont } from '../styles';
 import { tagColor } from '../theme';
 import { ArrowUpRight } from '../icons';
-import { projects } from '../data/projects';
+import { visibleProjects } from '../data/projects';
 
 const Header = styled.div`
   padding: 5rem 0 3rem;
@@ -240,7 +240,7 @@ export default function UxProjects() {
         </Header>
 
         <ListEnd>
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </ListEnd>

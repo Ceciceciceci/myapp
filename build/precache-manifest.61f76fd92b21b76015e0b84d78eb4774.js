@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06abc9d9ebe2893065dab4b68448445c",
+    "revision": "4f83a0b4cea50558f6d511f2f5a5d652",
     "url": "/index.html"
   },
   {
-    "revision": "48457769ddd2db049516",
+    "revision": "bfac26db5b954e2f6839",
     "url": "/static/css/main.f202acaf.chunk.css"
   },
   {
-    "revision": "d1c5b686a8df1522d90f",
-    "url": "/static/js/2.d969293d.chunk.js"
+    "revision": "fadb8e6709a2cea8aae8",
+    "url": "/static/js/2.0b43f6b6.chunk.js"
   },
   {
     "revision": "a64acf8e3ad6aa1497056f0bb9a7ce4f",
-    "url": "/static/js/2.d969293d.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.0b43f6b6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "48457769ddd2db049516",
-    "url": "/static/js/main.b9edb4e5.chunk.js"
+    "revision": "bfac26db5b954e2f6839",
+    "url": "/static/js/main.a8299f19.chunk.js"
   },
   {
     "revision": "740dd3b9cc3d84204ea7",
@@ -52,6 +52,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/alarm-setup.1eac7226.png"
   },
   {
+    "revision": "d0156fdd51fb5dbf66a01c2cba01460d",
+    "url": "/static/media/artwork.d0156fdd.png"
+  },
+  {
     "revision": "5184b873d19da98296f218208e5965bc",
     "url": "/static/media/baguette.5184b873.png"
   },
@@ -60,16 +64,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bakery.f592a9c5.png"
   },
   {
-    "revision": "e1b7ee4b9b15344c436a073739d117a5",
-    "url": "/static/media/bookletter.e1b7ee4b.png"
-  },
-  {
     "revision": "8420df2ed768d88017430f6888217de9",
     "url": "/static/media/bread-friends.8420df2e.png"
-  },
-  {
-    "revision": "86078d46e51b6f93a073f23b4fd96ede",
-    "url": "/static/media/breadbowlplant.86078d46.png"
   },
   {
     "revision": "e7570cddea842dd6a0910930c028136d",
@@ -82,6 +78,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d9c54f88927f82ef899f4dfaa9cb54ab",
     "url": "/static/media/bready-kitchen-towel-product.d9c54f88.png"
+  },
+  {
+    "revision": "7b4a5a1aabdd268f4bf5adbe2cc56261",
+    "url": "/static/media/buttons.7b4a5a1a.png"
   },
   {
     "revision": "82c5e37fe6848a116b5577aa13eb4a14",
@@ -100,24 +100,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/character-portraits.0aea5bf5.png"
   },
   {
-    "revision": "bc07951733bd141f1197723cc8a43f07",
-    "url": "/static/media/cloud.bc079517.svg"
+    "revision": "5ae28e7ce04a71cb71ea28740407a376",
+    "url": "/static/media/corps-team.5ae28e7c.png"
   },
   {
     "revision": "ecc75eb317fdbb347fd9c5825dda9463",
     "url": "/static/media/daily-life-stickersheet.ecc75eb3.png"
   },
   {
-    "revision": "0fb5879ba3eaf06089639e09b62a9143",
-    "url": "/static/media/daisy.0fb5879b.svg"
-  },
-  {
-    "revision": "422a319b94eb4cd53787b79ee967e46e",
-    "url": "/static/media/daisy2.422a319b.svg"
-  },
-  {
     "revision": "3065f19fb3ef781b6a3e57285d359fde",
     "url": "/static/media/denji.3065f19f.png"
+  },
+  {
+    "revision": "5955b81e19ee88bb1f6132efb1f269c3",
+    "url": "/static/media/desktop-17.5955b81e.png"
   },
   {
     "revision": "fc152df9c4b766a082043cb3842ada70",
@@ -134,14 +130,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6e5c646f142fe3868f901807ecb53e70",
     "url": "/static/media/flowchart.6e5c646f.jpg"
-  },
-  {
-    "revision": "23d476235dad627b41d410bc5d450539",
-    "url": "/static/media/flower.23d47623.svg"
-  },
-  {
-    "revision": "1cddac7fd9057b3b4c191ec9b1187f8e",
-    "url": "/static/media/flowerstems.1cddac7f.png"
   },
   {
     "revision": "3ea95d65bc58778e53b9ec8f868a1096",
@@ -256,10 +244,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/frierensticker.2a7d1dc0.png"
   },
   {
-    "revision": "91ee85664c8eed03c83ac7a7cd4a7ff0",
-    "url": "/static/media/funpattern.91ee8566.svg"
-  },
-  {
     "revision": "69370073304b41af6301e1f359b0b546",
     "url": "/static/media/ghibli12.69370073.png"
   },
@@ -280,8 +264,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/home-page.3e401e3b.png"
   },
   {
-    "revision": "f84bc39922ce2ddc1f86120a8d2220c0",
-    "url": "/static/media/imgbg.f84bc399.svg"
+    "revision": "a8236197f39f5f0380ec03afecaa2268",
+    "url": "/static/media/icons.a8236197.png"
+  },
+  {
+    "revision": "c3c4e2c6c5fc87c72f5a94181e8e7136",
+    "url": "/static/media/icons.c3c4e2c6.png"
+  },
+  {
+    "revision": "889bddcb3f4764170043d6d4f3dfef76",
+    "url": "/static/media/intro.889bddcb.png"
   },
   {
     "revision": "d793f4e7ca5c23656df4de2e5909d8f6",
@@ -296,16 +288,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/landing.303d8134.png"
   },
   {
-    "revision": "ab0d825f484069d14cf08762f734feee",
-    "url": "/static/media/me3.ab0d825f.png"
+    "revision": "332cf1a34bb28de8c7dfd719d906f4eb",
+    "url": "/static/media/loading-states.332cf1a3.png"
   },
   {
-    "revision": "22962f4b6eefa381a7462f9e036dba4a",
-    "url": "/static/media/me4.22962f4b.png"
-  },
-  {
-    "revision": "d633c9ca12ac25d0a338c249d0ed5874",
-    "url": "/static/media/me5.d633c9ca.png"
+    "revision": "9f7f3421d6b9e80752138050997671af",
+    "url": "/static/media/message-banner.9f7f3421.png"
   },
   {
     "revision": "caaeeb5b8c73e71b6db61df772bf19fa",
@@ -328,28 +316,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/mobile-menu.3cadb57d.png"
   },
   {
-    "revision": "a428963c36d0f77ad0e3c4f6236662ce",
-    "url": "/static/media/moon.a428963c.svg"
-  },
-  {
-    "revision": "cbc22c768d1d3393b3fd3353d042d0ed",
-    "url": "/static/media/multistar.cbc22c76.svg"
-  },
-  {
     "revision": "dd22aa3682bbb38712425fbe69e80f48",
     "url": "/static/media/notification.dd22aa36.png"
   },
   {
     "revision": "706f90cdf0ee23f42c2cea3712e3094b",
     "url": "/static/media/orig3.706f90cd.jpg"
-  },
-  {
-    "revision": "d4b0d7ea0fd13cbe6088634608be1165",
-    "url": "/static/media/pewpew.d4b0d7ea.svg"
-  },
-  {
-    "revision": "9d8bb88707e320174e35e30418995550",
-    "url": "/static/media/photoframe.9d8bb887.svg"
   },
   {
     "revision": "418ff0860603a85a78952fbca99460cb",
@@ -372,6 +344,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/post-it-note-designs.b18dc15f.png"
   },
   {
+    "revision": "e2171b7e5fbee61b75376a69dad25fe4",
+    "url": "/static/media/primitives.e2171b7e.png"
+  },
+  {
     "revision": "b881d35fb3f413ff91dd815e18a110da",
     "url": "/static/media/problem-inspiration.b881d35f.png"
   },
@@ -388,16 +364,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/proj1-img.b0743d0c.jpg"
   },
   {
-    "revision": "280a5f3fca98e7c59740916daee0bec2",
-    "url": "/static/media/proj2-img.280a5f3f.jpg"
+    "revision": "dc9b715cd15ff114413e5147426efd56",
+    "url": "/static/media/quiz-main.dc9b715c.png"
   },
   {
-    "revision": "13211a316ca4f7807ccb8aaac6f15cfb",
-    "url": "/static/media/proj3-img.13211a31.jpg"
-  },
-  {
-    "revision": "b6df9583f34b3b4cd243691cf87b71ea",
-    "url": "/static/media/proj4-img.b6df9583.jpg"
+    "revision": "c5dc66dfacb0d222a16144f25940c14a",
+    "url": "/static/media/quiz-modules.c5dc66df.png"
   },
   {
     "revision": "b8804a21803c3e1e1d02df2c116ecc5f",
@@ -428,36 +400,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/sourdough.1b67eb9b.png"
   },
   {
-    "revision": "1add7abc79aeab538a7f073bf90d351f",
-    "url": "/static/media/speechbubblestemleft.1add7abc.svg"
-  },
-  {
-    "revision": "405c473f7524b837f41e1284445c646b",
-    "url": "/static/media/speechbubblestemright.405c473f.svg"
-  },
-  {
-    "revision": "01e67d4583bf445a6640709a37b4e186",
-    "url": "/static/media/stampbg.01e67d45.png"
-  },
-  {
-    "revision": "56e3eab2228b414dbecc959dcf124445",
-    "url": "/static/media/stampflower.56e3eab2.png"
-  },
-  {
-    "revision": "ef67e990f2230a81021db4270ad2ebe0",
-    "url": "/static/media/stampstar.ef67e990.png"
-  },
-  {
-    "revision": "8442aecabfd0d98188c4889eb53df332",
-    "url": "/static/media/star.8442aeca.svg"
-  },
-  {
     "revision": "cf03b64ba6074b5403b913f6e845e220",
     "url": "/static/media/storyboard.cf03b64b.jpg"
-  },
-  {
-    "revision": "2a1b574e59088ff44e530864dc97f80f",
-    "url": "/static/media/sun.2a1b574e.svg"
   },
   {
     "revision": "15a236e0f437fba14cf00d1df4e2b285",
@@ -486,10 +430,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "59b18ff6596101e604092e7c35d27e5a",
     "url": "/static/media/testbread8 2.59b18ff6.png"
-  },
-  {
-    "revision": "73ef1243d26e3cc10da56d6675248077",
-    "url": "/static/media/whoshape.73ef1243.svg"
   },
   {
     "revision": "096a7b8eba79b1363e806d66d25fab99",
