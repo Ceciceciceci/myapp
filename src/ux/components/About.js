@@ -316,7 +316,9 @@ export default function UxAbout() {
             <BodyText>
               I'm Cecilia! Currently I'm a design engineer with a focus on
               front-end development and UX/UI design. I like building creative
-              solutions where technology intersects art.
+              solutions where technology intersects art. Fun fact! I have two
+              movie credits after working at Dreamworks: Puss in Boots 2 and
+              Bad Guys ^^
             </BodyText>
             <BodyText $last>
               My work spans wireframing, interface design, product development
