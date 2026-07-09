@@ -458,6 +458,7 @@ export const projects = [
       'Mapped quiz inputs to the four shaping dimensions riders care about most: traction, terrain, performance, and weight.',
       'Applied model-specific color themes that follow Onewheel branding, such as neon yellow for GT, deep blue for XR, and GTS blue for GT-S.',
       'Partnered with the graphic design team and COO to iron out quiz flow details, visual direction, and finalized illustration graphics.',
+      'Worked with the marketing team to update customer-facing quiz wording so prompts and shaping language read clearly for riders.',
       'Designed slider and radio patterns with dynamic illustrations that respond to rider selections.',
       'Prototyped model theme variants in Figma, including annotated interaction states and mobile quiz modules.',
       'Built the quiz frontend in React, translating the Figma flow into interactive sliders, radio inputs, and dynamic illustration states.',

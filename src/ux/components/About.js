@@ -10,7 +10,7 @@ const experience = [
     company: 'Future Motion',
     role: 'Lead UX Designer + Software Engineer',
     bullets: [
-      'Led a design language system across 10+ applications: documented reusable Figma components, set team documentation standards, and presented adoption plans to the COO and graphic design.',
+      'Led a design language system across 10+ applications: documented reusable Figma components, set team documentation standards, and presented adoption plans to the COO, graphic design, and the marketing team.',
       'Shipped a React + Redux middleman app that shortened custom board and accessory fulfillment reviews by 20 minutes and improved internal order status visibility by 40%.',
       'Led design and front-end implementation of the Onewheel warranty recall page, moving a high-stakes customer flow from concept to production.',
       'Owned end-to-end UX for the trade-in process in Figma (2024), then partnered with engineering to ship the customer-facing flow.',
@@ -100,6 +100,7 @@ const developerSkills = [
   'Claude',
   'Figma MCP',
   'Storybook',
+  'AWS Amplify / Route 53',
 ];
 
 const Hero = styled.div`
@@ -326,8 +327,13 @@ export default function UxAbout() {
             <BodyText>
               I'm Cecilia! Currently I'm a design engineer with a focus on
               front-end development and UX/UI design. I like building creative
-              solutions where technology intersects art. Fun fact! I have three
-              movie credits after working at Dreamworks:{' '}
+              solutions where technology intersects art. My work spans project
+              planning, interface/product design, component library management,
+              cross-functional communication, code development, and
+              illustration.
+            </BodyText>
+            <BodyText $last>
+              Fun fact! I have three movie credits after working at Dreamworks:{' '}
               <InlineExternalLink
                 href="https://youtu.be/D4tbx5FrAWY?si=_IlwtjXsmLArq58w&t=443"
                 target="_blank"
@@ -351,14 +357,9 @@ export default function UxAbout() {
               >
                 Ruby Gillman, Teenage Kraken
               </InlineExternalLink>{' '}
-              ^^
-            </BodyText>
-            <BodyText $last>
-              My work spans wireframing, interface design, product development
-              (actually building it too), and illustration. Outside of work I
-              draw, play video games, hike, watch anime, knit, and sew. I love
-              bread as well and drew all the mini illustrations on this page that
-              you can see more of in the{' '}
+              ^^ Outside of work I draw, play video games, hike, watch anime,
+              knit, and sew. I love bread as well and drew all the mini
+              illustrations on this page that you can see more of in the{' '}
               <InlineLink to="/ux/art">Art page</InlineLink>.
             </BodyText>
           </div>

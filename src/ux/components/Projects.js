@@ -228,13 +228,13 @@ export default function UxProjects() {
           <div>
             <Eyebrow>Case Studies</Eyebrow>
             <DisplayHeading style={{ fontSize: 'clamp(2.5rem, 5vw, 4.5rem)' }}>
-              Selected
+              6 Case
               <br />
-              Work
+              Studies
             </DisplayHeading>
           </div>
           <HeaderDesc>
-            Four case studies spanning desktop product design, Shopify e-commerce,
+            Six case studies spanning desktop product design, Shopify e-commerce,
             travel web development, and conservation-focused UX research.
           </HeaderDesc>
         </Header>
