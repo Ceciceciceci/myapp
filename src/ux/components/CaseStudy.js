@@ -921,7 +921,7 @@ export default function UxCaseStudy() {
       <PageMain>
         <Container style={{ textAlign: 'center', padding: '6rem 0' }}>
           <p style={{ color: '#7A5230', marginBottom: '1.5rem' }}>Project not found.</p>
-          <BackLink to="/ux/projects">← Back to projects</BackLink>
+          <BackLink to="/projects">← Back to projects</BackLink>
         </Container>
       </PageMain>
     );
@@ -931,7 +931,7 @@ export default function UxCaseStudy() {
     <PageMain>
       <Container>
         <BackWrap>
-          <BackLink to="/ux/projects">
+          <BackLink to="/projects">
             <ArrowLeft size={13} />
             All projects
           </BackLink>
@@ -1061,7 +1061,7 @@ export default function UxCaseStudy() {
         <NavSection>
           <NavGrid>
             {prev ? (
-              <NavButton onClick={() => history.push(`/ux/projects/${prev.id}`)} align="left">
+              <NavButton onClick={() => history.push(`/projects/${prev.id}`)} align="left">
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.825rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#333333' }}>
                   <ArrowLeft size={11} /> Previous
                 </span>
@@ -1073,7 +1073,7 @@ export default function UxCaseStudy() {
               <div />
             )}
             {next ? (
-              <NavButton onClick={() => history.push(`/ux/projects/${next.id}`)} align="right">
+              <NavButton onClick={() => history.push(`/projects/${next.id}`)} align="right">
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', fontSize: '0.825rem', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#333333' }}>
                   Next <ArrowRight size={11} />
                 </span>

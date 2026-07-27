@@ -6,9 +6,9 @@ import { MenuIcon, CloseIcon } from '../icons';
 import logo from '../../images/ceci-shaker-charm.png';
 
 const links = [
-  { label: 'Work', to: '/ux/projects' },
-  { label: 'Resume', to: '/ux/about' },
-  { label: 'Art', to: '/ux/art' },
+  { label: 'Work', to: '/projects' },
+  { label: 'Resume', to: '/about' },
+  { label: 'Art', to: '/art' },
 ];
 
 const NavBar = styled.nav`
@@ -168,8 +168,8 @@ const MobileLink = styled(Link)`
 `;
 
 const isActive = (pathname, to) => {
-  if (to === '/ux/projects') {
-    return pathname.startsWith('/ux/projects');
+  if (to === '/projects') {
+    return pathname.startsWith('/projects');
   }
   return pathname === to || pathname.startsWith(`${to}/`);
 };
@@ -182,7 +182,7 @@ export default function UxNav() {
     <>
       <NavBar>
         <NavInner>
-          <Brand to="/ux" onClick={() => setOpen(false)}>
+          <Brand to="/" onClick={() => setOpen(false)}>
             <BrandIcon>
               <img src={logo} alt="" />
             </BrandIcon>

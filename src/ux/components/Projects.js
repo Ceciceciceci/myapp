@@ -176,7 +176,7 @@ function ProjectCard({ project }) {
 
   return (
     <ProjectLink
-      to={`/ux/projects/${project.id}`}
+      to={`/projects/${project.id}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

@@ -11,16 +11,16 @@ const workGridItems = visibleProjects.slice(0, 4).map((project) => ({
   title: project.title,
   tags: project.tags,
   img: project.img,
-  to: `/ux/projects/${project.id}`,
+  to: `/projects/${project.id}`,
 }));
 
 const leftColumnItems = workGridItems.filter((_, i) => i % 2 === 0);
 const rightColumnItems = workGridItems.filter((_, i) => i % 2 === 1);
 
 const shortcuts = [
-  { label: 'Case Studies', to: '/ux/projects', bg: '#7DC3E1', bgHover: '#6AB8D4', text: '#1A293D' },
-  { label: 'Art & Drawing', to: '/ux/art', bg: '#A6C550', bgHover: '#95B548', text: '#1A293D' },
-  { label: 'About Me', to: '/ux/about', bg: '#E0665A', bgHover: '#D0554A', text: '#FFFFFF' },
+  { label: 'Case Studies', to: '/projects', bg: '#7DC3E1', bgHover: '#6AB8D4', text: '#1A293D' },
+  { label: 'Art & Drawing', to: '/art', bg: '#A6C550', bgHover: '#95B548', text: '#1A293D' },
+  { label: 'About Me', to: '/about', bg: '#E0665A', bgHover: '#D0554A', text: '#FFFFFF' },
 ];
 
 const HeroGrid = styled.div`

@@ -252,7 +252,7 @@ const SkillGroupTitle = styled.h3`
   font-size: 0.875rem;
   color: #4f4f4f;
   letter-spacing: 0.04em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.35rem;
 `;
 
 const SkillList = styled.ul`
@@ -360,7 +360,7 @@ export default function UxAbout() {
               ^^ Outside of work I draw, play video games, hike, watch anime,
               knit, and sew. I love bread as well and drew all the mini
               illustrations on this page that you can see more of in the{' '}
-              <InlineLink to="/ux/art">Art page</InlineLink>.
+              <InlineLink to="/art">Art page</InlineLink>.
             </BodyText>
           </div>
         </Hero>

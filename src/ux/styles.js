@@ -1,8 +1,6 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const UxGlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Fredoka:wght@300;400;500;600&family=Sometype+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
-
   .ux-portfolio {
     font-family: ${({ theme }) => theme.fonts.body};
     background: ${({ theme }) => theme.colors.background};
