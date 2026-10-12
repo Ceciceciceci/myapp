@@ -3,6 +3,8 @@ import styled, { createGlobalStyle, css } from 'styled-components';
 export const UxGlobalStyles = createGlobalStyle`
   .ux-portfolio {
     font-family: ${({ theme }) => theme.fonts.body};
+    font-size: ${({ theme }) => theme.typography.baseSize};
+    line-height: 1.5;
     background: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.foreground};
     min-height: 100vh;
@@ -70,6 +72,10 @@ export const Container = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
   padding: 0 2rem;
+
+  @media (max-width: 600px) {
+    padding: 0 1.25rem;
+  }
 `;
 
 export const SectionLabel = styled.p`
@@ -96,7 +102,7 @@ export const DisplayHeading = styled.h1`
 `;
 
 export const pillFont = css`
-  font-family: ${({ theme }) => theme.fonts.displayLight};
+  font-family: ${({ theme }) => theme.fonts.body};
   font-weight: 600;
 `;
 

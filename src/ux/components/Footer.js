@@ -3,97 +3,85 @@ import styled from 'styled-components';
 import footerMascot from '../../images/footer-mascot.png';
 
 const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ceciliaaa-tran/' },
-  { label: 'Github', href: 'https://github.com/Ceciceciceci' },
   { label: 'Email', href: 'mailto:cecitran94@gmail.com' },
-  { label: 'Instagram', href: 'https://www.instagram.com/ichiknees/' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ceciliaaa-tran/' },
 ];
 
 const FooterEl = styled.footer`
-  position: relative;
-  height: auto;
   width: 100%;
-  border-top: 1px solid ${({ theme }) => theme.colors.navBorder};
-  background: ${({ theme }) => theme.colors.background};
-  padding-bottom: env(safe-area-inset-bottom, 0);
+  background: ${({ theme }) => theme.colors.footerBg};
+  margin-top: 3rem;
+  padding: 2.5rem 2rem;
+  padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0));
+
+  @media (max-width: 600px) {
+    padding: 1.75rem 1.25rem;
+    padding-bottom: calc(1.75rem + env(safe-area-inset-bottom, 0));
+  }
 `;
 
 const FooterInner = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-  padding: 1rem 1.25rem 0.75rem;
+`;
+
+const Card = styled.div`
+  background: ${({ theme }) => theme.colors.footerCard};
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0));
-  }
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
 `;
 
-const Copyright = styled.p`
-  flex: 1;
-  margin: 0;
-  font-family: ${({ theme }) => theme.fonts.displayLight};
-  font-weight: 400;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.navSubtitle};
-  line-height: normal;
-  white-space: nowrap;
-
-  @media (max-width: 900px) {
-    flex: unset;
-    width: 100%;
-    white-space: normal;
-    text-align: center;
-    font-size: 1rem;
-  }
-`;
-
-const MascotWrap = styled.div`
+const Mascot = styled.div`
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
-  width: 124px;
-  height: 49px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: ${({ theme }) => theme.colors.placeholder};
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
   }
 `;
 
-const SocialList = styled.div`
-  flex: 1;
+const CardBody = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 2.5rem;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+`;
 
-  @media (max-width: 900px) {
-    flex: unset;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
-    width: 100%;
-  }
+const CardLabel = styled.p`
+  margin: 0;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.typography.baseSize};
+  color: ${({ theme }) => theme.colors.foreground};
+  white-space: nowrap;
+`;
+
+const SocialList = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 `;
 
 const SocialLink = styled.a`
   && {
-    font-family: ${({ theme }) => theme.fonts.displayLight};
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    font-family: ${({ theme }) => theme.fonts.body};
+    font-size: ${({ theme }) => theme.typography.baseSize};
+    font-weight: 400;
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.navLink};
-    transition: color 0.2s, font-weight 0.2s;
+    color: ${({ theme }) => theme.colors.footerLink};
+    transition: color 0.2s ease;
     white-space: nowrap;
   }
 
@@ -102,64 +90,35 @@ const SocialLink = styled.a`
   }
 `;
 
-function SocialItem({ label, href }) {
-  return (
-    <SocialLink
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-    >
-      {label}
-    </SocialLink>
-  );
-}
-
-const DesktopOnly = styled.div`
-  flex: 1;
-  min-width: 0;
-
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
-
-const MobileOnly = styled.div`
-  display: none;
-  width: 100%;
-
-  @media (max-width: 900px) {
-    display: block;
-  }
-`;
-
 export default function UxFooter() {
-  const year = new Date().getFullYear();
-
   return (
     <FooterEl>
       <FooterInner>
-        <DesktopOnly>
-          <Copyright>
-            © Cecilia Tran, {year}
-          </Copyright>
-        </DesktopOnly>
+        <Card>
+          <Mascot>
+            <img src={footerMascot} alt="" aria-hidden="true" />
+          </Mascot>
 
-        <MascotWrap>
-          <img src={footerMascot} alt="" aria-hidden="true" />
-        </MascotWrap>
-
-        <SocialList>
-          {socials.map((s) => (
-            <SocialItem key={s.label} {...s} />
-          ))}
-        </SocialList>
-
-        <MobileOnly>
-          <Copyright>
-            © Cecilia Tran, {year}
-          </Copyright>
-        </MobileOnly>
+          <CardBody>
+            <CardLabel>Bake with me here</CardLabel>
+            <SocialList>
+              {socials.map((s) => (
+                <SocialLink
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={
+                    s.href.startsWith('mailto:')
+                      ? undefined
+                      : 'noopener noreferrer'
+                  }
+                >
+                  {s.label}
+                </SocialLink>
+              ))}
+            </SocialList>
+          </CardBody>
+        </Card>
       </FooterInner>
     </FooterEl>
   );
