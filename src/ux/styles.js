@@ -36,7 +36,6 @@ export const UxGlobalStyles = createGlobalStyle`
     left: auto;
     height: auto;
     width: 100%;
-    padding: 0;
     display: block;
     font-size: inherit;
     font-weight: 400;

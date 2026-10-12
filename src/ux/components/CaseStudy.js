@@ -13,18 +13,32 @@ const Intro = styled.header`
   padding: 2.5rem 0 1.5rem;
 `;
 
-const AccentBar = styled.div`
-  width: 72px;
-  height: 10px;
-  border-radius: 4px;
-  background: ${({ theme }) => theme.colors.placeholder};
-  margin-bottom: 1.25rem;
+const BackLink = styled(Link)`
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 40px 0 0;
+  border: none;
+  background: none;
+  font-family: ${({ theme }) => theme.fonts.display};
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.foreground};
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.navLinkHover};
+  }
 `;
 
 const Title = styled.h1`
   margin: 0 0 1rem;
   font-family: ${({ theme }) => theme.fonts.body};
-  font-size: ${({ theme }) => theme.typography.headingSize};
+  font-size: 32px;
   font-weight: ${({ theme }) => theme.typography.headingWeight};
   line-height: 1.3;
   color: ${({ theme }) => theme.colors.foreground};
@@ -125,7 +139,7 @@ const FullWidthMedia = styled.div`
   margin: 0.75rem 0 1.25rem;
   border-radius: ${({ theme }) => theme.radius};
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.placeholder};
+  background: transparent;
 
   img,
   video {
@@ -133,6 +147,10 @@ const FullWidthMedia = styled.div`
     height: auto;
     display: block;
     object-fit: contain;
+  }
+
+  video {
+    background: #111;
   }
 `;
 
@@ -211,21 +229,39 @@ const BulletItem = styled.li`
   color: ${({ theme }) => theme.colors.foreground};
 `;
 
+const NumberIntro = styled(Body)`
+  margin: 0 0 20px;
+  padding: 0;
+`;
+
 const NumberList = styled.ol`
   margin: 0;
-  padding-left: 0;
+  padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 16px;
 `;
 
 const NumberItem = styled.li`
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 0.35em;
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.typography.baseSize};
   font-weight: ${({ theme }) => theme.typography.bodyWeight};
-  line-height: 1.65;
+  line-height: 1.25;
   color: ${({ theme }) => theme.colors.foreground};
+`;
+
+const NumberMarker = styled.span`
+  white-space: nowrap;
+`;
+
+const NumberText = styled.span`
+  min-width: 0;
 `;
 
 const MediaText = styled.div`
@@ -243,11 +279,19 @@ const MediaFrame = styled.div`
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.placeholder};
+  background: ${({ $hasMedia, theme }) =>
+    $hasMedia ? 'transparent' : theme.colors.placeholder};
   aspect-ratio: ${({ $hasMedia, $wide }) =>
     $hasMedia ? 'auto' : $wide ? '21 / 5' : '1 / 1'};
 
-  img,
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: transparent;
+  }
+
   video {
     width: 100%;
     height: auto;
@@ -409,11 +453,19 @@ function CaseSection({ section }) {
     return (
       <Section>
         {section.title ? <SectionTitle>{section.title}</SectionTitle> : null}
-        {section.intro ? <Body>{section.intro}</Body> : null}
+        {section.intro ? <NumberIntro>{section.intro}</NumberIntro> : null}
         <NumberList>
-          {(section.items || []).map((item) => (
-            <NumberItem key={item}>{item}</NumberItem>
-          ))}
+          {(section.items || []).map((item) => {
+            const match = String(item).match(/^(\d+\.\))\s*(.*)$/);
+            const marker = match ? match[1] : null;
+            const text = match ? match[2] : item;
+            return (
+              <NumberItem key={item}>
+                {marker ? <NumberMarker>{marker}</NumberMarker> : null}
+                <NumberText>{text}</NumberText>
+              </NumberItem>
+            );
+          })}
         </NumberList>
       </Section>
     );
@@ -510,7 +562,7 @@ export default function UxCaseStudy() {
     <Page>
       <Container>
         <Intro>
-          <AccentBar aria-hidden="true" />
+          <BackLink to="/">&lt; BACK</BackLink>
           <Title>{study.title}</Title>
           {study.metaFields?.length ? (
             <MetaBlock>

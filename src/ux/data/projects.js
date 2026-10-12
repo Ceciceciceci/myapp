@@ -73,10 +73,9 @@ export const projects = [
         {
           type: 'image-grid',
           title: 'Why was a design system needed?',
-          intro: 'There were a lot of non uniform',
+          intro:
+            'There were a lot of uniform components and the C-suite left notes on why everything looks different and layout messy on different applications. As part of the dev team, it was tough to keep track of all the components and styling between 42 different applications and most of the time it was easier to copy and paste into each application.',
           images: [null, null, null, null],
-          caption:
-            'show screenshot of mixed styling and colors everywhere, no uniform look or style\nlabel each picture show like 4 of them across',
         },
         {
           type: 'bullets',
@@ -92,7 +91,7 @@ export const projects = [
         },
         {
           type: 'prose',
-          title: 'Research ( add screenshots of the diff designs ystem )',
+          title: 'Research',
           img: fmDsCase5,
           body: [
             'I looked into many design systems to learn what makes for a good design system for our needs. Not all of them apply directly for what we use it for so I cherry picked and took notes.',
@@ -159,7 +158,7 @@ export const projects = [
         {
           type: 'media-text',
           title: 'Data Tables',
-          img: null,
+          img: fmDsDataTable,
           body: 'Designing this component was one of the hardest ones.',
         },
         {

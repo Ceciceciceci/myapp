@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { displayFont } from '../styles';
 import { MenuIcon, CloseIcon } from '../icons';
-import logo from '../../images/ceci-shaker-charm.png';
+import logo from '../../images/ceci-bread-logo.png';
 
 const links = [
   { label: 'work', to: '/' },
   { label: 'about', to: '/about' },
-  { label: 'resume', to: '/resume' },
+  { label: 'art', to: '/art' },
 ];
 
 const NavBar = styled.nav`
@@ -43,21 +43,17 @@ const Brand = styled(Link)`
 `;
 
 const BrandIcon = styled.div`
-  width: 36px;
   height: 36px;
+  width: auto;
   flex-shrink: 0;
-  border-radius: 50%;
-  overflow: hidden;
-  background: ${({ theme }) => theme.colors.placeholder};
   display: flex;
   align-items: center;
-  justify-content: center;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 36px;
+    width: auto;
     display: block;
+    object-fit: contain;
   }
 `;
 
@@ -84,12 +80,12 @@ const NavLink = styled(Link)`
   && {
     font-family: ${({ theme }) => theme.fonts.body};
     font-size: ${({ theme }) => theme.typography.baseSize};
-    font-weight: 400;
+    font-weight: ${({ $active }) => ($active ? 700 : 400)};
     text-decoration: none;
     white-space: nowrap;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
   &&:hover {
@@ -133,11 +129,11 @@ const MobileLink = styled(Link)`
   && {
     font-family: ${({ theme }) => theme.fonts.body};
     font-size: ${({ theme }) => theme.typography.baseSize};
-    font-weight: 400;
+    font-weight: ${({ $active }) => ($active ? 700 : 400)};
     text-decoration: none;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
   &&:hover {

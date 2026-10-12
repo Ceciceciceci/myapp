@@ -44,6 +44,12 @@ const ImageLink = styled(Link)`
   color: inherit;
 `;
 
+const ExternalImageLink = styled.a`
+  display: block;
+  text-decoration: none;
+  color: inherit;
+`;
+
 const ImageWrap = styled.div`
   width: 100%;
   margin-top: 0.35rem;
@@ -124,10 +130,25 @@ export default function ProjectCard({
           aria-label={title}
         />
       ) : img ? (
-        <Image src={img} alt={title} $hovered={hovered && Boolean(to)} />
+        <Image
+          src={img}
+          alt={title}
+          $hovered={hovered && Boolean(to || url)}
+        />
       ) : null}
     </ImageWrap>
   );
+
+  let media = mediaNode;
+  if (to) {
+    media = <ImageLink to={to}>{mediaNode}</ImageLink>;
+  } else if (url) {
+    media = (
+      <ExternalImageLink href={url} target="_blank" rel="noopener noreferrer">
+        {mediaNode}
+      </ExternalImageLink>
+    );
+  }
 
   return (
     <Card $layout={layout}>
@@ -135,7 +156,7 @@ export default function ProjectCard({
         {to ? <TitleLink to={to}>{title}</TitleLink> : title}
       </Title>
       <MetaLine meta={meta} url={url} />
-      {to ? <ImageLink to={to}>{mediaNode}</ImageLink> : mediaNode}
+      {media}
     </Card>
   );
 }

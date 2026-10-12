@@ -1,6 +1,7 @@
 import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
 import fxnctionHero from '../../images/fxnction/hero-product.png';
 import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
+import dpelPreview from '../../images/dpel/preview.png';
 
 /**
  * Homepage project grid layout.
@@ -45,9 +46,9 @@ export const homeProjects = [
   {
     id: 'dpel',
     title: 'Open Source Digital Production Example Library',
-    meta: 'Web + Mobile | Vite, Sketch',
+    meta: 'Web + Mobile | Vite, Sketch, Open-source',
     url: 'https://dpel.aswf.io/',
-    img: null,
+    img: dpelPreview,
     to: null,
     layout: 'half',
   },

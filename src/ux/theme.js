@@ -34,7 +34,7 @@ export const uxTheme = {
     socialHoverBg: '#FDDDD9',
     socialHoverColor: '#BF4E1E',
     socialHoverBorder: '#F5B8B2',
-    footerBg: '#DD9239',
+    footerBg: '#68B3EA',
     footerCard: '#FFFFFF',
     footerLink: '#68B3EA',
   },
