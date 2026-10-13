@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "284f79f661c8b15b86485d62a932a8e1",
+    "revision": "ff05272af67228d656f27fcdcdd8f11b",
     "url": "/index.html"
   },
   {
-    "revision": "40a3e21b6ae62eb7ac78",
+    "revision": "e19cc9c38c58ad0bea65",
     "url": "/static/css/main.f202acaf.chunk.css"
   },
   {
-    "revision": "fadb8e6709a2cea8aae8",
-    "url": "/static/js/2.0b43f6b6.chunk.js"
+    "revision": "bc0a85524b96dbc5f31c",
+    "url": "/static/js/2.f60fd4a8.chunk.js"
   },
   {
     "revision": "a64acf8e3ad6aa1497056f0bb9a7ce4f",
-    "url": "/static/js/2.0b43f6b6.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.f60fd4a8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "40a3e21b6ae62eb7ac78",
-    "url": "/static/js/main.8b509092.chunk.js"
+    "revision": "e19cc9c38c58ad0bea65",
+    "url": "/static/js/main.24a0b9d7.chunk.js"
   },
   {
     "revision": "740dd3b9cc3d84204ea7",
@@ -88,12 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cart-page.82c5e37f.png"
   },
   {
-    "revision": "e27ded31c783b89ef1560c7fccc44a42",
-    "url": "/static/media/ceci-shaker-charm.e27ded31.png"
-  },
-  {
-    "revision": "f9d8229a3c668231dc51ae3d1139884c",
-    "url": "/static/media/cecilia-avatar.f9d8229a.png"
+    "revision": "d5400d57c65244faacda53434b9cedbb",
+    "url": "/static/media/ceci-bread-logo.d5400d57.png"
   },
   {
     "revision": "0aea5bf54530c2bc598577ba506e82b6",
@@ -108,12 +104,48 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/daily-life-stickersheet.ecc75eb3.png"
   },
   {
+    "revision": "0e64c2cae0569d3695e3f8589e66aa8d",
+    "url": "/static/media/data-table.0e64c2ca.png"
+  },
+  {
     "revision": "3065f19fb3ef781b6a3e57285d359fde",
     "url": "/static/media/denji.3065f19f.png"
   },
   {
+    "revision": "c4df5b6f3cd36647bf0f8f2fca55cb99",
+    "url": "/static/media/design-system-3.c4df5b6f.png"
+  },
+  {
+    "revision": "56b3ce5c57df30b7c91c78fac1f72c64",
+    "url": "/static/media/design-system-4.56b3ce5c.png"
+  },
+  {
+    "revision": "836ea071a51809aa1316828e17b9ea4a",
+    "url": "/static/media/design-system-5.836ea071.png"
+  },
+  {
+    "revision": "7ad532d4f15d8d8c04fac039dff22db6",
+    "url": "/static/media/design-system-hero-a.7ad532d4.png"
+  },
+  {
+    "revision": "81e592e726720a7a3c265ad8d419a987",
+    "url": "/static/media/design-system-hero-b.81e592e7.png"
+  },
+  {
     "revision": "5955b81e19ee88bb1f6132efb1f269c3",
     "url": "/static/media/desktop-17.5955b81e.png"
+  },
+  {
+    "revision": "ea11b0b124e6f9035bbb2e482000aa68",
+    "url": "/static/media/diagnosing-buttons-pills.ea11b0b1.png"
+  },
+  {
+    "revision": "f139bf62687001de8a9b13df9dca9af2",
+    "url": "/static/media/diagnosing-reports-headers.f139bf62.png"
+  },
+  {
+    "revision": "cffecbfa500e98b9505bcd483bb63923",
+    "url": "/static/media/diagnosing-rma-headers.cffecbfa.png"
   },
   {
     "revision": "fc152df9c4b766a082043cb3842ada70",
@@ -126,6 +158,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "aa8c17deb3081df32f7c22996694d699",
     "url": "/static/media/dumpling-hair-claw-steamer.aa8c17de.png"
+  },
+  {
+    "revision": "3fdb2956e0c0000fc1df18d681b0b04b",
+    "url": "/static/media/email-icon.3fdb2956.svg"
   },
   {
     "revision": "6e5c646f142fe3868f901807ecb53e70",
@@ -236,8 +272,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/foodart9.f637dbe5.png"
   },
   {
-    "revision": "86b4cd6f819a2a54ee4e72f20eb12d66",
-    "url": "/static/media/footer-mascot.86b4cd6f.png"
+    "revision": "b6a5a9a498ac87d4f14c8ff90b4856b6",
+    "url": "/static/media/footer-mascot.b6a5a9a4.png"
   },
   {
     "revision": "2a7d1dc0234d1d4ba07abb3193082c6a",
@@ -286,6 +322,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "303d813458f439a469ac66a346a06759",
     "url": "/static/media/landing.303d8134.png"
+  },
+  {
+    "revision": "f49015b6912422866e2dfde0d3ef5936",
+    "url": "/static/media/linkedin-square-logo.f49015b6.webp"
   },
   {
     "revision": "332cf1a34bb28de8c7dfd719d906f4eb",
@@ -342,6 +382,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b18dc15f7cd71100dc50d3b9a5f7e379",
     "url": "/static/media/post-it-note-designs.b18dc15f.png"
+  },
+  {
+    "revision": "86b61878334cafb5b85a7ca42ac977a3",
+    "url": "/static/media/preview.86b61878.png"
   },
   {
     "revision": "e2171b7e5fbee61b75376a69dad25fe4",
@@ -402,6 +446,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cf03b64ba6074b5403b913f6e845e220",
     "url": "/static/media/storyboard.cf03b64b.jpg"
+  },
+  {
+    "revision": "5cb8e3500286c851e3847ac5ac5ba1dd",
+    "url": "/static/media/storybook-colors.5cb8e350.png"
   },
   {
     "revision": "15a236e0f437fba14cf00d1df4e2b285",
