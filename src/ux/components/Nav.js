@@ -3,12 +3,12 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { displayFont } from '../styles';
 import { MenuIcon, CloseIcon } from '../icons';
-import logo from '../../images/ceci-shaker-charm.png';
+import logo from '../../images/ceci-bread-logo.png';
 
 const links = [
-  { label: 'Work', to: '/projects' },
-  { label: 'Resume', to: '/about' },
-  { label: 'Art', to: '/art' },
+  { label: 'work', to: '/' },
+  { label: 'about', to: '/about' },
+  { label: 'art', to: '/art' },
 ];
 
 const NavBar = styled.nav`
@@ -18,76 +18,58 @@ const NavBar = styled.nav`
   right: 0;
   z-index: 50;
   background: ${({ theme }) => theme.colors.navBg};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.navBorder};
 `;
 
 const NavInner = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-  padding: 16px 20px;
+  padding: 1.125rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+
+  @media (max-width: 600px) {
+    padding: 1rem 1.25rem;
+  }
 `;
 
 const Brand = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.625rem;
   text-decoration: none;
-  flex: 1;
   min-width: 0;
 `;
 
 const BrandIcon = styled.div`
-  width: 36px;
   height: 36px;
+  width: auto;
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: 36px;
+    width: auto;
     display: block;
+    object-fit: contain;
   }
-`;
-
-const BrandText = styled.p`
-  margin: 0;
-  font-size: 16px;
-  line-height: normal;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 `;
 
 const BrandName = styled.span`
   ${displayFont}
-  display: inline-block;
+  font-size: 18px;
+  line-height: 1.2;
   color: ${({ theme }) => theme.colors.navName};
   font-weight: 400;
-`;
-
-const BrandTitle = styled.span`
-  font-family: ${({ theme }) => theme.fonts.displayLight};
-  color: ${({ theme }) => theme.colors.navSubtitle};
-  font-weight: 300;
-
-  @media (max-width: 899px) {
-    display: none;
-  }
+  white-space: nowrap;
 `;
 
 const DesktopLinks = styled.div`
   display: none;
   align-items: center;
-  justify-content: flex-end;
-  gap: 40px;
-  flex: 1;
+  gap: 2rem;
 
   @media (min-width: 900px) {
     display: flex;
@@ -96,15 +78,14 @@ const DesktopLinks = styled.div`
 
 const NavLink = styled(Link)`
   && {
-    font-family: ${({ theme }) => theme.fonts.displayLight};
-    font-size: 16px;
-    font-weight: ${({ $active }) => ($active ? 500 : 300)};
+    font-family: ${({ theme }) => theme.fonts.body};
+    font-size: ${({ theme }) => theme.typography.baseSize};
+    font-weight: ${({ $active }) => ($active ? 700 : 400)};
     text-decoration: none;
-    text-transform: uppercase;
     white-space: nowrap;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    transition: color 0.2s, font-weight 0.2s;
+    transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
   &&:hover {
@@ -134,9 +115,9 @@ const MobileDrawer = styled.div`
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.navBg};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.navBorder};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   z-index: 40;
-  padding: 1.5rem 20px;
+  padding: 1.5rem 1.25rem;
   gap: 1.25rem;
 
   @media (min-width: 900px) {
@@ -146,30 +127,23 @@ const MobileDrawer = styled.div`
 
 const MobileLink = styled(Link)`
   && {
-    font-family: ${({ theme }) => theme.fonts.displayLight};
-    font-size: 16px;
-    font-weight: ${({ $active }) => ($active ? 500 : 300)};
-    text-transform: uppercase;
+    font-family: ${({ theme }) => theme.fonts.body};
+    font-size: ${({ theme }) => theme.typography.baseSize};
+    font-weight: ${({ $active }) => ($active ? 700 : 400)};
     text-decoration: none;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    padding-left: ${({ $active }) => ($active ? '16px' : '0')};
-    border-left: 2px solid
-      ${({ $active, theme }) => ($active ? theme.colors.navLinkActive : 'transparent')};
-    transition: color 0.2s, border-color 0.2s, padding-left 0.2s;
+    transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
   &&:hover {
     color: ${({ theme }) => theme.colors.navLinkHover};
-    border-left-color: ${({ $active, theme }) =>
-      $active ? theme.colors.navLinkActive : theme.colors.navLinkHover};
-    padding-left: 16px;
   }
 `;
 
 const isActive = (pathname, to) => {
-  if (to === '/projects') {
-    return pathname.startsWith('/projects');
+  if (to === '/') {
+    return pathname === '/' || pathname.startsWith('/projects');
   }
   return pathname === to || pathname.startsWith(`${to}/`);
 };
@@ -186,10 +160,7 @@ export default function UxNav() {
             <BrandIcon>
               <img src={logo} alt="" />
             </BrandIcon>
-            <BrandText>
-              <BrandName>CECILIA TRAN</BrandName>
-              <BrandTitle>{'  UX Engineer && Product Designer'}</BrandTitle>
-            </BrandText>
+            <BrandName>Cecilia Tran</BrandName>
           </Brand>
 
           <DesktopLinks>

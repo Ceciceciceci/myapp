@@ -1,165 +1,152 @@
 import React from 'react';
 import styled from 'styled-components';
 import footerMascot from '../../images/footer-mascot.png';
+import linkedinLogo from '../../images/linkedin-square-logo.webp';
+import emailIcon from '../../images/email-icon.svg';
 
 const socials = [
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ceciliaaa-tran/' },
-  { label: 'Github', href: 'https://github.com/Ceciceciceci' },
-  { label: 'Email', href: 'mailto:cecitran94@gmail.com' },
-  { label: 'Instagram', href: 'https://www.instagram.com/ichiknees/' },
+  {
+    label: 'Email',
+    href: 'mailto:cecitran94@gmail.com',
+    icon: emailIcon,
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/ceciliaaa-tran/',
+    icon: linkedinLogo,
+  },
 ];
 
 const FooterEl = styled.footer`
-  position: relative;
-  height: auto;
-  width: 100%;
-  border-top: 1px solid ${({ theme }) => theme.colors.navBorder};
-  background: ${({ theme }) => theme.colors.background};
-  padding-bottom: env(safe-area-inset-bottom, 0);
+  && {
+    width: 100%;
+    background: ${({ theme }) => theme.colors.footerBg};
+    margin-top: 3rem;
+    padding: 40px 2rem;
+    padding-bottom: calc(40px + env(safe-area-inset-bottom, 0));
+  }
+
+  @media (max-width: 600px) {
+    && {
+      padding: 40px 1.25rem;
+      padding-bottom: calc(40px + env(safe-area-inset-bottom, 0));
+    }
+  }
 `;
 
 const FooterInner = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-  padding: 1rem 1.25rem 0.75rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom, 0));
-  }
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
 `;
 
-const Copyright = styled.p`
-  flex: 1;
-  margin: 0;
-  font-family: ${({ theme }) => theme.fonts.displayLight};
-  font-weight: 400;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.navSubtitle};
-  line-height: normal;
-  white-space: nowrap;
-
-  @media (max-width: 900px) {
-    flex: unset;
-    width: 100%;
-    white-space: normal;
-    text-align: center;
-    font-size: 1rem;
-  }
-`;
-
-const MascotWrap = styled.div`
+const Mascot = styled.img`
+  height: 96px;
+  width: auto;
+  max-width: min(320px, 100%);
+  display: block;
+  object-fit: contain;
   flex-shrink: 0;
-  width: 124px;
-  height: 49px;
+`;
+
+const Bubble = styled.div`
+  position: relative;
+  background: ${({ theme }) => theme.colors.footerCard};
+  border-radius: 20px;
+  padding: 1rem 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  width: fit-content;
+  max-width: 100%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid ${({ theme }) => theme.colors.footerCard};
+  }
+
+  @media (max-width: 600px) {
+    &::before {
+      display: none;
+    }
+  }
+`;
+
+const CardLabel = styled.p`
+  margin: 0;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.typography.baseSize};
+  color: ${({ theme }) => theme.colors.foreground};
+  white-space: nowrap;
+`;
+
+const SocialList = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+`;
+
+const SocialLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: ${({ theme }) => theme.colors.footerLink};
+  transition: opacity 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+    color: ${({ theme }) => theme.colors.navLinkHover};
+  }
 
   img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: contain;
-    display: block;
-  }
-`;
-
-const SocialList = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 2.5rem;
-
-  @media (max-width: 900px) {
-    flex: unset;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
-    width: 100%;
-  }
-`;
-
-const SocialLink = styled.a`
-  && {
-    font-family: ${({ theme }) => theme.fonts.displayLight};
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.navLink};
-    transition: color 0.2s, font-weight 0.2s;
-    white-space: nowrap;
-  }
-
-  &&:hover {
-    color: ${({ theme }) => theme.colors.navLinkHover};
-  }
-`;
-
-function SocialItem({ label, href }) {
-  return (
-    <SocialLink
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={label}
-    >
-      {label}
-    </SocialLink>
-  );
-}
-
-const DesktopOnly = styled.div`
-  flex: 1;
-  min-width: 0;
-
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
-
-const MobileOnly = styled.div`
-  display: none;
-  width: 100%;
-
-  @media (max-width: 900px) {
-    display: block;
   }
 `;
 
 export default function UxFooter() {
-  const year = new Date().getFullYear();
-
   return (
     <FooterEl>
       <FooterInner>
-        <DesktopOnly>
-          <Copyright>
-            © Cecilia Tran, {year}
-          </Copyright>
-        </DesktopOnly>
+        <Mascot src={footerMascot} alt="Bread Friends" />
 
-        <MascotWrap>
-          <img src={footerMascot} alt="" aria-hidden="true" />
-        </MascotWrap>
-
-        <SocialList>
-          {socials.map((s) => (
-            <SocialItem key={s.label} {...s} />
-          ))}
-        </SocialList>
-
-        <MobileOnly>
-          <Copyright>
-            © Cecilia Tran, {year}
-          </Copyright>
-        </MobileOnly>
+        <Bubble>
+          <CardLabel>Bake with me here</CardLabel>
+          <SocialList>
+            {socials.map((s) => (
+              <SocialLink
+                key={s.label}
+                href={s.href}
+                target={s.href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={
+                  s.href.startsWith('mailto:')
+                    ? undefined
+                    : 'noopener noreferrer'
+                }
+                aria-label={s.label}
+              >
+                <img src={s.icon} alt="" />
+              </SocialLink>
+            ))}
+          </SocialList>
+        </Bubble>
       </FooterInner>
     </FooterEl>
   );

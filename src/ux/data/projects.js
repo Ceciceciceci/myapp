@@ -29,6 +29,16 @@ import fmDsButtons from '../../images/future-motion-design-system/buttons.png';
 import fmDsIcons from '../../images/future-motion-design-system/icons.png';
 import fmDsMessageBanner from '../../images/future-motion-design-system/message-banner.png';
 import fmDsLoadingStates from '../../images/future-motion-design-system/loading-states.png';
+import fmDsDataTable from '../../images/future-motion-design-system/data-table.png';
+import fmDsStorybookColors from '../../images/future-motion-design-system/storybook-colors.png';
+import fmDsDiagnosing from '../../images/future-motion-design-system/diagnosing-buttons-pills.png';
+import fmDsDiagnosingRma from '../../images/future-motion-design-system/diagnosing-rma-headers.png';
+import fmDsDiagnosingReports from '../../images/future-motion-design-system/diagnosing-reports-headers.png';
+import fmDsCase1 from '../../images/future-motion-design-system/design-system-hero-a.png';
+import fmDsCase2 from '../../images/future-motion-design-system/design-system-hero-b.png';
+import fmDsCase3 from '../../images/future-motion-design-system/design-system-3.png';
+import fmDsCase4 from '../../images/future-motion-design-system/design-system-4.png';
+import fmDsCase5 from '../../images/future-motion-design-system/design-system-5.png';
 import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
 import onewheelQuizPrimitives from '../../images/onewheel-quiz/primitives.png';
 import onewheelQuizModules from '../../images/onewheel-quiz/quiz-modules.png';
@@ -43,13 +53,132 @@ export const projects = [
     tags: ['Design System', 'UX Design', 'Figma', 'Component Library', 'AI', 'COO Presentation'],
     brief:
       'Initiated a design language system at Future Motion with reusable Figma components, documented patterns, and shared UI foundations for customer-facing and internal tools. Presented the POC and ongoing work to the COO, and am exploring AI to build an agent that tests transferring components from Figma into Storybook.',
-    outcome: 'Component library in Figma · COO POC presentation · Cross-team adoption',
+    outcome:
+      'User experience improvements · Cross-team adoption · Cross-project and system adoption · C-suite approval · One singular developer-friendly component library',
     img: fmDsDesktop17,
     role: 'Lead UX Designer + Software Engineer',
     duration: '2025 – ongoing (continuing initiative)',
-    team: 'Design, engineering, graphic design stakeholders, and COO',
     tools: 'Figma, Storybook, React, AI',
     heroImg: fmDsDesktop17,
+    heroVideo: '/videos/future-motion-design-system.mp4',
+    caseStudy: {
+      title: 'Future Motion Design System',
+      metaFields: [
+        { label: 'Timeline', value: '2026 - ongoing' },
+        { label: 'Tools', value: 'Figma, Cursor, Claude, Storybook, React, CSS' },
+      ],
+      heroImgs: [fmDsCase2, fmDsCase1],
+      heroVideo: null,
+      sections: [
+        {
+          type: 'image-grid',
+          title: 'Why was a design system needed?',
+          intro:
+            'There were a lot of uniform components and the C-suite left notes on why everything looks different and layout messy on different applications. As part of the dev team, it was tough to keep track of all the components and styling between 42 different applications and most of the time it was easier to copy and paste into each application.',
+          images: [null, null, null, null],
+        },
+        {
+          type: 'bullets',
+          title: 'The results',
+          items: [
+            'C-suite happy with the increase usability and commonality between components without guesswork',
+            'No more copying components and styles over 10+ applications.',
+            'Removing ambiguity for both the customer and developers on internal and external apps',
+            'Codebase is much cleaner and organized',
+            'Colors, spacing, and typography is not mixed all over.',
+            'The ability to separate out categories for each of the',
+          ],
+        },
+        {
+          type: 'prose',
+          title: 'Research',
+          img: fmDsCase5,
+          body: [
+            'I looked into many design systems to learn what makes for a good design system for our needs. Not all of them apply directly for what we use it for so I cherry picked and took notes.',
+            "Atlassian Design System, Adobe's Spectrum for a lot of the main basics (ie Button ), Apple HIG for keyboard inputs, Google's Material Design for the cards and icons",
+            'I also referred back to design terminology and articles to best design certain components such as our current table styling based on what we need it to do.',
+          ],
+        },
+        {
+          type: 'numbered',
+          title: 'Process',
+          intro:
+            'With the additional workflow process to include AI. The process steps below reflect using Cursor and Claude to add and update Storybook components',
+          items: [
+            '1.) Review current UI screens on Figma and live apps',
+            '2.) Make list of common components',
+            '3.) Organize and pick a component to work on',
+            '4.) Make the different variations (if any) referenced from other design systems for accessibility and WCAG completeness on Figma',
+            '5.) Review components with devs and manager',
+            '6.) Label the new component in Figma and spread across to other existing mock ups',
+            '7.) Clean up and review once more',
+            '8.) Open Cursor and Claude and connect to the code base. Have cursor and Claude review the code and also write a report of requirements for the component.',
+            '8.) Go to current state of Storybook and input a markdown file that produces the component based on WCAG 2.0 guidelines and other accessibility requirements from other design system recommendations and articles ( paste links referenced)',
+            '9.) Make sure to do a code review and write tests for completeness',
+            '10.) Test in both light and dark mode',
+            '11.) Create a new substitute version tag and test integrating the new component into the apps slowly.',
+          ],
+        },
+        {
+          type: 'media-text',
+          title: 'Working on Basics',
+          img: fmDsCase3,
+          body: [
+            'Initially going in, there are 8 systems and 42 different applications total under all of 8 systems. I inherited what the last designer or developer had done. The design system needs the basics: color, typography, spacing, and light and dark mode.',
+            'The basics of the design system is made to be understandable to other teams what colors the dev team uses to develop and setup the applications. It means easy to read color tokens and permanent typography use throughout all systems that exist.',
+            'I gathered the favorite versions of the UI components that have been polled to get an idea what was more accessible and the uniformity. Before there were no color shade sets which made the color token names such as orange-1, orange-2, mediumorange, darkorange, gold that labeled the same thing. Using AI tools, I was able to compare my list of how many duplicates and uncommon on off colors, common spacing patterns that are used, and all of the typography.',
+          ],
+        },
+        {
+          type: 'media-text',
+          title: 'Light and Dark Mode',
+          img: fmDsCase4,
+          body: [
+            'In Figma, having the ability to setup the light and dark mode themes via the variables setup helped in the development of each. I had started to make the dark mode version as that was the most used from researching the user feedback throughout the apps. About 80% of the users used dark mode while 20% used light mode.',
+            "The main issue I saw was that the contrast wasn't consistent across the light and dark themes. The users would get a different experience. The contrast should be uniform between both and the visual hierarchy constant. I made sure to test both modes while making each component with WCAG standards and used a color contrast tool to check.",
+            'When importing the new components into existing Figma mockups, I used an AI agent to check contrast settings for testing readiness before it goes to Storybook.',
+          ],
+        },
+        {
+          type: 'media-text',
+          title: 'Interaction States',
+          img: null,
+          body: [
+            'This takes the bulk of the work. Deciding what works best for the different action states for the Button, Inputs, Toggles, etc. As the elements are being interacted with the appearance must be distinct enough when interacted with.',
+            'An example, the buttons would only have a pointer cursor show up when hovering. An opacity animation has been added not for hovering effects. For disabled buttons, only a not-allowed cursor showed but now those buttons are grey on top of that.',
+          ],
+        },
+        {
+          type: 'media-text',
+          title: 'Button States',
+          img: null,
+          body:
+            'Button colors were a big change from the original interaction states it had and also what the color of the buttons mean. There were 5 different colors used for the buttons before but with the new update of having a secondary style of the button. It helped with the multiple',
+        },
+        {
+          type: 'media-text',
+          title: 'Data Tables',
+          img: fmDsDataTable,
+          body: 'Designing this component was one of the hardest ones.',
+        },
+        {
+          type: 'stacked-media',
+          title: 'Setting Up for Storybook',
+          video: '/videos/future-motion-design-system.mp4',
+          body: [
+            'Installing Storybook to connect to all the systems was easily done after researching between Reddit tech forums, Github forums, and using Cursor to compare what would be best for the dev team to go with. Because I wanted the team to have a good dev UX to use the components. For each component going in, I researched on MDN and multiple design systems for how the component setup would work best for devs as this is not for customer UX.',
+            'With that information, I wrote a big markdown file for each component that takes in account the color tokens, the spacing, the typography. It would also take in account the design system web accessibility requirements that I had gathered from other design systems and MDN. After that to write a test for the component that could be tested in light and dark mode and any interaction states if exist.',
+          ],
+        },
+        {
+          type: 'prose',
+          title: 'Continue...',
+          body:
+            "It'll be the goal by the end of this year for this campaign to finish. The additional use of AI tooling has helped test and create components for development use has helped alot with the speed of refactoring a lot of the apps' components that all apps will not need to copy and paste random versions and stylizations of components. So far this has also helped keep the users unconfused",
+        },
+      ],
+    },
+    problemLabel: 'Why I redesigned the Design System',
     problem:
       'Future Motion was shipping multiple web and mobile experiences like warranty tools, trade-in flows, factory dashboards, sales platforms, and partner storefronts, all without a shared visual or component language. Teams reused one-off UI patterns, design reviews took longer than needed, and engineering spent time rebuilding the same buttons, forms, and layouts across products.',
     approach: [
@@ -61,60 +190,28 @@ export const projects = [
       'Applied the library to new product work including warranty, trade-in, and sales experiences.',
       'Building an AI agent to test transferring Figma components into Storybook and reduce manual design-to-code handoff.',
     ],
-    process: [
-      {
-        label: 'Documentation Intro',
-        body:
-          'Created a shared Figma file as the source of truth for internal tools, documenting primitives, components, usage guidelines, and how teams should copy, comment on, and publish updates to the library.',
-        img: fmDsIntro,
-      },
-      {
-        label: 'Product Sync Table',
-        body:
-          'Applied the system to a live internal tool for reviewing and syncing product updates from Shopify and the order system, including navigation, data tables, status chips, toggles, and primary actions.',
-        img: fmDsDesktop17,
-      },
-      {
-        label: 'Button Components',
-        body:
-          'Documented button variants across sizes, states, and intent (primary, submit, and danger) with solid and outlined styles, icon support, and usage guidance for in-card layouts.',
-        img: fmDsButtons,
-      },
-      {
-        label: 'Icons Library',
-        body:
-          'Organized Material Design icons into categorized tables for arrows, errors, actions, and objects, with naming conventions and implementation notes for developers.',
-        img: fmDsIcons,
-      },
-      {
-        label: 'Message Banner',
-        body:
-          'Defined message banner patterns for high-priority errors and warnings, including full-width layouts, persistent states, and closable versus non-closable variants.',
-        img: fmDsMessageBanner,
-      },
-      {
-        label: 'Loading States',
-        body:
-          'Standardized loading patterns for data-heavy internal screens, including centered fetch states and spinner treatment across light and dark themes.',
-        img: fmDsLoadingStates,
-      },
-    ],
+    process: [],
     solution:
       'A living design language system that gave Future Motion a shared foundation for web and mobile UI, from tokens and components in Figma to documented patterns teams could reuse across warranty, trade-in, factory, and sales products. I presented the POC and progress to the COO to align leadership on the system direction, with the next phase using AI to test an agent workflow for moving components from Figma into Storybook.',
+    diagnosing: [
+      {
+        imgs: [fmDsDiagnosing],
+        body:
+          'Buttons and pills look the same, with inconsistent sizes and padding. There were also too many button colors — at least four — used interchangeably for actions and status.',
+      },
+      {
+        imgs: [fmDsDiagnosingRma, fmDsDiagnosingReports],
+        body:
+          'Padding under page headers was never consistent, and the headers didn’t do a good job separating sections of the page.',
+      },
+    ],
     metrics: [
       { value: '1', label: 'Shared Figma library' },
       { value: 'Web + Mobile', label: 'Platforms covered' },
       { value: 'Multi-team', label: 'Adoption across products' },
       { value: 'Reusable', label: 'Base components' },
     ],
-    processImgs: [
-      fmDsIntro,
-      fmDsDesktop17,
-      fmDsButtons,
-      fmDsIcons,
-      fmDsMessageBanner,
-      fmDsLoadingStates,
-    ],
+    processImgs: [],
     links: [],
     extended: {
       context:
@@ -152,9 +249,16 @@ export const projects = [
       ],
       styleGuide:
         'The system covered typography scales, color roles for brand and status states, spacing units, button and input variants, form layouts, navigation shells, table patterns, icons, and message banners. Components were built as Figma variants with documented usage notes so teams knew which pattern to reach for in common scenarios.',
+      siteMapLabel: 'Process',
       siteMapPages: [
         {
-          title: 'Documentation Intro',
+          title: 'Colors, Typography, Icons',
+          description:
+            'Established shared color tokens, typography scales, and icon conventions as the foundation teams would build from across products.',
+          imgs: [fmDsStorybookColors, fmDsIcons],
+        },
+        {
+          title: 'Figma Setup + Documentation Intro',
           description:
             'Welcome page explaining primitives, components, and how teams should use and maintain the shared Figma library.',
           img: fmDsIntro,
@@ -188,6 +292,18 @@ export const projects = [
           description:
             'Standardized fetch and spinner patterns for data-heavy internal screens in light and dark themes.',
           img: fmDsLoadingStates,
+        },
+        {
+          title: 'Data Table Component',
+          description:
+            'Version B data table specs covering header rows, interactive cell states, zebra striping, and accessibility guidance for implementation.',
+          img: fmDsDataTable,
+        },
+        {
+          title: 'Storybook Color Tokens',
+          description:
+            'AI-assisted Storybook export of FM Colors 2 primitives across blue, grey, and orange scales for design-to-code parity.',
+          img: fmDsStorybookColors,
         },
       ],
       prototyping: {
