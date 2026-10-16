@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.f202acaf.chunk.css",
-    "main.js": "/static/js/main.3e416650.chunk.js",
-    "main.js.map": "/static/js/main.3e416650.chunk.js.map",
+    "main.js": "/static/js/main.ba25c2fe.chunk.js",
+    "main.js.map": "/static/js/main.ba25c2fe.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b2cc3228.js",
     "runtime-main.js.map": "/static/js/runtime-main.b2cc3228.js.map",
-    "static/js/2.87e09dfb.chunk.js": "/static/js/2.87e09dfb.chunk.js",
-    "static/js/2.87e09dfb.chunk.js.map": "/static/js/2.87e09dfb.chunk.js.map",
+    "static/js/2.2c811f73.chunk.js": "/static/js/2.2c811f73.chunk.js",
+    "static/js/2.2c811f73.chunk.js.map": "/static/js/2.2c811f73.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.fa698bba1b357a5f3954bfe4f4c94002.js": "/precache-manifest.fa698bba1b357a5f3954bfe4f4c94002.js",
+    "precache-manifest.13cd034319e67d20385278218d0ebf54.js": "/precache-manifest.13cd034319e67d20385278218d0ebf54.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.f202acaf.chunk.css.map": "/static/css/main.f202acaf.chunk.css.map",
-    "static/js/2.87e09dfb.chunk.js.LICENSE.txt": "/static/js/2.87e09dfb.chunk.js.LICENSE.txt",
+    "static/js/2.2c811f73.chunk.js.LICENSE.txt": "/static/js/2.2c811f73.chunk.js.LICENSE.txt",
     "static/media/Illustration12.png": "/static/media/Illustration12.948187a8.png",
     "static/media/Illustration16.png": "/static/media/Illustration16.2cbf5363.png",
     "static/media/Illustration20.png": "/static/media/Illustration20.c6f35a66.png",
@@ -28,7 +28,6 @@
     "static/media/bready-kitchen-towel-product.png": "/static/media/bready-kitchen-towel-product.d9c54f88.png",
     "static/media/buttons.png": "/static/media/buttons.7b4a5a1a.png",
     "static/media/cart-page.png": "/static/media/cart-page.82c5e37f.png",
-    "static/media/ceci-bread-logo.png": "/static/media/ceci-bread-logo.d5400d57.png",
     "static/media/character-portraits.png": "/static/media/character-portraits.0aea5bf5.png",
     "static/media/corps-team.png": "/static/media/corps-team.5ae28e7c.png",
     "static/media/daily-life-stickersheet.png": "/static/media/daily-life-stickersheet.ecc75eb3.png",
@@ -47,6 +46,7 @@
     "static/media/diagnosing-buttons-pills.png": "/static/media/diagnosing-buttons-pills.ea11b0b1.png",
     "static/media/diagnosing-reports-headers.png": "/static/media/diagnosing-reports-headers.f139bf62.png",
     "static/media/diagnosing-rma-headers.png": "/static/media/diagnosing-rma-headers.cffecbfa.png",
+    "static/media/dog-bread-2.png": "/static/media/dog-bread-2.8056725c.png",
     "static/media/dream1.png": "/static/media/dream1.fc152df9.png",
     "static/media/dumpling-hair-claw-hello.png": "/static/media/dumpling-hair-claw-hello.7b781d5a.png",
     "static/media/dumpling-hair-claw-steamer.png": "/static/media/dumpling-hair-claw-steamer.aa8c17de.png",
@@ -98,6 +98,8 @@
     "static/media/mobile-donate-rhino.png": "/static/media/mobile-donate-rhino.658c014c.png",
     "static/media/mobile-donations-landing.png": "/static/media/mobile-donations-landing.1763ead1.png",
     "static/media/mobile-menu.png": "/static/media/mobile-menu.3cadb57d.png",
+    "static/media/nav-logo-sleep.gif": "/static/media/nav-logo-sleep.c631d2f5.gif",
+    "static/media/nav-logo-wake.gif": "/static/media/nav-logo-wake.30c631e2.gif",
     "static/media/notification.png": "/static/media/notification.dd22aa36.png",
     "static/media/orig3.jpg": "/static/media/orig3.706f90cd.jpg",
     "static/media/po.png": "/static/media/po.418ff086.png",
@@ -122,6 +124,7 @@
     "static/media/sourdough.png": "/static/media/sourdough.1b67eb9b.png",
     "static/media/storyboard.jpg": "/static/media/storyboard.cf03b64b.jpg",
     "static/media/storybook-colors.png": "/static/media/storybook-colors.5cb8e350.png",
+    "static/media/sun.svg": "/static/media/sun.2a1b574e.svg",
     "static/media/sunny.png": "/static/media/sunny.15a236e0.png",
     "static/media/testbread3.png": "/static/media/testbread3.a7fda297.png",
     "static/media/testbread4.png": "/static/media/testbread4.e8fe6252.png",
@@ -133,8 +136,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.b2cc3228.js",
-    "static/js/2.87e09dfb.chunk.js",
+    "static/js/2.2c811f73.chunk.js",
     "static/css/main.f202acaf.chunk.css",
-    "static/js/main.3e416650.chunk.js"
+    "static/js/main.ba25c2fe.chunk.js"
   ]
 }

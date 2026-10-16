@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { displayFont } from '../styles';
 import { MenuIcon, CloseIcon } from '../icons';
-import logo from '../../images/ceci-bread-logo.png';
+import logoSleep from '../../images/nav-logo-sleep.gif';
+import logoWake from '../../images/nav-logo-wake.gif';
 
 const links = [
   { label: 'work', to: '/' },
@@ -148,9 +149,49 @@ const isActive = (pathname, to) => {
   return pathname === to || pathname.startsWith(`${to}/`);
 };
 
+const WAKE_MS = 5000;
+
 export default function UxNav() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
+  const [mode, setMode] = useState('sleep');
+  const [wakeKey, setWakeKey] = useState(0);
+  const wakeTimerRef = useRef(null);
+
+  useEffect(() => {
+    const triggerWake = () => {
+      setMode('wake');
+      setWakeKey((key) => key + 1);
+      if (wakeTimerRef.current) {
+        clearTimeout(wakeTimerRef.current);
+      }
+      wakeTimerRef.current = setTimeout(() => {
+        setMode('sleep');
+        wakeTimerRef.current = null;
+      }, WAKE_MS);
+    };
+
+    const onClick = (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest('a') || target.closest('nav')) {
+        triggerWake();
+      }
+    };
+
+    document.addEventListener('click', onClick, true);
+    return () => {
+      document.removeEventListener('click', onClick, true);
+      if (wakeTimerRef.current) {
+        clearTimeout(wakeTimerRef.current);
+      }
+    };
+  }, []);
+
+  // Cache-bust the wake GIF src so play-once animations restart on every click.
+  // Remounting with a new `key` alone is not enough — browsers reuse the finished GIF.
+  const logoSrc =
+    mode === 'wake' ? `${logoWake}?replay=${wakeKey}` : logoSleep;
 
   return (
     <>
@@ -158,7 +199,7 @@ export default function UxNav() {
         <NavInner>
           <Brand to="/" onClick={() => setOpen(false)}>
             <BrandIcon>
-              <img src={logo} alt="" />
+              <img key={mode === 'wake' ? `wake-${wakeKey}` : 'sleep'} src={logoSrc} alt="" />
             </BrandIcon>
             <BrandName>Cecilia Tran</BrandName>
           </Brand>

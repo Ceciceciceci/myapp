@@ -39,6 +39,10 @@ import fmDsCase2 from '../../images/future-motion-design-system/design-system-he
 import fmDsCase3 from '../../images/future-motion-design-system/design-system-3.png';
 import fmDsCase4 from '../../images/future-motion-design-system/design-system-4.png';
 import fmDsCase5 from '../../images/future-motion-design-system/design-system-5.png';
+import fmDsCase6 from '../../images/future-motion-design-system/design-system-6.png';
+import fmDsCase7 from '../../images/future-motion-design-system/design-system-7.png';
+import fmDsCase8 from '../../images/future-motion-design-system/design-system-8.png';
+import fmDsCase9 from '../../images/future-motion-design-system/design-system-9.png';
 import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
 import onewheelQuizPrimitives from '../../images/onewheel-quiz/primitives.png';
 import onewheelQuizModules from '../../images/onewheel-quiz/quiz-modules.png';
@@ -75,7 +79,7 @@ export const projects = [
           title: 'Why was a design system needed?',
           intro:
             'There were a lot of uniform components and the C-suite left notes on why everything looks different and layout messy on different applications. As part of the dev team, it was tough to keep track of all the components and styling between 42 different applications and most of the time it was easier to copy and paste into each application.',
-          images: [null, null, null, null],
+          images: [fmDsCase6, fmDsCase7, fmDsCase8, fmDsCase9],
         },
         {
           type: 'bullets',
