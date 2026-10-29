@@ -38,11 +38,12 @@ import fmDsCase1 from '../../images/future-motion-design-system/design-system-he
 import fmDsCase2 from '../../images/future-motion-design-system/design-system-hero-b.png';
 import fmDsCase3 from '../../images/future-motion-design-system/design-system-3.png';
 import fmDsCase4 from '../../images/future-motion-design-system/design-system-4.png';
-import fmDsCase5 from '../../images/future-motion-design-system/design-system-5.png';
 import fmDsCase6 from '../../images/future-motion-design-system/design-system-6.png';
 import fmDsCase7 from '../../images/future-motion-design-system/design-system-7.png';
 import fmDsCase8 from '../../images/future-motion-design-system/design-system-8.png';
-import fmDsCase9 from '../../images/future-motion-design-system/design-system-9.png';
+import fmDsOldForm from '../../images/future-motion-design-system/old-form.png';
+import fmDsNewForm from '../../images/future-motion-design-system/new-form.png';
+import fmDsButtonStates from '../../images/future-motion-design-system/button-states.png';
 import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
 import onewheelQuizPrimitives from '../../images/onewheel-quiz/primitives.png';
 import onewheelQuizModules from '../../images/onewheel-quiz/quiz-modules.png';
@@ -73,112 +74,156 @@ export const projects = [
       ],
       heroImgs: [fmDsCase2, fmDsCase1],
       heroVideo: null,
+      nav: [
+        { id: 'overview', label: 'Overview' },
+        { id: 'results', label: 'Results' },
+        { id: 'research', label: 'Research' },
+        { id: 'process', label: 'Process' },
+        { id: 'what-was-required', label: 'What was required' },
+        { id: 'final-stage', label: 'Setting Up for Storybook' },
+        { id: 'reflection', label: 'Reflection' },
+      ],
       sections: [
         {
+          id: 'overview',
           type: 'image-grid',
           title: 'Why was a design system needed?',
           intro:
-            'There were a lot of uniform components and the C-suite left notes on why everything looks different and layout messy on different applications. As part of the dev team, it was tough to keep track of all the components and styling between 42 different applications and most of the time it was easier to copy and paste into each application.',
-          images: [fmDsCase6, fmDsCase7, fmDsCase8, fmDsCase9],
+            'Within Future Motion, there was a brand styling set but not for the applications. This aims to solve building a design system that would mirror and reflect the state of Future Motion today for the customers. It also solves the multiple developer issues where it doesn’t limit only to multiple different overriding component code and styles, longer development cycles and off spacing from copy and pasting.',
+          images: [fmDsCase6, fmDsCase7, fmDsCase8],
         },
         {
-          type: 'bullets',
+          id: 'results',
+          type: 'results',
           title: 'The results',
+          stats: [
+            { value: '42', label: 'Apps aligned' },
+            { value: '8', label: 'Systems covered' },
+            { value: '1', label: 'Shared library' },
+            { value: '10+', label: 'Apps off copy-paste' },
+          ],
           items: [
-            'C-suite happy with the increase usability and commonality between components without guesswork',
-            'No more copying components and styles over 10+ applications.',
-            'Removing ambiguity for both the customer and developers on internal and external apps',
-            'Codebase is much cleaner and organized',
-            'Colors, spacing, and typography is not mixed all over.',
-            'The ability to separate out categories for each of the',
+            'One source of truth for color, type, and spacing: no more mixed tokens.',
+            'Consistent UI that earned C-suite buy-in, without the guesswork.',
+            'Less ambiguity for customers and developers, internal and external.',
+            'Components built once in Figma + Storybook, reused everywhere.',
           ],
         },
         {
+          id: 'research',
           type: 'prose',
           title: 'Research',
-          img: fmDsCase5,
           body: [
             'I looked into many design systems to learn what makes for a good design system for our needs. Not all of them apply directly for what we use it for so I cherry picked and took notes.',
-            "Atlassian Design System, Adobe's Spectrum for a lot of the main basics (ie Button ), Apple HIG for keyboard inputs, Google's Material Design for the cards and icons",
+            'Atlassian Design System, Adobe’s Spectrum for a lot of the main basics ( ie Button ), Apple HIG for keyboard inputs, Google’s Material Design for the cards and icons',
             'I also referred back to design terminology and articles to best design certain components such as our current table styling based on what we need it to do.',
           ],
         },
         {
+          id: 'process',
           type: 'numbered',
           title: 'Process',
-          intro:
-            'With the additional workflow process to include AI. The process steps below reflect using Cursor and Claude to add and update Storybook components',
+          intro: 'How a component moves from audit to Storybook, with Cursor and Claude assisting the handoff:',
           items: [
-            '1.) Review current UI screens on Figma and live apps',
-            '2.) Make list of common components',
-            '3.) Organize and pick a component to work on',
-            '4.) Make the different variations (if any) referenced from other design systems for accessibility and WCAG completeness on Figma',
-            '5.) Review components with devs and manager',
-            '6.) Label the new component in Figma and spread across to other existing mock ups',
-            '7.) Clean up and review once more',
-            '8.) Open Cursor and Claude and connect to the code base. Have cursor and Claude review the code and also write a report of requirements for the component.',
-            '8.) Go to current state of Storybook and input a markdown file that produces the component based on WCAG 2.0 guidelines and other accessibility requirements from other design system recommendations and articles ( paste links referenced)',
-            '9.) Make sure to do a code review and write tests for completeness',
-            '10.) Test in both light and dark mode',
-            '11.) Create a new substitute version tag and test integrating the new component into the apps slowly.',
+            '1.) Audit screens in Figma and live apps, and list the common components',
+            '2.) Prioritize one component at a time, design its variants in Figma (checked against WCAG and reference systems), and review with devs and manager',
+            '3.) Roll it into existing mockups, then clean up',
+            '4.) Generate requirements + a Storybook spec with AI (tokens, spacing, type, a11y), then code review, tests, and verify in light and dark mode',
+            '5.) Version it, then integrate gradually across apps',
           ],
         },
         {
-          type: 'media-text',
+          id: 'what-was-required',
+          type: 'stacked-media',
           title: 'Working on Basics',
           img: fmDsCase3,
+          stackGap: '2.5rem',
           body: [
-            'Initially going in, there are 8 systems and 42 different applications total under all of 8 systems. I inherited what the last designer or developer had done. The design system needs the basics: color, typography, spacing, and light and dark mode.',
-            'The basics of the design system is made to be understandable to other teams what colors the dev team uses to develop and setup the applications. It means easy to read color tokens and permanent typography use throughout all systems that exist.',
-            'I gathered the favorite versions of the UI components that have been polled to get an idea what was more accessible and the uniformity. Before there were no color shade sets which made the color token names such as orange-1, orange-2, mediumorange, darkorange, gold that labeled the same thing. Using AI tools, I was able to compare my list of how many duplicates and uncommon on off colors, common spacing patterns that are used, and all of the typography.',
+            'Initially going in, there are 8 systems and 42 different applications total under all of 8 systems. I inherited what the last designer or developer had done The design system needs the basics: color, typography, spacing, and light and dark mode.',
+            'The basics of the design system is made to be understandable to other teams what colors the dev team uses to develop and setup the applications. It means easy to understand color tokens and consistent typography throughout all systems.',
+            'I gathered the favorite versions of the UI components that have been polled to get an idea what was more accessible and the uniformity. Using AI tools, I was able to compare my list of how many duplicates and uncommon on off colors, common spacing patterns that are used, and all of the typography.',
+          ],
+          columns: [
+            {
+              title: 'Typography',
+              body:
+                'Used existing fonts from the mobile Onewheel App and Future Motion website. I removed any other fonts that were not related. This gave us two sets of fonts. One font used for internal applications and one set of 2 for customer facing applications.',
+            },
+            {
+              title: 'Colors',
+              body:
+                'Before there were no color shade sets which made the color token names such as orange-1, orange-2, mediumorange, darkorange, gold that labeled the same thing. Using existing brand colors, I made the color scales off them. This helps keeps uniformity between the product and the applications.',
+            },
+            {
+              title: 'Spacing',
+              body:
+                'Using the AI tools, I recorded what was used most of the time between elements and started labeling what each spacing those do rather than a scale. This helped my dev team not have to remember spacing tokens by numbers but rather what they are for like card-spacing than spacing-100.',
+            },
           ],
         },
         {
-          type: 'media-text',
+          type: 'stacked-media',
           title: 'Light and Dark Mode',
           img: fmDsCase4,
+          stackGap: '1rem',
+          modeStats: [
+            { value: '80%', label: 'Dark Mode', accent: 'blue' },
+            { value: '20%', label: 'Light Mode', accent: 'orange' },
+          ],
           body: [
-            'In Figma, having the ability to setup the light and dark mode themes via the variables setup helped in the development of each. I had started to make the dark mode version as that was the most used from researching the user feedback throughout the apps. About 80% of the users used dark mode while 20% used light mode.',
-            "The main issue I saw was that the contrast wasn't consistent across the light and dark themes. The users would get a different experience. The contrast should be uniform between both and the visual hierarchy constant. I made sure to test both modes while making each component with WCAG standards and used a color contrast tool to check.",
+            'In Figma, having the ability to setup the light and dark mode themes via the variables setup helped in the development of each. I had started to make the dark mode version as that was the most used from researching the user feedback throughout the apps.',
+            'The contrast wasn’t consistent across the light and dark themes. The users would get a different experiences. I made sure to test both modes while making each component with WCAG standards and used a color contrast tool to check.',
             'When importing the new components into existing Figma mockups, I used an AI agent to check contrast settings for testing readiness before it goes to Storybook.',
           ],
         },
         {
-          type: 'media-text',
+          type: 'stacked-media',
           title: 'Interaction States',
-          img: null,
+          stackGap: '1rem',
           body: [
             'This takes the bulk of the work. Deciding what works best for the different action states for the Button, Inputs, Toggles, etc. As the elements are being interacted with the appearance must be distinct enough when interacted with.',
             'An example, the buttons would only have a pointer cursor show up when hovering. An opacity animation has been added not for hovering effects. For disabled buttons, only a not-allowed cursor showed but now those buttons are grey on top of that.',
           ],
-        },
-        {
-          type: 'media-text',
-          title: 'Button States',
-          img: null,
-          body:
-            'Button colors were a big change from the original interaction states it had and also what the color of the buttons mean. There were 5 different colors used for the buttons before but with the new update of having a secondary style of the button. It helped with the multiple',
-        },
-        {
-          type: 'media-text',
-          title: 'Data Tables',
-          img: fmDsDataTable,
-          body: 'Designing this component was one of the hardest ones.',
+          subsections: [
+            {
+              title: 'Button States',
+              img: fmDsButtonStates,
+              body:
+                'Button colors were a big change from the original interaction states it had and also what the color of the buttons mean. There were 5 different colors used for the buttons before but with the new update of having a secondary style of the button. It helped with the multiple',
+            },
+            {
+              title: 'Form States',
+              imgs: [fmDsOldForm, fmDsNewForm],
+              body:
+                'The form states were used very often but didn’t have a singular base to work off of. So after multiple iterations and testing with the C-suite and other picked out employees I was able to get a better interpretation of what our form states would be like for Inputs or Selects.',
+            },
+          ],
         },
         {
           type: 'stacked-media',
+          title: 'Hardest component: Data tables',
+          img: fmDsDataTable,
+          stackGap: '0.5rem',
+          body:
+            'Designing this component was one of the hardest ones. More on this in this case study.',
+        },
+        {
+          id: 'final-stage',
+          type: 'stacked-media',
           title: 'Setting Up for Storybook',
           video: '/videos/future-motion-design-system.mp4',
+          stackGap: '2.5rem',
           body: [
             'Installing Storybook to connect to all the systems was easily done after researching between Reddit tech forums, Github forums, and using Cursor to compare what would be best for the dev team to go with. Because I wanted the team to have a good dev UX to use the components. For each component going in, I researched on MDN and multiple design systems for how the component setup would work best for devs as this is not for customer UX.',
             'With that information, I wrote a big markdown file for each component that takes in account the color tokens, the spacing, the typography. It would also take in account the design system web accessibility requirements that I had gathered from other design systems and MDN. After that to write a test for the component that could be tested in light and dark mode and any interaction states if exist.',
           ],
         },
         {
+          id: 'reflection',
           type: 'prose',
           title: 'Continue...',
           body:
-            "It'll be the goal by the end of this year for this campaign to finish. The additional use of AI tooling has helped test and create components for development use has helped alot with the speed of refactoring a lot of the apps' components that all apps will not need to copy and paste random versions and stylizations of components. So far this has also helped keep the users unconfused",
+            'Goal: finish the migration by end of year. AI-assisted creation and testing has sped up refactoring, so apps pull from the library instead of copy-pasting one-off styles.',
         },
       ],
     },
@@ -201,7 +246,7 @@ export const projects = [
       {
         imgs: [fmDsDiagnosing],
         body:
-          'Buttons and pills look the same, with inconsistent sizes and padding. There were also too many button colors — at least four — used interchangeably for actions and status.',
+          'Buttons and pills look the same, with inconsistent sizes and padding. There were also too many button colors (at least four) used interchangeably for actions and status.',
       },
       {
         imgs: [fmDsDiagnosingRma, fmDsDiagnosingReports],
@@ -564,7 +609,7 @@ export const projects = [
     tags: ['UX Design', 'Product Design', 'Front-End', 'Customer Experience', 'Figma', 'Graphic Design', 'COO Presentation'],
     brief:
       'Designed and built a custom shaping quiz for multiple Onewheel models that adapts to each rider’s purchase and riding history, helping them dial in traction, terrain, performance, and weight across model-specific color themes like neon yellow for GT and deep blue for XR. Drove a 50% increase in user account registration and more logins back into the app.',
-    outcome: '50% registration increase · More app logins · Multi-model themes',
+    outcome: '50% registration increase · More app logins · Less Reddit inquiries',
     img: onewheelQuizMain,
     role: 'Lead UX Designer + Software Engineer',
     duration: '2025',
@@ -615,8 +660,7 @@ export const projects = [
     metrics: [
       { value: '50%', label: 'Registration increase' },
       { value: 'More', label: 'App logins' },
-      { value: '4', label: 'Shaping dimensions' },
-      { value: 'Multi-model', label: 'Color themes' },
+      { value: 'Less', label: 'Reddit inquiries' },
     ],
     processImgs: [
       onewheelQuizPrimitives,
@@ -699,8 +743,10 @@ export const projects = [
     team: 'Team of 2',
     tools: 'Figma, Shopify Developer Tools',
     heroImg: fxnctionHero,
+    problemLabel: 'Overview',
     problem:
-      'With a new influx of orders, the owner could not keep up with fulfillment and record data on a spreadsheet. He needed a better bookkeeping solution and a faster way for customers to buy wrist guards. With a one week build window, a quick but good solution was needed.',
+      'The owner of f(x)nction wanted to be able to sell his products free of fulfillment management and have a place he can come back to reference what was sold. Before he used Google sheets and different forms of payment that was not in one singular location.  The owner would also take his orders on Reddit.',
+    problemImg: fxnctionWristGuards,
     approach: [
       'Clarified B2B partnership requirements between f(x)nction and Future Motion, including product details, target riders, and storefront display needs.',
       'Reviewed a design sketch from the graphic design team and matched Shopify templates to their vision.',
@@ -708,12 +754,6 @@ export const projects = [
       'Learned Shopify Developer Tools through online courses to customize templates and ship under a tight deadline.',
     ],
     process: [
-      {
-        label: 'Overview',
-        body:
-          'As a team of two, my coworker and I created a B2B Shopify website to help the owner of f(x)nction sell more wrist guards with more accurate information for records and a hands-off ordering process. f(x)nction is in a brand partnership with Future Motion to sell wrist guards to Onewheel riders.',
-        img: fxnctionWristGuards,
-      },
       {
         label: 'Solution',
         body:
@@ -747,14 +787,16 @@ export const projects = [
     metrics: [
       { value: '50%', label: 'Sales increase' },
       { value: 'Shopify', label: 'Platform chosen' },
-      { value: '2 wks', label: 'Timeline' },
-      { value: '2', label: 'Person team' },
+    ],
+    resultItems: [
+      'Shopify storefront replaced spreadsheet and email ordering for riders.',
+      'Wrist guard sales increased by 50% after launch.',
+      'Owner gained analytics and shipment visibility without staying hands-on.',
+      'Custom Shopify API tools improved warehouse and fulfillment tracking.',
     ],
     processImgs: [fxnctionHome, fxnctionProduct, fxnctionAbout, fxnctionCart],
     links: [{ label: 'Access the Site', url: 'https://fxnctiongear.com/' }],
     extended: {
-      context:
-        'f(x)nction is in a B2B brand partnership with Future Motion to sell wrist guards to Onewheel riders. Before this project, orders were tracked manually and customers placed purchases through spreadsheets or email.',
       siteMapPages: [
         {
           title: 'Home Page',
@@ -777,29 +819,6 @@ export const projects = [
           title: 'Cart',
           description: 'Easy to scan through for the user.',
           img: fxnctionCart,
-        },
-      ],
-      researchSteps: [
-        {
-          title: 'Asking questions',
-          items: [
-            'Walked through B2B product, audience, and display requirements with the project owner and Future Motion stakeholders.',
-            'Read about f(x)nction on Reddit to understand what riders value about the brand.',
-          ],
-        },
-        {
-          title: 'Design sketch review',
-          items: [
-            'Reviewed a design sketch from the graphic design team.',
-            'Looked up Shopify templates that matched the team\'s original sketch.',
-          ],
-        },
-        {
-          title: 'Shopify developer tooling',
-          items: [
-            'Learned how to edit Shopify templates with Shopify Developer Tools.',
-            'Took online courses to ship the build on a one week timeline.',
-          ],
         },
       ],
       prototyping: {

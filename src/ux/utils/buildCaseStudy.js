@@ -4,6 +4,7 @@
  */
 export function buildCaseStudy(project) {
   if (project.caseStudy) {
+    const sections = withSectionIds(project.caseStudy.sections || []);
     return {
       title: project.caseStudy.title || project.title,
       meta: project.caseStudy.meta || null,
@@ -14,10 +15,14 @@ export function buildCaseStudy(project) {
           ? null
           : project.caseStudy.heroVideo ?? project.heroVideo,
       heroImg: project.caseStudy.heroImg ?? project.heroImg,
-      sections: project.caseStudy.sections || [],
+      // Explicit nav (e.g. Design System) wins; otherwise mirror section headers
+      customNav: Boolean(project.caseStudy.nav?.length),
+      nav: project.caseStudy.nav || buildNavFromSections(sections),
+      sections,
     };
   }
 
+  const sections = withSectionIds(buildSectionsFromLegacy(project));
   return {
     title: project.title,
     meta: buildMetaLine(project),
@@ -25,8 +30,33 @@ export function buildCaseStudy(project) {
     heroImgs: null,
     heroVideo: project.heroVideo,
     heroImg: project.heroImg,
-    sections: buildSectionsFromLegacy(project),
+    customNav: false,
+    nav: buildNavFromSections(sections),
+    sections,
   };
+}
+
+function slugify(value) {
+  return String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function withSectionIds(sections) {
+  return (sections || []).map((section, i) => ({
+    ...section,
+    id: section.id || slugify(section.title) || `section-${i}`,
+  }));
+}
+
+function buildNavFromSections(sections) {
+  return (sections || [])
+    .filter((section) => section.title)
+    .map((section) => ({
+      id: section.id,
+      label: section.navLabel || section.title,
+    }));
 }
 
 function buildMetaLine(project) {
@@ -43,6 +73,7 @@ function buildSectionsFromLegacy(project) {
       type: 'prose',
       title: project.problemLabel || 'Why was this needed?',
       body: project.problem,
+      img: project.problemImg || null,
     });
   }
 
@@ -62,13 +93,15 @@ function buildSectionsFromLegacy(project) {
 
   if (project.metrics?.length) {
     sections.push({
-      type: 'bullets',
+      type: 'results',
       title: 'The results',
-      items: project.metrics.map((m) => `${m.value} — ${m.label}`),
+      stats: project.metrics,
+      // Only show cards when they add new copy; don't echo the stats from outcome.
+      items: project.resultItems?.length ? project.resultItems : undefined,
     });
   } else if (project.outcome) {
     sections.push({
-      type: 'bullets',
+      type: 'results',
       title: 'The results',
       items: project.outcome.split('·').map((s) => s.trim()).filter(Boolean),
     });

@@ -22,9 +22,10 @@ const NavBar = styled.nav`
 `;
 
 const NavInner = styled.div`
-  max-width: ${({ theme }) => theme.maxWidth};
+  width: 100%;
   margin: 0 auto;
-  padding: 1.125rem 2rem;
+  /* Match case study outer gutters so edges stay aligned as the viewport grows */
+  padding: 1.125rem max(40px, calc((100vw - 1032px) / 2));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -44,18 +45,24 @@ const Brand = styled(Link)`
 `;
 
 const BrandIcon = styled.div`
+  position: relative;
+  height: 36px;
+  width: 54px;
+  flex-shrink: 0;
+  flex-grow: 0;
+`;
+
+const LogoLayer = styled.img`
+  position: absolute;
+  left: 0;
+  top: 50%;
   height: 36px;
   width: auto;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-
-  img {
-    height: 36px;
-    width: auto;
-    display: block;
-    object-fit: contain;
-  }
+  display: block;
+  object-fit: contain;
+  transform: translateY(-50%);
+  pointer-events: none;
+  opacity: ${({ $active }) => ($active ? 1 : 0)};
 `;
 
 const BrandName = styled.span`
@@ -155,13 +162,42 @@ export default function UxNav() {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState('sleep');
-  const [wakeKey, setWakeKey] = useState(0);
+  // Double-buffer wake layers so a restarted GIF can decode before becoming visible.
+  const [wakeSlot, setWakeSlot] = useState(0);
+  const [wakeSrcs, setWakeSrcs] = useState([logoWake, logoWake]);
   const wakeTimerRef = useRef(null);
+  const wakeGenRef = useRef(0);
+  const wakeSlotRef = useRef(0);
+
+  useEffect(() => {
+    // Warm both GIFs so the first swap is less likely to flash.
+    const sleepPreload = new Image();
+    const wakePreload = new Image();
+    sleepPreload.src = logoSleep;
+    wakePreload.src = logoWake;
+  }, []);
 
   useEffect(() => {
     const triggerWake = () => {
-      setMode('wake');
-      setWakeKey((key) => key + 1);
+      const nextSlot = wakeSlotRef.current === 0 ? 1 : 0;
+      const gen = ++wakeGenRef.current;
+      const nextSrc = `${logoWake}?replay=${gen}`;
+
+      // Decode the next wake GIF first, then reveal it (keeps current frame visible).
+      const probe = new Image();
+      probe.onload = () => {
+        if (wakeGenRef.current !== gen) return;
+        setWakeSrcs((srcs) => {
+          const copy = [...srcs];
+          copy[nextSlot] = nextSrc;
+          return copy;
+        });
+        wakeSlotRef.current = nextSlot;
+        setWakeSlot(nextSlot);
+        setMode('wake');
+      };
+      probe.src = nextSrc;
+
       if (wakeTimerRef.current) {
         clearTimeout(wakeTimerRef.current);
       }
@@ -188,18 +224,15 @@ export default function UxNav() {
     };
   }, []);
 
-  // Cache-bust the wake GIF src so play-once animations restart on every click.
-  // Remounting with a new `key` alone is not enough — browsers reuse the finished GIF.
-  const logoSrc =
-    mode === 'wake' ? `${logoWake}?replay=${wakeKey}` : logoSleep;
-
   return (
     <>
       <NavBar>
         <NavInner>
           <Brand to="/" onClick={() => setOpen(false)}>
             <BrandIcon>
-              <img key={mode === 'wake' ? `wake-${wakeKey}` : 'sleep'} src={logoSrc} alt="" />
+              <LogoLayer src={logoSleep} alt="" $active={mode === 'sleep'} />
+              <LogoLayer src={wakeSrcs[0]} alt="" $active={mode === 'wake' && wakeSlot === 0} />
+              <LogoLayer src={wakeSrcs[1]} alt="" $active={mode === 'wake' && wakeSlot === 1} />
             </BrandIcon>
             <BrandName>Cecilia Tran</BrandName>
           </Brand>
