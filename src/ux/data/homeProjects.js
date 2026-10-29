@@ -1,4 +1,3 @@
-import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
 import fxnctionHero from '../../images/fxnction/hero-product.png';
 import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
 import dpelPreview from '../../images/dpel/preview.png';
@@ -21,7 +20,7 @@ export const homeProjects = [
     title: 'Onewheel Rider Quiz',
     meta: 'Web + Mobile | Figma, React, CSS',
     url: 'https://my.onewheel.com/',
-    img: onewheelQuizMain,
+    video: '/videos/onewheel-riding-preference-quiz.mp4',
     to: '/projects/onewheel-riding-preference-quiz',
     layout: 'half',
   },
