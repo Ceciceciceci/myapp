@@ -1,4 +1,5 @@
 import fxnctionHero from '../../images/fxnction/hero-product.png';
+import stretchieLanding from '../../images/stretchie/landing.png';
 import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
 import dpelPreview from '../../images/dpel/preview.png';
 
@@ -40,6 +41,14 @@ export const homeProjects = [
     url: 'https://fxnctiongear.com/',
     img: fxnctionHero,
     to: '/projects/fxnction',
+    layout: 'half',
+  },
+  {
+    id: 'stretchie',
+    title: 'Stretchie',
+    meta: 'Desktop | Figma Make | 2026',
+    img: stretchieLanding,
+    to: '/projects/stretchie',
     layout: 'half',
   },
   {

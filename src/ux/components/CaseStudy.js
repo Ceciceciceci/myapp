@@ -177,16 +177,22 @@ const Title = styled.h1`
 `;
 
 const MetaBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2rem;
+  row-gap: 0.85rem;
   margin-bottom: 0.25rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const MetaGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
+  min-width: 0;
 `;
 
 const MetaLabel = styled.p`

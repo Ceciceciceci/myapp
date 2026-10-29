@@ -24,7 +24,7 @@ export default function UxHome() {
       <Container>
         <Hero
           greeting="Hello!"
-          lead="Cecilia likes to click clack and swish swash to make design systems and products that make dev and customer lives easier"
+          lead="Cecilia likes to click clack and swish swash, designing and coding systems and products that make life easier for both devs and customers"
           funFact="My fun fact: I have three Dreamworks movie credits! ( Bad Guys, Ruby Gillman Teenage Kraken, Puss in Boots 2 )"
         />
 

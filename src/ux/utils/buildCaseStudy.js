@@ -25,8 +25,8 @@ export function buildCaseStudy(project) {
   const sections = withSectionIds(buildSectionsFromLegacy(project));
   return {
     title: project.title,
-    meta: buildMetaLine(project),
-    metaFields: null,
+    meta: project.metaFields?.length ? null : buildMetaLine(project),
+    metaFields: project.metaFields || null,
     heroImgs: null,
     heroVideo: project.heroVideo,
     heroImg: project.heroImg,
@@ -140,6 +140,7 @@ function buildSectionsFromLegacy(project) {
           title: step.label,
           img: step.img,
           body: step.body,
+          layout: step.layout || null,
         });
       } else {
         sections.push({

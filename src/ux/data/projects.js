@@ -205,7 +205,7 @@ export const projects = [
           img: fmDsDataTable,
           stackGap: '0.5rem',
           body:
-            'Designing this component was one of the hardest ones. More on this in this case study.',
+            "Designing this component was one of the hardest ones. If you'd like to talk to me more about this, schedule an interview with me or shoot an email!",
         },
         {
           id: 'final-stage',
@@ -390,6 +390,16 @@ export const projects = [
     team: 'Solo project',
     tools: 'Figma Make',
     heroImg: stretchieLanding,
+    metaFields: [
+      {
+        label: 'About',
+        value:
+          'A desktop stretch app for desk workers who need a reminder stretch session throughout the day',
+      },
+      { label: 'Role', value: 'UX Designer & Product Designer' },
+      { label: 'Time', value: '2026' },
+      { label: 'Tool', value: 'Figma Make' },
+    ],
     problem:
       'As a desktop-first user, I rarely reached for my phone during the workday. Even when I set stretch reminders on my phone, I often ignored them. Over time that led to stiff joints, nerve pain, and tension headaches. I cycled through multiple rounds of physical therapy, but the same pain points returned once I went back to long hours at the desk. Friends who work the same way described the same problem: they know they should stretch, but nothing in their workflow makes it easy or appealing.',
     approach: [
@@ -415,24 +425,28 @@ export const projects = [
       },
       {
         label: 'Landing & Session Start',
+        layout: 'column',
         body:
           'The landing screen introduces Stretchie as a desk-break buddy. Users can build a custom stretch session, connect email to save routines, or jump straight into a saved flow without leaving the desktop.',
         img: stretchieLanding,
       },
       {
         label: 'Build Your Session',
+        layout: 'column',
         body:
           'Users pick stretches from six body areas, drag them into a session queue, adjust reps, and see total duration before continuing. The layout keeps browsing and session editing side by side so building a routine feels quick, not like homework.',
         img: stretchieSessionBuilder,
       },
       {
         label: 'Work Timer & Alarm',
+        layout: 'column',
         body:
           'The alarm setup supports one-time countdowns or repeating schedules during work hours, with preset intervals and custom reminders. Browser notifications nudge users when it is time to move, with a friendly prompt to start stretching instead of snoozing through stiffness.',
         img: stretchieAlarmSetup,
       },
       {
         label: 'Guided Stretch Session',
+        layout: 'column',
         body:
           'During a session, each stretch shows an animated character demo, rep count, and countdown timer. Previous and next controls, plus a pause state, make it easy to follow along without breaking focus from the desktop.',
         img: stretchieActiveStretch,
