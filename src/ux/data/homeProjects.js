@@ -29,7 +29,7 @@ export const homeProjects = [
     id: 'board-trade-in-system',
     title: 'Board Trade-in System',
     meta: 'Web + Mobile | Figma, React, CSS',
-    url: 'https://my.onewheel.com/',
+    url: 'https://tradein.onewheel.com/',
     video: '/videos/board-trade-in-system.mp4',
     to: null,
     layout: 'half',
