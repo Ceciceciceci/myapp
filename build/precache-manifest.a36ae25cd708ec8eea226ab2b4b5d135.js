@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b935b18fb66782191a2e651df258822",
+    "revision": "6483b96d970019fb07bf762c5ee96591",
     "url": "/index.html"
   },
   {
-    "revision": "0d2c0980dfec4b1768fb",
+    "revision": "00abb677ab3083e94861",
     "url": "/static/css/main.f202acaf.chunk.css"
   },
   {
-    "revision": "bb6f4359e0d9e654a113",
-    "url": "/static/js/2.7e5a813d.chunk.js"
+    "revision": "554aabb2908cc457250d",
+    "url": "/static/js/2.7760b7c1.chunk.js"
   },
   {
     "revision": "a64acf8e3ad6aa1497056f0bb9a7ce4f",
-    "url": "/static/js/2.7e5a813d.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.7760b7c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0d2c0980dfec4b1768fb",
-    "url": "/static/js/main.37238e6b.chunk.js"
+    "revision": "00abb677ab3083e94861",
+    "url": "/static/js/main.3738d471.chunk.js"
   },
   {
     "revision": "740dd3b9cc3d84204ea7",
@@ -446,6 +446,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c5dc66dfacb0d222a16144f25940c14a",
     "url": "/static/media/quiz-modules.c5dc66df.png"
+  },
+  {
+    "revision": "9e10a9b8c0ac5089397c2eb5aa640389",
+    "url": "/static/media/reddit-posts.9e10a9b8.png"
+  },
+  {
+    "revision": "38b3e8ca6b48d96eadd8f0771aa6d914",
+    "url": "/static/media/research-inspo.38b3e8ca.png"
   },
   {
     "revision": "b8804a21803c3e1e1d02df2c116ecc5f",

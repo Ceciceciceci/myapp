@@ -68,7 +68,15 @@ function buildMetaLine(project) {
 function buildSectionsFromLegacy(project) {
   const sections = [];
 
-  if (project.problem) {
+  if (project.problemPairs?.length) {
+    sections.push({
+      type: 'story-pairs',
+      title: project.problemLabel || 'Why was this needed?',
+      intro: project.problem || null,
+      subtitle: project.problemSubtitle || null,
+      pairs: project.problemPairs,
+    });
+  } else if (project.problem) {
     sections.push({
       type: 'prose',
       title: project.problemLabel || 'Why was this needed?',
@@ -107,7 +115,14 @@ function buildSectionsFromLegacy(project) {
     });
   }
 
-  if (project.extended?.researchSteps?.length) {
+  if (project.extended?.research) {
+    sections.push({
+      type: 'prose',
+      title: 'Research',
+      body: project.extended.research,
+      img: project.extended.researchImg || null,
+    });
+  } else if (project.extended?.researchSteps?.length) {
     const body = project.extended.researchSteps
       .map((step) => `${step.title}: ${step.items.join(' ')}`)
       .join(' ');

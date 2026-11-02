@@ -306,6 +306,33 @@ const SectionTitle = styled.h2`
   color: ${({ theme }) => theme.colors.foreground};
 `;
 
+const SectionSubtitle = styled.h3`
+  margin: 1.5rem 0 1rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.typography.headingSize};
+  font-weight: ${({ theme }) => theme.typography.headingWeight};
+  line-height: 1.3;
+  color: ${({ theme }) => theme.colors.foreground};
+`;
+
+const StoryPairs = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+`;
+
+const StoryPairRow = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1.75rem;
+  align-items: start;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
 const Body = styled.p`
   margin: 0 0 1rem;
   font-family: ${({ theme }) => theme.fonts.body};
@@ -766,11 +793,33 @@ function CaseSection({ section }) {
       <Section id={section.id}>
         {section.title ? <SectionTitle>{section.title}</SectionTitle> : null}
         {section.img ? (
-          <FullWidthMedia>
+          <FullWidthMedia style={{ marginBottom: section.body ? 16 : 0 }}>
             <img src={section.img} alt={section.title || ''} />
           </FullWidthMedia>
         ) : null}
         {renderBody(section.body)}
+      </Section>
+    );
+  }
+
+  if (section.type === 'story-pairs') {
+    return (
+      <Section id={section.id}>
+        {section.title ? <SectionTitle>{section.title}</SectionTitle> : null}
+        {section.intro ? renderBody(section.intro) : null}
+        {section.subtitle ? <SectionSubtitle>{section.subtitle}</SectionSubtitle> : null}
+        <StoryPairs>
+          {(section.pairs || []).map((pair, i) => (
+            <StoryPairRow key={pair.body || i}>
+              {pair.img ? (
+                <Media src={pair.img} alt={pair.alt || section.title || ''} />
+              ) : (
+                <PlaceholderBlock $height={pair.placeholderHeight || '220px'} />
+              )}
+              <MediaCopy>{renderBody(pair.body)}</MediaCopy>
+            </StoryPairRow>
+          ))}
+        </StoryPairs>
       </Section>
     );
   }

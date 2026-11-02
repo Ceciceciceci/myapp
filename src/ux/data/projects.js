@@ -48,6 +48,8 @@ import onewheelQuizMain from '../../images/onewheel-quiz/quiz-main.png';
 import onewheelQuizPrimitives from '../../images/onewheel-quiz/primitives.png';
 import onewheelQuizModules from '../../images/onewheel-quiz/quiz-modules.png';
 import onewheelQuizIcons from '../../images/onewheel-quiz/icons.png';
+import onewheelQuizReddit from '../../images/onewheel-quiz/reddit-posts.png';
+import onewheelQuizResearch from '../../images/onewheel-quiz/research-inspo.png';
 
 export const projects = [
   {
@@ -630,8 +632,23 @@ export const projects = [
     team: 'Graphic design, COO, marketing, and engineering',
     tools: 'Figma, React',
     heroImg: onewheelQuizMain,
+    heroVideo: '/videos/onewheel-riding-preference-quiz.mp4',
+    problemLabel: 'Why was this needed?',
     problem:
-      'Onewheel riders could customize board shaping settings across multiple models, but the right traction, terrain, performance, and weight setup was not always obvious, especially when the experience needed to reflect what board they owned and how they actually rode.',
+      'What is a Onewheel? it is a electric skateboard where there is a singular tire in the center. This projects aims to solve a question about setting up settings of a rider’s board.',
+    problemSubtitle: 'What happened?',
+    problemPairs: [
+      {
+        img: onewheelQuizReddit,
+        body:
+          'On Reddit, there were questions from primarily first time Onewheel owners and riders about riding preferences.',
+      },
+      {
+        body:
+          'This confusion stems from the Onewheel Bluetooth app where the user would connect their board for the first time.',
+        placeholderHeight: '220px',
+      },
+    ],
     approach: [
       'Pulled color and typography primitives from the Onewheel mobile app to keep the quiz visually aligned with existing rider-facing products.',
       'Mapped quiz inputs to the four shaping dimensions riders care about most: traction, terrain, performance, and weight.',
@@ -646,24 +663,28 @@ export const projects = [
     process: [
       {
         label: 'Primitives & Tokens',
+        layout: 'column',
         body:
           'Documented color and font primitives from the mobile app, including board theme colors such as neon yellow for GT, deep blue for XR, and GTS blue for GT-S, plus MONO45 / ABCFavorit typography, so each model’s quiz felt native to Onewheel branding.',
         img: onewheelQuizPrimitives,
       },
       {
         label: 'Single-Page Quiz Flow',
+        layout: 'column',
         body:
           'Designed and implemented a single-page slider form that adapts to each rider’s Onewheel model with traction, terrain, performance, and weight sections, model-specific color themes, hover states, dynamic graphics, and a clear submit action in React.',
         img: onewheelQuizMain,
       },
       {
         label: 'Quiz Modules',
+        layout: 'column',
         body:
           'Built reusable quiz item modules for vertical lists, horizontal scales, and icon-based questions, with selected, default, and hover states across model-specific themes such as GT neon yellow and XR deep blue.',
         img: onewheelQuizModules,
       },
       {
         label: 'Illustrations & Icons',
+        layout: 'column',
         body:
           'Created line-art icons and dynamic illustrations for traction, terrain, performance, and weight, then worked with the graphic design team and COO to refine the finalized graphics, including variants that update based on rider input such as mellow-to-aggressive performance visuals.',
         img: onewheelQuizIcons,
@@ -696,22 +717,12 @@ export const projects = [
         'Build a responsive React frontend that matches the approved Figma flow',
         'Finalize quiz graphics and interaction details with graphic design and the COO',
       ],
-      researchSteps: [
-        {
-          title: 'Graphic design collaboration',
-          items: [
-            'Partnered with the graphic design team to refine quiz visuals, illustration direction, and finalized graphics.',
-            'Iterated on traction, terrain, performance, and weight graphics so they felt on-brand and easy to understand.',
-          ],
-        },
-        {
-          title: 'COO review & POC presentation',
-          items: [
-            'Worked with the COO to iron out quiz flow details, content priorities, and visual polish.',
-            'Presented the quiz POC to the COO to walk through the shaping experience and gather executive feedback.',
-          ],
-        },
+      research: [
+        'Looked for different types of quizzes that exist for other recreation vehicles. Recreation vehicles also include bicycles, scooters, skateboards. These are the ones I had found to base on.',
+        'I also worked with the designated riding team under Onewheel to get the categories that would make sense to ask about that would generate the quiz results. This would end up being traction, terrain, performance, and weight and as well as the options under each.',
+        'I also worked with the graphic design team to solidify the right branding images and vectors to use for this feature.',
       ],
+      researchImg: onewheelQuizResearch,
       reflection:
         'The quiz became much stronger once graphic design and the COO were involved in shaping the details. Model-specific themes like neon yellow for GT and deep blue for XR made each version feel true to Onewheel branding, and tying the flow to purchase and riding history made the shaping dimensions feel personal instead of generic. The 50% lift in account registration and increase in app logins showed that riders were willing to come back when the experience felt tailored to their board.',
       siteMapPages: [
