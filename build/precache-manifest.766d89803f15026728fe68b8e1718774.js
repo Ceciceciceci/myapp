@@ -1,0 +1,998 @@
+self.__precacheManifest = (self.__precacheManifest || []).concat([
+  {
+    "revision": "3967119d7365b583c630c228e6fd6976",
+    "url": "/index.html"
+  },
+  {
+    "revision": "f23de43a284a93bfd7a5",
+    "url": "/static/css/main.f202acaf.chunk.css"
+  },
+  {
+    "revision": "47723c01ccc81d249b35",
+    "url": "/static/js/2.92851acc.chunk.js"
+  },
+  {
+    "revision": "293ca5f62066dbe915316e84f5d1f239",
+    "url": "/static/js/2.92851acc.chunk.js.LICENSE.txt"
+  },
+  {
+    "revision": "f23de43a284a93bfd7a5",
+    "url": "/static/js/main.fea9874d.chunk.js"
+  },
+  {
+    "revision": "740dd3b9cc3d84204ea7",
+    "url": "/static/js/runtime-main.b2cc3228.js"
+  },
+  {
+    "revision": "7c0d93f8df28b2d2b68bf8921e8ec6e5",
+    "url": "/static/media/DSC07819.7c0d93f8.jpg"
+  },
+  {
+    "revision": "613aa36946adcfbd54460e3170ee8143",
+    "url": "/static/media/DSC07826.613aa369.jpg"
+  },
+  {
+    "revision": "6882005c048cea76d21784b60afdefa2",
+    "url": "/static/media/DSC09638.6882005c.jpg"
+  },
+  {
+    "revision": "27c0deb14d980fd33e1ad36e3ba63c4f",
+    "url": "/static/media/DSC09650.27c0deb1.jpg"
+  },
+  {
+    "revision": "1e0453387e91c70bd8353de04494f36f",
+    "url": "/static/media/DSC09663.1e045338.jpg"
+  },
+  {
+    "revision": "584989d94b580b11a271d810dd778d1a",
+    "url": "/static/media/DSC09673.584989d9.jpg"
+  },
+  {
+    "revision": "d46a047e0934f92a47a0fc963a941ad4",
+    "url": "/static/media/DSC09680.d46a047e.jpg"
+  },
+  {
+    "revision": "20817bb18c0e756922d216237ce66a55",
+    "url": "/static/media/DSC09692.20817bb1.jpg"
+  },
+  {
+    "revision": "57c5263b76125a24246563485471b3f1",
+    "url": "/static/media/IMG_1299.57c5263b.jpg"
+  },
+  {
+    "revision": "38ed0fd21de8fe896d607b72001e6465",
+    "url": "/static/media/IMG_2431.38ed0fd2.jpg"
+  },
+  {
+    "revision": "c49f46b7004988a3f39fccb0d262308a",
+    "url": "/static/media/Illustration 20261102.c49f46b7.png"
+  },
+  {
+    "revision": "d1cd9b9ee54dac69aee2db8c4549defa",
+    "url": "/static/media/Illustration10.d1cd9b9e.png"
+  },
+  {
+    "revision": "948187a8e6f8905ee03320a74213d2fa",
+    "url": "/static/media/Illustration12.948187a8.png"
+  },
+  {
+    "revision": "fe942a6d4f5c5230ea82f34376707c9b",
+    "url": "/static/media/Illustration13.fe942a6d.png"
+  },
+  {
+    "revision": "2cbf5363c6430daf29a12a61698e5f1f",
+    "url": "/static/media/Illustration16.2cbf5363.png"
+  },
+  {
+    "revision": "f97d5b04448894c45108a5a5706bee02",
+    "url": "/static/media/Illustration18.f97d5b04.png"
+  },
+  {
+    "revision": "b2ca746dc31969c725b5014305074d74",
+    "url": "/static/media/Illustration2.b2ca746d.png"
+  },
+  {
+    "revision": "c6f35a668366d078301a77687e156253",
+    "url": "/static/media/Illustration20.c6f35a66.png"
+  },
+  {
+    "revision": "5eb0dd971ce68bcaeab9816e10f970f7",
+    "url": "/static/media/Illustration21.5eb0dd97.png"
+  },
+  {
+    "revision": "4e961fd1b3dc307e2911fbe2e9f8c6f5",
+    "url": "/static/media/Illustration217.4e961fd1.png"
+  },
+  {
+    "revision": "1b754fef97b2bf967a8a6d8440e6102c",
+    "url": "/static/media/Illustration23.1b754fef.png"
+  },
+  {
+    "revision": "bf2d269cf7063da3904b64b0ae4622fb",
+    "url": "/static/media/Illustration258 2.bf2d269c.png"
+  },
+  {
+    "revision": "abe438468a5f4b857709e2630af147ff",
+    "url": "/static/media/Illustration258 3.abe43846.png"
+  },
+  {
+    "revision": "bce05e9704cd2f1276d1b215adb1373e",
+    "url": "/static/media/Illustration260 2.bce05e97.png"
+  },
+  {
+    "revision": "846bb8632a7ff78e725c017c6cff4697",
+    "url": "/static/media/Illustration284 2.846bb863.png"
+  },
+  {
+    "revision": "db1418fedc150043ffe7a3d7026781b8",
+    "url": "/static/media/Illustration3.db1418fe.png"
+  },
+  {
+    "revision": "955a096d68b4acd3dc1f97206cf95fae",
+    "url": "/static/media/Illustration6.955a096d.png"
+  },
+  {
+    "revision": "f3cf374ec8a2e3b19280da6d498501e2",
+    "url": "/static/media/Screenshot 2026-02-21 at 7.03.02 PM.f3cf374e.png"
+  },
+  {
+    "revision": "47a107e1ee1ad1eaaaf3209121434f23",
+    "url": "/static/media/about-page.47a107e1.png"
+  },
+  {
+    "revision": "bcc6b1ac4872dfaf02d89e7901dd72bb",
+    "url": "/static/media/active-stretch.bcc6b1ac.png"
+  },
+  {
+    "revision": "8147d53e6780d3053581686155363e6c",
+    "url": "/static/media/agency-id-registration.8147d53e.png"
+  },
+  {
+    "revision": "1eac7226b34791096b637230233aa20d",
+    "url": "/static/media/alarm-setup.1eac7226.png"
+  },
+  {
+    "revision": "d0156fdd51fb5dbf66a01c2cba01460d",
+    "url": "/static/media/artwork.d0156fdd.png"
+  },
+  {
+    "revision": "5184b873d19da98296f218208e5965bc",
+    "url": "/static/media/baguette.5184b873.png"
+  },
+  {
+    "revision": "f592a9c5c72a494cc2c6230582a010e9",
+    "url": "/static/media/bakery.f592a9c5.png"
+  },
+  {
+    "revision": "ef9ba97042c5e0900ae50580dd703aba",
+    "url": "/static/media/bear.ef9ba970.png"
+  },
+  {
+    "revision": "8420df2ed768d88017430f6888217de9",
+    "url": "/static/media/bread-friends.8420df2e.png"
+  },
+  {
+    "revision": "48bd244d2fb9885d6fc9d9bed2f353cc",
+    "url": "/static/media/bread-sample.48bd244d.png"
+  },
+  {
+    "revision": "bbe4038d32b87a27c9ac08b69f526662",
+    "url": "/static/media/breadpuns.bbe4038d.png"
+  },
+  {
+    "revision": "e7570cddea842dd6a0910930c028136d",
+    "url": "/static/media/breadstamps.e7570cdd.jpg"
+  },
+  {
+    "revision": "932e4a2a63ad648a95a9aca9a3588987",
+    "url": "/static/media/bready-kitchen-towel-flatlay.932e4a2a.png"
+  },
+  {
+    "revision": "d9c54f88927f82ef899f4dfaa9cb54ab",
+    "url": "/static/media/bready-kitchen-towel-product.d9c54f88.png"
+  },
+  {
+    "revision": "129060196a2405514df8053f05fbad39",
+    "url": "/static/media/bready.12906019.png"
+  },
+  {
+    "revision": "a7b99eaea65817fc48ceb3319e11572e",
+    "url": "/static/media/bryan.a7b99eae.png"
+  },
+  {
+    "revision": "6b5e7447e9613a76ce5a8c2e9bd5e5d1",
+    "url": "/static/media/button-states.6b5e7447.png"
+  },
+  {
+    "revision": "7b4a5a1aabdd268f4bf5adbe2cc56261",
+    "url": "/static/media/buttons.7b4a5a1a.png"
+  },
+  {
+    "revision": "82c5e37fe6848a116b5577aa13eb4a14",
+    "url": "/static/media/cart-page.82c5e37f.png"
+  },
+  {
+    "revision": "6796332030f239f7310c1927eea6d634",
+    "url": "/static/media/ceci-dkph-mira.67963320.png"
+  },
+  {
+    "revision": "8660124f1cf1df022d2c48fc843f9a27",
+    "url": "/static/media/ceci-dkph-rumi.8660124f.png"
+  },
+  {
+    "revision": "02fd15636ce904e9cc3516ad8a20af7d",
+    "url": "/static/media/ceci-dkph-zoey.02fd1563.png"
+  },
+  {
+    "revision": "a5b7226f99a2a41c374eae7b8703460c",
+    "url": "/static/media/ceci-sticker-clear-c.a5b7226f.png"
+  },
+  {
+    "revision": "191663d1d2ccce5b894d6ba122ef159d",
+    "url": "/static/media/ceci-sticker-reg-b.191663d1.png"
+  },
+  {
+    "revision": "0aea5bf54530c2bc598577ba506e82b6",
+    "url": "/static/media/character-portraits.0aea5bf5.png"
+  },
+  {
+    "revision": "bf03a055a7a3a37848b9b45eb51482e9",
+    "url": "/static/media/commission1.bf03a055.png"
+  },
+  {
+    "revision": "5ae28e7ce04a71cb71ea28740407a376",
+    "url": "/static/media/corps-team.5ae28e7c.png"
+  },
+  {
+    "revision": "f972274ad5e99e1ccf420391c6d15980",
+    "url": "/static/media/crayon.f972274a.png"
+  },
+  {
+    "revision": "ecc75eb317fdbb347fd9c5825dda9463",
+    "url": "/static/media/daily-life-stickersheet.ecc75eb3.png"
+  },
+  {
+    "revision": "0e64c2cae0569d3695e3f8589e66aa8d",
+    "url": "/static/media/data-table.0e64c2ca.png"
+  },
+  {
+    "revision": "3065f19fb3ef781b6a3e57285d359fde",
+    "url": "/static/media/denji.3065f19f.png"
+  },
+  {
+    "revision": "c4df5b6f3cd36647bf0f8f2fca55cb99",
+    "url": "/static/media/design-system-3.c4df5b6f.png"
+  },
+  {
+    "revision": "56b3ce5c57df30b7c91c78fac1f72c64",
+    "url": "/static/media/design-system-4.56b3ce5c.png"
+  },
+  {
+    "revision": "fd12be1f13bc7f8586b062493aafe888",
+    "url": "/static/media/design-system-6.fd12be1f.png"
+  },
+  {
+    "revision": "ea11b0b124e6f9035bbb2e482000aa68",
+    "url": "/static/media/design-system-7.ea11b0b1.png"
+  },
+  {
+    "revision": "25009d9b1d6d9d39466ee000e11022b2",
+    "url": "/static/media/design-system-8.25009d9b.png"
+  },
+  {
+    "revision": "7ad532d4f15d8d8c04fac039dff22db6",
+    "url": "/static/media/design-system-hero-a.7ad532d4.png"
+  },
+  {
+    "revision": "81e592e726720a7a3c265ad8d419a987",
+    "url": "/static/media/design-system-hero-b.81e592e7.png"
+  },
+  {
+    "revision": "5955b81e19ee88bb1f6132efb1f269c3",
+    "url": "/static/media/desktop-17.5955b81e.png"
+  },
+  {
+    "revision": "ea11b0b124e6f9035bbb2e482000aa68",
+    "url": "/static/media/diagnosing-buttons-pills.ea11b0b1.png"
+  },
+  {
+    "revision": "f139bf62687001de8a9b13df9dca9af2",
+    "url": "/static/media/diagnosing-reports-headers.f139bf62.png"
+  },
+  {
+    "revision": "cffecbfa500e98b9505bcd483bb63923",
+    "url": "/static/media/diagnosing-rma-headers.cffecbfa.png"
+  },
+  {
+    "revision": "8056725c97694253b38fc919bc07c86a",
+    "url": "/static/media/dog-bread-2.8056725c.png"
+  },
+  {
+    "revision": "fc152df9c4b766a082043cb3842ada70",
+    "url": "/static/media/dream1.fc152df9.png"
+  },
+  {
+    "revision": "0e16584811abeaaa2b70af6eaa7773c9",
+    "url": "/static/media/dream2.0e165848.png"
+  },
+  {
+    "revision": "3f8cec337edb2e5510865fac6d4c9cc9",
+    "url": "/static/media/dream3.3f8cec33.png"
+  },
+  {
+    "revision": "61b839c35287e5383b0b5b6cadc264a9",
+    "url": "/static/media/dream4.61b839c3.png"
+  },
+  {
+    "revision": "ee1cf804546702d2c3f7ce06f4a7a2f5",
+    "url": "/static/media/dream6.ee1cf804.png"
+  },
+  {
+    "revision": "7b781d5a8cc72c431869d65367b7c6a5",
+    "url": "/static/media/dumpling-hair-claw-hello.7b781d5a.png"
+  },
+  {
+    "revision": "aa8c17deb3081df32f7c22996694d699",
+    "url": "/static/media/dumpling-hair-claw-steamer.aa8c17de.png"
+  },
+  {
+    "revision": "25d41e7bd9607e0fe9afbb1f64f1a3d8",
+    "url": "/static/media/elephaant.25d41e7b.png"
+  },
+  {
+    "revision": "3fdb2956e0c0000fc1df18d681b0b04b",
+    "url": "/static/media/email-icon.3fdb2956.svg"
+  },
+  {
+    "revision": "7d32decf24db5c28c95883f62f7fb5c5",
+    "url": "/static/media/falin.7d32decf.png"
+  },
+  {
+    "revision": "6e5c646f142fe3868f901807ecb53e70",
+    "url": "/static/media/flowchart.6e5c646f.jpg"
+  },
+  {
+    "revision": "23d476235dad627b41d410bc5d450539",
+    "url": "/static/media/flower.23d47623.svg"
+  },
+  {
+    "revision": "3ea95d65bc58778e53b9ec8f868a1096",
+    "url": "/static/media/foodart1.3ea95d65.png"
+  },
+  {
+    "revision": "42810d9ffdb2642439ac7ee587c17fab",
+    "url": "/static/media/foodart10.42810d9f.png"
+  },
+  {
+    "revision": "5957863b7627561fc5841720f625d210",
+    "url": "/static/media/foodart11.5957863b.png"
+  },
+  {
+    "revision": "487a2d254e31b9a6b54c10760e7c7778",
+    "url": "/static/media/foodart12.487a2d25.png"
+  },
+  {
+    "revision": "c2c818a24f1c769c8c90e47398f92118",
+    "url": "/static/media/foodart13.c2c818a2.png"
+  },
+  {
+    "revision": "6a051d24c9a4c5b5b0d45b671547df4f",
+    "url": "/static/media/foodart14.6a051d24.png"
+  },
+  {
+    "revision": "54a4dc18c9804406164d12fdacde90f1",
+    "url": "/static/media/foodart15.54a4dc18.png"
+  },
+  {
+    "revision": "5921ba371115f4cba96dc13fef0705c3",
+    "url": "/static/media/foodart16.5921ba37.png"
+  },
+  {
+    "revision": "ab58d80fe873ab7fb5d4288c8ec21530",
+    "url": "/static/media/foodart17.ab58d80f.png"
+  },
+  {
+    "revision": "df26712b9a8f50fd87e5f349dfb92741",
+    "url": "/static/media/foodart18.df26712b.png"
+  },
+  {
+    "revision": "745fc2f517ac9b0cb651270695edf9cb",
+    "url": "/static/media/foodart19.745fc2f5.png"
+  },
+  {
+    "revision": "4ac2ee5ea9158fb7a1764b70e7711ca3",
+    "url": "/static/media/foodart2.4ac2ee5e.png"
+  },
+  {
+    "revision": "cd77669d34048b5f38a99abd2f4c1c7d",
+    "url": "/static/media/foodart20.cd77669d.png"
+  },
+  {
+    "revision": "53ae298f5cfdf014cf18ed6e65da7fcd",
+    "url": "/static/media/foodart21.53ae298f.png"
+  },
+  {
+    "revision": "eac3183de6184bd272de65c60bb454a8",
+    "url": "/static/media/foodart22.eac3183d.png"
+  },
+  {
+    "revision": "46ae87383e0cb95c506b6e30eb7ebfd4",
+    "url": "/static/media/foodart23.46ae8738.png"
+  },
+  {
+    "revision": "fc66d7c5820669e27ec596c2a1c02acf",
+    "url": "/static/media/foodart24.fc66d7c5.png"
+  },
+  {
+    "revision": "c28bb111d215c5817b7b9222c687929f",
+    "url": "/static/media/foodart25.c28bb111.png"
+  },
+  {
+    "revision": "b37b7aae24ffd90343306594f1dcf03c",
+    "url": "/static/media/foodart26.b37b7aae.png"
+  },
+  {
+    "revision": "c7c2a4cf16df2e98ad4e653383b67606",
+    "url": "/static/media/foodart3.c7c2a4cf.png"
+  },
+  {
+    "revision": "4b8e804630ecfca75c518d9cea925288",
+    "url": "/static/media/foodart4.4b8e8046.png"
+  },
+  {
+    "revision": "082b046e81ac4fb07d714127cc1a7efa",
+    "url": "/static/media/foodart5.082b046e.png"
+  },
+  {
+    "revision": "8ad9945eae522a9f866f86705c4d3410",
+    "url": "/static/media/foodart6.8ad9945e.png"
+  },
+  {
+    "revision": "4eccb68d71b3ab73cd8f31985aeca654",
+    "url": "/static/media/foodart7.4eccb68d.png"
+  },
+  {
+    "revision": "282f28467639d0298a746893619fe5c1",
+    "url": "/static/media/foodart8.282f2846.png"
+  },
+  {
+    "revision": "f637dbe5825750547db1e9d29b01c2a9",
+    "url": "/static/media/foodart9.f637dbe5.png"
+  },
+  {
+    "revision": "b6a5a9a498ac87d4f14c8ff90b4856b6",
+    "url": "/static/media/footer-mascot.b6a5a9a4.png"
+  },
+  {
+    "revision": "2a7d1dc0234d1d4ba07abb3193082c6a",
+    "url": "/static/media/frierensticker.2a7d1dc0.png"
+  },
+  {
+    "revision": "070ecd551fa659d7c09c5a4d24bd09fc",
+    "url": "/static/media/getogojo.070ecd55.png"
+  },
+  {
+    "revision": "69370073304b41af6301e1f359b0b546",
+    "url": "/static/media/ghibli1 2.69370073.png"
+  },
+  {
+    "revision": "69370073304b41af6301e1f359b0b546",
+    "url": "/static/media/ghibli12.69370073.png"
+  },
+  {
+    "revision": "71a873c371fcb8a9f9ccdf90082db29d",
+    "url": "/static/media/ghibli2 2.71a873c3.png"
+  },
+  {
+    "revision": "9557af181944dfa8d1290728a51f1317",
+    "url": "/static/media/ghibli23.9557af18.png"
+  },
+  {
+    "revision": "1fa9f3e8426822c493bd807e61855fec",
+    "url": "/static/media/halloween collection.1fa9f3e8.png"
+  },
+  {
+    "revision": "0e004316b491e57e419ab4a2d054c091",
+    "url": "/static/media/halo1.0e004316.png"
+  },
+  {
+    "revision": "1b1b038e5c561bb523d970991641daa6",
+    "url": "/static/media/halo2.1b1b038e.png"
+  },
+  {
+    "revision": "c6df09686e765273a1fc7258d57820db",
+    "url": "/static/media/hero-product.c6df0968.png"
+  },
+  {
+    "revision": "3d3547ac0f1f8b5e45b5d85871c59419",
+    "url": "/static/media/hinata.3d3547ac.png"
+  },
+  {
+    "revision": "3e401e3b9398973eca95a9a26511154b",
+    "url": "/static/media/home-page.3e401e3b.png"
+  },
+  {
+    "revision": "09c8b80f17f9ac2666f1c464b90af635",
+    "url": "/static/media/hq-sample.09c8b80f.png"
+  },
+  {
+    "revision": "a8236197f39f5f0380ec03afecaa2268",
+    "url": "/static/media/icons.a8236197.png"
+  },
+  {
+    "revision": "c3c4e2c6c5fc87c72f5a94181e8e7136",
+    "url": "/static/media/icons.c3c4e2c6.png"
+  },
+  {
+    "revision": "a6bb3d63ac1018727657aee5cef20e11",
+    "url": "/static/media/illustration15.a6bb3d63.png"
+  },
+  {
+    "revision": "fcc398ffe1c4d32f0b4174aa9cb61dde",
+    "url": "/static/media/img10.fcc398ff.png"
+  },
+  {
+    "revision": "ecd041f36d88346f89dd741d8a9784c3",
+    "url": "/static/media/img11.ecd041f3.png"
+  },
+  {
+    "revision": "e6686dec632b1dfaddc6bc214024e059",
+    "url": "/static/media/img12.e6686dec.png"
+  },
+  {
+    "revision": "06093a7c339bfb9a50af7772d3e8b8d9",
+    "url": "/static/media/img13.06093a7c.png"
+  },
+  {
+    "revision": "8bfbd6bf82930e4d1dbad3e723e820ff",
+    "url": "/static/media/img14.8bfbd6bf.png"
+  },
+  {
+    "revision": "76ebe49c70460a2b15878e3534969b20",
+    "url": "/static/media/img15.76ebe49c.png"
+  },
+  {
+    "revision": "b577f1488d6c11e2c7e6daad7c22eff7",
+    "url": "/static/media/img16.b577f148.png"
+  },
+  {
+    "revision": "37fb1c307e138eda7ff9a81195b1004e",
+    "url": "/static/media/img17.37fb1c30.png"
+  },
+  {
+    "revision": "fedfd65794ba6c3a015da05d245e1c2f",
+    "url": "/static/media/img18.fedfd657.png"
+  },
+  {
+    "revision": "40bc31b53d02fead6a750a1d9c325ad6",
+    "url": "/static/media/img19.40bc31b5.jpg"
+  },
+  {
+    "revision": "172cde0f59d5550dc97fc3256d3c69db",
+    "url": "/static/media/img20.172cde0f.png"
+  },
+  {
+    "revision": "adcd57629d88f501a65f55b0c1316be5",
+    "url": "/static/media/img21.adcd5762.png"
+  },
+  {
+    "revision": "0152e66e1a85940598278e69e8b1f9fe",
+    "url": "/static/media/img22.0152e66e.png"
+  },
+  {
+    "revision": "f01b7ca42d638c1e70cfffa7fa49ab97",
+    "url": "/static/media/img23.f01b7ca4.png"
+  },
+  {
+    "revision": "11abd23eddbe7c9275cdbfb93ebfe073",
+    "url": "/static/media/img24.11abd23e.png"
+  },
+  {
+    "revision": "61c18ac196b24004719b1fb1e767d31c",
+    "url": "/static/media/img25.61c18ac1.jpg"
+  },
+  {
+    "revision": "bea02f3bc087106918f73d97652ecb92",
+    "url": "/static/media/img26.bea02f3b.png"
+  },
+  {
+    "revision": "0dd5671bb8364a41baba868289200bb6",
+    "url": "/static/media/img27.0dd5671b.png"
+  },
+  {
+    "revision": "b231320b0b28beeba2a68fc5705c33c4",
+    "url": "/static/media/img28.b231320b.png"
+  },
+  {
+    "revision": "c54c6bb20e6b67a6ca13f40d74cdb3ab",
+    "url": "/static/media/img29.c54c6bb2.png"
+  },
+  {
+    "revision": "b0efca698f9508b4cd2254cfb834ba36",
+    "url": "/static/media/img30.b0efca69.png"
+  },
+  {
+    "revision": "a8b81f4f8348b9ced06c76cf5c7b3f22",
+    "url": "/static/media/img31.a8b81f4f.png"
+  },
+  {
+    "revision": "4efbdccd877f6b0d5d5744bb4e0c99fa",
+    "url": "/static/media/img32.4efbdccd.png"
+  },
+  {
+    "revision": "b8df9257615d99f13ecd718399c4fe10",
+    "url": "/static/media/img33.b8df9257.png"
+  },
+  {
+    "revision": "af6e3b1a29505040ad98769bf9c0a1e7",
+    "url": "/static/media/img34.af6e3b1a.png"
+  },
+  {
+    "revision": "facb8a867c16b3d603502c69249ca3fd",
+    "url": "/static/media/img35.facb8a86.png"
+  },
+  {
+    "revision": "258386c8b32aff2e71abae7bab2ee0e8",
+    "url": "/static/media/img36.258386c8.png"
+  },
+  {
+    "revision": "3c381866a94394331ec1e1149080779b",
+    "url": "/static/media/img37.3c381866.png"
+  },
+  {
+    "revision": "03c7e45c83499a3ed7a879682debb810",
+    "url": "/static/media/img38.03c7e45c.png"
+  },
+  {
+    "revision": "c9e2504c06e8cc51e828c2f1ed0d92b6",
+    "url": "/static/media/img39.c9e2504c.png"
+  },
+  {
+    "revision": "4e1fd7269d7575fc0ece181f4a1c736e",
+    "url": "/static/media/img4.4e1fd726.png"
+  },
+  {
+    "revision": "a05d53bdc15f20391dcaf4a0731cad5d",
+    "url": "/static/media/img40.a05d53bd.png"
+  },
+  {
+    "revision": "844709b6b8cd81d47211d9e26ceb22eb",
+    "url": "/static/media/img41.844709b6.png"
+  },
+  {
+    "revision": "bc4bb27e0b1b88d551803c80fb87b52e",
+    "url": "/static/media/img42.bc4bb27e.png"
+  },
+  {
+    "revision": "5f9d06962ca9e85640ff551f452ada87",
+    "url": "/static/media/img43.5f9d0696.png"
+  },
+  {
+    "revision": "81cead7d3635f1511d342569d9dfc9a1",
+    "url": "/static/media/img5.81cead7d.png"
+  },
+  {
+    "revision": "708921598f56f1c47157cd9430a2d9d6",
+    "url": "/static/media/img6.70892159.png"
+  },
+  {
+    "revision": "e43602111f0d6b9f96b2df3bb2554aad",
+    "url": "/static/media/img7.e4360211.png"
+  },
+  {
+    "revision": "a72d18a7ecde30c2c7998d3748954263",
+    "url": "/static/media/img8.a72d18a7.png"
+  },
+  {
+    "revision": "689d54ceb11a670636b850ca45a16814",
+    "url": "/static/media/img9.689d54ce.png"
+  },
+  {
+    "revision": "889bddcb3f4764170043d6d4f3dfef76",
+    "url": "/static/media/intro.889bddcb.png"
+  },
+  {
+    "revision": "7a5bcfd716dae6a5a61f6a4ac441f511",
+    "url": "/static/media/jeep.7a5bcfd7.png"
+  },
+  {
+    "revision": "d793f4e7ca5c23656df4de2e5909d8f6",
+    "url": "/static/media/kburger.d793f4e7.png"
+  },
+  {
+    "revision": "373294b6ced3167eb996b217cc68884d",
+    "url": "/static/media/kcake.373294b6.png"
+  },
+  {
+    "revision": "05bfc321a2e62a2f9a0196df6c0c578e",
+    "url": "/static/media/knit1.05bfc321.png"
+  },
+  {
+    "revision": "cde8259cac099b90bd4eb3ff5a6a91bb",
+    "url": "/static/media/knit2.cde8259c.png"
+  },
+  {
+    "revision": "c058d95b69196b658861cd8c18fcb52c",
+    "url": "/static/media/knit3.c058d95b.png"
+  },
+  {
+    "revision": "535f578d5484b4217eb60fe04bf61185",
+    "url": "/static/media/knit4.535f578d.png"
+  },
+  {
+    "revision": "336c522a60d91f89bc1f973f9bc3b0f0",
+    "url": "/static/media/knit5.336c522a.png"
+  },
+  {
+    "revision": "303d813458f439a469ac66a346a06759",
+    "url": "/static/media/landing.303d8134.png"
+  },
+  {
+    "revision": "f49015b6912422866e2dfde0d3ef5936",
+    "url": "/static/media/linkedin-square-logo.f49015b6.webp"
+  },
+  {
+    "revision": "332cf1a34bb28de8c7dfd719d906f4eb",
+    "url": "/static/media/loading-states.332cf1a3.png"
+  },
+  {
+    "revision": "ab0d825f484069d14cf08762f734feee",
+    "url": "/static/media/me3.ab0d825f.png"
+  },
+  {
+    "revision": "47a57da1bf4f1632c088695805338a1c",
+    "url": "/static/media/merch1.47a57da1.png"
+  },
+  {
+    "revision": "9f7f3421d6b9e80752138050997671af",
+    "url": "/static/media/message-banner.9f7f3421.png"
+  },
+  {
+    "revision": "1413d512fa88efbf254359cc2f27fedd",
+    "url": "/static/media/millie.1413d512.png"
+  },
+  {
+    "revision": "caaeeb5b8c73e71b6db61df772bf19fa",
+    "url": "/static/media/mobile-donate-elephant.caaeeb5b.png"
+  },
+  {
+    "revision": "d51456eb5affb6a431ffbd6263206d3f",
+    "url": "/static/media/mobile-donate-monkey.d51456eb.png"
+  },
+  {
+    "revision": "658c014c79f652ce6a5292dc4e04b476",
+    "url": "/static/media/mobile-donate-rhino.658c014c.png"
+  },
+  {
+    "revision": "1763ead137b931ce40ff58e14a62de37",
+    "url": "/static/media/mobile-donations-landing.1763ead1.png"
+  },
+  {
+    "revision": "3cadb57d56e5cc2505bfe67c4d828118",
+    "url": "/static/media/mobile-menu.3cadb57d.png"
+  },
+  {
+    "revision": "c631d2f59f05ead7f68df7019991bd64",
+    "url": "/static/media/nav-logo-sleep.c631d2f5.gif"
+  },
+  {
+    "revision": "30c631e274be8920108ace1b45b71c05",
+    "url": "/static/media/nav-logo-wake.30c631e2.gif"
+  },
+  {
+    "revision": "29a0795999cd21774b8e7f2bb1974f32",
+    "url": "/static/media/new-form.29a07959.png"
+  },
+  {
+    "revision": "dd22aa3682bbb38712425fbe69e80f48",
+    "url": "/static/media/notification.dd22aa36.png"
+  },
+  {
+    "revision": "ee6cd449fa773d88d3d7804cbea98524",
+    "url": "/static/media/old-form.ee6cd449.png"
+  },
+  {
+    "revision": "706f90cdf0ee23f42c2cea3712e3094b",
+    "url": "/static/media/orig3.706f90cd.jpg"
+  },
+  {
+    "revision": "c3c151e196acb8386a144a761ec4ac54",
+    "url": "/static/media/orig4.c3c151e1.png"
+  },
+  {
+    "revision": "1471480360d7540061d995a5cc570fb9",
+    "url": "/static/media/orig5.14714803.png"
+  },
+  {
+    "revision": "d5f177368eea2e608f9f65aedf890c3b",
+    "url": "/static/media/orig6.d5f17736.png"
+  },
+  {
+    "revision": "c74367a90d2133631115681481d00b83",
+    "url": "/static/media/orig7.c74367a9.png"
+  },
+  {
+    "revision": "8028713b06ff2a4626a21b8f71b75f9d",
+    "url": "/static/media/orig8.8028713b.png"
+  },
+  {
+    "revision": "d7995a6f5db6b0ea7b569231f1401cbc",
+    "url": "/static/media/orig9.d7995a6f.png"
+  },
+  {
+    "revision": "ae4426e151b3f0511fa20e7c64cacf58",
+    "url": "/static/media/penguin.ae4426e1.png"
+  },
+  {
+    "revision": "418ff0860603a85a78952fbca99460cb",
+    "url": "/static/media/po.418ff086.png"
+  },
+  {
+    "revision": "28c886ddfa42d279b11797496eb518e3",
+    "url": "/static/media/pokemon-starters-fire.28c886dd.png"
+  },
+  {
+    "revision": "e45a17a81319862516ee7f513b414bee",
+    "url": "/static/media/pokemon-starters-grass.e45a17a8.png"
+  },
+  {
+    "revision": "e5c40dc5842ec9ce43a34aaf030482ed",
+    "url": "/static/media/pokemon-starters-water.e5c40dc5.png"
+  },
+  {
+    "revision": "b18dc15f7cd71100dc50d3b9a5f7e379",
+    "url": "/static/media/post-it-note-designs.b18dc15f.png"
+  },
+  {
+    "revision": "86b61878334cafb5b85a7ca42ac977a3",
+    "url": "/static/media/preview.86b61878.png"
+  },
+  {
+    "revision": "e2171b7e5fbee61b75376a69dad25fe4",
+    "url": "/static/media/primitives.e2171b7e.png"
+  },
+  {
+    "revision": "b881d35fb3f413ff91dd815e18a110da",
+    "url": "/static/media/problem-inspiration.b881d35f.png"
+  },
+  {
+    "revision": "33747d728c52665504978a32fed6cfc1",
+    "url": "/static/media/product-design-booking.33747d72.png"
+  },
+  {
+    "revision": "3497f004fe904b38def348d8d5b5784a",
+    "url": "/static/media/product-info.3497f004.png"
+  },
+  {
+    "revision": "b0743d0c8567a71bdb71a97cdde52831",
+    "url": "/static/media/proj1-img.b0743d0c.jpg"
+  },
+  {
+    "revision": "325b25547191b7061a7ee1ac5c906b2e",
+    "url": "/static/media/pumpkin.325b2554.png"
+  },
+  {
+    "revision": "dc9b715cd15ff114413e5147426efd56",
+    "url": "/static/media/quiz-main.dc9b715c.png"
+  },
+  {
+    "revision": "c5dc66dfacb0d222a16144f25940c14a",
+    "url": "/static/media/quiz-modules.c5dc66df.png"
+  },
+  {
+    "revision": "9e10a9b8c0ac5089397c2eb5aa640389",
+    "url": "/static/media/reddit-posts.9e10a9b8.png"
+  },
+  {
+    "revision": "38b3e8ca6b48d96eadd8f0771aa6d914",
+    "url": "/static/media/research-inspo.38b3e8ca.png"
+  },
+  {
+    "revision": "b8804a21803c3e1e1d02df2c116ecc5f",
+    "url": "/static/media/retail-shopify.b8804a21.png"
+  },
+  {
+    "revision": "ee9eae0568dbe5f364759c10f5edd419",
+    "url": "/static/media/rhino.ee9eae05.png"
+  },
+  {
+    "revision": "90912080443038ebf8c1a58b8f15894a",
+    "url": "/static/media/rose.90912080.png"
+  },
+  {
+    "revision": "b9e5fad8a36d3bf66954818debae53d1",
+    "url": "/static/media/sdzoodesktopmain.b9e5fad8.png"
+  },
+  {
+    "revision": "23c0fbacf631ceb8f2eadce07ba4b9e6",
+    "url": "/static/media/sea-bakery.23c0fbac.png"
+  },
+  {
+    "revision": "6e569bcb91ca76fd5d59fa2f3fc06a18",
+    "url": "/static/media/session-builder.6e569bcb.png"
+  },
+  {
+    "revision": "209516fd7d5c39e8c2a3b8ee22765413",
+    "url": "/static/media/severance-1.209516fd.png"
+  },
+  {
+    "revision": "7108b8b32a3e76cb08fe37e4dd7e29b1",
+    "url": "/static/media/severance-2.7108b8b3.png"
+  },
+  {
+    "revision": "35983ef761f053b082062cbd42391537",
+    "url": "/static/media/shugocharaeggbomb.35983ef7.png"
+  },
+  {
+    "revision": "1b67eb9bf958a1b3a4978d077f30c704",
+    "url": "/static/media/sourdough.1b67eb9b.png"
+  },
+  {
+    "revision": "cf03b64ba6074b5403b913f6e845e220",
+    "url": "/static/media/storyboard.cf03b64b.jpg"
+  },
+  {
+    "revision": "5cb8e3500286c851e3847ac5ac5ba1dd",
+    "url": "/static/media/storybook-colors.5cb8e350.png"
+  },
+  {
+    "revision": "59d711432c32188abce35cbfbdb57818",
+    "url": "/static/media/sua.59d71143.png"
+  },
+  {
+    "revision": "b5a9557abdb75cb18b050553c90f9250",
+    "url": "/static/media/suamizi.b5a9557a.png"
+  },
+  {
+    "revision": "2a1b574e59088ff44e530864dc97f80f",
+    "url": "/static/media/sun.2a1b574e.svg"
+  },
+  {
+    "revision": "15a236e0f437fba14cf00d1df4e2b285",
+    "url": "/static/media/sunny.15a236e0.png"
+  },
+  {
+    "revision": "16d9b8c842e6dfad6c691a5c54c5ad88",
+    "url": "/static/media/sweater.16d9b8c8.png"
+  },
+  {
+    "revision": "a7fda2971fca9ae8700c0b6abc32219d",
+    "url": "/static/media/testbread3.a7fda297.png"
+  },
+  {
+    "revision": "e8fe6252bdd6cf78cb5572c2b11cf623",
+    "url": "/static/media/testbread4.e8fe6252.png"
+  },
+  {
+    "revision": "a6454c075c955b9d9748865492e05f18",
+    "url": "/static/media/testbread5 2.a6454c07.png"
+  },
+  {
+    "revision": "022534ce4e8d440670431c408dc06b4d",
+    "url": "/static/media/testbread6.022534ce.png"
+  },
+  {
+    "revision": "9b02489a4596368851c61a50b1700a1e",
+    "url": "/static/media/testbread7.9b02489a.png"
+  },
+  {
+    "revision": "59b18ff6596101e604092e7c35d27e5a",
+    "url": "/static/media/testbread8 2.59b18ff6.png"
+  },
+  {
+    "revision": "15d4a34c1c5187b687b5e3fc2a224c1c",
+    "url": "/static/media/totebag1.15d4a34c.png"
+  },
+  {
+    "revision": "29673494fba05d7854a91a38592e6cde",
+    "url": "/static/media/totebag2.29673494.png"
+  },
+  {
+    "revision": "526d54876363d54bb885e538d2791dbd",
+    "url": "/static/media/webtools.526d5487.png"
+  },
+  {
+    "revision": "096a7b8eba79b1363e806d66d25fab99",
+    "url": "/static/media/wrist-guards-photo.096a7b8e.png"
+  }
+]);

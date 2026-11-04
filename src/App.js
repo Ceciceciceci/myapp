@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import UxApp from './ux/UxApp';
+import ArtistApp from './artist/ArtistApp';
 import { LightTheme, DarkTheme } from './styles/theme';
 import { GlobalStyles } from './styles/global';
 import ScrollTo from './components/ScrollTo';
 
-function AppRoutes() {
+function UxRoutes() {
   const [theme] = useState('light');
 
   return (
@@ -24,7 +25,10 @@ export default function App() {
   return (
     <Router>
       <ScrollTo />
-      <AppRoutes />
+      <Switch>
+        <Route path="/artist" component={ArtistApp} />
+        <Route path="/" component={UxRoutes} />
+      </Switch>
     </Router>
   );
 }
