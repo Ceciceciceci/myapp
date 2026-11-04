@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from './theme';
 import { UxGlobalStyles } from './styles';
 import UxNav from './components/Nav';

@@ -79,15 +79,6 @@ export const Container = styled.div`
   }
 `;
 
-export const SectionLabel = styled.p`
-  font-size: 0.825rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.accent};
-  margin-bottom: 1.25rem;
-`;
-
 export const displayFont = css`
   font-family: ${({ theme }) => theme.fonts.display};
   letter-spacing: ${({ theme }) => theme.typography.displayLetterSpacing};
@@ -102,13 +93,9 @@ export const DisplayHeading = styled.h1`
   font-weight: 400;
 `;
 
-export const pillFont = css`
+export const Tag = styled.span`
   font-family: ${({ theme }) => theme.fonts.body};
   font-weight: 600;
-`;
-
-export const Tag = styled.span`
-  ${pillFont}
   font-size: 0.825rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -117,15 +104,4 @@ export const Tag = styled.span`
   border: none;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
-`;
-
-export const StyledLink = styled.a`
-  text-decoration: none;
-  color: inherit;
-`;
-
-export const mediaTablet = css`
-  @media (max-width: 900px) {
-    ${(props) => props.$tablet || ''}
-  }
 `;
