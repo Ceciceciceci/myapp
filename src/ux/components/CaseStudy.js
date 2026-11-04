@@ -273,14 +273,44 @@ const HeroVideo = styled.video`
 `;
 
 const MobileFollowUp = styled.div`
-  margin: 1.25rem 0 0;
+  margin: 1.5rem 0 32px;
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.75rem;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+`;
+
+const MobilePreview = styled.div`
+  flex: 0 0 auto;
+  width: min(220px, 42%);
+  margin: 0;
+  border-radius: ${({ theme }) => theme.radius};
+  overflow: hidden;
+  background: transparent;
+
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #111;
+  }
+
+  @media (max-width: 700px) {
+    width: min(200px, 55%);
+  }
 `;
 
 const MediaCaption = styled.p`
   margin: 0;
+  flex: 1 1 auto;
+  max-width: 22rem;
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.typography.baseSize};
   line-height: 1.5;
@@ -1274,33 +1304,38 @@ export default function UxCaseStudy() {
             </HeroWrap>
           )}
 
-          {study.mobileVideo ? (
-            <MobileFollowUp>
-              <FullWidthMedia>
-                <video
-                  key={study.mobileVideo}
-                  src={study.mobileVideo}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="auto"
-                  controls
-                  aria-label={`${study.title} mobile`}
-                />
-              </FullWidthMedia>
-              {study.mobileCaption ? (
-                <MediaCaption>{study.mobileCaption}</MediaCaption>
-              ) : null}
-            </MobileFollowUp>
-          ) : null}
+          {sections.map((section, i) => {
+            const beforeLast =
+              study.mobileVideo &&
+              sections.length > 0 &&
+              i === sections.length - 1;
 
-          {sections.map((section, i) => (
-            <CaseSection
-              key={`${section.type}-${section.title || i}`}
-              section={section}
-            />
-          ))}
+            return (
+              <React.Fragment key={`${section.type}-${section.title || i}`}>
+                {beforeLast ? (
+                  <MobileFollowUp>
+                    <MobilePreview>
+                      <video
+                        key={study.mobileVideo}
+                        src={study.mobileVideo}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        controls
+                        aria-label={`${study.title} mobile`}
+                      />
+                    </MobilePreview>
+                    {study.mobileCaption ? (
+                      <MediaCaption>{study.mobileCaption}</MediaCaption>
+                    ) : null}
+                  </MobileFollowUp>
+                ) : null}
+                <CaseSection section={section} />
+              </React.Fragment>
+            );
+          })}
 
           <NavSection aria-label="More case studies">
             <NavCard

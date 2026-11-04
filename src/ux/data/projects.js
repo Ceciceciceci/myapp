@@ -376,6 +376,7 @@ export const projects = [
   },
   {
     id: 'stretchie',
+    hidden: true,
     year: '2026',
     title: 'Stretchie',
     subtitle: 'A desktop stretch app for desk workers who need a reminder stretch session throughout the day',

@@ -7,9 +7,9 @@ import ArtistGallery from './ArtistGallery';
 const ArtistGlobal = createGlobalStyle`
   body {
     margin: 0;
-    background: #fffef8;
-    color: var(--dark-blue);
-    font-family: var(--openSans);
+    background: #fffdf7;
+    color: #1e2a4a;
+    font-family: 'Open Sans', sans-serif;
   }
 
   a {
@@ -20,7 +20,7 @@ const ArtistGlobal = createGlobalStyle`
 const Shell = styled.div`
   width: 100%;
   min-height: 100dvh;
-  background: #fffef8;
+  background: #fffdf7;
 `;
 
 export default function ArtistApp() {
