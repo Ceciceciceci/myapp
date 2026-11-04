@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a44e6ab333dfa25bf0c51127844ba7ac",
+    "revision": "06d01cc1114f27623020ec998adcc07b",
     "url": "/index.html"
   },
   {
-    "revision": "8484115f4a223ed5d4cd",
+    "revision": "cf7f07c9153b44194450",
     "url": "/static/css/main.f202acaf.chunk.css"
   },
   {
-    "revision": "29408307b595a64d83d4",
-    "url": "/static/js/2.b39c87ee.chunk.js"
+    "revision": "4c2497dd2df33030d7aa",
+    "url": "/static/js/2.297f22dd.chunk.js"
   },
   {
     "revision": "293ca5f62066dbe915316e84f5d1f239",
-    "url": "/static/js/2.b39c87ee.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.297f22dd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8484115f4a223ed5d4cd",
-    "url": "/static/js/main.4b0534f4.chunk.js"
+    "revision": "cf7f07c9153b44194450",
+    "url": "/static/js/main.b456f930.chunk.js"
   },
   {
     "revision": "740dd3b9cc3d84204ea7",
@@ -300,8 +300,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/diagnosing-rma-headers.cffecbfa.png"
   },
   {
-    "revision": "8056725c97694253b38fc919bc07c86a",
-    "url": "/static/media/dog-bread-2.8056725c.png"
+    "revision": "ca7e83a5f19e1c0a6d93c69eb98e44d0",
+    "url": "/static/media/display-left.ca7e83a5.png"
+  },
+  {
+    "revision": "22f6058623ce2c9329de5296b6c96f92",
+    "url": "/static/media/display-right.22f60586.png"
   },
   {
     "revision": "fc152df9c4b766a082043cb3842ada70",
@@ -334,10 +338,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "25d41e7bd9607e0fe9afbb1f64f1a3d8",
     "url": "/static/media/elephaant.25d41e7b.png"
-  },
-  {
-    "revision": "3fdb2956e0c0000fc1df18d681b0b04b",
-    "url": "/static/media/email-icon.3fdb2956.svg"
   },
   {
     "revision": "7d32decf24db5c28c95883f62f7fb5c5",
@@ -456,10 +456,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/foodart9.f637dbe5.png"
   },
   {
-    "revision": "b6a5a9a498ac87d4f14c8ff90b4856b6",
-    "url": "/static/media/footer-mascot.b6a5a9a4.png"
-  },
-  {
     "revision": "2a7d1dc0234d1d4ba07abb3193082c6a",
     "url": "/static/media/frierensticker.2a7d1dc0.png"
   },
@@ -510,6 +506,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "09c8b80f17f9ac2666f1c464b90af635",
     "url": "/static/media/hq-sample.09c8b80f.png"
+  },
+  {
+    "revision": "fe086d712847611032939dbac0b8ed76",
+    "url": "/static/media/ichee-cafe-hero.fe086d71.png"
   },
   {
     "revision": "a8236197f39f5f0380ec03afecaa2268",
@@ -724,16 +724,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/landing.303d8134.png"
   },
   {
-    "revision": "f49015b6912422866e2dfde0d3ef5936",
-    "url": "/static/media/linkedin-square-logo.f49015b6.webp"
-  },
-  {
     "revision": "332cf1a34bb28de8c7dfd719d906f4eb",
     "url": "/static/media/loading-states.332cf1a3.png"
   },
   {
-    "revision": "ab0d825f484069d14cf08762f734feee",
-    "url": "/static/media/me3.ab0d825f.png"
+    "revision": "e1a4a6ba1e5d7c327881840b499e7058",
+    "url": "/static/media/me1.e1a4a6ba.png"
+  },
+  {
+    "revision": "db8071360f02fa9fd59d4c520046ec9a",
+    "url": "/static/media/me2.db807136.png"
   },
   {
     "revision": "47a57da1bf4f1632c088695805338a1c",
@@ -938,10 +938,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b5a9557abdb75cb18b050553c90f9250",
     "url": "/static/media/suamizi.b5a9557a.png"
-  },
-  {
-    "revision": "2a1b574e59088ff44e530864dc97f80f",
-    "url": "/static/media/sun.2a1b574e.svg"
   },
   {
     "revision": "15a236e0f437fba14cf00d1df4e2b285",
