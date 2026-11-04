@@ -8,9 +8,13 @@ const FANART_PINNED_GROUPS = [
     /^illustration\s*258[\s_-]*2\.png$/i,
   ],
   [
+    'Illustration284 2.png',
     'Illustration283 3.png',
+    '284 2.png',
     '283 3.png',
+    /^illustration\s*284[\s_-]*2\.png$/i,
     /^illustration\s*283[\s_-]*3\.png$/i,
+    /^284[\s_-]*2\.png$/i,
     /^283[\s_-]*3\.png$/i,
   ],
   [
@@ -18,6 +22,15 @@ const FANART_PINNED_GROUPS = [
     '260 2.png',
     /^illustration\s*260[\s_-]*2\.png$/i,
     /^260[\s_-]*2\.png$/i,
+  ],
+];
+
+/** Food art top pins. */
+const FOODART_PINNED_GROUPS = [
+  [
+    'sea-bakery.png',
+    'sea bakery.png',
+    /^sea[\s_-]*bakery\.png$/i,
   ],
 ];
 
@@ -90,6 +103,7 @@ export const fanartPhotos = loadFolderPhotos(
 
 export const foodartPhotos = loadFolderPhotos(
   require.context('../images/foodart', false, /\.(png|jpe?g|webp|gif)$/i),
+  FOODART_PINNED_GROUPS,
 );
 
 export const galleryPhotos = {

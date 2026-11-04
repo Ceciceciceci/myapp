@@ -80,6 +80,7 @@ import rose from '../images/original/rose.png';
 import webtools from '../images/original/webtools.png'
 
 /** Food art */
+import seaBakery from '../images/foodart/sea-bakery.png'
 import baguette from '../images/foodart/baguette.png'
 import bakery from '../images/foodart/bakery.png'
 import breadstamps from '../images/foodart/breadstamps.jpg'
@@ -207,6 +208,7 @@ const originalPhotosList = [
 ]
 
 const foodartPhotosList = [
+  {id: 'sea-bakery', url: seaBakery, width: '600', height: ''},
   {id: 'foodart1', url: foodart1, width: '600', height: ''},
   {id: 'foodart2', url: foodart2, width: '600', height: ''},
   {id: 'foodart3', url: foodart3, width: '600', height: ''},

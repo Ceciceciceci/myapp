@@ -86,6 +86,12 @@ const Portrait = styled.div`
     max-width: 240px;
     justify-self: start;
   }
+
+  @media (max-width: 550px) {
+    width: 75%;
+    max-width: none;
+    justify-self: end;
+  }
 `;
 
 const PortraitImg = styled.img`
@@ -247,22 +253,6 @@ const MediaExternal = styled.a`
   color: inherit;
 `;
 
-const Collaborate = styled.p`
-  margin: 3.5rem 0 0;
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.foreground};
-
-  a {
-    color: ${({ theme }) => theme.colors.accent};
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-  }
-`;
-
 function WorkMedia({ project, hovered, setHovered }) {
   const layout = project.layout || 'half';
   const media = (
@@ -409,11 +399,6 @@ export default function UxHome() {
         </WorkList>
 
         <FloatingPlayground />
-
-        <Collaborate>
-          let&apos;s collaborate!{' '}
-          <a href="mailto:cecitran94@gmail.com">cecitran94@gmail.com</a>
-        </Collaborate>
       </Container>
     </Page>
   );

@@ -11,7 +11,7 @@ import flowchart from '../../images/flowchart.jpg';
 import storyboard from '../../images/storyboard.jpg';
 import fxnctionHero from '../../images/fxnction/hero-product.png';
 import fxnctionWristGuards from '../../images/fxnction/wrist-guards-photo.png';
-import fxnctionRetail from '../../images/fxnction/retail-shopify.png';
+import fxnctionShopify from '../../images/fxnction/shopify.png';
 import fxnctionHome from '../../images/fxnction/home-page.png';
 import fxnctionProduct from '../../images/fxnction/product-info.png';
 import fxnctionAbout from '../../images/fxnction/about-page.png';
@@ -632,7 +632,7 @@ export const projects = [
     tools: 'Figma, React, CSS',
     heroImg: onewheelQuizMain,
     heroVideo: '/videos/onewheel-riding-preference-quiz.mp4',
-    mobileVideo: '/videos/onewheel-quiz-mobile.mov',
+    mobileVideo: '/videos/onewheel-quiz-mobile.mp4',
     mobileCaption: 'Made for mobile as well!',
     metaFields: [
       { label: 'Role', value: 'Lead UX Designer + Software Engineer' },
@@ -811,10 +811,19 @@ export const projects = [
     outcome: '50% sales increase · Shopify storefront live',
     img: fxnctionHero,
     role: 'Frontend Developer and UX Designer',
-    duration: '2 weeks',
+    duration: '1 week',
     team: 'Team of 2',
     tools: 'Figma, Shopify Developer Tools',
     heroImg: fxnctionHero,
+    metaFields: [
+      { label: 'Role', value: ['Frontend Developer', 'UX Designer'] },
+      { label: 'Timeline', value: '1 week' },
+      { label: 'Tools', value: ['Figma', 'Shopify Developer Tools'] },
+      {
+        label: 'Interaction',
+        value: ['Business Owner', 'C-Suite', 'Graphic Design'],
+      },
+    ],
     problemLabel: 'Overview',
     problem:
       'The owner of f(x)nction wanted to be able to sell his products free of fulfillment management and have a place he can come back to reference what was sold. Before he used Google sheets and different forms of payment that was not in one singular location.  The owner would also take his orders on Reddit.',
@@ -830,7 +839,7 @@ export const projects = [
         label: 'Solution',
         body:
           'Shopify increased purchasing accessibility by 50%, and users reported that buying through the site was much easier than ordering over a spreadsheet or email. Extra diagnostic tools were also built for the owner using Shopify APIs to improve visibility into warehouse handling and shipment.',
-        img: fxnctionRetail,
+        img: fxnctionShopify,
       },
       {
         label: 'Site Map',

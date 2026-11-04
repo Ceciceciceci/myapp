@@ -65,6 +65,7 @@ import testbread7 from '../../images/foodart/testbread7.png';
 import testbread8 from '../../images/foodart/testbread8 2.png';
 
 const foodArtworks = [
+  { title: 'Sea Bakery', medium: 'Sticker sheet', img: seaBakery },
   { title: 'Daily Life', medium: 'Sticker sheet', img: dailyLifeStickersheet },
   { title: 'Sleepy Time: Water Starters', medium: 'Fan art', img: pokemonStartersWater },
   { title: 'Sleepy Time: Grass Starters', medium: 'Fan art', img: pokemonStartersGrass },

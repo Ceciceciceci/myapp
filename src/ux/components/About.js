@@ -10,7 +10,7 @@ const experience = [
     company: 'Future Motion',
     role: 'Lead UX Designer + Software Engineer',
     bullets: [
-      'Led a design language system across 10+ applications: documented reusable Figma components, set team documentation standards, and presented adoption plans to the COO, graphic design, and the marketing team.',
+      'Led a design language system across 20+ applications: documented reusable Figma components, set team documentation standards, and presented adoption plans to the COO, graphic design, and the marketing team.',
       'Shipped a React + Redux middleman app that shortened custom board and accessory fulfillment reviews by 20 minutes and improved internal order status visibility by 40%.',
       'Led design and front-end implementation of the Onewheel warranty recall page, moving a high-stakes customer flow from concept to production.',
       'Owned end-to-end UX for the trade-in process in Figma (2024), then partnered with engineering to ship the customer-facing flow.',
@@ -199,7 +199,7 @@ const ExpCompanyName = styled.div`
   font-family: ${({ theme }) => theme.fonts.mono};
   font-weight: 600;
   font-size: 1.125rem;
-  color: #333333;
+  color: ${({ theme }) => theme.colors.foreground};
   text-transform: uppercase;
   letter-spacing: 0.04em;
   line-height: 1.3;
@@ -208,7 +208,7 @@ const ExpCompanyName = styled.div`
 const ExpDates = styled.div`
   font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 0.875rem;
-  color: #828282;
+  color: ${({ theme }) => theme.colors.mutedForeground};
   flex-shrink: 0;
   letter-spacing: 0.04em;
 `;
@@ -216,7 +216,7 @@ const ExpDates = styled.div`
 const ExpRoleLine = styled.div`
   font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 0.875rem;
-  color: #828282;
+  color: ${({ theme }) => theme.colors.mutedForeground};
   margin-bottom: 0.75rem;
   letter-spacing: 0.04em;
 `;
@@ -226,13 +226,17 @@ const ExpBullets = styled.ul`
   padding-left: 1.25rem;
   list-style-type: disc;
   list-style-position: outside;
-  color: #4f4f4f;
+  color: ${({ theme }) => theme.colors.foreground};
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.65;
 
   li {
     display: list-item;
     list-style-type: disc;
+  }
+
+  li::marker {
+    color: ${({ theme }) => theme.colors.mutedForeground};
   }
 
   li + li {
@@ -250,7 +254,7 @@ const SkillGroupTitle = styled.h3`
   font-family: ${({ theme }) => theme.fonts.mono};
   font-weight: 600;
   font-size: 0.875rem;
-  color: #4f4f4f;
+  color: ${({ theme }) => theme.colors.foreground};
   letter-spacing: 0.04em;
   margin: 0 0 0.35rem;
 `;
@@ -266,9 +270,13 @@ const SkillList = styled.ul`
     list-style-type: disc;
     font-family: ${({ theme }) => theme.fonts.mono};
     font-size: 0.875rem;
-    color: #828282;
+    color: ${({ theme }) => theme.colors.mutedForeground};
     line-height: 1.5;
     letter-spacing: 0.02em;
+  }
+
+  li::marker {
+    color: ${({ theme }) => theme.colors.mutedForeground};
   }
 
   li + li {
@@ -278,15 +286,15 @@ const SkillList = styled.ul`
 
 const EduCard = styled.div`
   padding: 1.25rem;
-  border: none;
   border-radius: 12px;
-  background: ${({ theme }) => theme.colors.tagYellow};
+  background: ${({ theme }) => theme.colors.card};
+  border: 1px solid ${({ theme }) => theme.colors.border};
   margin-bottom: 1rem;
 `;
 
 const EduTitle = styled.div`
   ${displayFont}
-  color: #000000;
+  color: ${({ theme }) => theme.colors.foreground};
   font-size: 1rem;
   margin-bottom: 0.25rem;
 `;
@@ -294,7 +302,7 @@ const EduTitle = styled.div`
 const EduDetail = styled.div`
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #000000;
+  color: ${({ theme }) => theme.colors.foreground};
   line-height: 1.4;
 `;
 

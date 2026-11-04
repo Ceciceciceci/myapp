@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06d01cc1114f27623020ec998adcc07b",
+    "revision": "efef5ebcfeef8574892cbd168d98bca1",
     "url": "/index.html"
   },
   {
-    "revision": "cf7f07c9153b44194450",
+    "revision": "6be9a8bd0f765b998e8a",
     "url": "/static/css/main.f202acaf.chunk.css"
   },
   {
-    "revision": "4c2497dd2df33030d7aa",
-    "url": "/static/js/2.297f22dd.chunk.js"
+    "revision": "9cf7a3b868398aa89845",
+    "url": "/static/js/2.d7756b90.chunk.js"
   },
   {
     "revision": "293ca5f62066dbe915316e84f5d1f239",
-    "url": "/static/js/2.297f22dd.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.d7756b90.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cf7f07c9153b44194450",
-    "url": "/static/js/main.b456f930.chunk.js"
+    "revision": "6be9a8bd0f765b998e8a",
+    "url": "/static/js/main.66433e2d.chunk.js"
   },
   {
     "revision": "740dd3b9cc3d84204ea7",
@@ -86,10 +86,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f97d5b04448894c45108a5a5706bee02",
     "url": "/static/media/Illustration18.f97d5b04.png"
-  },
-  {
-    "revision": "b2ca746dc31969c725b5014305074d74",
-    "url": "/static/media/Illustration2.b2ca746d.png"
   },
   {
     "revision": "c6f35a668366d078301a77687e156253",
@@ -180,6 +176,34 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/bread-sample.48bd244d.png"
   },
   {
+    "revision": "1e1f0db99ea5de2b990951e54bf20e05",
+    "url": "/static/media/breado1.1e1f0db9.png"
+  },
+  {
+    "revision": "2a9d3a36ecbd7532d6720af7edc276dc",
+    "url": "/static/media/breado2.2a9d3a36.png"
+  },
+  {
+    "revision": "4f969ee65647e443ba57ba535e5bf66e",
+    "url": "/static/media/breado3.4f969ee6.png"
+  },
+  {
+    "revision": "5ad1c7d20595bb4bc50bceaa60674fdf",
+    "url": "/static/media/breado4.5ad1c7d2.png"
+  },
+  {
+    "revision": "87c3bb3671d023e20ea90bcf71e828e6",
+    "url": "/static/media/breado5.87c3bb36.png"
+  },
+  {
+    "revision": "817b91e3222bc33bfce23c618156983b",
+    "url": "/static/media/breadobag.817b91e3.png"
+  },
+  {
+    "revision": "4529275057eca748608b06a9c0ea036c",
+    "url": "/static/media/breadobagref.45292750.png"
+  },
+  {
     "revision": "bbe4038d32b87a27c9ac08b69f526662",
     "url": "/static/media/breadpuns.bbe4038d.png"
   },
@@ -238,10 +262,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0aea5bf54530c2bc598577ba506e82b6",
     "url": "/static/media/character-portraits.0aea5bf5.png"
-  },
-  {
-    "revision": "bf03a055a7a3a37848b9b45eb51482e9",
-    "url": "/static/media/commission1.bf03a055.png"
   },
   {
     "revision": "5ae28e7ce04a71cb71ea28740407a376",
@@ -884,10 +904,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/research-inspo.38b3e8ca.png"
   },
   {
-    "revision": "b8804a21803c3e1e1d02df2c116ecc5f",
-    "url": "/static/media/retail-shopify.b8804a21.png"
-  },
-  {
     "revision": "ee9eae0568dbe5f364759c10f5edd419",
     "url": "/static/media/rhino.ee9eae05.png"
   },
@@ -914,6 +930,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7108b8b32a3e76cb08fe37e4dd7e29b1",
     "url": "/static/media/severance-2.7108b8b3.png"
+  },
+  {
+    "revision": "0cda275b1a60346c5db09ea5c8d17c0e",
+    "url": "/static/media/shopify.0cda275b.png"
   },
   {
     "revision": "35983ef761f053b082062cbd42391537",

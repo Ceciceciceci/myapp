@@ -1338,34 +1338,43 @@ export default function UxCaseStudy() {
           )}
 
           {sections.map((section, i) => {
-            const beforeLast =
-              study.mobileVideo &&
-              sections.length > 0 &&
+            const mobileBlock = study.mobileVideo ? (
+              <MobileFollowUp>
+                <MobilePreview>
+                  <video
+                    key={study.mobileVideo}
+                    src={study.mobileVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    controls
+                    aria-label={`${study.title} mobile`}
+                  />
+                </MobilePreview>
+                {study.mobileCaption ? (
+                  <MediaCaption>{study.mobileCaption}</MediaCaption>
+                ) : null}
+              </MobileFollowUp>
+            ) : null;
+
+            // Short case studies (e.g. Trade-in): mobile sits under Overview.
+            // Longer ones (e.g. Quiz): keep mobile just before the final section.
+            const showMobileAfterOverview =
+              Boolean(mobileBlock) &&
+              sections.length === 1 &&
+              i === 0;
+            const showMobileBeforeLast =
+              Boolean(mobileBlock) &&
+              sections.length > 1 &&
               i === sections.length - 1;
 
             return (
               <React.Fragment key={`${section.type}-${section.title || i}`}>
-                {beforeLast ? (
-                  <MobileFollowUp>
-                    <MobilePreview>
-                      <video
-                        key={study.mobileVideo}
-                        src={study.mobileVideo}
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="auto"
-                        controls
-                        aria-label={`${study.title} mobile`}
-                      />
-                    </MobilePreview>
-                    {study.mobileCaption ? (
-                      <MediaCaption>{study.mobileCaption}</MediaCaption>
-                    ) : null}
-                  </MobileFollowUp>
-                ) : null}
+                {showMobileBeforeLast ? mobileBlock : null}
                 <CaseSection section={section} />
+                {showMobileAfterOverview ? mobileBlock : null}
               </React.Fragment>
             );
           })}
