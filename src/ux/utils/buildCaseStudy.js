@@ -7,6 +7,11 @@ export function buildCaseStudy(project) {
     const sections = withSectionIds(project.caseStudy.sections || []);
     return {
       title: project.caseStudy.title || project.title,
+      lead:
+        project.caseStudy.lead ??
+        project.caseStudy.subtitle ??
+        project.subtitle ??
+        null,
       meta: project.caseStudy.meta || null,
       metaFields: project.caseStudy.metaFields || null,
       heroImgs: project.caseStudy.heroImgs || null,
@@ -31,6 +36,7 @@ export function buildCaseStudy(project) {
   const sections = withSectionIds(buildSectionsFromLegacy(project));
   return {
     title: project.title,
+    lead: project.lead ?? project.subtitle ?? null,
     meta: project.metaFields?.length ? null : buildMetaLine(project),
     metaFields: project.metaFields || null,
     heroImgs: null,

@@ -136,6 +136,7 @@ export const projects = [
           type: 'stacked-media',
           title: 'Working on Basics',
           img: fmDsCase3,
+          mediaBgDark: '#F5F0E8',
           stackGap: '2.5rem',
           body: [
             'Initially going in, there are 8 systems and 42 different applications total under all of 8 systems. I inherited what the last designer or developer had done The design system needs the basics: color, typography, spacing, and light and dark mode.',
@@ -626,13 +627,22 @@ export const projects = [
     outcome: '50% registration increase · More app logins · Less Reddit inquiries',
     img: onewheelQuizMain,
     role: 'Lead UX Designer + Software Engineer',
-    duration: '2025',
-    team: 'Graphic design, COO, marketing, and engineering',
-    tools: 'Figma, React',
+    duration: '3 weeks',
+    team: 'Graphic Design, Marketing, Sales, C-Suite',
+    tools: 'Figma, React, CSS',
     heroImg: onewheelQuizMain,
     heroVideo: '/videos/onewheel-riding-preference-quiz.mp4',
     mobileVideo: '/videos/onewheel-quiz-mobile.mov',
     mobileCaption: 'Made for mobile as well!',
+    metaFields: [
+      { label: 'Role', value: 'Lead UX Designer + Software Engineer' },
+      { label: 'Timeline', value: '3 weeks' },
+      { label: 'Tools', value: 'Figma, React, CSS' },
+      {
+        label: 'Collaborated with',
+        value: ['Graphic Design', 'Marketing', 'Sales', 'C-Suite'],
+      },
+    ],
     problemLabel: 'Why was this needed?',
     problem:
       'What is a Onewheel? it is a electric skateboard where there is a singular tire in the center. This projects aims to solve a question about setting up settings of a rider’s board.',

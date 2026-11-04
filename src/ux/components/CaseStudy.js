@@ -23,11 +23,11 @@ const CaseShell = styled.div`
   align-items: flex-start;
   gap: 2rem;
   width: 100%;
-  padding: 0 max(40px, calc((100vw - 1032px) / 2)) 2rem;
+  padding: 40px max(40px, calc((100vw - 1032px) / 2)) 2rem;
 
   @media (max-width: 900px) {
     display: block;
-    padding: 0 1.25rem 1.5rem;
+    padding: 40px 1.25rem 1.5rem;
   }
 `;
 
@@ -168,11 +168,21 @@ const Intro = styled.header`
 `;
 
 const Title = styled.h1`
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: 32px;
   font-weight: ${({ theme }) => theme.typography.headingWeight};
   line-height: 1.3;
+  color: ${({ theme }) => theme.colors.foreground};
+`;
+
+const IntroLead = styled.p`
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.typography.baseSize};
+  font-weight: ${({ theme }) => theme.typography.bodyWeight};
+  line-height: 1.55;
   color: ${({ theme }) => theme.colors.foreground};
 `;
 
@@ -204,13 +214,17 @@ const MetaLabel = styled.p`
   color: ${({ theme }) => theme.colors.foreground};
 `;
 
-const MetaValue = styled.p`
+const MetaValue = styled.div`
   margin: 0;
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.typography.baseSize};
   font-weight: ${({ theme }) => theme.typography.bodyWeight};
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.foreground};
+
+  p {
+    margin: 0;
+  }
 `;
 
 const MetaLine = styled.p`
@@ -322,7 +336,8 @@ const FullWidthMedia = styled.div`
   margin: 0;
   border-radius: ${({ theme }) => theme.radius};
   overflow: hidden;
-  background: transparent;
+  background: ${({ theme, $darkBg }) =>
+    theme.mode === 'dark' && $darkBg ? $darkBg : 'transparent'};
 
   img,
   video {
@@ -751,19 +766,22 @@ const NavCard = styled.button`
   cursor: pointer;
   text-align: left;
   padding: 0;
-  background: ${({ theme }) => theme.colors.placeholder};
+  background: ${({ theme }) => theme.colors.accentRed};
   border-radius: 12px;
   min-height: 96px;
   overflow: hidden;
-  transition: opacity 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 
-  &:hover {
-    opacity: 0.88;
+  &:hover:not(:disabled) {
+    background: ${({ theme }) => theme.colors.hoverBrown};
+    transform: translateY(-1px);
   }
 
   &:disabled {
-    opacity: 0.45;
+    background: ${({ theme }) =>
+      theme.mode === 'dark' ? '#4A5568' : '#C4BBB0'};
     cursor: default;
+    transform: none;
   }
 `;
 
@@ -780,15 +798,25 @@ const NavLabel = styled.span`
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.typography.baseSize};
   font-weight: ${({ theme }) => theme.typography.bodyWeight};
-  color: ${({ theme }) => theme.colors.foreground};
+  color: #fffbf5;
+
+  ${NavCard}:disabled & {
+    color: ${({ theme }) =>
+      theme.mode === 'dark' ? '#D1D5DB' : '#F5F0E8'};
+  }
 `;
 
 const NavTitle = styled.span`
   font-family: ${({ theme }) => theme.fonts.body};
   font-size: ${({ theme }) => theme.typography.headingSize};
   font-weight: ${({ theme }) => theme.typography.headingWeight};
-  color: ${({ theme }) => theme.colors.foreground};
+  color: #fffbf5;
   line-height: 1.25;
+
+  ${NavCard}:disabled & {
+    color: ${({ theme }) =>
+      theme.mode === 'dark' ? '#D1D5DB' : '#F5F0E8'};
+  }
 `;
 
 const Missing = styled.div`
@@ -963,7 +991,7 @@ function CaseSection({ section }) {
             section.placeholder && !section.video && !section.img ? (
               <PlaceholderBlock $height={section.placeholderHeight || '260px'} />
             ) : (
-              <FullWidthMedia>
+              <FullWidthMedia $darkBg={section.mediaBgDark || null}>
                 {section.video ? (
                   <video
                     src={section.video}
@@ -1262,12 +1290,17 @@ export default function UxCaseStudy() {
 
           <Intro>
             <Title>{study.title}</Title>
+            {study.lead ? <IntroLead>{study.lead}</IntroLead> : null}
             {study.metaFields?.length ? (
               <MetaBlock>
                 {study.metaFields.map((field) => (
                   <MetaGroup key={field.label}>
                     <MetaLabel>{field.label}</MetaLabel>
-                    <MetaValue>{field.value}</MetaValue>
+                    <MetaValue>
+                      {Array.isArray(field.value)
+                        ? field.value.map((line) => <p key={line}>{line}</p>)
+                        : field.value}
+                    </MetaValue>
                   </MetaGroup>
                 ))}
               </MetaBlock>

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { displayFont } from '../styles';
 import { MenuIcon, CloseIcon } from '../icons';
+import ThemeToggle from './ThemeToggle';
 import logoSleep from '../../images/nav-logo-sleep.gif';
 import logoWake from '../../images/nav-logo-wake.gif';
 
@@ -19,29 +19,29 @@ const NavBar = styled.nav`
   right: 0;
   z-index: 50;
   background: ${({ theme }) => theme.colors.navBg};
+  backdrop-filter: blur(10px);
 `;
 
 const NavInner = styled.div`
   width: 100%;
+  max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
-  /* Match case study outer gutters so edges stay aligned as the viewport grows */
-  padding: 1.125rem max(40px, calc((100vw - 1032px) / 2));
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1.5rem;
 
   @media (max-width: 600px) {
-    padding: 1rem 1.25rem;
+    padding: 0.9rem 1.25rem;
+    gap: 1rem;
   }
 `;
 
 const Brand = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 0.625rem;
   text-decoration: none;
-  min-width: 0;
+  flex-shrink: 0;
 `;
 
 const BrandIcon = styled.div`
@@ -49,7 +49,6 @@ const BrandIcon = styled.div`
   height: 36px;
   width: 54px;
   flex-shrink: 0;
-  flex-grow: 0;
 `;
 
 const LogoLayer = styled.img`
@@ -65,19 +64,10 @@ const LogoLayer = styled.img`
   opacity: ${({ $active }) => ($active ? 1 : 0)};
 `;
 
-const BrandName = styled.span`
-  ${displayFont}
-  font-size: 18px;
-  line-height: 1.2;
-  color: ${({ theme }) => theme.colors.navName};
-  font-weight: 400;
-  white-space: nowrap;
-`;
-
 const DesktopLinks = styled.div`
   display: none;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
 
   @media (min-width: 900px) {
     display: flex;
@@ -87,18 +77,25 @@ const DesktopLinks = styled.div`
 const NavLink = styled(Link)`
   && {
     font-family: ${({ theme }) => theme.fonts.body};
-    font-size: ${({ theme }) => theme.typography.baseSize};
-    font-weight: ${({ $active }) => ($active ? 700 : 400)};
+    font-size: 0.95rem;
+    font-weight: ${({ $active }) => ($active ? 600 : 400)};
     text-decoration: none;
     white-space: nowrap;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    transition: color 0.2s ease, font-weight 0.2s ease;
+    transition: color 0.2s ease;
   }
 
   &&:hover {
     color: ${({ theme }) => theme.colors.navLinkHover};
   }
+`;
+
+const RightCluster = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.75rem;
 `;
 
 const MenuButton = styled.button`
@@ -136,12 +133,11 @@ const MobileDrawer = styled.div`
 const MobileLink = styled(Link)`
   && {
     font-family: ${({ theme }) => theme.fonts.body};
-    font-size: ${({ theme }) => theme.typography.baseSize};
-    font-weight: ${({ $active }) => ($active ? 700 : 400)};
+    font-size: 1rem;
+    font-weight: ${({ $active }) => ($active ? 600 : 400)};
     text-decoration: none;
     color: ${({ $active, theme }) =>
       $active ? theme.colors.navLinkActive : theme.colors.navLink};
-    transition: color 0.2s ease, font-weight 0.2s ease;
   }
 
   &&:hover {
@@ -158,11 +154,10 @@ const isActive = (pathname, to) => {
 
 const WAKE_MS = 5000;
 
-export default function UxNav() {
+export default function UxNav({ mode, onToggleTheme }) {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState('sleep');
-  // Double-buffer wake layers so a restarted GIF can decode before becoming visible.
+  const [logoMode, setLogoMode] = useState('sleep');
   const [wakeSlot, setWakeSlot] = useState(0);
   const [wakeSrcs, setWakeSrcs] = useState([logoWake, logoWake]);
   const wakeTimerRef = useRef(null);
@@ -170,7 +165,6 @@ export default function UxNav() {
   const wakeSlotRef = useRef(0);
 
   useEffect(() => {
-    // Warm both GIFs so the first swap is less likely to flash.
     const sleepPreload = new Image();
     const wakePreload = new Image();
     sleepPreload.src = logoSleep;
@@ -183,7 +177,6 @@ export default function UxNav() {
       const gen = ++wakeGenRef.current;
       const nextSrc = `${logoWake}?replay=${gen}`;
 
-      // Decode the next wake GIF first, then reveal it (keeps current frame visible).
       const probe = new Image();
       probe.onload = () => {
         if (wakeGenRef.current !== gen) return;
@@ -194,7 +187,7 @@ export default function UxNav() {
         });
         wakeSlotRef.current = nextSlot;
         setWakeSlot(nextSlot);
-        setMode('wake');
+        setLogoMode('wake');
       };
       probe.src = nextSrc;
 
@@ -202,7 +195,7 @@ export default function UxNav() {
         clearTimeout(wakeTimerRef.current);
       }
       wakeTimerRef.current = setTimeout(() => {
-        setMode('sleep');
+        setLogoMode('sleep');
         wakeTimerRef.current = null;
       }, WAKE_MS);
     };
@@ -228,13 +221,20 @@ export default function UxNav() {
     <>
       <NavBar>
         <NavInner>
-          <Brand to="/" onClick={() => setOpen(false)}>
+          <Brand to="/" onClick={() => setOpen(false)} aria-label="Home">
             <BrandIcon>
-              <LogoLayer src={logoSleep} alt="" $active={mode === 'sleep'} />
-              <LogoLayer src={wakeSrcs[0]} alt="" $active={mode === 'wake' && wakeSlot === 0} />
-              <LogoLayer src={wakeSrcs[1]} alt="" $active={mode === 'wake' && wakeSlot === 1} />
+              <LogoLayer src={logoSleep} alt="" $active={logoMode === 'sleep'} />
+              <LogoLayer
+                src={wakeSrcs[0]}
+                alt=""
+                $active={logoMode === 'wake' && wakeSlot === 0}
+              />
+              <LogoLayer
+                src={wakeSrcs[1]}
+                alt=""
+                $active={logoMode === 'wake' && wakeSlot === 1}
+              />
             </BrandIcon>
-            <BrandName>Cecilia Tran</BrandName>
           </Brand>
 
           <DesktopLinks>
@@ -250,13 +250,16 @@ export default function UxNav() {
             ))}
           </DesktopLinks>
 
-          <MenuButton
-            type="button"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </MenuButton>
+          <RightCluster>
+            <ThemeToggle mode={mode} onToggle={onToggleTheme} />
+            <MenuButton
+              type="button"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              onClick={() => setOpen(!open)}
+            >
+              {open ? <CloseIcon /> : <MenuIcon />}
+            </MenuButton>
+          </RightCluster>
         </NavInner>
       </NavBar>
 

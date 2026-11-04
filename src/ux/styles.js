@@ -71,6 +71,8 @@ export const Container = styled.div`
   max-width: ${({ theme }) => theme.maxWidth};
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
 
   @media (max-width: 600px) {
     padding: 0 1.25rem;

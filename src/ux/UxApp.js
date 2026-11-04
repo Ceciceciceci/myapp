@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { uxTheme } from './theme';
+import styled from 'styled-components';
+import { lightTheme, darkTheme } from './theme';
 import { UxGlobalStyles } from './styles';
 import UxNav from './components/Nav';
 import UxFooter from './components/Footer';
@@ -11,12 +12,15 @@ import UxCaseStudy from './components/CaseStudy';
 import UxAbout from './components/About';
 import UxArt from './components/Art';
 import UxResume from './components/Resume';
-import styled from 'styled-components';
+
+const THEME_KEY = 'ux-theme-mode';
 
 const Shell = styled.div`
   width: 100%;
   min-height: 100dvh;
   background: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.foreground};
+  transition: background 0.25s ease, color 0.25s ease;
 `;
 
 const Content = styled.div`
@@ -24,11 +28,32 @@ const Content = styled.div`
 `;
 
 export default function UxApp() {
+  const [mode, setMode] = useState(() => {
+    try {
+      return localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light';
+    } catch {
+      return 'light';
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(THEME_KEY, mode);
+    } catch {
+      /* ignore */
+    }
+  }, [mode]);
+
+  const theme = mode === 'dark' ? darkTheme : lightTheme;
+
   return (
-    <ThemeProvider theme={uxTheme}>
+    <ThemeProvider theme={theme}>
       <UxGlobalStyles />
       <Shell className="ux-portfolio">
-        <UxNav />
+        <UxNav
+          mode={mode}
+          onToggleTheme={() => setMode((m) => (m === 'dark' ? 'light' : 'dark'))}
+        />
         <Content>
           <Switch>
             <Route exact path="/" component={UxHome} />
