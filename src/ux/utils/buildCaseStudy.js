@@ -15,6 +15,12 @@ export function buildCaseStudy(project) {
           ? null
           : project.caseStudy.heroVideo ?? project.heroVideo,
       heroImg: project.caseStudy.heroImg ?? project.heroImg,
+      mobileVideo:
+        project.caseStudy.mobileVideo ?? project.mobileVideo ?? null,
+      mobileCaption:
+        project.caseStudy.mobileCaption ??
+        project.mobileCaption ??
+        null,
       // Explicit nav (e.g. Design System) wins; otherwise mirror section headers
       customNav: Boolean(project.caseStudy.nav?.length),
       nav: project.caseStudy.nav || buildNavFromSections(sections),
@@ -30,6 +36,8 @@ export function buildCaseStudy(project) {
     heroImgs: null,
     heroVideo: project.heroVideo,
     heroImg: project.heroImg,
+    mobileVideo: project.mobileVideo || null,
+    mobileCaption: project.mobileCaption || null,
     customNav: false,
     nav: buildNavFromSections(sections),
     sections,

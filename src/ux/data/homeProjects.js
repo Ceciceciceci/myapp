@@ -12,7 +12,7 @@ export const homeProjects = [
     id: 'future-motion-design-system',
     title: 'Future Motion Design System',
     meta: 'Web + Mobile | Figma, Storybook, React, CSS, Cursor, Claude | 2026 - ongoing',
-    video: '/videos/future-motion-design-system.mp4',
+    video: '/videos/design-system.mov',
     to: '/projects/future-motion-design-system',
     layout: 'full',
   },
@@ -31,7 +31,7 @@ export const homeProjects = [
     meta: 'Web + Mobile | Figma, React, CSS',
     url: 'https://tradein.onewheel.com/',
     video: '/videos/board-trade-in-system.mp4',
-    to: null,
+    to: '/projects/board-trade-in-system',
     layout: 'half',
   },
   {

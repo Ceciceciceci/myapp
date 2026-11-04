@@ -34,8 +34,6 @@ import fmDsStorybookColors from '../../images/future-motion-design-system/storyb
 import fmDsDiagnosing from '../../images/future-motion-design-system/diagnosing-buttons-pills.png';
 import fmDsDiagnosingRma from '../../images/future-motion-design-system/diagnosing-rma-headers.png';
 import fmDsDiagnosingReports from '../../images/future-motion-design-system/diagnosing-reports-headers.png';
-import fmDsCase1 from '../../images/future-motion-design-system/design-system-hero-a.png';
-import fmDsCase2 from '../../images/future-motion-design-system/design-system-hero-b.png';
 import fmDsCase3 from '../../images/future-motion-design-system/design-system-3.png';
 import fmDsCase4 from '../../images/future-motion-design-system/design-system-4.png';
 import fmDsCase6 from '../../images/future-motion-design-system/design-system-6.png';
@@ -67,15 +65,14 @@ export const projects = [
     duration: '2025 – ongoing (continuing initiative)',
     tools: 'Figma, Storybook, React, AI',
     heroImg: fmDsDesktop17,
-    heroVideo: '/videos/future-motion-design-system.mp4',
+    heroVideo: '/videos/design-system.mov',
     caseStudy: {
       title: 'Future Motion Design System',
       metaFields: [
         { label: 'Timeline', value: '2026 - ongoing' },
         { label: 'Tools', value: 'Figma, Cursor, Claude, Storybook, React, CSS' },
       ],
-      heroImgs: [fmDsCase2, fmDsCase1],
-      heroVideo: null,
+      heroVideo: '/videos/design-system.mov',
       nav: [
         { id: 'overview', label: 'Overview' },
         { id: 'results', label: 'Results' },
@@ -633,6 +630,8 @@ export const projects = [
     tools: 'Figma, React',
     heroImg: onewheelQuizMain,
     heroVideo: '/videos/onewheel-riding-preference-quiz.mp4',
+    mobileVideo: '/videos/onewheel-quiz-mobile.mov',
+    mobileCaption: 'Made for mobile as well!',
     problemLabel: 'Why was this needed?',
     problem:
       'What is a Onewheel? it is a electric skateboard where there is a singular tire in the center. This projects aims to solve a question about setting up settings of a rider’s board.',
@@ -749,6 +748,43 @@ export const projects = [
           description:
             'Line-art icons and dynamic illustrations that respond to rider selections.',
           img: onewheelQuizIcons,
+        },
+      ],
+    },
+  },
+  {
+    id: 'board-trade-in-system',
+    year: '2024',
+    title: 'Board Trade-in System',
+    subtitle: 'End-to-end UX for trading in an Onewheel board online',
+    tags: ['UX Design', 'Web Dev', 'Figma', 'React', 'Customer Experience'],
+    brief:
+      'Owned end-to-end UX for the trade-in process in Figma, then partnered with engineering to ship the customer-facing flow at tradein.onewheel.com.',
+    outcome: 'Live trade-in flow · Desktop + mobile',
+    role: 'Lead UX Designer',
+    duration: '2024',
+    tools: 'Figma, React, CSS',
+    heroVideo: '/videos/board-trade-in-system.mp4',
+    mobileVideo: '/videos/board-trade-in-mobile.mov',
+    mobileCaption: 'Made for mobile as well!',
+    links: [{ label: 'Live site', href: 'https://tradein.onewheel.com/' }],
+    caseStudy: {
+      title: 'Board Trade-in System',
+      metaFields: [
+        { label: 'Timeline', value: '2024' },
+        { label: 'Tools', value: 'Figma, React, CSS' },
+        { label: 'Live', value: 'tradein.onewheel.com' },
+      ],
+      heroVideo: '/videos/board-trade-in-system.mp4',
+      mobileVideo: '/videos/board-trade-in-mobile.mov',
+      mobileCaption: 'Made for mobile as well!',
+      sections: [
+        {
+          id: 'overview',
+          type: 'prose',
+          title: 'Overview',
+          body:
+            'Owned end-to-end UX for the trade-in process in Figma (2024), then partnered with engineering to ship the customer-facing flow so riders can trade in a board online on desktop and mobile.',
         },
       ],
     },

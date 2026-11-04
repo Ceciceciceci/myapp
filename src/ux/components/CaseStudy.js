@@ -272,6 +272,21 @@ const HeroVideo = styled.video`
   background: #111;
 `;
 
+const MobileFollowUp = styled.div`
+  margin: 1.25rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
+const MediaCaption = styled.p`
+  margin: 0;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: ${({ theme }) => theme.typography.baseSize};
+  line-height: 1.5;
+  color: ${({ theme }) => theme.colors.foreground};
+`;
+
 const FullWidthMedia = styled.div`
   width: 100%;
   margin: 0;
@@ -1258,6 +1273,27 @@ export default function UxCaseStudy() {
               ) : null}
             </HeroWrap>
           )}
+
+          {study.mobileVideo ? (
+            <MobileFollowUp>
+              <FullWidthMedia>
+                <video
+                  key={study.mobileVideo}
+                  src={study.mobileVideo}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  controls
+                  aria-label={`${study.title} mobile`}
+                />
+              </FullWidthMedia>
+              {study.mobileCaption ? (
+                <MediaCaption>{study.mobileCaption}</MediaCaption>
+              ) : null}
+            </MobileFollowUp>
+          ) : null}
 
           {sections.map((section, i) => (
             <CaseSection
