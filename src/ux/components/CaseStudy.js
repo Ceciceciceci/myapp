@@ -5,6 +5,7 @@ import { PageMain } from '../styles';
 import { projects, visibleProjects } from '../data/projects';
 import { buildCaseStudy } from '../utils/buildCaseStudy';
 import flowerMarker from '../../images/svgs/flower.svg';
+import { LoadableImage, LoadableVideo } from './MediaLoader';
 
 const flowerNudge = keyframes`
   0% { transform: rotate(0deg) scale(1); }
@@ -242,6 +243,18 @@ const HeroWrap = styled.div`
   border-radius: ${({ theme }) => theme.radius};
   overflow: hidden;
   background: ${({ theme }) => theme.colors.placeholder};
+
+  img,
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  video {
+    background: #111;
+  }
 `;
 
 const HeroSplit = styled.div`
@@ -269,21 +282,6 @@ const HeroSplitItem = styled.div`
     object-fit: contain;
     object-position: top center;
   }
-`;
-
-const HeroImage = styled.img`
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-`;
-
-const HeroVideo = styled.video`
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  background: #111;
 `;
 
 const MobileFollowUp = styled.div`
@@ -329,6 +327,30 @@ const MediaCaption = styled.p`
   font-size: ${({ theme }) => theme.typography.baseSize};
   line-height: 1.5;
   color: ${({ theme }) => theme.colors.foreground};
+`;
+
+const VideoRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+  background: #000;
+  border-radius: ${({ theme }) => theme.radius};
+  overflow: hidden;
+
+  > div {
+    min-width: 0;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    background: #000;
+  }
 `;
 
 const FullWidthMedia = styled.div`
@@ -833,7 +855,7 @@ function Media({ src, video, alt = '', wide = false }) {
   return (
     <MediaFrame $wide={wide} $hasMedia={hasMedia}>
       {video ? (
-        <video
+        <LoadableVideo
           src={video}
           autoPlay
           muted
@@ -842,9 +864,10 @@ function Media({ src, video, alt = '', wide = false }) {
           preload="auto"
           controls
           aria-label={alt}
+          minHeight="14rem"
         />
       ) : src ? (
-        <img src={src} alt={alt} />
+        <LoadableImage src={src} alt={alt} minHeight="14rem" />
       ) : null}
     </MediaFrame>
   );
@@ -867,7 +890,7 @@ function CaseSection({ section }) {
         {section.title ? <SectionTitle>{section.title}</SectionTitle> : null}
         {section.img ? (
           <FullWidthMedia style={{ marginBottom: section.body ? 16 : 0 }}>
-            <img src={section.img} alt={section.title || ''} />
+            <LoadableImage src={section.img} alt={section.title || ''} />
           </FullWidthMedia>
         ) : null}
         {renderBody(section.body)}
@@ -907,7 +930,7 @@ function CaseSection({ section }) {
         <ImageGrid $cols={cols}>
           {images.slice(0, cols).map((src, i) => (
             <GridImage key={src || `ph-${i}`} $ratio={cols === 3 ? '239 / 205' : '1'}>
-              {src ? <img src={src} alt="" /> : null}
+              {src ? <LoadableImage src={src} alt="" minHeight="8rem" /> : null}
             </GridImage>
           ))}
         </ImageGrid>
@@ -993,7 +1016,7 @@ function CaseSection({ section }) {
             ) : (
               <FullWidthMedia $darkBg={section.mediaBgDark || null}>
                 {section.video ? (
-                  <video
+                  <LoadableVideo
                     src={section.video}
                     autoPlay
                     muted
@@ -1002,9 +1025,10 @@ function CaseSection({ section }) {
                     preload="auto"
                     controls
                     aria-label={section.title || ''}
+                    minHeight="14rem"
                   />
                 ) : (
-                  <img src={section.img} alt={section.title || ''} />
+                  <LoadableImage src={section.img} alt={section.title || ''} />
                 )}
               </FullWidthMedia>
             )
@@ -1030,26 +1054,65 @@ function CaseSection({ section }) {
               ))}
             </FeatureColumns>
           ) : null}
-          {section.subsections?.map((sub) => {
+          {section.subsections?.map((sub, subIndex) => {
             const imgs = sub.imgs || (sub.img ? [sub.img] : []);
+            const videos = sub.videos || [];
+            const hasVideoRow = videos.length > 0;
+            const hasSingleVideo = Boolean(sub.video);
+            const hasImgs = imgs.length > 0;
+
             return (
-              <SubSection key={sub.title} id={sub.id}>
+              <SubSection key={sub.id || sub.title || `sub-${subIndex}`} id={sub.id}>
                 {sub.title ? <SubSectionTitle>{sub.title}</SubSectionTitle> : null}
-                {imgs.length > 1 ? (
+                {hasVideoRow ? (
+                  <VideoRow>
+                    {videos.map((src, i) => (
+                      <div key={src || i}>
+                        <LoadableVideo
+                          src={src}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          preload="metadata"
+                          aria-label={`${sub.title || 'Mobile'} ${i + 1}`}
+                          minHeight="12rem"
+                        />
+                      </div>
+                    ))}
+                  </VideoRow>
+                ) : hasSingleVideo ? (
+                  <FullWidthMedia $darkBg={sub.mediaBgDark || null}>
+                    <LoadableVideo
+                      src={sub.video}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      controls
+                      aria-label={sub.title || ''}
+                      minHeight="14rem"
+                    />
+                  </FullWidthMedia>
+                ) : hasImgs && imgs.length > 1 ? (
                   <SubMediaStack>
                     {imgs.map((src, i) => (
                       <SubMediaItem key={src || i}>
-                        <img src={src} alt={`${sub.title || ''} ${i + 1}`} />
+                        <LoadableImage
+                          src={src}
+                          alt={`${sub.title || ''} ${i + 1}`}
+                        />
                       </SubMediaItem>
                     ))}
                   </SubMediaStack>
-                ) : imgs.length === 1 ? (
+                ) : hasImgs ? (
                   <FullWidthMedia>
-                    <img src={imgs[0]} alt={sub.title || ''} />
+                    <LoadableImage src={imgs[0]} alt={sub.title || ''} />
                   </FullWidthMedia>
-                ) : (
+                ) : sub.placeholder ? (
                   <PlaceholderBlock $height={sub.placeholderHeight || '100px'} />
-                )}
+                ) : null}
                 {renderBody(sub.body)}
               </SubSection>
             );
@@ -1313,14 +1376,18 @@ export default function UxCaseStudy() {
             <HeroSplit>
               {study.heroImgs.map((src, i) => (
                 <HeroSplitItem key={src || i}>
-                  <img src={src} alt={`${study.title} ${i + 1}`} />
+                  <LoadableImage
+                    src={src}
+                    alt={`${study.title} ${i + 1}`}
+                    minHeight="16rem"
+                  />
                 </HeroSplitItem>
               ))}
             </HeroSplit>
           ) : (
             <HeroWrap>
               {study.heroVideo ? (
-                <HeroVideo
+                <LoadableVideo
                   key={study.heroVideo}
                   src={study.heroVideo}
                   autoPlay
@@ -1330,9 +1397,14 @@ export default function UxCaseStudy() {
                   preload="auto"
                   controls
                   aria-label={study.title}
+                  minHeight="16rem"
                 />
               ) : study.heroImg ? (
-                <HeroImage src={study.heroImg} alt={study.title} />
+                <LoadableImage
+                  src={study.heroImg}
+                  alt={study.title}
+                  minHeight="16rem"
+                />
               ) : null}
             </HeroWrap>
           )}
@@ -1341,7 +1413,7 @@ export default function UxCaseStudy() {
             const mobileBlock = study.mobileVideo ? (
               <MobileFollowUp>
                 <MobilePreview>
-                  <video
+                  <LoadableVideo
                     key={study.mobileVideo}
                     src={study.mobileVideo}
                     autoPlay
@@ -1351,6 +1423,7 @@ export default function UxCaseStudy() {
                     preload="auto"
                     controls
                     aria-label={`${study.title} mobile`}
+                    minHeight="12rem"
                   />
                 </MobilePreview>
                 {study.mobileCaption ? (

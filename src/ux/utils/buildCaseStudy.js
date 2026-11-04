@@ -163,11 +163,20 @@ function buildSectionsFromLegacy(project) {
 
   if (project.process?.length) {
     project.process.forEach((step) => {
-      if (step.img) {
+      if (step.subsections?.length) {
+        sections.push({
+          type: 'stacked-media',
+          title: step.label,
+          body: step.body || null,
+          subsections: step.subsections,
+          stackGap: step.stackGap || '1.5rem',
+        });
+      } else if (step.img || step.video) {
         sections.push({
           type: 'media-text',
           title: step.label,
-          img: step.img,
+          img: step.img || null,
+          video: step.video || null,
           body: step.body,
           layout: step.layout || null,
         });

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Container, PageMain } from '../styles';
 import { homeProjects } from '../data/homeProjects';
 import FloatingPlayground from './FloatingPlayground';
+import { LoadableImage, LoadableVideo } from './MediaLoader';
 import me1 from '../../images/me1.png';
 import me2 from '../../images/me2.png';
 
@@ -229,6 +230,15 @@ const MediaFrame = styled.div`
   aspect-ratio: ${({ $layout }) => ($layout === 'full' ? '21 / 9' : '4 / 3')};
   border: 1px solid ${({ theme }) => theme.colors.border};
 
+  > div {
+    height: 100%;
+    min-height: 100% !important;
+  }
+
+  > div > div {
+    height: 100%;
+  }
+
   img,
   video {
     width: 100%;
@@ -258,16 +268,17 @@ function WorkMedia({ project, hovered, setHovered }) {
   const media = (
     <MediaFrame $hovered={hovered} $layout={layout}>
       {project.video ? (
-        <video
+        <LoadableVideo
           src={project.video}
           autoPlay
           muted
           loop
           playsInline
           aria-label={project.title}
+          fill
         />
       ) : project.img ? (
-        <img src={project.img} alt={project.title} />
+        <LoadableImage src={project.img} alt={project.title} fill />
       ) : null}
     </MediaFrame>
   );

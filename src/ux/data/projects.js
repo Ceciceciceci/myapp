@@ -2,11 +2,10 @@ import projimg1 from '../../images/proj1-img.jpg';
 import classicVacationsBooking from '../../images/classic-vacations/product-design-booking.png';
 import classicVacationsAgencyId from '../../images/classic-vacations/agency-id-registration.png';
 import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
-import sdzMobileMenu from '../../images/san-diego-zoo/mobile-menu.png';
-import sdzMobileDonationsLanding from '../../images/san-diego-zoo/mobile-donations-landing.png';
-import sdzMobileDonateMonkey from '../../images/san-diego-zoo/mobile-donate-monkey.png';
-import sdzMobileDonateElephant from '../../images/san-diego-zoo/mobile-donate-elephant.png';
-import sdzMobileDonateRhino from '../../images/san-diego-zoo/mobile-donate-rhino.png';
+import sdzStyleGuide from '../../images/san-diego-zoo/style-guide.png';
+import sdzWireframes from '../../images/san-diego-zoo/wireframes.png';
+import sdzWireframes2 from '../../images/san-diego-zoo/wireframes-2.png';
+import sdzIteration1 from '../../images/san-diego-zoo/iteration-1.png';
 import flowchart from '../../images/flowchart.jpg';
 import storyboard from '../../images/storyboard.jpg';
 import fxnctionHero from '../../images/fxnction/hero-product.png';
@@ -977,9 +976,14 @@ export const projects = [
     outcome: '41 survey responses · 5 interviews · Hi-fi prototype',
     img: sdzoodesktopmain,
     role: 'UI Designer & UX Researcher',
-    duration: 'Feb 2021',
-    team: 'Solo case study (UC Irvine UX/UI program)',
+    duration: '2 weeks',
+    team: '3',
     heroImg: sdzoodesktopmain,
+    metaFields: [
+      { label: 'Roles', value: ['UI Designer', 'UX Researcher'] },
+      { label: 'Timeline', value: '2 weeks' },
+      { label: 'Team', value: '3' },
+    ],
     problem:
       'When COVID-19 shut down in-person visits, the San Diego Zoo lost its primary way of connecting with the public. Traffic shifted online, but the existing site treated live cams, conservation programs, and donations as secondary pages buried deep in the navigation. Users who wanted to support wildlife from home had no clear path to understand where their money went or why membership still mattered.',
     approach: [
@@ -997,27 +1001,51 @@ export const projects = [
       },
       {
         label: 'Define',
+        layout: 'column',
         body:
           'Clustered survey and interview data into themes, transparency, education, proximity, and cause-driven giving. Defined two personas (the Remote Supporter and the Local Family) and reframed the design challenge around remote engagement.',
         img: storyboard,
       },
       {
         label: 'Ideate',
+        layout: 'column',
         body:
           'Sketched user flows for three critical paths: finding and watching live cams, understanding conservation impact before donating, and evaluating membership value. Restructured the information architecture so conservation content sits at the top level, not three clicks deep.',
         img: flowchart,
       },
       {
         label: 'Prototype & Style',
-        body:
-          'Built hi-fi desktop prototypes for a redesigned homepage, conservation impact hub, and streamlined donation flow. Created a style guide covering typography, color, and photography treatment to keep the experience warm and trustworthy without feeling like a generic nonprofit template.',
-        img: sdzoodesktopmain,
-        mobileViews: [
-          { src: sdzMobileMenu, alt: 'Mobile navigation menu' },
-          { src: sdzMobileDonationsLanding, alt: 'Mobile donations landing page' },
-          { src: sdzMobileDonateMonkey, alt: 'Mobile donation amount: monkey' },
-          { src: sdzMobileDonateElephant, alt: 'Mobile donation amount: elephant' },
-          { src: sdzMobileDonateRhino, alt: 'Mobile donation amount: rhino' },
+        subsections: [
+          {
+            id: 'style-guide',
+            title: 'Style Guide',
+            img: sdzStyleGuide,
+          },
+          {
+            id: 'wireframes',
+            title: 'Wireframes',
+            imgs: [sdzWireframes, sdzWireframes2],
+          },
+          {
+            id: 'desktop-view',
+            title: 'Desktop View',
+            video: '/videos/san-diego-zoo-desktop.mp4',
+          },
+          {
+            id: 'iteration-1',
+            img: sdzIteration1,
+            body:
+              'Some updated iterations and setting up the prototype.',
+          },
+          {
+            id: 'mobile-view',
+            title: 'Mobile View',
+            videos: [
+              '/videos/san-diego-zoo-animation-1.mp4',
+              '/videos/san-diego-zoo-menu-animation.mp4',
+              '/videos/san-diego-zoo-donate-animation.mp4',
+            ],
+          },
         ],
       },
     ],
@@ -1029,7 +1057,14 @@ export const projects = [
       { value: '80%', label: 'Want spending transparency' },
       { value: '82%', label: 'Open to future giving' },
     ],
-    processImgs: [sdzoodesktopmain, storyboard, flowchart],
+    processImgs: [
+      sdzoodesktopmain,
+      storyboard,
+      flowchart,
+      sdzStyleGuide,
+      sdzWireframes,
+      sdzIteration1,
+    ],
     links: [],
     extended: {
       context:

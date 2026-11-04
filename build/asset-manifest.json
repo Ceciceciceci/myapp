@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.f202acaf.chunk.css",
-    "main.js": "/static/js/main.66433e2d.chunk.js",
-    "main.js.map": "/static/js/main.66433e2d.chunk.js.map",
+    "main.js": "/static/js/main.a6ce7457.chunk.js",
+    "main.js.map": "/static/js/main.a6ce7457.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b2cc3228.js",
     "runtime-main.js.map": "/static/js/runtime-main.b2cc3228.js.map",
-    "static/js/2.d7756b90.chunk.js": "/static/js/2.d7756b90.chunk.js",
-    "static/js/2.d7756b90.chunk.js.map": "/static/js/2.d7756b90.chunk.js.map",
+    "static/js/2.a166de4a.chunk.js": "/static/js/2.a166de4a.chunk.js",
+    "static/js/2.a166de4a.chunk.js.map": "/static/js/2.a166de4a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.2dd627f3059b662638b3a7c8521fd5f6.js": "/precache-manifest.2dd627f3059b662638b3a7c8521fd5f6.js",
+    "precache-manifest.1d550ba619e3035e5c3bdcc822e5b2c9.js": "/precache-manifest.1d550ba619e3035e5c3bdcc822e5b2c9.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.f202acaf.chunk.css.map": "/static/css/main.f202acaf.chunk.css.map",
-    "static/js/2.d7756b90.chunk.js.LICENSE.txt": "/static/js/2.d7756b90.chunk.js.LICENSE.txt",
+    "static/js/2.a166de4a.chunk.js.LICENSE.txt": "/static/js/2.a166de4a.chunk.js.LICENSE.txt",
     "static/media/DSC07819.jpg": "/static/media/DSC07819.7c0d93f8.jpg",
     "static/media/DSC07826.jpg": "/static/media/DSC07826.613aa369.jpg",
     "static/media/DSC09638.jpg": "/static/media/DSC09638.6882005c.jpg",
@@ -182,6 +182,7 @@
     "static/media/img8.png": "/static/media/img8.a72d18a7.png",
     "static/media/img9.png": "/static/media/img9.689d54ce.png",
     "static/media/intro.png": "/static/media/intro.889bddcb.png",
+    "static/media/iteration-1.png": "/static/media/iteration-1.33b4aa4c.png",
     "static/media/jeep.png": "/static/media/jeep.7a5bcfd7.png",
     "static/media/kburger.png": "/static/media/kburger.d793f4e7.png",
     "static/media/kcake.png": "/static/media/kcake.373294b6.png",
@@ -197,11 +198,6 @@
     "static/media/merch1.png": "/static/media/merch1.47a57da1.png",
     "static/media/message-banner.png": "/static/media/message-banner.9f7f3421.png",
     "static/media/millie.png": "/static/media/millie.1413d512.png",
-    "static/media/mobile-donate-elephant.png": "/static/media/mobile-donate-elephant.caaeeb5b.png",
-    "static/media/mobile-donate-monkey.png": "/static/media/mobile-donate-monkey.d51456eb.png",
-    "static/media/mobile-donate-rhino.png": "/static/media/mobile-donate-rhino.658c014c.png",
-    "static/media/mobile-donations-landing.png": "/static/media/mobile-donations-landing.1763ead1.png",
-    "static/media/mobile-menu.png": "/static/media/mobile-menu.3cadb57d.png",
     "static/media/nav-logo-sleep.gif": "/static/media/nav-logo-sleep.c631d2f5.gif",
     "static/media/nav-logo-wake.gif": "/static/media/nav-logo-wake.30c631e2.gif",
     "static/media/new-form.png": "/static/media/new-form.29a07959.png",
@@ -243,6 +239,7 @@
     "static/media/sourdough.png": "/static/media/sourdough.1b67eb9b.png",
     "static/media/storyboard.jpg": "/static/media/storyboard.cf03b64b.jpg",
     "static/media/storybook-colors.png": "/static/media/storybook-colors.5cb8e350.png",
+    "static/media/style-guide.png": "/static/media/style-guide.9b7fc8f6.png",
     "static/media/sua.png": "/static/media/sua.59d71143.png",
     "static/media/suamizi.png": "/static/media/suamizi.b5a9557a.png",
     "static/media/sunny.png": "/static/media/sunny.15a236e0.png",
@@ -256,12 +253,14 @@
     "static/media/totebag1.png": "/static/media/totebag1.15d4a34c.png",
     "static/media/totebag2.png": "/static/media/totebag2.29673494.png",
     "static/media/webtools.png": "/static/media/webtools.526d5487.png",
+    "static/media/wireframes-2.png": "/static/media/wireframes-2.a5a2e833.png",
+    "static/media/wireframes.png": "/static/media/wireframes.e84f882f.png",
     "static/media/wrist-guards-photo.png": "/static/media/wrist-guards-photo.096a7b8e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b2cc3228.js",
-    "static/js/2.d7756b90.chunk.js",
+    "static/js/2.a166de4a.chunk.js",
     "static/css/main.f202acaf.chunk.css",
-    "static/js/main.66433e2d.chunk.js"
+    "static/js/main.a6ce7457.chunk.js"
   ]
 }
