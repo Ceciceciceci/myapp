@@ -56,7 +56,6 @@ import po from '../images/fanart/po.png';
 
 /** Originals */
 import bryan from '../images/original/bryan.png';
-import crayon from '../images/original/crayon.png';
 import corps from '../images/original/corps-team.png';
 import ill3 from '../images/original/Illustration3.png';
 import ill6 from '../images/original/Illustration6.png';
@@ -70,14 +69,11 @@ import millie from '../images/original/millie.png'
 import orig3 from '../images/original/orig3.jpg';
 import orig4 from '../images/original/orig4.png';
 import orig5 from '../images/original/orig5.png';
-import orig6 from '../images/original/orig6.png';
 import orig7 from '../images/original/orig7.png';
 import orig8 from '../images/original/orig8.png';
 import orig9 from '../images/original/orig9.png';
-import penguin from '../images/original/penguin.png'
 import sunny from '../images/fanart/sunny.png';
 import rose from '../images/original/rose.png';
-import webtools from '../images/original/webtools.png'
 
 /** Food art */
 import seaBakery from '../images/foodart/sea-bakery.png'
@@ -115,21 +111,14 @@ import sourdough from '../images/foodart/sourdough.png'
 /** Others */
 import coaster from '../images/original/DSC07819.jpg'
 import coaster2 from '../images/original/DSC07826.jpg'
-import knit1 from '../images/original/knit1.png'
-import knit2 from '../images/original/knit2.png'
-import knit3 from '../images/original/knit3.png'
-import knit4 from '../images/original/knit4.png'
-import knit5 from '../images/original/knit5.png'
-import sweater from '../images/original/sweater.png'
 import merch1 from '../images/original/merch1.png'
 import memopad1 from '../images/original/DSC09638.jpg'
 import memopad2 from '../images/original/DSC09650.jpg'
 import catsticker from '../images/original/DSC09663.jpg'
-import haikyuusticker from '../images/original/DSC09673.jpg'
-import newjeans from '../images/original/DSC09680.jpg'
+import haikyuusticker from '../images/fanart/DSC09673.jpg'
+import newjeans from '../images/fanart/DSC09680.jpg'
 import woodpins from '../images/original/DSC09692.jpg'
 import totebag1 from '../images/original/totebag1.png'
-import totebag2 from '../images/original/totebag2.png'
 
 const fanartPhotosList = [
   {id: 'kcake', url: kcake, width: '600', height: ''},
@@ -249,17 +238,9 @@ const otherPhotosList = [
   {id: 'newjeans', url: newjeans, width: '600', height: ''},
   {id: 'woodpins', url: woodpins, width: '600', height: ''},
   {id: 'totebag1', url: totebag1, width: '600', height: ''},
-  {id: 'totebag2', url: totebag2, width: '600', height: ''},
   {id: 'coaster', url: coaster, width: '600', height: ''},
   {id: 'coaster2', url: coaster2, width: '600', height: ''},
   {id: 'merch1', url: merch1, width: '600', height: ''},
-  {id: 'knit1', url: knit1, width: '600', height: ''},
-  {id: 'knit2', url: knit2, width: '600', height: ''},
-  {id: 'knit3', url: knit3, width: '600', height: ''},
-  {id: 'knit5', url: knit5, width: '600', height: ''},
-  {id: 'knit4', url: knit4, width: '600', height: ''},
-  {id: 'sweater', url: sweater, width: '600', height: ''},
-  
 ]
 
 export const fanartPhotos = fanartPhotosList.map((photo) => { 

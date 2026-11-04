@@ -1,4 +1,15 @@
 /**
+ * Original gallery top pins — keep lettered series first.
+ */
+const ORIGINAL_PINNED_GROUPS = [
+  ['A.jpg', /^a\.jpe?g$/i],
+  ['AA.jpg', /^aa\.jpe?g$/i],
+  ['AAA.png', /^aaa\.png$/i],
+  ['AAAA.png', /^aaaa\.png$/i],
+  ['B.jpg', /^b\.jpe?g$/i],
+];
+
+/**
  * Fanart-only top pins. In a 3-column masonry layout these become
  * the first image in each column.
  */
@@ -94,6 +105,7 @@ function loadFolderPhotos(context, pinnedGroups = null) {
 /* Populate each gallery from its image folder at build time. */
 export const originalPhotos = loadFolderPhotos(
   require.context('../images/original', false, /\.(png|jpe?g|webp|gif)$/i),
+  ORIGINAL_PINNED_GROUPS,
 );
 
 export const fanartPhotos = loadFolderPhotos(

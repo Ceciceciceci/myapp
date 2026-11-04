@@ -7,8 +7,6 @@ import characterPortraits from '../../images/original/character-portraits.png';
 import breadyKitchenTowelProduct from '../../images/original/bready-kitchen-towel-product.png';
 import breadyKitchenTowelFlatlay from '../../images/original/bready-kitchen-towel-flatlay.png';
 import postItNoteDesigns from '../../images/original/post-it-note-designs.png';
-import dumplingHairClawHello from '../../images/original/dumpling-hair-claw-hello.png';
-import dumplingHairClawSteamer from '../../images/original/dumpling-hair-claw-steamer.png';
 import orig3 from '../../images/original/orig3.jpg';
 import dailyLifeStickersheet from '../../images/original/daily-life-stickersheet.png';
 import frierensticker from '../../images/fanart/frierensticker.png';
@@ -70,8 +68,6 @@ const foodArtworks = [
   { title: 'Sleepy Time: Water Starters', medium: 'Fan art', img: pokemonStartersWater },
   { title: 'Sleepy Time: Grass Starters', medium: 'Fan art', img: pokemonStartersGrass },
   { title: 'Sleepy Time: Fire Starters', medium: 'Fan art', img: pokemonStartersFire },
-  { title: 'Dumpling Hair Claw', medium: 'Product design', img: dumplingHairClawHello },
-  { title: 'Dumpling Hair Claw in Steamer', medium: 'Product design', img: dumplingHairClawSteamer },
   { title: 'Baguette', img: baguette },
   { title: 'Bakery', img: bakery },
   { title: 'Bread Stamps', img: breadstamps },
