@@ -46,6 +46,7 @@ import onewheelQuizPrimitives from '../../images/onewheel-quiz/primitives.png';
 import onewheelQuizModules from '../../images/onewheel-quiz/quiz-modules.png';
 import onewheelQuizIcons from '../../images/onewheel-quiz/icons.png';
 import onewheelQuizReddit from '../../images/onewheel-quiz/reddit-posts.png';
+import onewheelQuizShapingApp from '../../images/onewheel-quiz/custom-shaping-app.png';
 import onewheelQuizResearch from '../../images/onewheel-quiz/research-inspo.png';
 
 export const projects = [
@@ -669,9 +670,10 @@ export const projects = [
           'On Reddit, there were questions from primarily first time Onewheel owners and riders about riding preferences.',
       },
       {
+        img: onewheelQuizShapingApp,
+        alt: 'Hand adjusting custom shaping in the Onewheel Bluetooth app',
         body:
           'This confusion stems from the Onewheel Bluetooth app where the user would connect their board for the first time.',
-        placeholderHeight: '220px',
       },
     ],
     approach: [

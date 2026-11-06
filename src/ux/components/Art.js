@@ -33,31 +33,6 @@ const HeaderDesc = styled.div`
   }
 `;
 
-const InstagramLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-  border: 1.5px solid
-    ${({ $hovered, theme }) =>
-      $hovered ? theme.colors.hoverYellowBorder : theme.colors.border};
-  padding: 0.75rem 1.75rem;
-  color: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.hoverBrown : theme.colors.foreground};
-  background: ${({ $hovered, theme }) =>
-    $hovered ? theme.colors.hoverYellow : 'transparent'};
-  text-decoration: none;
-  font-size: 0.875rem;
-  letter-spacing: 0.04em;
-  ${displayFont}
-  transition: border-color 0.25s, color 0.25s, background 0.25s, box-shadow 0.25s;
-  border-radius: 15px;
-  box-shadow: ${({ $hovered }) =>
-    $hovered
-      ? '0 4px 14px rgba(246,166,108,0.15)'
-      : '0 1px 4px rgba(92,51,23,0.08)'};
-`;
-
 const Eyebrow = styled.p`
   font-size: 0.75rem;
   letter-spacing: 0.1em;
@@ -126,22 +101,6 @@ const ArtMeta = styled.div`
   letter-spacing: 0.04em;
 `;
 
-function InstagramCta() {
-  const [hovered, setHovered] = useState(false);
-  return (
-    <InstagramLink
-      href="https://www.instagram.com/ichiknees/"
-      target="_blank"
-      rel="noopener noreferrer"
-      $hovered={hovered}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      Follow on Instagram →
-    </InstagramLink>
-  );
-}
-
 function ArtCard({ artwork }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -180,7 +139,6 @@ export default function UxArt() {
               No AI used to produce these. I did it all myself from concept {'>'} sketch{' '}
               {'>'} final.
             </p>
-            <InstagramCta />
           </HeaderDesc>
         </Header>
 
