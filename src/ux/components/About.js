@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container, PageMain, DisplayHeading, displayFont } from '../styles';
+import { ContentFrame, PageMain, DisplayHeading, displayFont } from '../styles';
 import breadFriends from '../../images/bread-friends.png';
 
 const experience = [
@@ -323,7 +323,7 @@ function SkillBullets({ labels }) {
 export default function UxAbout() {
   return (
     <PageMain>
-      <Container>
+      <ContentFrame>
         <Hero>
           <HeroIntro>
             <HeroBanner src={breadFriends} alt="Bread Friends illustration" />
@@ -422,7 +422,7 @@ export default function UxAbout() {
             </SidebarSection>
           </div>
         </BodyGrid>
-      </Container>
+      </ContentFrame>
     </PageMain>
   );
 }

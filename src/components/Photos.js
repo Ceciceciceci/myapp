@@ -3,6 +3,7 @@ import kburger from '../images/fanart/kburger.png';
 import kcake from '../images/fanart/kcake.png';
 import frierensticker from '../images/fanart/frierensticker.png';
 import getogojo from '../images/fanart/getogojo.png';
+import ghibli from '../images/fanart/ghibli.png';
 import ghibli12 from '../images/fanart/ghibli12.png';
 import ghibli23 from '../images/fanart/ghibli23.png';
 import img4 from '../images/fanart/img4.png';
@@ -24,7 +25,6 @@ import img18 from '../images/fanart/img18.png';
 import img19 from '../images/fanart/img19.jpg';
 import img20 from '../images/fanart/img20.png';
 import img21 from '../images/fanart/img21.png';
-import img22 from '../images/fanart/img22.png';
 import img23 from '../images/fanart/img23.png';
 import img24 from '../images/fanart/img24.png';
 import img25 from '../images/fanart/img25.jpg';
@@ -36,13 +36,11 @@ import img30 from '../images/fanart/img30.png';
 import img31 from '../images/fanart/img31.png';
 import img32 from '../images/fanart/img32.png';
 import img33 from '../images/fanart/img33.png';
-import img34 from '../images/fanart/img34.png';
 import img35 from '../images/fanart/img35.png';
 import img36 from '../images/fanart/img36.png';
 import img37 from '../images/fanart/img37.png';
 import img38 from '../images/fanart/img38.png';
 import img39 from '../images/fanart/img39.png';
-import img40 from '../images/fanart/img40.png';
 import img41 from '../images/fanart/img41.png';
 import img42 from '../images/fanart/img42.png';
 import img43 from '../images/fanart/img43.png';
@@ -125,6 +123,7 @@ const fanartPhotosList = [
   {id: 'kburger', url: kburger, width: '600', height: ''},
   {id: 'frierensticker', url: frierensticker, width: '600', height: '' },
   {id: 'getogojo', url: getogojo, width: '600', height: ''},
+  {id: 'ghibli', url: ghibli, width: '600', height: ''},
   {id: 'ghibli12', url: ghibli12, width: '600', height: ''},
   {id: 'ghibli23', url: ghibli23, width: '600', height: ''},
   {id: 'newjeans', url: newjeans, width: '600', height: ''},
@@ -147,7 +146,6 @@ const fanartPhotosList = [
   {id: 'img19', url: img19, width: '600', height: ''},
   {id: 'img20', url: img20, width: '600', height: ''},
   {id: 'img21', url: img21, width: '600', height: ''},
-  {id: 'img22', url: img22, width: '1200', height: ''},
   {id: 'img23', url: img23, width: '600', height: ''},
   {id: 'img24', url: img24, width: '600', height: ''},
   {id: 'img25', url: img25, width: '600', height: ''},
@@ -163,7 +161,6 @@ const fanartPhotosList = [
   {id: 'img37', url: img37, width: '600', height: ''},
   {id: 'img38', url: img38, width: '600', height: ''},
   {id: 'img39', url: img39, width: '600', height: ''},
-  {id: 'img40', url: img40, width: '600', height: ''},
   {id: 'img41', url: img41, width: '600', height: ''},
   {id: 'img42', url: img42, width: '600', height: ''},
   {id: 'dream1', url: dream1, width: '600', height: ''},

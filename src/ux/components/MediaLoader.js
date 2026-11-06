@@ -53,7 +53,7 @@ const Line = styled.div`
   }
 `;
 
-function MediaSpinner() {
+export function MediaSpinner() {
   return (
     <Spinner aria-hidden="true">
       <Line />

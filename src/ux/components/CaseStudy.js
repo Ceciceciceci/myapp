@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { PageMain } from '../styles';
+import { PageMain, contentFrame } from '../styles';
 import { projects, visibleProjects } from '../data/projects';
 import { buildCaseStudy } from '../utils/buildCaseStudy';
 import flowerMarker from '../../images/svgs/flower.svg';
@@ -20,15 +20,16 @@ const Page = styled(PageMain)`
 /* Sidebar 250 + gap 32 + content 750 = 1032; extra viewport width becomes side padding.
    Both columns share the same top edge (BACK // title). */
 const CaseShell = styled.div`
+  ${contentFrame}
   display: flex;
   align-items: flex-start;
   gap: 2rem;
-  width: 100%;
-  padding: 40px max(40px, calc((100vw - 1032px) / 2)) 2rem;
+  padding-top: 40px;
+  padding-bottom: 2rem;
 
   @media (max-width: 900px) {
     display: block;
-    padding: 40px 1.25rem 1.5rem;
+    padding-bottom: 1.5rem;
   }
 `;
 
@@ -447,6 +448,22 @@ const ImageGrid = styled.div`
       minmax(0, 1fr)
     );
   }
+`;
+
+const CaptionedStack = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: 100%;
+  margin: 1rem 0 0;
+`;
+
+const ImageCaption = styled.p`
+  margin: 0.65rem 0 0;
+  font-family: ${({ theme }) => theme.fonts.body};
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: ${({ theme }) => theme.colors.foreground};
 `;
 
 const GridImage = styled.div`
@@ -921,19 +938,40 @@ function CaseSection({ section }) {
   }
 
   if (section.type === 'image-grid') {
-    const images = section.images || [null, null, null];
+    const images = (section.images || []).map((item) =>
+      item && typeof item === 'object' ? item : { src: item, caption: '' },
+    );
+    const stacked =
+      section.layout === 'column' || images.some((item) => item.caption);
     const cols = Math.min(Math.max(images.length, 1), 4);
     return (
       <Section id={section.id}>
         {section.title ? <SectionTitle>{section.title}</SectionTitle> : null}
         {section.intro ? <Body>{section.intro}</Body> : null}
-        <ImageGrid $cols={cols}>
-          {images.slice(0, cols).map((src, i) => (
-            <GridImage key={src || `ph-${i}`} $ratio={cols === 3 ? '239 / 205' : '1'}>
-              {src ? <LoadableImage src={src} alt="" minHeight="8rem" /> : null}
-            </GridImage>
-          ))}
-        </ImageGrid>
+        {stacked ? (
+          <CaptionedStack>
+            {images.map((item, i) => (
+              <div key={item.src || `ph-${i}`}>
+                {item.src ? (
+                  <FullWidthMedia>
+                    <LoadableImage src={item.src} alt={item.caption || ''} />
+                  </FullWidthMedia>
+                ) : null}
+                {item.caption ? <ImageCaption>{item.caption}</ImageCaption> : null}
+              </div>
+            ))}
+          </CaptionedStack>
+        ) : (
+          <ImageGrid $cols={cols}>
+            {images.slice(0, cols).map((item, i) => (
+              <GridImage key={item.src || `ph-${i}`} $ratio={cols === 3 ? '239 / 205' : '1'}>
+                {item.src ? (
+                  <LoadableImage src={item.src} alt="" minHeight="8rem" />
+                ) : null}
+              </GridImage>
+            ))}
+          </ImageGrid>
+        )}
         {section.caption ? <Body>{section.caption}</Body> : null}
       </Section>
     );

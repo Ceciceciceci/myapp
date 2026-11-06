@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Container, PageMain, DisplayHeading, displayFont } from '../styles';
+import { ContentFrame, PageMain, DisplayHeading, displayFont } from '../styles';
 import { artworks } from '../data/artworks';
 
 const Header = styled.div`
@@ -161,7 +161,7 @@ function ArtCard({ artwork }) {
 export default function UxArt() {
   return (
     <PageMain>
-      <Container>
+      <ContentFrame>
         <Header>
           <div>
             <Eyebrow>Art</Eyebrow>
@@ -189,7 +189,7 @@ export default function UxArt() {
             <ArtCard key={artwork.id} artwork={artwork} />
           ))}
         </MasonryGrid>
-      </Container>
+      </ContentFrame>
     </PageMain>
   );
 }

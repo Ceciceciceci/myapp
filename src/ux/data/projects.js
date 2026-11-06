@@ -88,7 +88,23 @@ export const projects = [
           title: 'Why was a design system needed?',
           intro:
             'Within Future Motion, there was a brand styling set but not for the applications. This aims to solve building a design system that would mirror and reflect the state of Future Motion today for the customers. It also solves the multiple developer issues where it doesn’t limit only to multiple different overriding component code and styles, longer development cycles and off spacing from copy and pasting.',
-          images: [fmDsCase6, fmDsCase7, fmDsCase8],
+          layout: 'column',
+          images: [
+            {
+              src: fmDsCase6,
+              caption: 'The padding and alignment is off.',
+            },
+            {
+              src: fmDsCase7,
+              caption:
+                'The button colors and shapes are too similar to badges/pills.',
+            },
+            {
+              src: fmDsCase8,
+              caption:
+                "Forms didn't have the same UI style or state for each.",
+            },
+          ],
         },
         {
           id: 'results',

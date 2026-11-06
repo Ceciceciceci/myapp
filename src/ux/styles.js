@@ -79,6 +79,23 @@ export const Container = styled.div`
   }
 `;
 
+/* Matches the case study shell: sidebar 250 + gap 32 + content 750 = 1032. */
+export const contentFrame = css`
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: max(40px, calc((100vw - 1032px) / 2));
+  padding-right: max(40px, calc((100vw - 1032px) / 2));
+
+  @media (max-width: 900px) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+`;
+
+export const ContentFrame = styled.div`
+  ${contentFrame}
+`;
+
 export const displayFont = css`
   font-family: ${({ theme }) => theme.fonts.display};
   letter-spacing: ${({ theme }) => theme.typography.displayLetterSpacing};

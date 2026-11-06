@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { MenuIcon, CloseIcon } from '../icons';
 import ThemeToggle from './ThemeToggle';
+import { contentFrame } from '../styles';
 import logoSleep from '../../images/nav-logo-sleep.gif';
 import logoWake from '../../images/nav-logo-wake.gif';
 
@@ -23,16 +24,16 @@ const NavBar = styled.nav`
 `;
 
 const NavInner = styled.div`
-  width: 100%;
-  max-width: ${({ theme }) => theme.maxWidth};
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  ${contentFrame}
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 1.5rem;
 
-  @media (max-width: 600px) {
-    padding: 0.9rem 1.25rem;
+  @media (max-width: 900px) {
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
     gap: 1rem;
   }
 `;

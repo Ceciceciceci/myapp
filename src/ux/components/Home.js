@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Container, PageMain } from '../styles';
+import { ContentFrame, PageMain } from '../styles';
 import { homeProjects } from '../data/homeProjects';
 import FloatingPlayground from './FloatingPlayground';
 import { LoadableImage, LoadableVideo } from './MediaLoader';
@@ -361,7 +361,7 @@ export default function UxHome() {
 
   return (
     <Page>
-      <Container>
+      <ContentFrame>
         <DateLine>
           Today is {today}
           <br />
@@ -410,7 +410,7 @@ export default function UxHome() {
         </WorkList>
 
         <FloatingPlayground />
-      </Container>
+      </ContentFrame>
     </Page>
   );
 }

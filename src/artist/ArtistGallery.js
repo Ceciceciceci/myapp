@@ -1,9 +1,10 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, Redirect, useParams } from 'react-router-dom';
 import PhotoAlbum from 'react-photo-album';
 import styled from 'styled-components';
 import { galleryMeta, galleryPhotos } from './photos';
 import Lightbox from './Lightbox';
+import { MediaSpinner } from '../ux/components/MediaLoader';
 
 const Page = styled.div`
   width: 100%;
@@ -69,6 +70,51 @@ const AlbumWrap = styled.div`
     object-position: center;
   }
 `;
+
+const Loading = styled.div`
+  position: relative;
+  min-height: 16rem;
+`;
+
+function GalleryPhoto({ photo, imageProps, wrapperStyle }) {
+  const [ready, setReady] = useState(false);
+  const imgRef = useRef(null);
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth > 0) {
+      setReady(true);
+    }
+  }, [imageProps.src]);
+
+  return (
+    <div style={{ ...wrapperStyle, position: 'relative' }}>
+      {!ready ? (
+        <Loading style={{ position: 'absolute', inset: 0, minHeight: 0 }}>
+          <MediaSpinner />
+        </Loading>
+      ) : null}
+      <img
+        {...imageProps}
+        ref={imgRef}
+        alt={photo.alt || ''}
+        style={{
+          ...imageProps.style,
+          opacity: ready ? 1 : 0,
+          transition: 'opacity 0.25s ease',
+        }}
+        onLoad={(event) => {
+          if (imageProps.onLoad) imageProps.onLoad(event);
+          setReady(true);
+        }}
+        onError={(event) => {
+          if (imageProps.onError) imageProps.onError(event);
+          setReady(true);
+        }}
+      />
+    </div>
+  );
+}
 
 function measurePhotos(sourcePhotos) {
   return Promise.all(
@@ -167,9 +213,14 @@ export default function ArtistGallery() {
               if (containerWidth < 800) return 2;
               return 3;
             }}
+            renderPhoto={GalleryPhoto}
             onClick={(_event, _photo, photoIndex) => setIndex(photoIndex)}
           />
-        ) : null}
+        ) : (
+          <Loading>
+            <MediaSpinner />
+          </Loading>
+        )}
       </AlbumWrap>
 
       <Lightbox

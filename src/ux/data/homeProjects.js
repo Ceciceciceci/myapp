@@ -14,7 +14,7 @@ export const homeProjects = [
     blurb:
       'rebuilt a shared design language across web and mobile so designers and developers can ship from one library',
     meta: 'Web + Mobile | Figma, Storybook, React, CSS, Cursor, Claude | 2026 - ongoing',
-    video: '/videos/design-system.mov',
+    video: '/videos/design-system.mp4',
     to: '/projects/future-motion-design-system',
     layout: 'full',
   },
