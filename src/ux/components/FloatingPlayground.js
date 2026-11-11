@@ -299,6 +299,7 @@ export default function FloatingPlayground() {
     const ctx = canvas.getContext('2d');
     let cancelled = false;
     let onResize = null;
+    let resizeTimer = null;
     let onPointer = null;
     let onLeave = null;
 
@@ -312,7 +313,7 @@ export default function FloatingPlayground() {
       imagesRef.current = breadoImgs;
       const rawMask = buildMask(maskImg);
 
-      onResize = () => {
+      const layoutPlayground = () => {
         const rect = stage.getBoundingClientRect();
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
         canvas.width = Math.floor(rect.width * dpr);
@@ -342,7 +343,12 @@ export default function FloatingPlayground() {
         }
       };
 
-      onResize();
+      onResize = () => {
+        if (resizeTimer) window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(layoutPlayground, 150);
+      };
+
+      layoutPlayground();
       window.addEventListener('resize', onResize);
 
       onPointer = (event) => {
@@ -423,6 +429,7 @@ export default function FloatingPlayground() {
     return () => {
       cancelled = true;
       cancelAnimationFrame(rafRef.current);
+      if (resizeTimer) window.clearTimeout(resizeTimer);
       if (onResize) window.removeEventListener('resize', onResize);
       if (onPointer) {
         stage.removeEventListener('pointermove', onPointer);

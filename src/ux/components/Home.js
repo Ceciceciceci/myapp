@@ -222,6 +222,7 @@ const WorkMeta = styled.p`
 `;
 
 const MediaFrame = styled.div`
+  position: relative;
   width: 100%;
   order: 1;
   border-radius: 10px;
@@ -230,17 +231,32 @@ const MediaFrame = styled.div`
   aspect-ratio: ${({ $layout }) => ($layout === 'full' ? '21 / 9' : '4 / 3')};
   border: 1px solid ${({ theme }) => theme.colors.border};
 
+  @media (max-width: 800px) {
+    aspect-ratio: ${({ $layout }) =>
+      $layout === 'full' ? '16 / 9' : '16 / 10'};
+  }
+
+  /* Absolute fill so iOS Safari respects object-fit on video */
   > div {
-    height: 100%;
-    min-height: 100% !important;
+    position: absolute !important;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
+    min-height: 0 !important;
+    background: ${({ theme }) => theme.colors.placeholder};
   }
 
   > div > div {
-    height: 100%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
   }
 
   img,
   video {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     display: block;

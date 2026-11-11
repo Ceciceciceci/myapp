@@ -3,7 +3,7 @@ import bookletter from '../../images/bookletter.png';
 import stampbg from '../../images/stampbg.png';
 import stampflower from '../../images/stampflower.png';
 import stampstar from '../../images/stampstar.png';
-import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
+import sdzoodesktopmain from '../../images/sdzoodesktopmain.jpg';
 
 import styled from 'styled-components';
 

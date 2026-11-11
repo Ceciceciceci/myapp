@@ -1,7 +1,7 @@
 import projimg1 from '../../images/proj1-img.jpg';
 import classicVacationsBooking from '../../images/classic-vacations/product-design-booking.png';
 import classicVacationsAgencyId from '../../images/classic-vacations/agency-id-registration.png';
-import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
+import sdzoodesktopmain from '../../images/sdzoodesktopmain.jpg';
 import sdzStyleGuide from '../../images/san-diego-zoo/style-guide.png';
 import sdzWireframes from '../../images/san-diego-zoo/wireframes.png';
 import sdzWireframes2 from '../../images/san-diego-zoo/wireframes-2.png';
@@ -65,14 +65,14 @@ export const projects = [
     duration: '2025 – ongoing (continuing initiative)',
     tools: 'Figma, Storybook, React, AI',
     heroImg: fmDsDesktop17,
-    heroVideo: '/videos/design-system.mov',
+    heroVideo: '/videos/design-system.mp4',
     caseStudy: {
       title: 'Future Motion Design System',
       metaFields: [
         { label: 'Timeline', value: '2026 - ongoing' },
         { label: 'Tools', value: 'Figma, Cursor, Claude, Storybook, React, CSS' },
       ],
-      heroVideo: '/videos/design-system.mov',
+      heroVideo: '/videos/design-system.mp4',
       nav: [
         { id: 'overview', label: 'Overview' },
         { id: 'results', label: 'Results' },
@@ -132,6 +132,7 @@ export const projects = [
             'I looked into many design systems to learn what makes for a good design system for our needs. Not all of them apply directly for what we use it for so I cherry picked and took notes.',
             'Atlassian Design System, Adobe’s Spectrum for a lot of the main basics ( ie Button ), Apple HIG for keyboard inputs, Google’s Material Design for the cards and icons',
             'I also referred back to design terminology and articles to best design certain components such as our current table styling based on what we need it to do.',
+            'My personal thought: It is easy to use AI to have it create a design system but they can cause a rift in what is needed and what could be overbloating even after giving it the entire code base to summarize what exists. I believe that researching the best practices first from other existing patterns before having the AI agent create after makes a better usable component.',
           ],
         },
         {
@@ -793,7 +794,7 @@ export const projects = [
     duration: '2024',
     tools: 'Figma, React, CSS',
     heroVideo: '/videos/board-trade-in-system.mp4',
-    mobileVideo: '/videos/board-trade-in-mobile.mov',
+    mobileVideo: '/videos/board-trade-in-mobile.mp4',
     mobileCaption: 'Made for mobile as well!',
     links: [{ label: 'Live site', href: 'https://tradein.onewheel.com/' }],
     caseStudy: {
@@ -804,7 +805,7 @@ export const projects = [
         { label: 'Live', value: 'tradein.onewheel.com' },
       ],
       heroVideo: '/videos/board-trade-in-system.mp4',
-      mobileVideo: '/videos/board-trade-in-mobile.mov',
+      mobileVideo: '/videos/board-trade-in-mobile.mp4',
       mobileCaption: 'Made for mobile as well!',
       sections: [
         {

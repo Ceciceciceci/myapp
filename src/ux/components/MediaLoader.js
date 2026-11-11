@@ -10,10 +10,10 @@ const spin = keyframes`
 const Wrap = styled.div`
   position: relative;
   width: 100%;
-  min-height: ${({ $ready, $minHeight }) =>
-    $ready ? '0' : $minHeight || '11rem'};
-  background: ${({ theme, $ready }) =>
-    $ready ? 'transparent' : theme.colors.placeholder};
+  min-height: ${({ $ready, $minHeight, $fill }) =>
+    $fill ? '100%' : $ready ? '0' : $minHeight || '11rem'};
+  height: ${({ $fill }) => ($fill ? '100%' : 'auto')};
+  background: ${({ theme }) => theme.colors.placeholder};
   border-radius: inherit;
   overflow: hidden;
 `;
@@ -88,6 +88,36 @@ function useMediaReady(resetKey) {
   return [ready, setReady];
 }
 
+function useNearViewport(rootMargin = '320px 0px') {
+  const ref = useRef(null);
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || near) return undefined;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setNear(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [near, rootMargin]);
+
+  return [ref, near];
+}
+
 export function LoadableImage({
   src,
   alt = '',
@@ -110,6 +140,7 @@ export function LoadableImage({
     <Wrap
       className={className}
       $ready={ready}
+      $fill={fill}
       $minHeight={fill ? '100%' : minHeight}
     >
       {!ready ? <MediaSpinner /> : null}
@@ -118,6 +149,8 @@ export function LoadableImage({
           ref={imgRef}
           src={src}
           alt={alt}
+          loading="lazy"
+          decoding="async"
           onLoad={() => setReady(true)}
           onError={() => setReady(true)}
           {...rest}
@@ -133,26 +166,61 @@ export function LoadableVideo({
   minHeight,
   fill = false,
   'aria-label': ariaLabel,
+  preload = 'metadata',
+  autoPlay = false,
   ...rest
 }) {
   const [ready, setReady] = useMediaReady(src);
+  const [wrapRef, near] = useNearViewport();
+  const videoRef = useRef(null);
+  const activeSrc = near ? src : undefined;
+  const activePreload = near && autoPlay ? 'auto' : preload;
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !activeSrc || !autoPlay) return undefined;
+
+    const tryPlay = () => {
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // Autoplay can be blocked until more data buffers; ignore.
+        });
+      }
+    };
+
+    tryPlay();
+    video.addEventListener('canplay', tryPlay);
+    video.addEventListener('loadeddata', tryPlay);
+    return () => {
+      video.removeEventListener('canplay', tryPlay);
+      video.removeEventListener('loadeddata', tryPlay);
+    };
+  }, [activeSrc, autoPlay]);
 
   return (
     <Wrap
+      ref={wrapRef}
       className={className}
       $ready={ready}
+      $fill={fill}
       $minHeight={fill ? '100%' : minHeight}
     >
       {!ready ? <MediaSpinner /> : null}
       <MediaSlot $ready={ready} $fill={fill}>
-        <video
-          src={src}
-          aria-label={ariaLabel}
-          onLoadedData={() => setReady(true)}
-          onCanPlay={() => setReady(true)}
-          onError={() => setReady(true)}
-          {...rest}
-        />
+        {activeSrc ? (
+          <video
+            ref={videoRef}
+            src={activeSrc}
+            aria-label={ariaLabel}
+            preload={activePreload}
+            autoPlay={autoPlay}
+            onLoadedData={() => setReady(true)}
+            onCanPlay={() => setReady(true)}
+            onError={() => setReady(true)}
+            {...rest}
+          />
+        ) : null}
       </MediaSlot>
     </Wrap>
   );

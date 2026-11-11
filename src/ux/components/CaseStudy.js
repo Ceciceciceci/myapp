@@ -878,7 +878,7 @@ function Media({ src, video, alt = '', wide = false }) {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           controls
           aria-label={alt}
           minHeight="14rem"
@@ -1060,7 +1060,7 @@ function CaseSection({ section }) {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     controls
                     aria-label={section.title || ''}
                     minHeight="14rem"
@@ -1432,7 +1432,7 @@ export default function UxCaseStudy() {
                   muted
                   loop
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   controls
                   aria-label={study.title}
                   minHeight="16rem"
@@ -1458,7 +1458,7 @@ export default function UxCaseStudy() {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="metadata"
                     controls
                     aria-label={`${study.title} mobile`}
                     minHeight="12rem"

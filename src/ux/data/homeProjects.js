@@ -1,5 +1,5 @@
 import fxnctionHero from '../../images/fxnction/hero-product.png';
-import sdzoodesktopmain from '../../images/sdzoodesktopmain.png';
+import sdzoodesktopmain from '../../images/sdzoodesktopmain.jpg';
 import dpelPreview from '../../images/dpel/preview.png';
 
 /**
@@ -12,7 +12,7 @@ export const homeProjects = [
     title: 'Future Motion Design System',
     role: 'Lead UX Designer + Software Engineer',
     blurb:
-      'rebuilt a shared design language across web and mobile so designers and developers can ship from one library',
+      'Built a shared design component library for Future Motion based on the legacy codebase that designers, developers, and AI agents can build with',
     meta: 'Web + Mobile | Figma, Storybook, React, CSS, Cursor, Claude | 2026 - ongoing',
     video: '/videos/design-system.mp4',
     to: '/projects/future-motion-design-system',
